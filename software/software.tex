@@ -69,7 +69,9 @@
     \par
     La elección fue realizada a partir de los criterios antes mencionados aplicados sobre la tabla comparativa.
     \par
-    Se decidió desarrollar la aplicación para la plataforma \textbf{Android}, considerado, el porcentaje de uso en Argentina, el tamaño de la comunidad de desarrolladores, la gran disponibilidad de herramientas y la sencillez relativa en cuanto a  requerimientos para la publicación de aplicaciones.
+    Se decidió desarrollar la aplicación para la plataforma \textbf{Android}, considerado, el porcentaje de uso en Argentina, el tamaño de la comunidad de desarrolladores, la gran disponibilidad de herramientas y la sencillez relativa en cuanto a requerimientos para la publicación de aplicaciones.
+    
+    \par Para el desarrollo se empleó el lenguaje Java (JDK 1.7 o Java 7) sobre el entorno de desarrollo integrado (IDE) oficial de Google, AndroidStudio. La versión de sistema operativo mínima para la que se desarrolló es \textit{Nougat 7.0}, lanzada en agosto de 2016, la cual utiliza la plataforma de desarrollo (Android SDK plataform \footnote{\url{https://developer.android.com/studio/releases/platforms}}) API nivel 24.
 
 
 
@@ -93,15 +95,85 @@
         \end{figure}
 
 \section{Implementación}
-    \par Esta sección contiene la presentación de los resultados obtenidos del desarrollo de este componente. Como se introdujo anteriormente en el diseño, la arquitectura de una aplicación Android se divide en ciertos elementos denominados \textit{Activities}, los cuales incluyen componentes de interfaz gráfica denominados Vistas(\textit{Views}) y los eventos correspondientes a la interacción con los mismos (patrón \textit{observer}).
+    \par Esta sección contiene la presentación de los resultados obtenidos del desarrollo de este componente. 
+    El desarrollo de esta aplicación [fue realizado utilizando principalmente el lenguaje java junto al IDE  Android Studio.
+    de desarrollo AndroidStudio (LO DE ANDROID STUDIO Y VERSION DE JAVA LO PUSE ARRIBA)] se basa en el patrón de arquitectura de desarrollo MVP \footnote{MVP, Modelo Vista Presentador. Patrón que separa la lógica de datos y de negocios(modelo y presentador respectivamente) de la interfaz gráfica (Vista)}. Los elementos correspondientes a la lógica    
+    
+
+    
+    se divide en ciertos elementos denominados \textit{Activities}, los cuales incluyen componentes de interfaz gráfica denominados Vistas(\textit{Views}) y los eventos correspondientes a la interacción con los mismos (patrón \textit{observer}). 
     
     \par Debido a la imposibilidad de la desagregación de ciertas funciones, los \textit{activities} incluyen métodos o llamadas que interaccionan con librerías o clases complementarias. Dentro de estas últimos se encuentran el modelo de clases, la interacción con la base de datos y llamadas a las API's, entre otras.
     
-    \par Para cada uno de los \textit{activities} de la misma se adjunta la correspondiente descripción general, las funciones que cumple, interacción con clases o librerías complementarias y el modo de uso. 
+    \par Para cada uno de los \textit{activities} de la misma se adjunta la correspondiente descripción general, las funciones que cumple y interacción con clases o librerías complementarias. 
     
     
         \subsection{Pantalla principal}
+        
             \subsubsection{Descripción}
-                \par Es la pantalla con la que inicia la aplicación.
+                \par Es la pantalla con la que inicia la aplicación. En la misma se puede visualizar la lista de maceraciones planificadas.
+                
+                \par Para la implementación se utiliza un Activity denominado \textit{MainActivity}. La interfaz definida se compone por un ActionBar que cuenta con un botón para acceder a la pantalla de planificación, una lista de elementos (maceraciones) que ocupa el área restante de la pantalla (RecyclerView?, Adapter?) y un botón flotante para acceder un dialogo tipo pop up donde puede observarse los valores actuales recolectados por los sensores de la estación de recolección de datos Figura X. 
+                
             \subsubsection{Funciones}
-            \subsubsection{Modo de uso}
+                \paragraph{Lista de maceraciones planificadas:}
+                Cada una de las maceraciones listadas es un botón clickeable que permite el acceso a la pantalla de gestión de la maceración seleccionada.
+                \paragraph{Agregar nueva maceración:}
+                Al seleccionar el botón, se accede a la pantalla que permite crear una nueva maceración.
+                \paragraph{Medición actual:}
+                Dialogo pop up que muestra los valores obtenidos por cada sensor, Figura X.
+            
+            \subsubsection{Detalle de implementación}
+                En el diagrama X ubicado en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
+                
+                
+        \subsection{Pantalla de planificación}
+        \subsubsection{Descripción}
+                \par Es la pantalla donde se planifica una nueva maceración. En la misma se pueden visualizar opciones para rellenar los campos necesarios para definir una maceración.
+                
+                \par Para la implementación se utiliza un Activity denominado \textit{PlanningActivity}. La interfaz definida se compone por un actionbar que cuenta con un botón para finalizar la planificación, una lista de campos (tipo de maceración, volumen, densidad deseada, lista de granos, lista de intervalos) que ocupa el área restante de la pantalla. 
+                
+            \subsubsection{Funciones}
+                \paragraph{Seleccionar tipo de maceración:}
+                Menú desplegable que permite seleccionar el tipo de maceración de una lista predefinida, siendo estas opciones \textit{simple}, \textit{escalonada} o \textit{por decocción}.
+                
+                \paragraph{Establecer volumen y densidad deseada:}
+                Estos parámetros se pueden establecer rellenando los campos correspondientes. El volumen ingresado debe estar expresado en litros y la densidad en kilogramos sobre litro.
+                
+                \paragraph{Agregar/Quitar granos:}
+                Al presionar el botón ``AGREGAR GRANO'', se despliega un dialogo con tres campos, Figura X,  donde se deberá agregar el nombre del grano, porcentaje correspondiente a la receta y el extracto potencial provisto por el fabricante del mismo. Una vez agregado, los datos del mismo se mostrarán en una lista en conjunto con los granos agregados anteriormente.
+                \par Para eliminar un elemento de esta lista, se debe mantener presionado el mismo y seleccionar la opción ``Eliminar grano'' del menú contextual (Figura X).
+                
+                \paragraph{Definir intervalos con sus parámetros:}
+                Para el agregado de intervalos debe seleccionarse el botón con el signo "+", esto desplegará un dialogo tipo pop-up, Figura X, donde podrán encontrarse los campos necesarios para definir un intervalo. Pueden ser agregados uno o mas intervalos según corresponda al tipo y receta de maceración a ser realizada.
+                
+                \paragraph{Finalizar planificación:}
+                Al finalizar el ingreso de datos, ser presionará el botón para finalizar, antes mencionado, esto desplegará un dialogo tipo pop-up donde deberán ser ingresados los campos nombre de la maceración, intervalo de medición de temperatura e intervalo de medición de pH. Luego del ingreso de los datos, presionando el botón ``Aceptar'' dará por concluido el ingreso de datos y se retornará al \textit{Main Activity}.
+                
+                \paragraph{Regla de negocios}
+                Dado que es necesario mantener igualdad de condiciones para los experimentos de maceración llevados a cabo con los parámetros aquí ingresados, los mismos no podrán ser modificados luego. Debiendo en el caso de requerir modificarlos, eliminar la maceración e ingresar nuevamente los datos.
+            
+            \subsubsection{Detalle de implementación}
+                En el diagrama X ubicado en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
+        
+        \subsection{Pantalla de gestión de maceración}
+            \subsubsection{Descripción}
+                \par Es la pantalla donde se gestiona la maceración seleccionada.
+                \par Para la implementación se utiliza un Activity denominado \textit{ExperimentActivity}. En la misma se puede visualizar en primer lugar un ActionBar donde se indica el nombre de la maceración y que incluye además una serie de botones para acceder al detalle de la maceración, ingresar a la pantalla de información histórica y estadística de los experimentos realizados, y por último eliminar la maceración. En el área restante de la pantalla puede encontrarse una lista con los experimentos realizados, y un botón flotante en la parte inferior que permite iniciar un nuevo experimento y acceder de esta manera a la pantalla correspondiente.
+                
+                
+            \subsubsection{Funciones}
+                \paragraph{Lista de experimentos realizados:}
+                Cada una de los experimentos listados es un botón clickeable que permite el acceso a la pantalla de gestión de la maceración seleccionada.
+                \paragraph{Agregar nueva maceración:}
+                Al seleccionar el botón, se accede a la pantalla que permite crear una nueva maceración.
+                \paragraph{Medición actual:}
+                Dialogo pop up que muestra los valores obtenidos por cada sensor, Figura X.
+            
+            \subsubsection{Detalle de implementación}
+                En el diagrama X ubicado en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
+            
+        \subsection{Pantalla}
+            \subsubsection{Descripción}
+            \subsubsection{Funciones}
+            \subsubsection{Detalle de implementación}
