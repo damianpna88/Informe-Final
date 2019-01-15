@@ -145,7 +145,7 @@
                 \par Para eliminar un elemento de esta lista, se debe mantener presionado el mismo y seleccionar la opción ``Eliminar grano'' del menú contextual (Figura X).
                 
                 \paragraph{Definir intervalos con sus parámetros:}
-                Para el agregado de intervalos debe seleccionarse el botón con el signo "+", esto desplegará un dialogo tipo pop-up, Figura X, donde podrán encontrarse los campos necesarios para definir un intervalo. Pueden ser agregados uno o mas intervalos según corresponda al tipo y receta de maceración a ser realizada.
+                Para el agregado de intervalos debe seleccionarse el botón con el signo ``+'', esto desplegará un dialogo tipo pop-up, Figura X, donde podrán encontrarse los campos necesarios para definir un intervalo. Pueden ser agregados uno o mas intervalos según corresponda al tipo y receta de maceración a ser realizada.
                 
                 \paragraph{Finalizar planificación:}
                 Al finalizar el ingreso de datos, ser presionará el botón para finalizar, antes mencionado, esto desplegará un dialogo tipo pop-up donde deberán ser ingresados los campos nombre de la maceración, intervalo de medición de temperatura e intervalo de medición de pH. Luego del ingreso de los datos, presionando el botón ``Aceptar'' dará por concluido el ingreso de datos y se retornará al \textit{Main Activity}.
@@ -158,22 +158,80 @@
         
         \subsection{Pantalla de gestión de maceración}
             \subsubsection{Descripción}
-                \par Es la pantalla donde se gestiona la maceración seleccionada.
-                \par Para la implementación se utiliza un Activity denominado \textit{ExperimentActivity}. En la misma se puede visualizar en primer lugar un ActionBar donde se indica el nombre de la maceración y que incluye además una serie de botones para acceder al detalle de la maceración, ingresar a la pantalla de información histórica y estadística de los experimentos realizados, y por último eliminar la maceración. En el área restante de la pantalla puede encontrarse una lista con los experimentos realizados, y un botón flotante en la parte inferior que permite iniciar un nuevo experimento y acceder de esta manera a la pantalla correspondiente.
+                \par Es la pantalla de administración para la maceración seleccionada.
+                \par Para la implementación se utiliza un Activity denominado \textit{ExperimentActivity}. En la misma puede ser visualizado en primer lugar un ActionBar donde se indica el nombre de la maceración y que incluye además una serie de botones: acceso a la pantalla de detalle de la maceración, ingreso a la pantalla de información histórica y estadística de los experimentos realizados, y por último, la opción de eliminar la maceración. En el área restante de la pantalla puede encontrarse una lista con los experimentos realizados, y un botón flotante en la parte inferior que permite iniciar un nuevo experimento y acceder de esta manera a la pantalla correspondiente.
                 
                 
             \subsubsection{Funciones}
                 \paragraph{Lista de experimentos realizados:}
-                Cada una de los experimentos listados es un botón clickeable que permite el acceso a la pantalla de gestión de la maceración seleccionada.
-                \paragraph{Agregar nueva maceración:}
-                Al seleccionar el botón, se accede a la pantalla que permite crear una nueva maceración.
-                \paragraph{Medición actual:}
-                Dialogo pop up que muestra los valores obtenidos por cada sensor, Figura X.
+                Cada una de los experimentos listados es un botón sensible a ser presionado que permite el acceso a la pantalla de resultados del experimento pulsado (Figura X).
+                
+                \paragraph{Eliminar experimento:}
+                 Como se mencionó en el punto anterior, cada una de los experimentos listados es un botón sensible a ser presionado. Si la duración de esta selección supera los dos segundos, se procede a borrar el experimento seleccionado de la lista y de la base de datos.
+                 
+                \paragraph{Detalle del plan de maceración:}
+                 Pantalla en la cual pueden ser visualizados los valores ingresados en la planificación de la maceración; el volumen y temperatura de agua a ser incorporada en cada etapa; y la cantidad de cada tipo de grano a ser utilizado.
+                
+                \paragraph{Información histórica y estadística:}
+                Acceso a la pantalla de información histórica y estadística correspondiente a la maceración. (Figura X)
+                
+                \paragraph{Eliminar maceración:}
+                Al seleccionarse la opción presente en el ActionBar, se procede a eliminar la maceración actual en conjunto con todos los datos ligados a la misma (experimentos realizados y datos inherentes a la planificación de la misma)
+                
+                \paragraph{Iniciar nuevo experimento}
+                Ingreso a la pantalla de monitoreo del experimento a ser iniciado (Figura X).
             
             \subsubsection{Detalle de implementación}
                 En el diagrama X ubicado en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
             
-        \subsection{Pantalla}
+        \subsection{Pantalla de detalle de maceración}
             \subsubsection{Descripción}
-            \subsubsection{Funciones}
+            Es la pantalla donde se presentan los datos ingresados para esta maceración en la planificación, junto a otros datos calculados.
+            En la misma puede ser visualizarse en la parte superior el \textit{ActionBar} donde se indica el nombre de la Maceración. Luego, en el espacio restante se presentan los siguientes valores: tipo de maceración; volumen de mosto; densidad específica deseada; información de los granos a utilizar (nombre, cantidad teórica y, en caso de haber realizado mas de tres experimentos, la cantidad ajustada); e información de los intervalos (duración, temperatura y pH deseados con sus respectivas tolerancias de desvío, volumen y temperatura del agua a ser incorporada, y en caso de maceración por decocción, la temperatura del segundo macerador).
+            
             \subsubsection{Detalle de implementación}
+            
+        \subsection{Pantalla de información estadística e histórica}
+            \subsubsection{Descripción}
+            En esta pantalla puede ser visualizado un resumen de los experimentos llevados a cabo para la correspondiente maceración.
+            En esta pantalla puede visualizarse un \textit{ActionBar} en la parte superior con el nombre de la maceración. Debajo, dos botones tipo pestañas (\textit{TabLayout}) que permiten acceder a los dos paneles (\textit{Fragments}), Resumen General y Detalle de temperatura de cada experimento. 
+            Se divide en dos paneles (\textit{Fragments}): Resumen general y Detalle de temperatura por experimento.
+            
+            \paragraph{Resumen general:} En este panel en primer lugar se ubica un botón que permite alternar entre los dos tipos de gráficas comparativas de la evolución promedio de cada variable (gráfica de líneas y gráfico estadístico descriptivo Boxplot\footnote{También conocido como gráfico de caja y bigote (representa valores extremos y el 1$^{\circ}$, 2$^{\circ}$ y 3$^{\circ}$ cuartil)}). Luego de este, se presentan las siguientes gráficas: Temperatura; pH; y Activación de enzimas. Finalmente, se presenta una serie de valores calculados a partir de los mismos valores que conforman las gráficas, estos son: Número de experimentos válidos; Rendimiento del equipo\footnote{Este valor comienza a ajustarse a partir del tercer experimento válido de una maceración}; Cálculo Teórico de insumos con rendimiento no ajustado \footnote{El ajuste se realiza tomando como rendimiento del equipo el valor de rendimiento calculado, en lugar del estándar 70\%}; Cálculo Teórico de insumos con rendimiento ajustado; por último el calculo práctico de cantidad de insumos. 
+            
+            \paragraph{Detalle de temperatura por experimento:} En este puede encontrarse en el borde superior un menú desplegable (\textit{Spinner}), el cual permite seleccionar el tipo de gráficas a ser comparadas luego, pudiendo ser de cada sensor o del promedio de sensores para cada muestra. De esta manera permite compara el/los mismo/s sensores entre diferentes experimentos. Debajo, se presentan las gráficas por experimento antes mencionadas.
+            
+            \subsubsection{Funciones}
+            \paragraph{Visualización de gráficas de variables:}
+              En el resumen general, se presentan gráficas de los valores promedios de las variables antes mencionadas respecto al tiempo. Se consideran para estas solo los experimentos válidos\footnote{Se consideran válidos aquellos experimentos, que cumplan con la cantidad de mediciones e incluyan el valor de densidad obtenida.} de esta maceración.
+            
+            \subsubsection{Detalle de implementación}
+            
+        \subsection{Pantalla de resultados de experimento}
+            \subsubsection{Descripción}
+            En esta pantalla puede ser viualizado un resumen de los resultados obtenidos en este experimento.
+            En el borde superior se ubica un \textit{ActionBar} con el la fecha y horario del experimento, debajo se presentan los valores temperatura ambiental, densidad específica del mosto y rendimiento obtenido. En forma posterior, se ubican representaciones gráficas de la evolución temporal de las variables temperatura, pH y activación de enzimas para este experimento, seguidas de la evolución temporal de la temperatura de cada sensor.
+            
+            \subsubsection{Detalle de implementación}
+            
+        \subsection{Pantalla de monitoreo de experimento}
+            \subsubsection{Descripción}
+            Esta pantalla es la encargada de asistir al usuario con el experimento en curso.
+            En esta pantalla puede visualizarse un \textit{ActionBar} en la parte superior con el nombre de la maceración, seguido de dos botones, el primero para cancelar el experimento en curso y el segundo para confirmar la conclusión del experimento. Debajo, dos botones tipo pestañas (\textit{TabLayout}) que permiten acceder a los dos paneles (\textit{Fragments}), Mediciones y Etapas.
+            
+            \paragraph{Mediciones:}
+            En este panel se visualizan los valores obtenidos a través de la estación de recolección de datos para el experimento en curso. Además, enseña dentro de tarjetas (\textit{CardViews}) el porcentaje de avance en el que se encuentre la maceración, los valores planificados para dicho momento y el correspondiente desvío con los valores recolectados.
+            \paragraph{Etapas:}
+            En este panel se visualiza un resumen de las etapas que componen la maceración, adicionando temporizadores correspondientes al tiempo restante para el inicio de cada una de las mismas.
+            
+            \subsubsection{Funciones}
+            \paragraph{Configuración de medición de temperatura:} Manteniendo presionada la tarjeta perteneciente a la temperatura, se abre un dialogo de selección, el cual permite elegir los métodos de representación de los valores de temperatura para monitoreo. Estos pueden ser: promedio, mediana, promedio de valores extremos, y finalmente permite seleccionar los sensores incoroporados o exceptuados del cálculo.
+            \paragraph{Alerta:} 
+            En caso de obtenerse un valor fuera de la tolerancia planificada, se muestra una notificación en el dispositivo correspondiente a la variable fuera de rango. 
+            \paragraph{Finalizar experimento:}
+            Al seleccionar esta opción, en caso que se hayan realizado todas las mediciones del experimento, se muestra un dialogo para que el usuario ingrese el valor de densidad especifica del mosto obtenida. En caso de no haber completado las mediciones, se enseña un mensaje indicando dicha situación.
+            \paragraph{Cancelar experimento:} 
+            Esta función permite abortar el experimento en curso. Una vez cancelado, se procede a la eliminación de todos los datos relacionados al experimento cancelado.
+            
+            \subsubsection{Detalle de implementación}
+            
