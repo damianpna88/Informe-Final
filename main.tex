@@ -13,6 +13,9 @@
 \usepackage{xr} % Referenciar secciones en otro tex
 \usepackage{booktabs}
 \usepackage{varwidth}
+
+\usepackage{emptypage}
+
 \usepackage{natbib}
 \usepackage{todonotes}
 \usepackage{blindtext}
@@ -41,6 +44,9 @@
 \usepackage{afterpage}
 %Tablas largas
 \usepackage{longtable} % para tablas largas
+
+%Apendice
+\usepackage{appendix}
 
 % ENCABEZADOS Y PIES DE PAGINAS
 \usepackage{fancyhdr}
@@ -73,9 +79,7 @@
 \afterpage{\null\newpage}
 \newpage
 
-
-
-\mainmatter
+\frontmatter
 
 %Indice General
 \tableofcontents
@@ -84,12 +88,37 @@
 %Indice de Figuras
 \listoffigures
 
-\import{Prefacio/}{Prefacio.tex}
 
+\pagestyle{plain}
+\import{Prefacio/}{Prefacio.tex}
 
 \import{resumen/}{resumen.tex}
 \afterpage{\null\newpage}
 \newpage
+
+
+%------------------------ACOMODO ESTILOS!------------------------------------
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}%Ancho del encabezado
+
+% Numeración de Páginas
+\lhead[]{}
+\chead[]{}
+\rhead[]{}
+\cfoot[]{}
+\fancyhead[LO,RE]{ \leftmark}% Aca hay una magia con el leftmark para q ponga los encabezados, si pones rightmark se manda otra...
+\renewcommand{\headrulewidth}{0pt}% Ancho de la linea del encabezado
+\fancyfoot[LO,RE]{\thepage}% Num de pagina alternante con paginas pares e impares
+
+\fancypagestyle{plain}{% Formato para nuevos capitulos, incluye la bibliografia
+\fancyhf{} 
+\fancyfoot[LO,RE]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+%------------------------------------------------------------------------------
+
+
+\mainmatter
 
 \import{introduccion/}{introduccion.tex}
 
@@ -104,6 +133,7 @@
 \import{software/}{software.tex}
 
 \import{Conclusiones/}{Conclusiones.tex}
+\fancyhead[LO,RE]{ANEXOS}
 
 \import{Anexo/}{anexo.tex}
 

@@ -1,10 +1,18 @@
-\clearpage
+%\clearpage
 
 \appendix
-\chapter*{Anexo}
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
+\clearpage
+\addappheadtotoc
+%\appendixpage %Agrega una pagina en blanco q en el medio Dice Anexo en grande..
+
+
 
     \begin{minipage}{0.95\textwidth}
-    \section{Diagrama del modelo de casos de uso}
+    \chapter{Diagrama del modelo de casos de uso}
+    %\section{Diagrama del modelo de casos de uso}
     	\leftline{\includegraphics[scale=0.55]{ModelodeCasosdeUso.jpg}}
     	\captionof{figure}{Diagrama de Casos de Uso}
 	    \label{DiagCU}
@@ -12,7 +20,7 @@
 
 
     \begin{minipage}{0.95\textwidth}
-    \section{Diagrama de base de datos del componente de Hardware}
+    \chapter{Diagrama de base de datos del componente de Hardware}
         \centering
         \includegraphics[scale=1]{diagramaBD-Rasp.jpg}
         \captionof{figure}{Diagrama de diseño de Base de Datos}
@@ -21,17 +29,19 @@
     \end{minipage}
     
     \begin{minipage}{0.95\textwidth}
-    \section{Esquema de conexión de la estación de recolección de datos}
+    \chapter{Esquema de conexión de la estación de recolección de datos}
         \centering
         \includegraphics[scale=0.55]{EsquemaHardware.jpg}
         \captionof{figure}{Esquema simplificado de las conexiones}
         \label{fig:EsquemaHardware}
     \end{minipage}
     
+%---------------------- MOCK UP ----------------------------------------
     \begin{minipage}{0.95\textwidth}
-    \section{Diseño de Interfaz de Usuario}
+    \chapter{Diseño de Interfaz de Usuario}
+    %\section{Diseño de Interfaz de Usuario}
         \centering
-        \includegraphics[scale=0.5]{Anexo/MainActivity.jpg}
+        \includegraphics[scale=0.55]{Anexo/MockUp/MainActivity.jpg}
         \captionof{figure}{Pantalla Principal}
         \label{fig:MockUpMainActivity}
     \end{minipage}
@@ -39,7 +49,7 @@
     \begin{minipage}{0.95\textwidth}
 
         \centering
-        \includegraphics[scale=0.55, angle =90]{Anexo/PlanningActivity.jpg}
+        \includegraphics[scale=0.55, angle =90]{Anexo/MockUp/PlanningActivity.jpg}
         \captionof{figure}{Pantalla de planificación de maceración}
         \label{fig:MockUpPlanningActivity}
     \end{minipage}
@@ -47,7 +57,7 @@
     \begin{minipage}{0.95\textwidth}
 
         \centering
-        \includegraphics[scale=0.55]{Anexo/ExperimentActivity.jpg}
+        \includegraphics[scale=0.55]{Anexo/MockUp/ExperimentActivity.jpg}
         \captionof{figure}{Pantalla con lista de experimentos de una maceración}
         \label{fig:MockUpExperimentActivity}
     \end{minipage}
@@ -55,7 +65,7 @@
     \begin{minipage}{0.95\textwidth}
 
         \centering
-        \includegraphics[scale=0.7]{Anexo/InfoMash.jpg}
+        \includegraphics[scale=0.7]{Anexo/MockUp/InfoMash.jpg}
         \captionof{figure}{Pantalla con información de la maceración}
         \label{fig:MockUpInfoMash}
     \end{minipage}
@@ -63,7 +73,7 @@
     \begin{minipage}{0.95\textwidth}
 
         \centering
-        \includegraphics[scale=0.5]{Anexo/CurrentExperience-MeasureFragment.jpg}
+        \includegraphics[scale=0.5]{Anexo/MockUp/CurrentExperience-MeasureFragment.jpg}
         \captionof{figure}{Pantalla de mediciones del experimento en ejecución}
         \label{fig:MockUpCurrentExperienceFragment}
     \end{minipage}
@@ -71,7 +81,7 @@
     \begin{minipage}{0.95\textwidth}
 
         \centering
-        \includegraphics[scale=0.7]{Anexo/CurrentExperience-StageFragment.jpg}
+        \includegraphics[scale=0.7]{Anexo/MockUp/CurrentExperience-StageFragment.jpg}
         \captionof{figure}{Pantalla con información de las etapas del experimento en ejecución}
         \label{fig:MockUpStageFragment}
     \end{minipage}
@@ -79,7 +89,7 @@
     \begin{minipage}{0.95\textwidth}
 
         \centering
-        \includegraphics[scale=0.7]{Anexo/MashvsExpermientHistory-GeneralFragment.jpg}
+        \includegraphics[scale=0.7]{Anexo/MockUp/MashvsExpermientHistory-GeneralFragment.jpg}
         \captionof{figure}{Pantalla con información estadística descriptiva de mediciones y de optimización de insumos y rendimiento}
         \label{fig:MockUpGeneralFragment}
     \end{minipage}
@@ -87,21 +97,90 @@
     \begin{minipage}{0.95\textwidth}
 
         \centering
-        \includegraphics[scale=0.7]{Anexo/MashvsExpermientHistory-ExperimentFragment.jpg}
+        \includegraphics[scale=0.7]{Anexo/MockUp/MashvsExpermientHistory-ExperimentFragment.jpg}
         \captionof{figure}{Pantalla con información estadística descriptiva de mediciones de temperatura de cada experimento}
         \label{fig:MockUpExperimentFragment}
     \end{minipage}
+    
    \begin{minipage}{0.95\textwidth}
 
         \centering
-        \includegraphics[scale=0.7]{Anexo/DetailExperimentActivity.jpg}
+        \includegraphics[scale=0.7]{Anexo/MockUp/DetailExperimentActivity.jpg}
         \captionof{figure}{Pantalla con información detalladas de los resultados de cada experimento}
-        \label{fig:DetailExperimentActivity}
+        \label{fig:MockUpDetailExperimentActivity}
     \end{minipage}
- 
+    
+%-------------------------- DIAGRAMAS DE CLASE --------------------------- 
+    \begin{minipage}{0.95\textwidth}
+    \chapter{Diagramas de clases}
+    %\begin{figure}
+        \centering
+        \includegraphics[scale=0.55, angle=90]{Anexo/DiagramasClase/ExperimentActivity.jpg}
+        \captionof{figure}{Diagrama de clases de ExperimentActivity}
+        \label{fig:DiagClaseExperimentActivity}
+    %\end{figure}
+    \end{minipage}
+    
+    %\begin{minipage}{0.95\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.5, angle=90]{Anexo/DiagramasClase/PlanningActivity.jpg}
+                \captionof{figure}{Diagrama de clases de PlanningActivity}
+                \label{fig:DiagClasePlanningActivity}
+            \end{figure}
+    %\end{minipage}
     
     
-
+    \begin{figure}
+        %\section{Diagramas de clases}
+        \centering
+        \includegraphics[scale=0.5, angle =90]{Anexo/DiagramasClase/MainActivity.jpg}
+        \captionof{figure}{Diagrama de clases de MainActivity}
+        \label{fig:DiagClaseMainActivity}
+    \end{figure}
     
     
-	
+    %\begin{minipage}{0.95\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.6, angle=90]{Anexo/DiagramasClase/CurrentExperienceActivity-P1.jpg}
+        \captionof{figure}{Diagrama de clases de CurrentExperienceActivity - Parte 1}
+        \label{fig:DiagClaseCurrentExperienceActivityP1}
+    \end{figure}
+    %\end{minipage}
+    
+    %\begin{minipage}{0.95\textwidth}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.6, angle=90]{Anexo/DiagramasClase/CurrentExperienceActivity-P2.jpg}
+        \captionof{figure}{Diagrama de clases de CurrentExperienceActivity - Parte 2}
+        \label{fig:DiagClaseCurrentExperienceActivityP2}
+    \end{figure}
+    %\end{minipage}
+    
+    %\begin{minipage}{0.95\textwidth}
+        \begin{figure}
+        \centering
+        \includegraphics[scale=0.5, angle=90]{Anexo/DiagramasClase/MashExpHistoryActivity.jpg}
+        \captionof{figure}{Diagrama de clases de MashExpHistoryActivity}
+        \label{fig:DiagClaseMashExpHistoryActivity}
+        \end{figure}
+    %\end{minipage}
+    
+    %\begin{minipage}{0.95\textwidth}
+        \begin{figure}
+        \centering
+        \includegraphics[scale=0.5, angle=90]{Anexo/DiagramasClase/DetailExperimentActivity.jpg}
+        \captionof{figure}{Diagrama de clases de DetailExperimentActivity}
+        \label{fig:DiagClaseDetailExperimentActivity}
+        \end{figure}
+    %\end{minipage}
+    
+    %\begin{minipage}{0.95\textwidth}
+        \begin{figure}
+        \centering
+        \includegraphics[scale=0.5, angle=90]{Anexo/DiagramasClase/GeneralDiagram.jpg}
+        \captionof{figure}{Diagrama General de la APP}
+        \label{fig:DiagGeneral}
+        \end{figure}
+    %\end{minipage}
