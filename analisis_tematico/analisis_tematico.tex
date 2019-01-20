@@ -252,13 +252,27 @@
             \subsubsection{Cálculo de rendimiento }
                 \par Para determinar cuál fue el rendimiento obtenido en la maceración se debe conocer qué porcentaje del grano utilizado persiste en el mosto.
                 
-                \par Se puede utilizar la siguiente fórmula: 
+                Para saber la cantidad de extracto solubilizado en un litro de mosto luego de la maceración, se parte de:
+                    
+                    \begin{equation}
+                        KgExt_{litro} = \frac{(DE-1) \cdot DE}{0.4}
+                    \end{equation}
+                    donde $DE$ es la densidad específica obtenida. Esta fórmula esta basada en los grados plato °$P$, que indican el porcentaje de extracto de malta sobre el peso del agua.
+                    
+                    \par Teniendo en conocimiento este valor, se debe ajustar al volumen de maceración con el que se trabaja, por tanto:
+                    
+                    \begin{equation}
+                        KgExt_{total} = V \cdot KgExt_{litro}
+                        \label{EcuacionExtractoTotal}
+                    \end{equation}
                 
+                Entonces, el rendimiento de la maceración es:
                 \begin{equation}
-                    R_m = \frac{D_e \cdot V_f}{G}
+                    R_m = \frac{KgExt_{total}}{G}
+                    \label{EcuacionRendimientoMaceracion}
                 \end{equation}
                 
-                \par donde $R_m$ es el rendimiento de la maceración, $D_e$ es la densidad específica obtenida una vez finalizada la maceración, $V_f$ es el volumem final obtenido y $G$ es la cantidad de grano empleada.
+                \par donde $R_m$ es el rendimiento de la maceración, $KgExt_{total}$ es la cantidad de extracto en el mosto y $G$ es la cantidad total de grano utilizado.
                 
                 \par Para obtener el rendimiento del equipo se promedia todos los valores obtenidos de cada maceración.
     
@@ -297,7 +311,7 @@
                         \begin{equation}
                             PD = FD \cdot V
                         \end{equation}
-                        donde $FD = (Densidad -1)\cdot 1000 $ es el \textit{factor denso} y $V$ es el volúmen de mosto.
+                        donde $FD = (Densidad -1)\cdot 1000 $ es el \textit{factor denso} y $V$ es el volumen de mosto.
                         
                         \par Luego, para saber el aporte de azúcar $A_i$ que tiene cada grano se calcula:
                         
@@ -310,29 +324,18 @@
                         
                         \begin{equation}
                             G_{i} = \frac{PD \cdot P_{i}}{A_{i} \cdot R_E} 
+                            \label{EcuacionRayDaniels}
                         \end{equation}
                         donde $P_i$ es el porcentaje de utilización según la receta del i-ésimo grano y $R_E$ es el rendimiento del equipo, siendo utilizado el valor $0.7$ en una primera aproximación y luego ajustado a partir de los experimentos realizados.
                         
                     \item \textbf{Cálculo empírico basado en extracto obtenido} 
                     \par Para este cálculo, se debe conocer valores de densidad específica obtenidos en experimentos anteriores para estimar la cantidad de cada grano que hay que utilizar.
                     
-                    Para saber la cantidad de extracto solubilizado en un litro de mosto luego de la maceración, se parte de:
-                    
-                    \begin{equation}
-                        KgExt_{litro} = \frac{(DE-1) \cdot DE}{0.4}
-                    \end{equation}
-                    donde $DE$ es la densidad específica obtenida. Esta fórmula esta basada en los grados plato °$P$, que indican el porcentaje de extracto de malta sobre el peso del agua.
-                    
-                    \par Teniendo en conocimiento este valor, se debe ajustar al volumen de maceración con el que se trabaja, por tanto:
-                    
-                    \begin{equation}
-                        KgExt_{total} = V \cdot KgExt_{litro}
-                    \end{equation}
-                    
-                    \par Por último, para saber la cantidad del i-ésimo grano a utilizar según el porcentaje del mismo en la receta será:
+                    \par Partiendo de la ecuación \ref{EcuacionRendimientoMaceracion}, para conocer la cantidad del i-ésimo grano a utilizar según el porcentaje del mismo en la receta será:
                     
                     \begin{equation}
                         G_{i} = \frac{KgExt_{total} * P_{i}}{R_E}
+                        \label{EcuacionCantidadGranoEmpirico}
                     \end{equation}
                     
                     \par La adaptación de este método al equipo utilizado y el tipo de grano empleado, cuyo poder diastacico puede verse afectado por condiciones de almacenamiento, brinda resultados mas exactos que el método anterior.
@@ -347,6 +350,7 @@
                 
                 \begin{equation}
                     T_a = \frac{0.41}{r} \cdot (T_o - T_{amb}) + T_o
+                    \label{EcuacionInfusion}
                 \end{equation}
                 donde $r$ es la relación agua grano $V/G$, $0.41$ es una constante termodinámica, $T_o$ es la temperatura objetivo y $T_{amb}$ es la temperatura de los granos (ambiente). 
                 
@@ -355,6 +359,7 @@
                 
                 \begin{equation}
                     V_D = \frac{(T_{obj} - T_{act}) \cdot V }{95^{\circ}C - T_{act}}
+                    \label{EcuacionDecoccion}
                 \end{equation}
                 
                 \par donde $V_D$ es el volumen que se retira para utilizar en un segundo macerador, $T_{obj}$ es la temperatura objetivo, $T_{act}$ es la temperatura actual de la templa. 
@@ -400,6 +405,7 @@
                 \par Por último recordando que $V = \sum_i V_i = \sum_{i=2}^{n} \Pi_i \cdot(K + V_1) + V_1$ y definiendo $\Gamma = \sum_{i=2}^n \Pi_i$, obtenemos
                 \begin{equation}
                     V_1 = \frac{V - \Gamma \cdot K}{1 + \Gamma}
+                \label{EcuacionEscalonadaGamma}
                 \end{equation}
                 
                 \par Adicionalmente, a partir del conocimiento de este valor, el calculo de los volúmenes de agua hirviendo a adicionar en cada etapa resulta facilitado por la utilización de la fórmula \ref{EcuacionEscalonadaPi}.
