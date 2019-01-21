@@ -113,7 +113,7 @@
         \label{fig:emptyActivity}
     \end{figure}
     
-    \par Android organiza los componentes visuales de una pantalla mediante archivos XML. En estos puede ser definida la estructura básica de una pantalla (posiciones, margenes, etc.) y ser agregados layouts o widgets. De entre los componentes tipo widget pueden ser mencionados los botones estáticos (\textit{Button}) o flotantes (\textit{FloatingActionButton}), menús desplegables (\textit{Spinner}), campos para inserción y presentación de texto (\textit{EditText y TextView respectivamente}), entre otros.
+    \par Android organiza los componentes visuales de una pantalla mediante archivos XML. En estos puede ser definida la estructura básica de una pantalla (posiciones, margenes, etc.) y ser agregados layouts o widgets. De entre los componentes tipo widget pueden ser mencionados los botones estáticos (\textit{Button}) o flotantes (\textit{FloatingActionButton}), menús desplegables (\textit{Spinner}), campos para inserción y presentación de texto (\textit{EditText y TextView} respectivamente), cronómetros (\textit{Chronometer}) entre otros.
     
     %Le clavo itemize?
     %\begin{minipage}[0.95\textwidth]
@@ -146,10 +146,10 @@
     %\par En la implementación de los componentes de la interfaz gráfica (Views) pueden ser incorporados \textit{listeners} los cuales definen un comportamiento u operación a ser realizada según la forma en la que el usuario interactúe con los mismos. Ejemplos de estos últimos son el click (\textit{onClickListener}), click de larga duración (\textit{onLongClickListener}), desplazamiento vertical u horizontal (\textit{onScrollListener}), entre otros.
     
     
-    \subsubsection{Librerías externas}
+    \subsubsection{Librerías utilizadas}
      \par Los \textit{Activities} dentro de su hilo de ejecución incluyen métodos o llamadas que interaccionan con librerías o clases complementarias. Se considera importante mencionar las siguientes:
      \begin{itemize}
-         \item \textbf{Clases POJO} (Plain Old Java Object): Utilizadas en el modelado de las reglas de negocio, se utilizan clases complementarias que estructuran y relacionan la información requerida mediante la definición de sus atributos y métodos.
+         \item \textbf{Clases POJO} (Plain Old Java Object): Para el modelado de las reglas de negocio se utilizan clases complementarias que estructuran y relacionan la información requerida mediante la definición de sus atributos y métodos.
          
          \item \textbf{Persistencia}: Pueden ser utilizadas distintas librerías\footnote{https://developer.android.com/guide/topics/data/data-storage}. En el desarrollo de esta aplicación se utilizó persistencia de datos y almacenamiento de preferencias compartidas (datos de configuración). Para el primero, se decidió gestionar la base de datos SQL en Android utilizando \textit{SQLite}\footnote{SQLite, sistema de gestión de bases de datos relacional}. En su implementación, se define una clase con patrón \textit{Singleton}\footnote{Singleton, patrón de diseño que permite restringir la creación de objetos pertenecientes a una clase o el valor de un tipo a un único objeto} que define la estructura de tablas de la base de datos y en la que, adicionalmente, se pueden implementar funciones para actualizar, insertar, eliminar y consultar datos de las tablas. Para el segundo, preferencias compartidas, se utiliza \textit{SharedPreferences} el cual define un sistema clave-valor (\textit{key-value}) para persistir datos aislados cuando la aplicación se cierra.
          
@@ -160,6 +160,8 @@
         \par Existen dos tipos de procesos, paralelos y subprocesos. Los primeros son utilizados cuando se requieren tareas paralelas a la aplicación, estas carecen de la capacidad de interacción con las interfaces visuales pero poseen la ventaja de continuar su ejecución aun si el proceso que las inicio se encuentra inactivo o en segundo plano. Para el manejo de estos se utilizó la librería \textit{WorkManager}\footnote{https://developer.android.com/topic/libraries/architecture/workmanager/}. En la misma, se define la funcionalidad a ejecutar y el intervalo de tiempo de vida que posee. Por otro lado, los subprocesos no cuentan con la habilidad de ejecución independiente sino que son ejecutados junto con el hilo principal, pudiendo de esta manera actualizar la interfaz gráfica mientras en el hilo padre se llevan adelante tareas de gestión de la interfaz. Esto se lleva adelante con herramientas propias del sistema Android.
         
         \item \textbf{Gráficas}: Para la presentación de gráficas se decidió utilizar la librería \textit{MPAndroidChart}\footnote{https://github.com/PhilJay/MPAndroidChart} ya que la misma dispone de todos las gráficas necesarias para esta aplicación. Para esto, se ubica un \textit{View} de tipo \textit{ChartView} en el layout correspondiente, el cual varía según el tipo de gráfica que se desee utilizar (Ej. \textit{LineChartView, CombinedChartView, CandleStick}, etc.). Permite agregar múltiples funciones gráficas del mismo o de diferente tipo dentro de un mismo gráfico.
+        
+        \item \textbf{Cálculos Varios}: Se implementó una clase ``Calculos'' que actúa como librería, los métodos incorporados son utilizados por numerosas clases dentro de la aplicación razón por la cual se decidió unificarlos en una librería. Entre los mismos, se pueden encontrar todos los cálculos inherentes al rendimiento, cantidad de insumos, activación de enzimas, valores estadísticos, entre otros.
      \end{itemize}
     
     \subsection{Pantalla principal}
@@ -324,7 +326,7 @@
             
             \subsubsection{Detalle de implementación}
             
-            \par Para obtener los datos correspondientes al experimento, se instancia la clase SQLiteDatabase y se realiza una consulta SELECT en la tabla SensedValues. Esta última retorna todas las entradas que tenga el ID del experimento obtenido de la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}).
+            \par Con el objetivo de obtener los datos correspondientes al experimento, se instancia la clase SQLiteDatabase y se realiza una consulta SELECT en la tabla SensedValues. Esta última retorna todas las entradas que tenga el ID del experimento obtenido de la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}).
             
             \par En la parte superior del layout se muestran tres \textit{Textviews} que contienen los valores de densidad obtenida del experimento, el rendimiento de este y el valor promedio de temperatura ambiental a lo largo del experimento. 
             
@@ -358,8 +360,31 @@
                 \end{itemize}
             
             \subsubsection{Detalle de implementación}
+             \par El \textit{Activity} inicia con el ID de experimento recibido como parámetro de la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}), en primer lugar se instancia la clase \textit{SQLiteDatabase} y se realiza una consulta SELECT en la tabla \textit{Maceracion} para obtener los valores \textit{intervaloMedTemp} e \textit{intervaloMedPh} y en la tabla \textit{Intervalo}, con la que se obtiene la duración total de la maceración como sumatoria de las duraciones de todos los intervalos de la maceración correspondiente. Luego, con estos datos se realiza una llamada a la API "ApiEscribe.php" (función postExperiment(), incluida en la interfaz API) mediante el uso de la librería Retrofit. Esta llamada, inicia un nuevo experimento de maceración en la estación de recolección de datos.
+             
+             \par Con el objetivo de obtener los valores presentes en la base de datos de la estación, se creo una clase \textit{MyWorker} que implementa la librería WorkManager. Con la misma, se crea un hilo de ejecución paralelo en el cual se realizan reiteradas llamadas a la API getSensedValues() (la que invoca a la API ``ApiGet.php'') con el fin de obtener nuevos valores recolectados para luego ser insertados en la base de datos de la aplicación. Estas peticiones concluyen luego de un numero de iteraciones separadas por un lapso de tiempo. El lapso es equivalente a la mitad del valor especificado para el intervalo de medición de temperatura, y el número de iteraciones se obtiene al dividir la duración total del experimento sobre este lapso de separación.
+             
+            \par En este Activity se encuentran dos pestañas: Mediciones(\textit{MeasureFragment}) y Etapas(\textit{StageFragment}). En la primera se encuentran cargados en \textit{CardViews} los valores del último SensedValues insertado en la base de datos de experimento en curso y en la segunda se muestra información relevantes a las etapas.
             
-            \par En los diagramas \ref{} y \ref{} ubicados en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
+            \par Debido a que la clase \textit{MyWorker} no esta habilitada para modificar la interfaz gráfica, se implementó dentro del \textit{MeasureFragment} un subhilo de ejecución. Este último se encarga de realizar consultas \textit{SELECT} a través de una instancia de \textit{SQLiteDatabase} con periodo de repetición equivalente al utilizado en \textit{MyWorker}. Mediante estas consultas, son obtenidos  los valores de la tabla \textit{SensedValues} mas actuales para así actualizar los \textit{CardViews} con la correspondiente información.
+            
+            \par En forma adicional a los valores obtenidos de la estación de recolección, se visualiza el promedio de temperatura del macerador, la activación de enzimas y el porcentaje de avance del experimento. 
+            \begin{itemize}
+                \item El primer valor puede ser configurado para que ignore un/algunos valor/es de un/varios sensor/es y para que el método de cálculo de promedio sea media aritmética, mediana o promedio de valores extremos. Con la finalidad de implementar estas configuraciones, se utilizo un I donde el usuario puede visualizar y seleccionar que sensor esta habilitado y alguno de los tres tipos de cálculos, implementados en la clase \textit{Calculos}. Esta configuración es almacenada en el \textit{SharedPreferences} ``ConfTemp'' y es cargada cada vez que se inicia una nueva experiencia de medición. 
+                
+                \item Las activaciones de cada tipo de enzimas son calculadas a partir del valor promedio de temperatura y el pH actual (el último valor recolectado disponible). Para ello se utiliza las funciones \textit{alfaAmilasa}, \textit{betaAmilasa}, \textit{proteasa} y \textit{betaGlucanasa}, implementadas en la clase \textit{Calculos}. 
+                
+                \item El porcentaje de avance se obtiene a partir de la división de la cantidad de valores insertados en la tabla SensedValues para el experimento en curso y la cantidad de mediciones total del mismo. Adicionalmente, se visualiza la etapa actual que se esta sensando, valor obtenido a partir de la comparación de la cantidad de valores sensados y la acumulación de mediciones correspondiente a cada intervalo de la maceración. Por último, se incorpora un cronómetro (widget \textit{Chronometer}) que informa el tiempo transcurrido desde el inicio del experimento.
+            \end{itemize}
+            
+            \par En el segundo \textit{Fragment} del \textit{CurrentExperienceActivity}, se incluye un \textit{RecyclerView} con una lista de \textit{CardViews} por cada etapa de medición que posea la maceración. En cada uno de estos, se pueden ver los valores de la planificación como son duración, temperatura y pH deseados con sus correspondientes desvíos tolerados, y el volumen y temperatura de agua a incorporar en el intervalo (Maceración Escalonada) o cantidad de mosto a retirar (Maceración por Decocción). Adicionalmente, se incorpora un \textit{Chronometer} en modo temporizador para cada intervalo que indica cuanto tiempo resta para que comience dicha etapa.
+            
+            \par Por último, en el \textit{ActionBar} del \textit{Activity} se incorporaron dos opciones: Cancelar Experimento y Finalizar Experimento. Al seleccionar la primer opción, inicialmente se cierra el Activity y se inicia la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}) adjuntando el ID de maceración actual. Luego, se realiza una llamada a la API ``apiCancel.php'' a través de la función \textit{cancelExperiment} implementada en la \textit{interface} de \textit{RetroFit}. Una vez finalizado este proceso, se enseña un cartel emergente indicando un resultado satisfactorio.
+            
+            \par Al presionar la opción Finalizar Experimento, se pueden presentar dos escenarios: El primero ocurre cuando no se obtuvieron aún todas las mediciones y se le indica al usuario que no puede finalizar la medición. El segundo, ya finalizado el experimento, se muestra un \textit{AlertDialog} con un \textit{EditText} que le permite al usuario ingresar la densidad específica del mosto resultante. Una vez finalizada esta operación, se retorna a la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}) correspondiente al ID de maceración actual.
+            
+            \par En los diagramas \ref{fig:DiagClaseCurrentExperienceActivityP1} y \ref{fig:DiagClaseCurrentExperienceActivityP2} ubicados en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
             
             %---------------FIN Descripción CurrentExperimentActivity ---------------
-    \subsection{Reposit}
+    \subsection{Código fuente}
+    \par El detalle de la implementación de esta aplicación se encuentra alojado en el repositorio de GitHubhttps://www.overleaf.com/project/5c261622e2e3af05da316924 \url{https://github.com/damianpna88/proyectofinal} dentro de la carpeta APP. Para compilar el proyecto, es requerida una versión actualizada de Android Studio con la API 24 (Nougat 7.0) descargada.
