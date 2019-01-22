@@ -412,7 +412,16 @@
             \end{itemize} %ecuaciones de temperatura y cantidad de agua
             
         \subsubsection{Activación de enzimas}
-        \par La activación de cada una de las enzimas esta regida principalmente por la temperatura y pH de la solución. Debido a que su comportamiento es una suma de factores, la función de activación tiene una forma similar obtenida a la campana gaussiana. Entonces para conocer la activación se utiliza la fórmula:
+        \par La activación de cada una de las enzimas esta regida principalmente por la temperatura y pH de la solución. Debido a que su comportamiento es una suma de factores aleatorios, la función de activación tiene una forma similar obtenida para la distribución normal \footnote{Su función es conocida como campana de Gauss $f(x,a,\mu, \sigma) = a\cdot e^{\frac{-(x - \mu)^2}{2\sigma^2}}$ y permite modelar numerosos fenómenos naturales. Mientras que los mecanismos que subyacen a gran parte de este tipo de fenómenos son desconocidos, por la enorme cantidad de variables incontrolables que en ellos intervienen, el uso del modelo normal puede justificarse asumiendo que cada observación se obtiene como la suma de unas pocas causas independientes.} truncada del lado derecho para la variable temperatura ya que las enzimas poseen un valor de temperatura máximo de trabajo antes que sufran su desnaturalización. Entonces para conocer la activación se utiliza la fórmula:
         \begin{equation}
-            Act = \exp{- (t_e - t)^2} \cdot \exp{- (pH_e - pH)^2}
+            Act_e(t, pH) = e^{- \frac{(t_e - t)^2}{2\sigma^2}} \cdot e^{- \frac{(pH_e - pH)^2}{2\sigma^2}}, \text{ para }t< t_{max}
+            \label{EcuacionActivacionEnzimas}
         \end{equation}
+        \par donde $Act_e$ es el valor de activación de enzimas (expresado de 0 a 1), $t_e$ es el valor intermedio del intervalo de temperatura de mayor activación de la enzima $e$, $t$ es el valor actual de temperatura de la templa, $t_{max}$ es el valor máximo de temperatura antes que sufra su desnaturalización, $pH_e$ es el valor intermedio del intervalo de pH de mayor activación de la enzima $e$, $pH$ es el valor actual de pH de la templa, $\sigma$ es equivalente al desvío estándar de una función normal (un valor representativo es $2\sigma^2=64$). 
+        
+        \par Entonces, por ejemplo, para la activación de alfa amilasa se utiliza:
+        
+        \begin{equation}
+            Act_\alpha(t, pH) = e^{- \frac{(t_\alpha - t)^2}{64}} \cdot e^{- \frac{(pH_\alpha - pH)^2}{64}}, \text{ para } t< t_{max} 
+        \end{equation}
+        \par donde, según la tabla \ref{tablaEnzimas}, $Act_\alpha$ es el porcentaje de activación de la enzima alfa amilasa, $t_\alpha = \frac{67.8 + 72}{2}$, $pH_\alpha = \frac{5.3 + 5.7}{2}$ y $t_{max} = 72$

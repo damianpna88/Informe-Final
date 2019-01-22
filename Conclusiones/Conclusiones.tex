@@ -2,15 +2,43 @@
 \par
 En este último capítulo se describen las conclusiones finales obtenidas a partir de las pruebas y de un análisis de las funcionalidades provistas por el sistema. Además se presentan una serie de propuestas para trabajos futuros que permitirían mejorar el alcance y rendimiento del sistema.
 
-\section{Conclusiones}
-En este proyecto fue planteado un trabajo de investigación sobre los firewalls de aplicación web (WAF) y el desarrollo de una herramienta web que facilite la gestión de ModSecurity. Luego de estudiar las características presentes en los productos dentro del mercado, se realizó un análisis comparativo entre aquellos WAF que cumplían con una serie de requerimientos, siendo ModSecurity el más adecuado para continuar con el trabajo.
+%podria ser conclusiones y resultados?
+\section{Conclusiones} % Cumplimos lo que nos propusimos? era cierto lo que se dijo?
+\par En este proyecto fue planteado el desarrollo de un prototipo de hardware y software para asistir al productor de cerveza artesanal en la planificación, seguimiento y evaluación del proceso maceración. Tomando como guía los objetivos planteados para el mismo (Sección \ref{secccionObjetivos}), se fueron desempeñando las tareas correspondientes para el cumplimiento de los mismos. A continuación evalúan los tres ejes del sistema:
+%no se si va lo de los objetivos
 
-\par
-Dado que la mayor parte de los programas de gestión de WAF se presentan como aplicaciones de escritorio, también representaba un desafío llevar a cabo el desarrollo con tecnologías web que permitieran una mayor compatibilidad con los dispositivos de hoy en día. Como resultado de esta etapa, fue desarrollado MSToolKit, quien además de cumplir con los requerimientos planteados por la Secretaría de Tecnologías para la Gestión (STG) también pretende ser un aporte a la comunidad de software libre, quedando a disposición de quien desee adquirirla (disponible en GitHub).
-\par
-Finalmente, en las pruebas realizadas en la STG, si bien no se realizaron pruebas sobre MSToolKit, si se probó el desempeño de ModSecurity, y se estima que desplegar la aplicación desarrollada se podrá realizar sin grandes esfuerzos y sin que ello represente una diferencia significativa en el consumo de recursos. Este es un aspecto muy importante, ya que actualmente la STG está utilizando ModSecurity y se encuentra con dificultades para las cuales está diseñada MSToolKit, por lo que en un paso posterior a este proyecto podría implementarse en un entorno productivo y con un impacto real, lo que le dará visualización y respaldo al proyecto. Además, al no existir un producto de características similares y estar bajo la licencia de software libre Apache 2.0, se espera obtener la colaboración de desarrolladores interesados en añadir funcionalidades al proyecto.
+%evitar caer en beneficios; ya se habló en la sección objetivos..
 
-\section{Trabajos futuros}
+%Aca podemos hablar de subestimaciones (o que acertamos) que tuvimos también, pero la cosa es que no agregamos cosas del anteproyecto. [Respecto al tiempo y alcance mas que nada. El costo por ahí va a ser un poco engorroso porque no tuvimos un seguimiento fino, aunque algo se podría garabatear.]
+
+\subsubsection{Asistencia en planificación} 
+\par A raíz de las pruebas realizadas (sección sumbudrule), se comprobó que el sistema contribuía a la asistencia del proceso de la maceración de forma práctica, útil y precisa. Los valores de estimación obtenidos en la Pantalla de detalle de maceración \ref{DescripPantallaDetalleMaceración} concordaron con un nivel de precisión x (o nivel de error menor) a los obtenidos en los experimentos guía/ejemplo/patrón/de prueba. Por ende se puede afirmar que los cálculos (Rey Daniel) utilizados estiman valores geniales.
+%Como trabajaron las enzimas nunca lo vamos a poder saber. Salvo que llevemos a un laboratorio las muestras obtenidas. Si bien nos desvalora el proyecto, podemos hablar de algo de esto.
+
+
+% estos son beneficios obtenidos
+%Las validaciones pertinentes durante el proceso permite que no se comentan errores en la planning. Los cálculos para maceraciones escalonada o decocción reducen el nivel de habilidades par realizar cálculos algebraicos por parte del productor, dándole una facilidad para que utilice estos tipos de maceración menos utilizados en el ámbito artesanal.
+
+\subsubsection{Asistencia en seguimiento} 
+\par La pantalla de monitoreo de experimento \ref{DescripPantallaMonitoreoExperimento} permite el seguimiento del avance de una maceración. La frecuencia de medición de la estación de recolección fue precisa, no siendo cumplido este atributo en la visualización de los mismos en la aplicación ya que se observó cierta variación temporal introducida a través de la interfaz (referencia a una prueba hecha). No obstante esto, estas alteraciones temporales en la visualización no alcanzan un valor significativo para considerarse causa de un problema en el seguimiento.
+
+%Aca tambien podemos decir que no pudimos medir a menos de 40 segundos por la limitante del jargüart
+% Podemos mencionar que usar múltiples sensores dió sus frutos o no. No se si ponerlo en monitoreo o evaluación
+
+\subsubsection{Asistencia en evaluación}  
+%No se que mierda poner aca.
+\par La utilización de las gráficas implementadas en la aplicación con la librería MPAndroidChart produjeron resultados satisfactorios, ya que se le permite al usuario el análisis gráfico puntal de una medición de un experimento hasta un resumen de todas las experiencias realizadas.
+\par El informe del valor preciso de rendimiento del equipo para cierta maceración permite una comparación simple y útil entre las distintas formas que puede realizarse la misma para una misma receta. 
+
+
+\section{Trabajos futuros} %A delirar fuerte.
+
+% Probar en un macerador mas grande, ya que nadie produce de a 2 litros.
+% unir a sistema que controle todo el proceso de producción de cerveza.
+% utilizar circuito propio en lugar de Rasp + ArduinoUNO?
+%intrucciones agrega x cantidad de acido porque tu ph esta muy alto, agrega bicarbonato de sodio por tenes un pH muy bajo, clavate una empanada salteña de carne cortada a cuchillo, si usara una hornalla para calentar que ponga a calentar que se le esta enfriando la templa (el guiso), 
+
+
 MSToolKit puede ser el puntapié inicial para un proyecto mucho más grande en tamaño y alcance. Como se mencionó anteriormente, los productos pagos brindan muchas funcionalidades y características ausentes en los productos libres. Como trabajos a un futuro cercano se propone la realización de:
 \begin{itemize}
 	\item Soporte para JSON: En la última versión de ModSecurity, mediante la nueva directiva \textit{SecAuditLogFormat} está la posibilidad de establecer el formato JSON o nativo para los archivos de auditoría. Actualmente todo el tratamiento de estos registros se realiza solo con el formato nativo, la propuesta es realizar el trabajo necesario para que MSToolKit también soporte el formato JSON.

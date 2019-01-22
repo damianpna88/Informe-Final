@@ -151,17 +151,17 @@
      \begin{itemize}
          \item \textbf{Clases POJO} (Plain Old Java Object): Para el modelado de las reglas de negocio se utilizan clases complementarias que estructuran y relacionan la información requerida mediante la definición de sus atributos y métodos.
          
-         \item \textbf{Persistencia}: Pueden ser utilizadas distintas librerías\footnote{https://developer.android.com/guide/topics/data/data-storage}. En el desarrollo de esta aplicación se utilizó persistencia de datos y almacenamiento de preferencias compartidas (datos de configuración). Para el primero, se decidió gestionar la base de datos SQL en Android utilizando \textit{SQLite}\footnote{SQLite, sistema de gestión de bases de datos relacional}. En su implementación, se define una clase con patrón \textit{Singleton}\footnote{Singleton, patrón de diseño que permite restringir la creación de objetos pertenecientes a una clase o el valor de un tipo a un único objeto} que define la estructura de tablas de la base de datos y en la que, adicionalmente, se pueden implementar funciones para actualizar, insertar, eliminar y consultar datos de las tablas. Para el segundo, preferencias compartidas, se utiliza \textit{SharedPreferences} el cual define un sistema clave-valor (\textit{key-value}) para persistir datos aislados cuando la aplicación se cierra.
+         \item \textbf{Persistencia}: Pueden ser utilizadas distintas librerías\footnote{Página de referencia \url{https://developer.android.com/guide/topics/data/data-storage}}. En el desarrollo de esta aplicación se utilizó persistencia de datos y almacenamiento de preferencias compartidas (datos de configuración). Para el primero, se decidió gestionar la base de datos SQL en Android utilizando \textit{SQLite}\footnote{SQLite, sistema de gestión de bases de datos relacional}. En su implementación, se define una clase con patrón \textit{Singleton}\footnote{Singleton, patrón de diseño que permite restringir la creación de objetos pertenecientes a una clase o el valor de un tipo a un único objeto} que define la estructura de tablas de la base de datos y en la que, adicionalmente, se pueden implementar funciones para actualizar, insertar, eliminar y consultar datos de las tablas. Para el segundo, preferencias compartidas, se utiliza \textit{SharedPreferences} el cual define un sistema clave-valor (\textit{key-value}) para persistir datos aislados cuando la aplicación se cierra.
          
-         \item \textbf{REST API}: Con el fin de interactuar con la API REST externa existen múltiples opciones a ser utilizadas. En este desarrollo, fue empleada la librería Retrofit \footnote{Librería implementada por Square. Repositorio https://square.github.io/retrofit/}, con la cual se definen servicios HTTP, GET o POST, a ser empleados. El envío y recepción de datos se realiza mediante objetos Json (\textit{JsonObject y JsonArray}), y una interfaz de conexión en la que se definen estas operaciones y la IP del servidor. Los objetos recibidos deben ser ``parseados'' a objetos denominados clases contenedoras (\textit{Containers}) en donde se definen los métodos de obtención de datos. 
+         \item \textbf{REST API}: Con el fin de interactuar con la API REST externa existen múltiples opciones a ser utilizadas. En este desarrollo, fue empleada la librería Retrofit \footnote{Librería implementada por Square. Repositorio \url{https://square.github.io/retrofit/}}, con la cual se definen servicios HTTP, GET o POST, a ser empleados. El envío y recepción de datos se realiza mediante objetos Json (\textit{JsonObject y JsonArray}), y una interfaz de conexión en la que se definen estas operaciones y la IP del servidor. Los objetos recibidos deben ser ``parseados'' a objetos denominados clases contenedoras (\textit{Containers}) en donde se definen los métodos de obtención de datos. 
          
         \item \textbf{Hilos de ejecución}: Cuando son requeridas tareas que sobrecargan el hilo de ejecución principal o detienen su ejecución por espera de respuestas, deben ser empleados hilos de ejecución (\textit{Threads}) independientes del hilo de principal del \textit{Activity} que se este ejecutando.
         
-        \par Existen dos tipos de procesos, paralelos y subprocesos. Los primeros son utilizados cuando se requieren tareas paralelas a la aplicación, estas carecen de la capacidad de interacción con las interfaces visuales pero poseen la ventaja de continuar su ejecución aun si el proceso que las inicio se encuentra inactivo o en segundo plano. Para el manejo de estos se utilizó la librería \textit{WorkManager}\footnote{https://developer.android.com/topic/libraries/architecture/workmanager/}. En la misma, se define la funcionalidad a ejecutar y el intervalo de tiempo de vida que posee. Por otro lado, los subprocesos no cuentan con la habilidad de ejecución independiente sino que son ejecutados junto con el hilo principal, pudiendo de esta manera actualizar la interfaz gráfica mientras en el hilo padre se llevan adelante tareas de gestión de la interfaz. Esto se lleva adelante con herramientas propias del sistema Android.
+        \par Existen dos tipos de procesos, paralelos y subprocesos. Los primeros son utilizados cuando se requieren tareas paralelas a la aplicación, estas carecen de la capacidad de interacción con las interfaces visuales pero poseen la ventaja de continuar su ejecución aun si el proceso que las inicio se encuentra inactivo o en segundo plano. Para el manejo de estos se utilizó la librería \textit{WorkManager}\footnote{Página de referencia \url{https://developer.android.com/topic/libraries/architecture/workmanager/}}. En la misma, se define la funcionalidad a ejecutar y el intervalo de tiempo de vida que posee. Por otro lado, los subprocesos no cuentan con la habilidad de ejecución independiente sino que son ejecutados junto con el hilo principal, pudiendo de esta manera actualizar la interfaz gráfica mientras en el hilo padre se llevan adelante tareas de gestión de la interfaz. Esto se lleva adelante con herramientas propias del sistema Android.
         
-        \item \textbf{Gráficas}: Para la presentación de gráficas se decidió utilizar la librería \textit{MPAndroidChart}\footnote{https://github.com/PhilJay/MPAndroidChart} ya que la misma dispone de todos las gráficas necesarias para esta aplicación. Para esto, se ubica un \textit{View} de tipo \textit{ChartView} en el layout correspondiente, el cual varía según el tipo de gráfica que se desee utilizar (Ej. \textit{LineChartView, CombinedChartView, CandleStick}, etc.). Permite agregar múltiples funciones gráficas del mismo o de diferente tipo dentro de un mismo gráfico.
+        \item \textbf{Gráficas}: Para la presentación de gráficas se decidió utilizar la librería \textit{MPAndroidChart}\footnote{Repositorio \url{https://github.com/PhilJay/MPAndroidChart}} ya que la misma dispone de todos las gráficas necesarias para esta aplicación. Para esto, se ubica un \textit{View} de tipo \textit{ChartView} en el layout correspondiente, el cual varía según el tipo de gráfica que se desee utilizar (Ej. \textit{LineChartView, CombinedChartView, CandleStick}, etc.). Permite agregar múltiples funciones gráficas del mismo o de diferente tipo dentro de un mismo gráfico.
         
-        \item \textbf{Cálculos Varios}: Se implementó una clase ``Calculos'' que actúa como librería, los métodos incorporados son utilizados por numerosas clases dentro de la aplicación razón por la cual se decidió unificarlos en una librería. Entre los mismos, se pueden encontrar todos los cálculos inherentes al rendimiento, cantidad de insumos, activación de enzimas, valores estadísticos, entre otros.
+        \item \textbf{Cálculos Varios}: Se implementó una clase \textit{Calculos} que actúa como librería, los métodos incorporados son utilizados por numerosas clases dentro de la aplicación razón por la cual se decidió unificarlos en una librería. Entre los mismos, se pueden encontrar todos los cálculos inherentes al rendimiento, cantidad de insumos, activación de enzimas, valores estadísticos, entre otros.
      \end{itemize}
     
     \subsection{Pantalla principal}
@@ -170,7 +170,21 @@
             \subsubsection{Descripción}
                 \par Es la pantalla con la que inicia la aplicación. En la misma se puede visualizar la lista de maceraciones planificadas.
                 
-                \par Para la implementación se utiliza un \textit{Activity} denominado \textit{MainActivity}. La interfaz definida se compone por un \textit{ActionBar} que cuenta con un botón para acceder a la pantalla de planificación, una lista de elementos (maceraciones) que ocupa el área restante de la pantalla y un botón flotante para acceder un dialogo tipo pop-up donde puede observarse los valores actuales recolectados por los sensores de la estación de recolección de datos Figura X. 
+                \par Para la implementación se utiliza un \textit{Activity} denominado \textit{MainActivity}. La interfaz definida se compone por un \textit{ActionBar} que cuenta con un botón para acceder a la pantalla de planificación, una lista de elementos (maceraciones) que ocupa el cuerpo de la pantalla y un botón flotante para acceder un dialogo tipo \textit{pop-up} donde puede observarse los valores actuales recolectados por los sensores de la estación de recolección de datos Figura \ref{fig:CapturaMainAct}. 
+                
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.2]{software/ScreenCapture/MainActivity.jpg}
+                    \caption{Captura de la pantalla principal}
+                    \label{fig:CapturaMainAct}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.2]{software/ScreenCapture/ShowCurrentValues.jpg}
+                    \caption{Captura de la pantalla principal con el diálogo de valores actuales}
+                    \label{fig:CapturaShowCurrentValues}
+                \end{figure}
+                
                 
             \subsubsection{Funciones}
                 \begin{itemize}
@@ -178,15 +192,15 @@
                     
                     \item \textbf{Agregar nueva maceración:} Al seleccionar el botón, se accede a la pantalla que permite crear una nueva maceración.
                     
-                    \item \textbf{Medición actual:} Dialogo pop-up que muestra los valores obtenidos por cada sensor, Figura X.
+                    \item \textbf{Medición actual:} Dialogo \textit{pop-up} que muestra los valores obtenidos por los sensores de la estación de recolección de datos de forma reciente, Figura \ref{fig:CapturaShowCurrentValues}).
                 \end{itemize}
                 
             \subsubsection{Detalle de implementación}
                 % captura de pantalla del mainactivity o citamos el mockup?
                 
-                Con el fin de obtener la lista de maceraciones planificadas, se instancia una clase SQLiteDatabase y se realiza una consulta SELECT para obtener los campos \textit{nombre} y \textit{tipo} de todos los índices de la tabla \textit{Maceracion}. Una vez obtenida esta lista, se instancia un \textit{Adapter} y se lo adjunta a un \textit{RecylcerView}, para que inserte los datos en \textit{CardViews} que son anidados en la lista. Estos últimos tienen añadido una funcionalidad cuando se los presiona que inicia la pantalla de gestión de maceración (subsección \ref{DescripPantallaPlanificación}) adjuntando el id perteneciente a la maceración del \textit{CardView} seleccionado.
+                Con el fin de obtener la lista de maceraciones planificadas, se instancia una clase \textit{SQLiteDatabase} y se realiza una consulta SELECT para obtener los campos \textit{nombre} y \textit{tipo} de todos los índices de la tabla \textit{Maceracion}. Una vez obtenida esta lista, se instancia un \textit{Adapter} y se lo adjunta a un \textit{RecylcerView}, para que inserte los datos en \textit{CardViews} que son anidados en la lista. Estos últimos tienen añadido una funcionalidad cuando se los presiona que inicia la pantalla de gestión de maceración (subsección \ref{DescripPantallaPlanificación}) adjuntando el ID perteneciente a la maceración del \textit{CardView} seleccionado.
                 
-                \par La información de los sensores que se muestra en el panel de mediciones actuales se obtiene a partir una llamada a la API "GetTempPh.php" (función getTempPh() incluida en la interfaz API) mediante el uso de la librería Retrofit. Una vez obtenidos estos valores, insertados en una instancia de la clase \textit{TempPh} (\textit{Container}), se carga un \textit{AlertDialog} con los mismos (Figura?).
+                \par La información de los sensores que se muestra en el panel de mediciones actuales se obtiene a partir una llamada a la API "GetTempPh.php" (función getTempPh() incluida en la interfaz API) mediante el uso de la librería \textit{Retrofit}. Una vez obtenidos estos valores, insertados en una instancia de la clase \textit{TempPh} (\textit{Container}), se carga un \textit{AlertDialog} con los mismos (Figura \ref{fig:CapturaShowCurrentValues}).
                 
                 \par El acceso a la pantalla de planificación se realiza mediante una funcionalidad implementada para el icono del \textit{OptionsMenu} que inicia el \textit{Activity PlanningActivity} (Subsección \ref{DescripPantallaPlanificación}).
                 
@@ -200,30 +214,55 @@
         \subsubsection{Descripción}
                 \par Es la pantalla donde se planifica una nueva maceración. En la misma se pueden visualizar opciones para rellenar los campos necesarios para definir una maceración.
                 
-                \par Para la implementación se utiliza un \textit{Activity} denominado \textit{PlanningActivity}. La interfaz definida se compone por un \textit{Actionbar} que cuenta con un botón para finalizar la planificación, una lista de campos (tipo de maceración, volumen, densidad deseada, lista de granos, lista de intervalos) que ocupa el área restante de la pantalla. 
-                
+                \par Para la implementación se utiliza un \textit{Activity} denominado \textit{PlanningActivity}. Como puede observarse en la figura \ref{fig:CapturaPlanAct} la interfaz definida se encuentra compuesta por un \textit{Actionbar} que cuenta con un botón para finalizar la planificación, una lista de campos (tipo de maceración, volumen, densidad deseada, lista de granos, lista de intervalos) que ocupa el área restante de la pantalla.
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.2]{software/ScreenCapture/PlanningActivity.jpg}
+                    \caption{Captura de la pantalla de planificación de maceración}
+                    \label{fig:CapturaPlanAct}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.2]{software/ScreenCapture/PlanningActivity-AddGrain.jpg}
+                    \caption{Captura del dialogo para añadir un Grano en la pantalla de planificación de maceración}
+                    \label{fig:CapturaPlanAddGrain}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.2]{software/ScreenCapture/PlanningActivity-AddInterval.jpg}
+                    \caption{Captura del dialogo para añadir un Intervalo en la pantalla de planificación de maceración}
+                    \label{fig:CapturaPlanAddInterval}
+                \end{figure}
+                \begin{figure}[h]
+                    \centering
+                     \includegraphics[scale=0.2]{software/ScreenCapture/PlanningActivity-Finish.jpg}
+                    \caption{Captura del dialogo para finalizar la pantalla de planificación de maceración}
+                    \label{fig:CapturaPlanFinish}
+                \end{figure}
+
+               
             \subsubsection{Funciones}
                 \begin{itemize}
                     \item \textbf{Seleccionar tipo de maceración:} Menú desplegable que permite seleccionar el tipo de maceración de una lista predefinida, siendo estas opciones \textit{simple}, \textit{escalonada} o \textit{decocción}.
                     
                     \item \textbf{Establecer volumen y densidad deseada:}Estos parámetros se pueden establecer rellenando los campos correspondientes. El volumen ingresado debe estar expresado en litros y la densidad en kilogramos sobre litro.
                     
-                    \item \textbf{Agregar/Quitar granos:} Al presionar el botón ``AGREGAR GRANO'', se despliega un dialogo con tres campos. Una vez agregado, los datos del mismo se mostrarán en una lista en conjunto con los granos agregados anteriormente.
+                    \item \textbf{Agregar/Quitar granos:} Al presionar el botón ``AGREGAR GRANO'', se despliega un dialogo con tres campos, (Figura \ref{fig:CapturaPlanAddGrain}). Una vez agregado, los datos del mismo se mostrarán en una lista en conjunto con los granos agregados anteriormente.
                     
-                        \par Para eliminar un elemento de esta lista, se debe mantener presionado el mismo y seleccionar la opción ``Eliminar grano'' del menú contextual (Figura X).
+                        \par Para eliminar un elemento de esta lista, se debe mantener presionado el mismo y seleccionar la opción ``Eliminar grano'' del menú contextual.
                     
-                    \item \textbf{Definir intervalos con sus parámetros:}Para el agregado de intervalos debe seleccionarse el botón con el signo ``+'', esto desplegará un dialogo tipo pop-up, Figura X, donde podrán encontrarse los campos necesarios para definir un intervalo. Pueden ser agregados uno o mas intervalos según corresponda al tipo y receta de maceración a ser realizada.
+                    \item \textbf{Definir intervalos con sus parámetros:}Para el agregado de intervalos debe seleccionarse el botón con el signo ``+'', esto desplegará un dialogo tipo \textit{pop-up}, Figura \ref{fig:CapturaPlanAddInterval}, donde podrán encontrarse los campos necesarios para definir un intervalo. Pueden ser agregados uno o mas intervalos según corresponda al tipo y receta de maceración a ser realizada.
                         \par Para eliminar un elemento de esta lista, se debe mantener presionado el mismo por un lapso de tiempo prolongado.
                     
-                    \item \textbf{Finalizar planificación:} Al finalizar el ingreso de datos, ser presionará el botón para finalizar, antes mencionado, esto desplegará un dialogo tipo pop-up donde deberán ser ingresados los campos nombre de la maceración, intervalo de medición de temperatura e intervalo de medición de pH. Luego del ingreso de los datos, presionando el botón ``Aceptar'' dará por concluido el ingreso de datos y se retornará al \textit{Main Activity}.
+                    \item \textbf{Finalizar planificación:} Al finalizar el ingreso de datos, ser presionará el botón para finalizar, antes mencionado, esto desplegará un dialogo tipo \textit{pop-up} donde deberán ser ingresados los campos nombre de la maceración, intervalo de medición de temperatura e intervalo de medición de pH (Figura \ref{fig:CapturaPlanFinish}). Luego del ingreso de los datos, presionando el botón ``Aceptar'' dará por concluido el ingreso de datos y se retornará al \textit{Main Activity}.
                     
                     \item \textbf{Regla de negocios} Dado que es necesario mantener igualdad de condiciones para los experimentos de maceración llevados a cabo con los parámetros aquí ingresados, los mismos no podrán ser modificados luego. Debiendo en el caso de requerir modificarlos, eliminar la maceración e ingresar nuevamente los datos.
                 \end{itemize}
             
             \subsubsection{Detalle de implementación}
-                \par De manera de permitir la seleccion uno de los tres tipos de maceración, para esto se utilizó un \textit{Spinner} con las tres opciones: \textit{Simple}, \textit{Escalonada}, \textit{Decocción}. Luego, para indicar los valores volumen de mosto y densidad planificados, se utilizaron dos \textit{EditText}. %Todos estos con etiquetas para indicar el campo a rellenar (TextView's)
+                \par De manera de permitir la selección uno de los tres tipos de maceración, para esto se utilizó un \textit{Spinner} con las tres opciones: \textit{Simple}, \textit{Escalonada}, \textit{Decocción}. Luego, para indicar los valores volumen de mosto y densidad planificados, se utilizaron dos \textit{EditText}. %Todos estos con etiquetas para indicar el campo a rellenar (TextView's)
                 
-                \par Los granos correspondientes a la receta se agregan mediante un botón con la etiqueta ``AGREGAR GRANO'', el cual al ser presionado muestra un \textit{AlertDialog}. Este último posee tres campos (\textit{EditText}) para ser rellenados: Nombre de grano, Porcentaje de utilización y Extracto Potencial. Cuando se presiona el botón ACEPTAR de este pop-up, se realiza una validación de campos ingresados (negando la aceptación en caso de incompletitud) con el fin de agregar una nueva entrada en un \textit{ListView} dentro del layout del \textit{PlanningActivity}. Cada entrada en esta lista posee un \textit{TextView} cargado con la descripción del grano. Se permite la eliminación de cualquier entrada, mediante el procedimiento de interacción con un \textit{ContextMenu} ya descripto en el apartado de funciones.
+                \par Los granos correspondientes a la receta se agregan mediante un botón con la etiqueta ``AGREGAR GRANO'', el cual al ser presionado muestra un \textit{AlertDialog}. Este último posee tres campos (\textit{EditText}) para ser rellenados: Nombre de grano, Porcentaje de utilización y Extracto Potencial. Cuando se presiona el botón ACEPTAR de este \textit{pop-up}, se realiza una validación de campos ingresados (negando la aceptación en caso de incompletitud) con el fin de agregar una nueva entrada en un \textit{ListView} dentro del layout del \textit{PlanningActivity}. Cada entrada en esta lista posee un \textit{TextView} cargado con la descripción del grano. Se permite la eliminación de cualquier entrada, mediante el procedimiento de interacción con un \textit{ContextMenu} ya descripto en el apartado de funciones.
                 
                 \par Los intervalos de la maceración también son agregados mediante un \textit{AlertDialog}, que es invocado al seleccionar el \textit{FloatingActionButton} presente en el layout del \textit{Activity}. Este último contiene un conjunto de \textit{EditText} para completar los datos del intervalo: duración; temperatura; desvío tolerado de temperatura; pH; desvío tolerado de pH. En caso que el tipo de maceración seleccionada sea ``Decocción'', también se incluirán los campos temperatura secundaria y desvío tolerado para temperatura secundaria. Luego de presionarse el botón ACEPTAR, se cierra la ventana emergente, y un nuevo \textit{CardView} es insertado dentro de una lista \textit{RecyclerView} donde cada entrada posee la información del intervalo agregado. Es posible eliminar cualquier entrada mediante el procedimiento ya descripto en el apartado de funcionalidades.
                 
@@ -234,33 +273,36 @@
         \label{DescripPantallaGestiónMaceración}
             \subsubsection{Descripción}
                 \par Es la pantalla de administración para la maceración seleccionada.
-                \par Para la implementación se utiliza un \textit{Activity} denominado \textit{ExperimentActivity}. En la misma puede ser visualizado en primer lugar un \textit{ActionBar} donde se indica el nombre de la maceración y que incluye además una serie de botones: acceso a la pantalla de detalle de la maceración, ingreso a la pantalla de información histórica y estadística de los experimentos realizados, y por último, la opción de eliminar la maceración. En el área restante de la pantalla puede encontrarse una lista con los experimentos realizados, y un botón flotante en la parte inferior que permite iniciar un nuevo experimento y acceder de esta manera a la pantalla correspondiente.
-                
+                \par Para la implementación se utiliza un \textit{Activity} denominado \textit{ExperimentActivity}. En la figura \ref{fig:CapturaExperimentAct} puede ser visualizado en primer lugar un \textit{ActionBar} donde se indica el nombre de la maceración y que incluye además una serie de botones: acceso a la pantalla de detalle de la maceración, ingreso a la pantalla de información histórica y estadística de los experimentos realizados, y por último, la opción de eliminar la maceración. En el área restante de la pantalla puede encontrarse una lista con los experimentos realizados, y un botón flotante en la parte inferior que permite iniciar un nuevo experimento y acceder de esta manera a la pantalla correspondiente.
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.2]{software/ScreenCapture/ExperimentActivity.jpg}
+                    \caption{Captura de la pantalla de Gestión de la Maceración}
+                    \label{fig:CapturaExperimentAct}
+                \end{figure}
             \subsubsection{Funciones}
                 \begin{itemize}
-                    \item \textbf{Lista de experimentos realizados:} Cada una de los experimentos listados es un botón sensible a ser presionado que permite el acceso a la pantalla de resultados del experimento pulsado (Figura X).
+                    \item \textbf{Lista de experimentos realizados:} Cada una de los experimentos listados es un botón sensible a ser presionado que permite el acceso a la pantalla de resultados del experimento pulsado (Figura \ref{fig:CapturaDetExpAct}).
                     
                     \item \textbf{Eliminar experimento:} Como se mencionó en el punto anterior, cada una de los experimentos listados es un botón sensible a ser presionado. Si la duración de esta selección supera los dos segundos, se procede a borrar el experimento seleccionado de la lista y de la base de datos.
                     
                     \item \textbf{Detalle del plan de maceración:} Pantalla en la cual pueden ser visualizados los valores ingresados en la planificación de la maceración; el volumen y temperatura de agua a ser incorporada en cada etapa; y la cantidad de cada tipo de grano a ser utilizado.
                     
-                    \item \textbf{Información histórica y estadística:} Acceso a la pantalla de información histórica y estadística correspondiente a la maceración. (Figura X).
+                    \item \textbf{Información histórica y estadística:} Acceso a la pantalla de información histórica y estadística correspondiente a la maceración. (Figura \ref{fig:CapturaGeneralFrag-P1}).
                     
                     \item \textbf{Eliminar maceración:} Al seleccionarse la opción presente en el \textit{ActionBar}, se procede a eliminar la maceración actual en conjunto con todos los datos ligados a la misma (experimentos realizados y datos inherentes a la planificación de la misma)
                     
-                    \item \textbf{Iniciar nuevo experimento:} Ingreso a la pantalla de monitoreo del experimento a ser iniciado (Figura X).
+                    \item \textbf{Iniciar nuevo experimento:} Ingreso a la pantalla de monitoreo del experimento a ser iniciado (Figura \ref{fig:CapturaMeasureFrag}).
                     
                 \end{itemize}
-            
             \subsubsection{Detalle de implementación}
                 \par Se da inicio a un nuevo experimento y su correspondiente monitoreo, adjuntando el ID de maceración actual, luego de presionado el \textit{FloatingActionButton} presente en el \textit{ExperimentActivity}. Este monitoreo se describe en subsección \ref{DescripPantallaMonitoreoExperimento}.
             
-                \par En la pantalla se puede observar la lista de experimentos realizados para dicha maceración. Para cargarla con los valores correspondientes, se instancia una clase SQLiteDatabase y se realiza una consulta SELECT para obtener los campos \textit{id} y \textit{fecha} de todos los índices de la tabla \textit{Experimento} que posean el ID de Maceración obtenido del \textit{MainActivity}. Una vez obtenida esta lista, se instancia un \textit{Adapter} y se lo adjunta a un \textit{RecylcerView}, para que inserte los datos en \textit{CardViews} que son anidados en la lista. Estos últimos tienen añadido dos funcionalidades: la primera es invocada cuando se los presiona, iniciando la pantalla de resultados del experimento (subsección \ref{DescripPantallaResultadosExperimento}) adjuntando el id perteneciente al experimento del \textit{CardView} seleccionado. La segunda elimina el experimento, del RecyclerView y de la base de datos, cuando el usuario mantiene presionado el ítem durante un lapso prolongado.
+                \par En la pantalla se puede observar la lista de experimentos realizados para dicha maceración. Para cargarla con los valores correspondientes, se instancia una clase \textit{SQLiteDatabase} y se realiza una consulta \textit{SELECT} para obtener los campos \textit{id} y \textit{fecha} de todos los índices de la tabla \textit{Experimento} que posean el ID de Maceración obtenido del \textit{MainActivity}. Una vez obtenida esta lista, se instancia un \textit{Adapter} y se lo adjunta a un \textit{RecylcerView}, para que inserte los datos en \textit{CardViews} que son anidados en la lista. Estos últimos tienen añadido dos funcionalidades: la primera es invocada cuando se los presiona, iniciando la pantalla de resultados del experimento (subsección \ref{DescripPantallaResultadosExperimento}) adjuntando el id perteneciente al experimento del \textit{CardView} seleccionado. La segunda elimina el experimento, del RecyclerView y de la base de datos, cuando el usuario mantiene presionado el ítem durante un lapso prolongado.
                 
                 \par Dentro del \textit{OptionsMenu} se encuentran tres opciones: \textbf{Información histórica}, mediante la cual se accede a la Pantalla de información histórica y estadística (subsección \ref{DescripPantallaEstadística}); \textbf{Detalle del plan de maceración}, que inicia la Pantalla de detalle de maceración (subsección \ref{DescripPantallaDetalleMaceración}); y \textbf{ Eliminar maceración}, que elimina todos los datos relacionados a la maceración de la base de datos. Con el fin de llevar a cabo esta última, eliminación, se instancia una clase \textit{SQLiteDatabase}. La cual, luego de obtener la lista de experimentos relacionados al ID de maceración correspondiente, elimina las entradas en la tabla \textit{SensedValues} que se correspondan con la lista de experimentos, luego elimina estos experimentos y, por último, las entradas en las tablas Grano, Intervalo y Maceración que se correspondan con el ID de maceración. Una vez realizada esta tarea, se cierra la pantalla actual y se accede a la Pantalla Principal (subsección \ref{DescripPantallaPrincipal}).
                 
                 \par En el diagrama \ref{fig:DiagClaseExperimentActivity} ubicado en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
-        
         %---------------FIN Descripción ExperimentActivity ---------------
             
         \subsection{Pantalla de detalle de maceración}
@@ -268,7 +310,12 @@
             \subsubsection{Descripción}
             Es la pantalla donde se presentan los datos ingresados para esta maceración en la planificación, junto a otros datos calculados.
             En la misma puede ser visualizarse en la parte superior el \textit{ActionBar} donde se indica el nombre de la Maceración. Luego, en el espacio restante se presentan los siguientes valores: tipo de maceración; volumen de mosto; densidad específica deseada; información de los granos a utilizar (nombre, cantidad teórica y, en caso de haber realizado mas de tres experimentos, la cantidad ajustada); e información de los intervalos (duración, temperatura y pH deseados con sus respectivas tolerancias de desvío, volumen y temperatura del agua a ser incorporada, y en caso de maceración por decocción, la temperatura del segundo macerador).
-            
+             \begin{figure}[h]
+                    \centering
+                    \includegraphics[scale=0.2]{software/ScreenCapture/MashDetailActvity.jpg}
+                    \caption{Captura de la pantalla de detalle de la maceración}
+                    \label{fig:CapturaDetMashAct}
+                \end{figure}
             \subsubsection{Detalle de implementación}
             \par Esta pantalla reutiliza el \textit{Activity} PlanningActivty, de manera que una vez cargados los valores obtenidos los widgets son bloqueados para que no se modifique su valor. 
             \par Para obtener los valores mostrados en la pantalla, primero se realiza una consulta a la base de datos a partir de una instancia de la clase SQLiteDatabase en las tablas Maceracion, Intervalo y Grano, obteniendo los valores correspondiente al ID de maceración. Una vez, obtenidos se cargan los valores de tipo de maceración, densidad y volumen deseado. 
@@ -277,52 +324,77 @@
             
             \par En el caso de los intervalos, de acuerdo al análisis temático, se calcula el volumen y temperatura de agua que se debe incorporar en cada uno de ellos:
             \begin{itemize}
-                \item Simple: Se utiliza la función NOMBRE DE FUNCION presente en la clase Calculos, para obtener el volumen y temperatura del agua a agregar para que la infusión alcance la temperatura planificada para el único intervalo. La ecuación se implementó de acuerdo a la ecuación \ref{EcuacionInfusion}.
+                \item Simple: Se utiliza la función \textit{temperaturaAguaInicial} presente en la clase \textit{Calculos}, para obtener el volumen y temperatura del agua a agregar para que la infusión alcance la temperatura planificada para el único intervalo. La ecuación se implementó de acuerdo a la ecuación \ref{EcuacionInfusion}.
                 
-                \item Escalonada: En este caso se computa para cada intervalo el volumen y temperatura que se debe agregar. Para esto se realiza el cálculo basado en las ecuaciones \ref{EcuacionEscalonadaPi} y \ref{EcuacionEscalonadaGamma}.
+                \item Escalonada: En este caso se computa para cada intervalo el volumen y temperatura que se debe agregar. Para esto se realiza el cálculo basado en las ecuaciones \ref{EcuacionEscalonadaPi} y \ref{EcuacionEscalonadaGamma}. Las funciones implementadas en la clase \textit{Calculos} para este fin poseen los nombres \textit{cantAguaEscalon} y \textit{cantAguaPrimerEscalon} respectivamente.
                 
-                \item Decocción: Para este tipo de maceración se calcula la cantidad de templa a retirar según la ecuación \ref{EcuacionDecoccion}. Dicho valor es obtenido al llamar la función X de la clase Calculos.
+                \item Decocción: Para este tipo de maceración se calcula la cantidad de templa a retirar según la ecuación \ref{EcuacionDecoccion}. Dicho valor es obtenido al llamar la función \textit{cantMostoRetirarDecoccion} de la clase \textit{Calculos}.
             \end{itemize}
             
             \par En el diagrama \ref{fig:DiagClasePlanningActivity} ubicado en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
-        
         %---------------FIN Descripción InfoMash PlanningActivity ---------------
             
         \subsection{Pantalla de información estadística e histórica}
         \label{DescripPantallaEstadística}
             \subsubsection{Descripción}
-            En esta pantalla puede ser visualizado un resumen de los experimentos llevados a cabo para la correspondiente maceración.
-            En esta pantalla puede visualizarse un \textit{ActionBar} en la parte superior con el nombre de la maceración. Debajo, dos botones tipo pestañas (\textit{TabLayout}) que permiten acceder a los dos paneles (\textit{Fragments}), Resumen General y Detalle de temperatura de cada experimento. 
-            Se divide en dos paneles (\textit{Fragments}): \textbf{Resumen general} y \textbf{Detalle de temperatura por experimento}.
+            \par En esta pantalla puede ser visualizado un resumen de los experimentos llevados a cabo para la correspondiente maceración.
+            \par En la figura \ref{fig:CapturaGeneralFrag-P1} puede visualizarse un \textit{ActionBar} en la parte superior con el nombre de la maceración. Debajo, dos botones tipo pestañas (\textit{TabLayout}) que permiten acceder a los dos paneles (\textit{Fragments}), Resumen General y Detalle de temperatura de cada experimento. 
+            Se divide en dos paneles: \textbf{Resumen general} (Figura \ref{fig:CapturaGeneralFrag-P1}) y \textbf{Detalle de temperatura por experimento} (Figura \ref{fig:CapturaExpFrag}).
             
-            \paragraph{Resumen general:} En este panel en primer lugar se ubica un botón que permite alternar entre los dos tipos de gráficas comparativas de la evolución promedio de cada variable (gráfica de líneas y gráfico estadístico descriptivo Boxplot\footnote{También conocido como gráfico de caja y bigote (representa valores extremos y el 1$^{\circ}$, 2$^{\circ}$ y 3$^{\circ}$ cuartil)}). Luego de este, se presentan las siguientes gráficas: Temperatura; pH; y Activación de enzimas. Finalmente, se presenta una serie de valores calculados a partir de los mismos valores que conforman las gráficas, estos son: Número de experimentos válidos; Rendimiento del equipo\footnote{Este valor comienza a ajustarse a partir del tercer experimento válido de una maceración}; Cálculo Teórico de insumos con rendimiento no ajustado \footnote{El ajuste se realiza tomando como rendimiento del equipo el valor de rendimiento calculado, en lugar del estándar 70\%}; Cálculo Teórico de insumos con rendimiento ajustado; por último el calculo práctico de cantidad de insumos. 
+            \paragraph{Resumen general:} En este panel en primer lugar se ubica un botón que permite alternar entre los dos tipos de gráficas comparativas de la evolución promedio de cada variable (gráfica de líneas y gráfico estadístico descriptivo \textit{Boxplot}\footnote{También conocido como gráfico de caja y bigote (representa valores extremos y el 1.\textsuperscript{er}, 2.\textsuperscript{o} y 3.\textsuperscript{er} cuartil)}). Luego de este, se presentan las siguientes gráficas: Temperatura; pH; y Activación de enzimas. Finalmente, se presenta una serie de valores calculados a partir de los mismos valores que conforman las gráficas, estos son: Número de experimentos válidos; Rendimiento del equipo\footnote{Este valor comienza a ajustarse a partir del tercer experimento válido de una maceración}; Cálculo Teórico de insumos con rendimiento no ajustado \footnote{El ajuste se realiza tomando como rendimiento del equipo el valor de rendimiento calculado, en lugar del estándar 70\%}; Cálculo Teórico de insumos con rendimiento ajustado; por último el calculo práctico de cantidad de insumos. (Figuras \ref{fig:CapturaGeneralFrag-P1} y \ref{fig:CapturaGeneralFrag-P2}) 
             
-            \paragraph{Detalle de temperatura por experimento:} En este puede encontrarse en el borde superior un menú desplegable, el cual permite seleccionar el tipo de gráficas a ser comparadas luego, pudiendo ser de cada sensor o del promedio de sensores para cada muestra. De esta manera permite compara el/los mismo/s sensores entre diferentes experimentos. Debajo, se presentan las gráficas por experimento antes mencionadas.
+            \paragraph{Detalle de temperatura por experimento:} En este puede encontrarse en el borde superior un menú desplegable, el cual permite seleccionar el tipo de gráficas a ser comparadas luego, pudiendo ser de cada sensor o del promedio de sensores para cada muestra. De esta manera permite compara el/los mismo/s sensores entre diferentes experimentos. Se presentan algunas de las gráficas por experimento antes mencionadas (Figura \ref{fig:CapturaExpFrag})
             
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.2]{software/ScreenCapture/GeneralStatistics.jpg}
+                \caption{Captura de pantalla de la pantalla de Estadísticas generales - parte 1}
+                \label{fig:CapturaGeneralFrag-P1}
+            \end{figure}
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.2]{software/ScreenCapture/GeneralStatistics-p2.jpg}
+                \caption{Captura de pantalla de la pantalla de Estadísticas generales - parte 2}
+                \label{fig:CapturaGeneralFrag-P2}
+            \end{figure}
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.2]{software/ScreenCapture/ExperimentStatistics.jpg}
+                \caption{Captura de pantalla de la pantalla de Estadísticas de Experimentos}
+                \label{fig:CapturaExpFrag}
+            \end{figure}
             \subsubsection{Funciones}
             \begin{itemize}
                 \item \textbf{Visualización de gráficas de variables:} En el resumen general, se presentan gráficas de los valores promedios de las variables antes mencionadas respecto al tiempo. Se consideran para estas solo los experimentos válidos\footnote{Se consideran válidos aquellos experimentos, que cumplan con la cantidad de mediciones e incluyan el valor de densidad obtenida.} de esta maceración.
             \end{itemize}
             
             \subsubsection{Detalle de implementación}
-            \par La obtención de los datos de la maceración se realizan a través de una consulta a la base de datos. Esta filtra los datos de las tabla Experimento con el ID de maceración obtenido de la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}) y luego obtiene la totalidad de datos de la tabla SensedValues a partir ID de experimentos obtenidos.
+            \par La obtención de los datos de la maceración se realizan a través de una consulta a la base de datos. Esta filtra los datos de las tabla Experimento con el ID de maceración obtenido de la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}) y luego obtiene la totalidad de datos de la tabla \textit{SensedValues} a partir ID de experimentos obtenidos.
             
-            \par En el \textit{Fragment} \textbf{Resumen general} se muestran tres gráficas de evolución temporal: temperatura promedio de todos los sensores, pH y activación de enzimas. Este último, es calculado a partir de los dos anteriores utilizando las funciones de activación de enzimas (alpha, beta, proteasa y glucanasa) implementadas en la clase Calculos. La forma en la que estas gráficas presentan los datos puede ser cambiado entre gráfico de lineas (\textit{LineChart} con valor promedio de todos los experimentos) o boxplot (\textit{CandleStick}, cargado con los valores mínimo, máximo, primer cuartil y tercer cuartil y \textit{LineChart}, con el valor del segundo cuartil o mediana).
+            \par En el \textit{Fragment} \textbf{Resumen general} se muestran tres gráficas de evolución temporal: temperatura promedio de todos los sensores, pH y activación de enzimas. Este último, es calculado a partir de los dos anteriores utilizando las funciones de activación de enzimas (\textit{alphaAmylase}, \textit{betaAmylase}, \textit{protease} y \textit{betaGlucanase}) implementadas en la clase \textit{Calculos}. La forma en la que estas gráficas presentan los datos puede ser cambiado entre gráfico de lineas (\textit{LineChart} con valor promedio de todos los experimentos) o \textit{boxplot} (\textit{CandleStick}, cargado con los valores mínimo, máximo, primer cuartil y tercer cuartil y \textit{LineChart}, con el valor del segundo cuartil o mediana). (Figura \ref{fig:CapturaGeneralFrag-P1})
             
-            \par Debajo de las tres gráficas se muestra un cuadro que contiene el rendimiento del equipo. Este es obtenido a partir del promedio de rendimiento de cada experimento calculado con la ecuación \ref{EcuacionRendimientoMaceracion} implementada en la clase \textit{Calculos}. Luego, se listan los granos utilizados con un \textit{ListView}, los cuales se cargan utilizando una cadena de texto con la cantidad de insumo correspondiente a cada tipo: Teórico (calcCantInsumoTeoRayDaniels con valor rendimiento de equipo 70\%), Ajustado (calcCantInsumoTeoRayDaniels con valor rendimiento de equipo calculado) y Real (llamada a la función calcInsumoReal de la clase Calculos que implementa la ecuación  \ref{EcuacionCantidadGranoEmpirico} con los valores de porcentaje de utilización de cada grano y el valor de rendimiento del equipo). Por último, se muestra la cantidad de experimentos válidos realizados.
+            \par Debajo de las tres gráficas se muestra un cuadro que contiene el rendimiento del equipo. Este es obtenido a partir del promedio de rendimiento de cada experimento calculado con la ecuación \ref{EcuacionRendimientoMaceracion} implementada en la clase \textit{Calculos}. Luego, se listan los granos utilizados con un \textit{ListView}, los cuales se cargan utilizando una cadena de texto con la cantidad de insumo correspondiente a cada tipo: Teórico (calcCantInsumoTeoRayDaniels con valor rendimiento de equipo 70\%), Ajustado (calcCantInsumoTeoRayDaniels con valor rendimiento de equipo calculado) y Real (llamada a la función calcInsumoReal de la clase Calculos que implementa la ecuación  \ref{EcuacionCantidadGranoEmpirico} con los valores de porcentaje de utilización de cada grano y el valor de rendimiento del equipo). Por último, se muestra la cantidad de experimentos válidos realizados. (Figura \ref{fig:CapturaGeneralFrag-P2})
             
-            \par En el \textit{Fragment} \textbf{Detalle de temperatura por experimento} se implementa un \textit{LineChart} por cada uno de los experimentos. Para cada uno de ellos se puede seleccionar distintas opciones de gráfico de temperatura, listadas mediante un \textit{Spinner} en la parte superior del layout del \textit{Fragment}.
+            \par En el \textit{Fragment} \textbf{Detalle de temperatura por experimento} se implementa un \textit{LineChart} por cada uno de los experimentos. Para cada uno de ellos se puede seleccionar distintas opciones de gráfico de temperatura, listadas mediante un \textit{Spinner} en la parte superior del layout del \textit{Fragment}.  (Figura \ref{fig:CapturaExpFrag})
             
             
             \par En el diagrama \ref{fig:DiagClaseMashExpHistoryActivity} ubicado en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
-            
         %---------------FIN Descripción MashExpHistoryActivity ---------------
         
         \subsection{Pantalla de resultados de experimento}
         \label{DescripPantallaResultadosExperimento}
             \subsubsection{Descripción}
             En esta pantalla puede ser visualizado un resumen de los resultados obtenidos en este experimento.
-            En el borde superior se ubica un \textit{ActionBar} con el la fecha y horario del experimento, debajo se presentan los valores temperatura ambiental, densidad específica del mosto y rendimiento obtenido. En forma posterior, se ubican representaciones gráficas de la evolución temporal de las variables temperatura, pH y activación de enzimas para este experimento, seguidas de la evolución temporal de la temperatura de cada sensor.
+            Como puede verse en la figura \ref{fig:CapturaDetExpAct} en el borde superior se ubica un \textit{ActionBar} con el la fecha y horario del experimento, debajo se presentan los valores temperatura ambiental, densidad específica del mosto y rendimiento obtenido. En forma posterior, se ubican representaciones gráficas de la evolución temporal de las variables temperatura, pH y activación de enzimas para este experimento, seguidas de la evolución temporal de la temperatura de cada sensor.
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.2]{software/ScreenCapture/DetailExperimentActivity.jpg}
+                \caption{Captura de la pantalla con el detalle de un Experimento}
+                \label{fig:CapturaDetExpAct}
+            \end{figure}
             
             \subsubsection{Detalle de implementación}
             
@@ -333,19 +405,31 @@
             \par Debajo se encuentran siete \textit{LineCharts} que contienen la evolución temporal a lo largo del experimento de: temperatura promedio, pH, activación de enzimas, sensor temperatura N°1, sensor temperatura N°2, sensor temperatura N°3, sensor temperatura N°4. Estos valores son obtenidos a partir del conjunto de valores obtenidos de la consulta de base de datos.
             
             \par En el diagrama \ref{fig:DiagClaseDetailExperimentActivity} y ubicado en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
-            
         %---------------FIN Descripción DetailExperimentActivity ---------------
-            
+        
         \subsection{Pantalla de monitoreo de experimento}
         \label{DescripPantallaMonitoreoExperimento}
             \subsubsection{Descripción}
             Esta pantalla es la encargada de asistir al usuario con el experimento en curso.
-            En esta pantalla puede visualizarse un \textit{ActionBar} en la parte superior con el nombre de la maceración, seguido de dos botones, el primero para cancelar el experimento en curso y el segundo para confirmar la conclusión del experimento. Debajo, dos botones tipo pestañas (\textit{TabLayout}) que permiten acceder a los dos paneles (\textit{Fragments}): \textbf{Mediciones} y \textbf{Etapas}.
+            En la figura \ref{fig:CapturaMeasureFrag} puede visualizarse un \textit{ActionBar} en la parte superior con el nombre de la maceración, seguido de dos botones, el primero para cancelar el experimento en curso y el segundo para confirmar la conclusión del experimento. Debajo, dos botones tipo pestañas (\textit{TabLayout}) que permiten acceder a los dos paneles (\textit{Fragments}): \textbf{Mediciones} (Figura \ref{fig:CapturaMeasureFrag}) y \textbf{Etapas} (Figura \ref{fig:CapturaStageFrag}).
             
             \paragraph{Mediciones:}
             En este panel se visualizan los valores obtenidos a través de la estación de recolección de datos para el experimento en curso. Además, enseña dentro de tarjetas (\textit{CardViews}) el porcentaje de avance en el que se encuentre la maceración, los valores planificados para dicho momento y el correspondiente desvío con los valores recolectados.
             \paragraph{Etapas:}
             En este panel se visualiza un resumen de las etapas que componen la maceración, adicionando temporizadores correspondientes al tiempo restante para el inicio de cada una de las mismas.
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.2]{software/ScreenCapture/MeasureFragment.jpg}
+                \caption{Captura de pantalla de Monitoreo de Experimento en Curso}
+                \label{fig:CapturaMeasureFrag}
+            \end{figure}
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.2]{software/ScreenCapture/StageFragment.jpg}
+                \caption{Captura de pantalla de Monitoreo de Etapa en Curso}
+                \label{fig:CapturaStageFrag}
+            \end{figure}
             
             \subsubsection{Funciones}
             
@@ -360,11 +444,11 @@
                 \end{itemize}
             
             \subsubsection{Detalle de implementación}
-             \par El \textit{Activity} inicia con el ID de experimento recibido como parámetro de la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}), en primer lugar se instancia la clase \textit{SQLiteDatabase} y se realiza una consulta SELECT en la tabla \textit{Maceracion} para obtener los valores \textit{intervaloMedTemp} e \textit{intervaloMedPh} y en la tabla \textit{Intervalo}, con la que se obtiene la duración total de la maceración como sumatoria de las duraciones de todos los intervalos de la maceración correspondiente. Luego, con estos datos se realiza una llamada a la API "ApiEscribe.php" (función postExperiment(), incluida en la interfaz API) mediante el uso de la librería Retrofit. Esta llamada, inicia un nuevo experimento de maceración en la estación de recolección de datos.
+             \par El \textit{Activity} inicia con el ID de experimento recibido como parámetro de la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}), en primer lugar se instancia la clase \textit{SQLiteDatabase} y se realiza una consulta \textit{SELECT} en la tabla \textit{Maceracion} para obtener los valores \textit{intervaloMedTemp} e \textit{intervaloMedPh} y en la tabla \textit{Intervalo}, con la que se obtiene la duración total de la maceración como sumatoria de las duraciones de todos los intervalos de la maceración correspondiente. Luego, con estos datos se realiza una llamada a la API "ApiEscribe.php" (función postExperiment(), incluida en la interfaz API) mediante el uso de la librería \textit{Retrofit}. Esta llamada, inicia un nuevo experimento de maceración en la estación de recolección de datos.
              
              \par Con el objetivo de obtener los valores presentes en la base de datos de la estación, se creo una clase \textit{MyWorker} que implementa la librería WorkManager. Con la misma, se crea un hilo de ejecución paralelo en el cual se realizan reiteradas llamadas a la API getSensedValues() (la que invoca a la API ``ApiGet.php'') con el fin de obtener nuevos valores recolectados para luego ser insertados en la base de datos de la aplicación. Estas peticiones concluyen luego de un numero de iteraciones separadas por un lapso de tiempo. El lapso es equivalente a la mitad del valor especificado para el intervalo de medición de temperatura, y el número de iteraciones se obtiene al dividir la duración total del experimento sobre este lapso de separación.
              
-            \par En este Activity se encuentran dos pestañas: Mediciones(\textit{MeasureFragment}) y Etapas(\textit{StageFragment}). En la primera se encuentran cargados en \textit{CardViews} los valores del último SensedValues insertado en la base de datos de experimento en curso y en la segunda se muestra información relevantes a las etapas.
+            \par En este Activity se encuentran dos pestañas: Mediciones(\textit{MeasureFragment}) y Etapas(\textit{StageFragment}). En la primera se encuentran cargados en \textit{CardViews} los valores del último \textit{SensedValues} insertado en la base de datos de experimento en curso y en la segunda se muestra información relevantes a las etapas.
             
             \par Debido a que la clase \textit{MyWorker} no esta habilitada para modificar la interfaz gráfica, se implementó dentro del \textit{MeasureFragment} un subhilo de ejecución. Este último se encarga de realizar consultas \textit{SELECT} a través de una instancia de \textit{SQLiteDatabase} con periodo de repetición equivalente al utilizado en \textit{MyWorker}. Mediante estas consultas, son obtenidos  los valores de la tabla \textit{SensedValues} mas actuales para así actualizar los \textit{CardViews} con la correspondiente información.
             
@@ -384,7 +468,7 @@
             \par Al presionar la opción Finalizar Experimento, se pueden presentar dos escenarios: El primero ocurre cuando no se obtuvieron aún todas las mediciones y se le indica al usuario que no puede finalizar la medición. El segundo, ya finalizado el experimento, se muestra un \textit{AlertDialog} con un \textit{EditText} que le permite al usuario ingresar la densidad específica del mosto resultante. Una vez finalizada esta operación, se retorna a la Pantalla de gestión de maceración (subsección \ref{DescripPantallaGestiónMaceración}) correspondiente al ID de maceración actual.
             
             \par En los diagramas \ref{fig:DiagClaseCurrentExperienceActivityP1} y \ref{fig:DiagClaseCurrentExperienceActivityP2} ubicados en el Anexo, pueden observarse las clases y funciones utilizadas para el despliegue de esta pantalla.
-            
             %---------------FIN Descripción CurrentExperimentActivity ---------------
+            
     \subsection{Código fuente}
-    \par El detalle de la implementación de esta aplicación se encuentra alojado en el repositorio de GitHubhttps://www.overleaf.com/project/5c261622e2e3af05da316924 \url{https://github.com/damianpna88/proyectofinal} dentro de la carpeta APP. Para compilar el proyecto, es requerida una versión actualizada de Android Studio con la API 24 (Nougat 7.0) descargada.
+    \par El detalle de la implementación de esta aplicación se encuentra alojado en el repositorio de GitHub \url{https://github.com/damianpna88/proyectofinal} dentro de la carpeta APP. Para compilar el proyecto, es requerida una versión actualizada de Android Studio con la API 24 (Nougat 7.0) descargada.
