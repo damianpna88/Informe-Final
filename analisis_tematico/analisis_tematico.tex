@@ -252,12 +252,21 @@
             \subsubsection{Cálculo de rendimiento }
                 \par Para determinar cuál fue el rendimiento obtenido en la maceración se debe conocer qué porcentaje del grano utilizado persiste en el mosto.
                 
-                Para saber la cantidad de extracto solubilizado en un litro de mosto luego de la maceración, se parte de:
+                \par El primer paso es conocer la cantidad de extracto presente cierta masa de mosto. Para esto se utiliza grados Plato °P, que se calcula de la siguiente manera.
+                
+                \begin{equation}
+                    P = \frac{DE -1}{0.004}
+                \end{equation}
+                
+                \par Donde $P$ son los grados plato y $DE$ es la densidad específica del mosto. Esta medida indica la cantidad de gramos presentes en 100 gramos de mosto. 
+                \par Si se multiplica este valor por un factor 0.01  obtendremos la cantidad de kilogramos de extracto presente en un kilogramo de mosto.
+                
+                \par Luego, para saber la cantidad de extracto solubilizado en un litro de mosto luego de la maceración, se parte de:
                     
                     \begin{equation}
                         KgExt_{litro} = \frac{(DE-1) \cdot DE}{0.4}
                     \end{equation}
-                    donde $DE$ es la densidad específica obtenida. Esta fórmula esta basada en los grados plato °$P$, que indican el porcentaje de extracto de malta sobre el peso del agua.
+                    donde $DE$ es la densidad específica obtenida expresada en kilogramos sobre litro.
                     
                     \par Teniendo en conocimiento este valor, se debe ajustar al volumen de maceración con el que se trabaja, por tanto:
                     
@@ -311,14 +320,14 @@
                         \begin{equation}
                             PD = FD \cdot V
                         \end{equation}
-                        donde $FD = (Densidad -1)\cdot 1000 $ es el \textit{factor denso} y $V$ es el volumen de mosto.
+                        donde $FD = (DE -1)\cdot 1000 $ es el \textit{factor denso} y $V$ es el volumen de mosto.
                         
                         \par Luego, para saber el aporte de azúcar $A_i$ que tiene cada grano se calcula:
                         
                         \begin{equation}
                             A_{i} = 8.316 \cdot 46 \cdot Ext_{i}                           
                         \end{equation}
-                        donde \textit{8.316} es un factor de conversión de libra sobre galón (\textit{PPG, pounds per galon}) a kg sobre litro, \textit{46} es el valor máximo que se puede obtener (azúcar blanca que posee 100\% de extracto potencial) y $Ext_i$ es el extracto potencial del i-ésimo grano expresado en porcentaje.
+                        donde \textit{8.316} es un factor de conversión de libra sobre galón (\textit{PPG, pounds per galon}) a kilogramo sobre litro, \textit{46} es el valor máximo que se puede obtener (azúcar blanca que posee 100\% de extracto potencial) y $Ext_i$ es el extracto potencial del i-ésimo grano expresado en porcentaje.
                         
                         \par Por último, para saber la cantidad de kilogramos $G_i$ del i-ésimo grano que hay que utilizar, se emplea la fórmula:
                         

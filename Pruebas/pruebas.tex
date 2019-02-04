@@ -1,11 +1,203 @@
-\chapter{Pruebas y Validación}
+\chapter{Verificación y Validación}
+\par En este capitulo se exponen los diferentes ciclos de verificación y validación llevados adelante durante el desarrollo de este proyecto.
+\par En primer lugar son presentadas las inspecciones realizadas sobre el sistema durante su desarrollo. Luego, son expuestas una serie de pruebas aplicadas sobre el producto final con el objetivo de asegurar la correcta ejecución y despliegue de resultados. Finalmente, son exhibidas pruebas de campo realizadas a partir de diferentes experimentos de maceración, monitoreados por el sistema, de manera de validar que el mismo se comporte según lo esperado.
 
-\par En este capítulo se expondrán en primer lugar las validaciones realizadas al sistema de manera de asegurar que los cálculos realizados en la aplicación arrojan resultados correctos. En segundo lugar, una serie de pruebas de maceraciones reales realizadas con el sistema completo verificando que el mismo se comporte según lo esperado.
+\section{Inspecciones del Sistema}
+
+Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron analizados los requerimientos funcionales y no funcionales, así como las especificaciones formuladas durante el diseño. De esta forma, luego de implementar e integrar funcionalidades en los componentes desarrollados se analizó la documentación de forma de asegurar que se cumpliera con todos los requisitos y requerimientos.
+\par Junto al avance del desarrollo de los componentes fueron aplicadas las siguientes pruebas estáticas de forma de comprobar que las funcionalidades cumplieran su objetivo de manera individual e integral:
+\begin{itemize}
+    \item Pruebas en Componente de Hardware: Recolección de datos de sensores; Inserción en base de datos.
+    \item Pruebas de Interfaz Hardware-Software: Las \textit{API REST} desarrolladas fueron probadas utilizando la herramienta \textit{Postman}\footnote{\textit{Postman}, Entorno de desarrollo de \textit{APIs} \url{https://www.getpostman.com/}}. Mediante esta herramienta se proveyeron datos a la \textit{API REST} de la misma forma en que luego serían provistas por la aplicación, así fueron identificados y corregidos distintos fallos.
+    \item Pruebas de la aplicación: Cada funcionalidad fue probada de manera individual imprimiendo en el \textit{log} del entorno de desarrollo \textit{AndroidStudio} diferentes variables de control, verificando así el correcto funcionamiento. En forma adicional, fueron probadas todas las funcionalidades que interactúan de forma integral con el sistema (métodos de interacción con la \textit{API REST}).
+\end{itemize}
+
+\par La tabla \ref{tab:TablaChequeoRequerimientos} refleja el cumplimiento de los requerimientos del sistema.
+ \begin{table}[h]
+     \centering
+     \begin{tabularx}{\textwidth}{|X|X|}
+     \hline
+     \multicolumn{1}{|c|}{Requerimiento} & \multicolumn{1}{|c|}{Verificación}\\
+     \hline
+     \hline
+        \multicolumn{1}{|c|}{RF001}  & El sistema implementa el uso de sensores de temperatura, pH y temperatura ambiente. Mencionados en el capítulo \textit{\textbf{Hardware}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RF002}  & El sistema implementa el uso de cuatro sensores de temperatura a ser ubicados en distintas posiciones del macerado. El uso de los mismos se menciona en el capítulo \textit{\textbf{Hardware}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RF003}  & El sistema permite visualizar los datos recolectados por los sensores aun si no se esta llevando a cabo un experimento. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RF004}  & El sistema permite realizar el seguimiento de un experimento de maceración.  Mencionado en el capítulo \textit{\textbf{Software}}.   \\
+        \hline
+        \multicolumn{1}{|c|}{RF005}  & El sistema permite ingresar todos los datos que caracterizan a una planificación de maceración. Mencionado en el capítulo \textit{\textbf{Software}}.  \\
+        \hline
+        \multicolumn{1}{|c|}{RF006}  & El sistema permite crear o eliminar una maceración planificada y de esta forma todos los experimentos relacionados a ella. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RF007}  & El sistema almacena los datos de los experimentos realizados, y de la misma forma permite eliminarlo mediante la interfaz gráfica de la aplicación. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RF008}  & El sistema realiza cálculos de insumos en forma teórica y practica. En forma adicional, para maceraciones complejas brinda los cálculos de volumen y temperatura del agua. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RF009}  & El sistema provee información relativa al proceso del experimento de maceración siendo monitoreado. Mencionado en el capítulo \textit{\textbf{Software}}.  \\
+        \hline
+        \multicolumn{1}{|c|}{RF010}  & El sistema provee gráficas relativas a los datos recolectados en cada experimento de maceración, además provee otras producto de resultados obtenidos del conjunto de experimentos. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RF011}  & Luego de 3 experimentos de maceraciones concretados para una misma maceración, el sistema comenzará a optimizar los insumos.Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RF012}  & Durante el monitoreo de un experimento, el sistema permite configurar que sensores intervienen en el calculo medidas de representatividad, además de cambiar la forma en que se calcula esta. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RNF001}  & La aplicación utiliza un diseño intuitivo y dinámica, la información es presentada en forma clara (sin ambigüedades). Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RNF002}  & Al momento de elegir los diferentes componentes se tuvo en cuenta esta limitación, optando así por los mas económicos.\\
+        \hline
+        \multicolumn{1}{|c|}{RNF003}  & La plataforma elegida para la aplicación, \textit{Android},  se basó en este requerimiento. Mencionado en el capítulo \textit{\textbf{Hardware}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RNF004}  & El sistema demora 55 segundos en recolectar un conjunto de valores, luego el envío a la aplicación es casi instantáneo. \\
+        \hline
+     \end{tabularx}
+     \caption{Tabla de chequeo de requerimientos}
+     \label{tab:TablaChequeoRequerimientos}
+ \end{table}
+
+\section{Pruebas de ejecución y despliegue de resultados}
+
+\par En esta sección mediante distintos tipos de pruebas dinámicas son validadas las funcionalidades del sistema.
+
+\subsection{Funcionamiento de la Aplicación}
+De forma de asegurar el correcto funcionamiento de la aplicación son llevados adelante casos de prueba de entrega. Según \cite{Som05} "\ldots Las pruebas de entrega, “pruebas funcionales” o “pruebas de caja negra”, son aquellas en las que solo interesan las funcionalidades del sistema y no su implementación. En otras palabras, se valida que el sistema satisfaga sus requerimientos \ldots".
+Las fichas de Casos de Prueba se encuentra ubicadas en el Anexo \ref{CasosPrueba}. Los casos de pruebas son ejecutados por el único usuario del sistema, el fabricante de cerveza Artesanal. Al final de cada ficha bajo el título de ``Evidencias'', se ubica un hipervínculo a un vídeo, donde podrá observarse la ejecución de la prueba.
+
+\subsubsection{Cálculo de Insumos}
+\par Se procedió a realizar la validación de los cálculos de insumos implementados mediante el uso de recetas provistas por los directores. Es de resaltar que en el cálculo de insumos utilizado para las mismas se lleva adelante un procedimiento diferente en el cual no es tenido en cuenta el extracto potencial máximo de cada malta, asumiendo así este potencial como del 100\%. Siendo que los extractos potenciales se encuentran en el intervalo de 70\% a 85\%, los valores aquí calculados serán entre un 15\% a un 30\% mayores según el caso. Tomando en cuenta lo antes mencionado, se consideran como válidos los cálculos que se encuentren dentro de estos intervalos.
+
+%; Parte de un valor de relación agua-grano (aproximación al objetivo de densidad), busca un resultado de mosto final prefijado y para encontrarlo utiliza valores incrementales de cantidad total de insumo hasta que el volumen de salida bajo esa relación satisfaga el objetivo; luego, sobre este total de insumo aplica los porcentajes de la receta para establecer cuanto debe utilizar de cada grano. Por tanto, los valores obtenidos mediante los cálculos aquí implementados variaran respecto de los provistos debido a la injerencia de la ponderación del extracto potencial máximo de cada grano
+
+En la tabla \ref{tab:TablaRecetaExperimentos}, se presentan las recetas y la comparativa de los valores de insumos allí presentes con los obtenidos por la aplicación.
+\begin{table}[h]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|}
+    \hline
+        Nombre Receta & Granos & Porcentaje & Volumen & Densidad Objetivo & Insumo Receta & Insumo Calculado \\
+        \hline
+        \hline
+        \multirow{2}{2cm}{English Pale Ale} & Pilsen &\multicolumn{1}{c|}{86\%}  &\multirow{2}{2cm}{48.6 litros}  &\multirow{2}{2cm}{1.090} & \multicolumn{1}{c|}{14.04 Kg.} & \multicolumn{1}{c|}{17.34 Kg.}\\
+         & Munich & \multicolumn{1}{c|}{14\%} & & &\multicolumn{1}{c|}{2.35 Kg.} &\multicolumn{1}{c|}{2.86 Kg.} \\
+        \hline
+        \multirow{3}{2cm}{American Blonde Ale} & Pilsen &\multicolumn{1}{c|}{86\%}  &\multirow{3}{2cm}{38.7 litros}  &\multirow{3}{2cm}{1.080} & \multicolumn{1}{c|}{9.47 Kg.} & \multicolumn{1}{c|}{12.28 Kg.}\\
+         & Malted Wheat & \multicolumn{1}{c|}{7\%} & & &\multicolumn{1}{c|}{0.87 Kg.} &\multicolumn{1}{c|}{0.96 Kg.}\\ 
+         & Carapils & \multicolumn{1}{c|}{7\%} & & & \multicolumn{1}{c|}{0.87 Kg.} &\multicolumn{1}{c|}{1.12 Kg.} \\
+        \hline
+        \multirow{5}{2cm}{New England IPA} & Pilsen &\multicolumn{1}{c|}{80\%}  &\multirow{5}{2cm}{43.7 litros}  &\multirow{5}{2cm}{1.090} & \multicolumn{1}{c|}{9.6 Kg.} & \multicolumn{1}{c|}{14.51 Kg.}\\
+         & Oats & \multicolumn{1}{c|}{10\%} & & &\multicolumn{1}{c|}{1.26 Kg.} &\multicolumn{1}{c|}{1.84 Kg.} \\
+        & Carapils & \multicolumn{1}{c|}{4\%} & & &\multicolumn{1}{c|}{0.61 Kg.} &\multicolumn{1}{c|}{0.98 Kg.} \\
+        & Wheat & \multicolumn{1}{c|}{3\%} & & &\multicolumn{1}{c|}{0.5 Kg.} &\multicolumn{1}{c|}{0.7 Kg.} \\
+        & Corn Sugar & \multicolumn{1}{c|}{3\%} & & &\multicolumn{1}{c|}{0.6 Kg.} &\multicolumn{1}{c|}{0.6 Kg.} \\
+        \hline
+        \multirow{4}{2cm}{Session IPA} & Pilsen &\multicolumn{1}{c|}{62\%}  &\multirow{4}{2cm}{40.5 litros}  &\multirow{4}{2cm}{1.070} & \multicolumn{1}{c|}{7.69 Kg.} & \multicolumn{1}{c|}{8.11 Kg.}\\
+         & Cara Munich & \multicolumn{1}{c|}{23.5\%} & & &\multicolumn{1}{c|}{2.9 Kg.} &\multicolumn{1}{c|}{3.47 Kg.} \\
+        & Crystal Munich & \multicolumn{1}{c|}{5.5\%} & & &\multicolumn{1}{c|}{0.73 Kg.} &\multicolumn{1}{c|}{0.83 Kg.} \\
+        & Carapils & \multicolumn{1}{c|}{9\%} & & &\multicolumn{1}{c|}{1.11 Kg.} &\multicolumn{1}{c|}{1.32 Kg.} \\
+        \hline
+        \multirow{8}{2cm}{Hopfen - Weizen} & Pilsen &\multicolumn{1}{c|}{44.44\%}  &\multirow{8}{2cm}{44.15 litros}  &\multirow{8}{2cm}{1.070} & \multicolumn{1}{c|}{5.99 Kg.} & \multicolumn{1}{c|}{6.33 Kg.}\\
+         & Malted Wheat & \multicolumn{1}{c|}{33.33\%} & & &\multicolumn{1}{c|}{4.5 Kg.} &\multicolumn{1}{c|}{4.58 Kg.} \\
+         & Carapils & \multicolumn{1}{c|}{7.4\%} & & &\multicolumn{1}{c|}{0.99 Kg.} &\multicolumn{1}{c|}{1.19 Kg.} \\
+         & Caramel Wheat & \multicolumn{1}{c|}{3.7\%} & & &\multicolumn{1}{c|}{0.49 Kg.} &\multicolumn{1}{c|}{0.61 Kg.} \\
+         & Biscuit & \multicolumn{1}{c|}{3.7\%} & & &\multicolumn{1}{c|}{0.49 Kg.} &\multicolumn{1}{c|}{0.54 Kg.} \\
+         & Ruby & \multicolumn{1}{c|}{3\%} & & &\multicolumn{1}{c|}{0.4 Kg.} &\multicolumn{1}{c|}{0.44 Kg.} \\
+         & Munich Best Malz & \multicolumn{1}{c|}{2.2\%} & & &\multicolumn{1}{c|}{0.297 Kg.} &\multicolumn{1}{c|}{0.32 Kg.} \\
+         & Chocolate & \multicolumn{1}{c|}{1.5\%} & & &\multicolumn{1}{c|}{0.2 Kg.} &\multicolumn{1}{c|}{0.24 Kg.} \\
+        \hline
+    \end{tabularx}
+    \caption{Recetas empleadas para experimentos}
+    \label{tab:TablaRecetaExperimentos}
+\end{table}
+\par Siendo que los valores presentados en la tabla \ref{tab:TablaRecetaExperimentos} satisfacen los objetivos antes presentados, se asume como exitosa esta prueba.
+
+\subsection{Cálculo de Rendimiento}
+Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de densidad objetivo, volumen y cantidad de insumos utilizadas y proporcionados por el calculo de insumos, se valida el correcto funcionamiento si la ecuación expresa el mismo rendimiento que el utilizado para el cálculo de insumos.
 
 
-\section{Validación de cálculos}
-\par En esta sección se analizarán los cálculos de estimación de cantidad de insumos con las distintas aproximaciones implementadas y del rendimiento del equipo.
+\begin{table}[h]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+        Densidad & Volumen & KgTotal de Insumos & Rendimiento utilizado & Rendimiento Calculado \\
+        \hline
+        \hline
+        
+    \end{tabularx}
+    \caption{Caption}
+    \label{tab:my_label}
+\end{table}
 
-\section{Pruebas}
-\par En esta sección se exponen un conjunto de pruebas realizadas con el fin de asegurar que los resultados obtenidos se ajusten a la base teórica utilizada
-%validar el usuario lo acepta, verificar comprobar que lo que haces anda bien, tiene resultados correctos
+
+\section{Pruebas de campo}
+\par En esta sección se exponen un conjunto de pruebas experimentales realizadas con el fin de demostrar que los resultados obtenidos por el sistema cumplen los requerimientos. 
+
+    \subsection{Metodología de pruebas}
+        \par Para llevar a cabo las pruebas se utilizó como macerador un termo\footnote{Termo, adaptación doméstica de un frasco de Dewar} con capacidad volumétrica de 2 litros. Al mismo se le realizaron orificios pasantes de forma de incorporar en el interior los cuatro sensores de temperatura sumergibles.
+        
+        \par Los sensores introducidos fueron fijados por medio de pegamento de base siliconada en diferentes posiciones (Figura \ref{}). Con el fin de disminuir la pérdida de calor producida por las perforaciones realizadas para introducir estos sensores, se procedió a aplicar sellador siliconado  en los orificios con el fin de mejorar el aislamiento térmico.
+        
+        \par El termo utilizado cuenta con pico vertedor. El mismo facilita la extracción de muestras sin la necesidad de exponer toda la templa a la temperatura ambiente que produciría la disminución de temperatura y, por tanto, la alteración del experimento.
+        
+        \par Las mediciones de pH se realizaron a partir de una muestra alojada en un recipiente de aluminio refrigerado, con la intención de disminuir la temperatura de la solución a veinticinco grados (ver Tabla \ref{tablePhvsTemp}). Dentro del mismo también se aloja uno de los sensores de temperatura para indicar en el sistema cual fue la temperatura al momento de la medición. 
+        
+        \par Para los experimentos se optó por utilizar intervalos de medición de un minuto para la medición de temperatura y diez para la obtención de la medida de pH. Si bien el sistema soporta mayor frecuencia de medición de pH, la limitante del volumen del recipiente empleado para el experimento no permite obtener una cantidad de templa de la cual se puedan extraer muchas muestras, sin que el total de estas extracciones afecte al resultado final.
+        
+        \par La cantidad de pruebas se definieron acorde a realizar cinco experimentos por cada tipo de maceración planteada. A partir de tres experimentos, el sistema comienza a realizar ajustes sobre el calculo de insumos. Luego, con cinco, es posible observar el ajuste de este valor, y un número suficiente para el relleno de las gráficas estadísticas. 
+        
+    \subsection{Recetas y tipos de maceración utilizadas}
+        \par Para llevar a cabo los experimentos se planificaron las siguientes maceraciones:
+            \subsubsection{Pilsen Lager - Simple} %por dar un ejemplo
+                \begin{itemize}
+                    \item Tipo de Maceración: Simple
+                    \item Volumen: 2 litros
+                    \item Densidad específica deseada: 1.045
+                    \item Granos:
+                        \begin{itemize}
+                            \item Nombre: Pilsener \\
+                                Porcentaje de utilización: 100\% \\
+                                Extracto Potencial: 81\%
+                        \end{itemize}
+                    \item Intervalos:
+                        \begin{itemize}
+                            \item Duración: 60 minutos \\
+                             Temperatura objetivo: 62$^{\circ}$C \\
+                             Desvío de temperatura tolerado: ±3$^{\circ}$C \\
+                             pH: 5.4 \\
+                             Desvío de pH tolerado: ±0.2 \\
+                        \end{itemize}
+                \end{itemize}
+                
+            \subsubsection{Pale Ale - Escalonada}
+            
+    \subsection{Valores calculados para cada receta}
+    \par A continuación se visualizan los valores calculados por la aplicación para conocer la cantidad de insumos necesaria para realizar la maceración según la planificación correspondiente.
+        \subsubsection{Pilsen Lager - Simple}
+            \begin{itemize}
+                \item Cantidad de grano:
+                    \begin{itemize}
+                        \item Pilsener: xxx kg
+                    \end{itemize}
+                \item Volumen y temperatura de agua a adicionar en cada etapa:
+                    \begin{itemize}
+                        \item Primer Intervalo: xxx litros a xx $^{\circ}$C
+                    \end{itemize}
+            \end{itemize}
+    
+    \subsection{Resultados obtenidos}
+        \par Para cada experimento realizado se muestran las gráficas de temperatura y pH obtenidas ?? (son muchas imágenes, creo), el volumen final, la densidad especifica y el rendimiento.
+        
+        \subsubsection{Pilsen Lager - Simple}
+            %Experimento 1
+            %Experimento 2
+            %Experimento 3
+            %Valores generales/promedio
+        
+        \subsubsection{Pale Ale - Escalonada}
+            %Experimento 1
+            %Experimento 2
+            %Experimento 3
+            %Valores generales/promedio
+        
+        
+        
+%validar el usuario lo acepta, verificar comprobar que lo que haces anda bien, tiene resultados correctos 
