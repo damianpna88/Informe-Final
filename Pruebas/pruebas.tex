@@ -1,4 +1,5 @@
 \chapter{Verificación y Validación}
+\label{CapituloPruebas}
 \par En este capitulo se exponen los diferentes ciclos de verificación y validación llevados adelante durante el desarrollo de este proyecto.
 \par En primer lugar son presentadas las inspecciones realizadas sobre el sistema durante su desarrollo. Luego, son expuestas una serie de pruebas aplicadas sobre el producto final con el objetivo de asegurar la correcta ejecución y despliegue de resultados. Finalmente, son exhibidas pruebas de campo realizadas a partir de diferentes experimentos de maceración, monitoreados por el sistema, de manera de validar que el mismo se comporte según lo esperado.
 
@@ -114,18 +115,21 @@ En la tabla \ref{tab:TablaRecetaExperimentos}, se presentan las recetas y la com
 \subsection{Cálculo de Rendimiento}
 Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de densidad objetivo, volumen y cantidad de insumos utilizadas y proporcionados por el calculo de insumos, se valida el correcto funcionamiento si la ecuación expresa el mismo rendimiento que el utilizado para el cálculo de insumos.
 
-
 \begin{table}[h]
     \centering
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
-        Densidad & Volumen & KgTotal de Insumos & Rendimiento utilizado & Rendimiento Calculado \\
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+        Densidad & Volumen & KgTotal de Insumos & KgTotal de extracto & Rendimiento utilizado & Rendimiento Calculado \\
         \hline
         \hline
-        
+        1.070 & 1.1 litros & 0.366 & 0.288 & 0.70 & 0.7038\\ \hline
+        1.070 & 40.55 litros & 13.73 & 10.98 & 0.70 & 0.7054 \\ \hline
+        1.090 & 43.7 litros & 18.62 & 14.98 & 0.70 & 0.6976 \\ \hline
     \end{tabularx}
-    \caption{Caption}
-    \label{tab:my_label}
+    \caption{Tabla de validación del cálculo de rendimiento  }
+    \label{tab:rendimiento}
 \end{table}
+
+\par Como puede observarse en la Tabla \ref{tab:rendimiento} los valores calculados aproximan muy bien al resultado, donde la desviación procede de los redondeos utilizados en cada cálculo. Dado que el error es menor al 0.5\% se toman los valores obtenidos como aceptables, concluyendo la validación del cálculo.
 
 
 \section{Pruebas de campo}
