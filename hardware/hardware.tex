@@ -2,7 +2,7 @@
 
 \par En este capítulo se analiza el componente electrónico o de hardware, de aquí en mas, estación de recolección de datos. Se aborda la elección de los elementos que la componen, el diseño de interconexión, y la descripción del software que se ejecuta dentro de la misma. Detallándose, en esta última, las funcionalidades de obtención y persistencia de datos necesarias para el funcionamiento de la estación.
 
-\section{Tecnologías Evaluadas}
+\section{Tecnologías evaluadas}
     \par Para el funcionamiento del prototipo propuesto es necesario obtener datos digitales provenientes de múltiples sensores\footnote{Dispositivo diseñado para recibir información de una magnitud del exterior y transformarla en otra magnitud, normalmente eléctrica, que seamos capaces de cuantificar y manipular} (temperatura y pH de líquidos;  temperatura y humedad ambiental); disponer de capacidad de almacenamiento para la persistencia de datos; e incorporar conectividad para transmisión de datos. De forma adicional, el componente debe poseer un tamaño reducido, de manera de no estorbar en las actividades de producción.
 
     \par Existen diferentes plataformas dentro de las cuales puede ser desarrollado un componente que cumpla los requerimientos antes mencionados. Raspberry\textsuperscript{\textregistered} y Arduino\textsuperscript{\textregistered} se destacan como las más utilizadas y con mayor comunidad, por tanto, luego se describen y comparan en detalle.
@@ -238,7 +238,7 @@
     
 \section{Implementación del diseño}
 
-    \subsection{Subcapa de Software}
+    \subsection{Subcapa de software}
         \par El siguiente diagrama de flujo (Figura \ref{FlujoPython}), muestra el funcionamiento del código desarrollado utilizando lenguaje Python cumpliendo las funcionalidades mencionadas en el apartado de diseño.
 
         \begin{figure}[H]
@@ -248,7 +248,7 @@
             \label{FlujoPython}
         \end{figure}
 
-\section{Subcapa de Hardware}
+\section{Subcapa de hardware}
     \par En las siguientes subsecciones se muestran los diagramas de conexión de cada sensor con la placa Raspberry, siguiendo el diseño general de la la Figura \ref{fig:EsquemaHardware} del Anexo.
 
     \subsection{Conexión sensor de pH}

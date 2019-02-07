@@ -1,9 +1,9 @@
-\chapter{Verificación y Validación}
+\chapter{Verificación y validación}
 \label{CapituloPruebas}
 \par En este capitulo se exponen los diferentes ciclos de verificación y validación llevados adelante durante el desarrollo de este proyecto.
 \par En primer lugar son presentadas las inspecciones realizadas sobre el sistema durante su desarrollo. Luego, son expuestas una serie de pruebas aplicadas sobre el producto final con el objetivo de asegurar la correcta ejecución y despliegue de resultados. Finalmente, son exhibidas pruebas de campo realizadas a partir de diferentes experimentos de maceración, monitoreados por el sistema, de manera de validar que el mismo se comporte según lo esperado.
 
-\section{Inspecciones del Sistema}
+\section{Inspecciones del sistema}
 
 Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron analizados los requerimientos funcionales y no funcionales, así como las especificaciones formuladas durante el diseño. De esta forma, luego de implementar e integrar funcionalidades en los componentes desarrollados se analizó la documentación de forma de asegurar que se cumpliera con todos los requisitos y requerimientos.
 \par Junto al avance del desarrollo de los componentes fueron aplicadas las siguientes pruebas estáticas de forma de comprobar que las funcionalidades cumplieran su objetivo de manera individual e integral:
@@ -62,11 +62,11 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
 
 \par En esta sección mediante distintos tipos de pruebas dinámicas son validadas las funcionalidades del sistema.
 
-\subsection{Funcionamiento de la Aplicación}
+\subsection{Funcionamiento de la aplicación}
 De forma de asegurar el correcto funcionamiento de la aplicación son llevados adelante casos de prueba de entrega. Según \cite{Som05} "\ldots Las pruebas de entrega, “pruebas funcionales” o “pruebas de caja negra”, son aquellas en las que solo interesan las funcionalidades del sistema y no su implementación. En otras palabras, se valida que el sistema satisfaga sus requerimientos \ldots".
 Las fichas de Casos de Prueba se encuentra ubicadas en el Anexo \ref{CasosPrueba}. Los casos de pruebas son ejecutados por el único usuario del sistema, el fabricante de cerveza Artesanal. Al final de cada ficha bajo el título de ``Evidencias'', se ubica un hipervínculo a un vídeo, donde podrá observarse la ejecución de la prueba.
 
-\subsubsection{Cálculo de Insumos}
+\subsubsection{Cálculo de insumos}
 \par Se procedió a realizar la validación de los cálculos de insumos implementados mediante el uso de recetas provistas por los directores. Es de resaltar que en el cálculo de insumos utilizado para las mismas se lleva adelante un procedimiento diferente en el cual no es tenido en cuenta el extracto potencial máximo de cada malta, asumiendo así este potencial como del 100\%. Siendo que los extractos potenciales se encuentran en el intervalo de 70\% a 85\%, los valores aquí calculados serán entre un 15\% a un 30\% mayores según el caso. Tomando en cuenta lo antes mencionado, se consideran como válidos los cálculos que se encuentren dentro de estos intervalos.
 
 %; Parte de un valor de relación agua-grano (aproximación al objetivo de densidad), busca un resultado de mosto final prefijado y para encontrarlo utiliza valores incrementales de cantidad total de insumo hasta que el volumen de salida bajo esa relación satisfaga el objetivo; luego, sobre este total de insumo aplica los porcentajes de la receta para establecer cuanto debe utilizar de cada grano. Por tanto, los valores obtenidos mediante los cálculos aquí implementados variaran respecto de los provistos debido a la injerencia de la ponderación del extracto potencial máximo de cada grano
@@ -112,12 +112,13 @@ En la tabla \ref{tab:TablaRecetaExperimentos}, se presentan las recetas y la com
 \end{table}
 \par Siendo que los valores presentados en la tabla \ref{tab:TablaRecetaExperimentos} satisfacen los objetivos antes presentados, se asume como exitosa esta prueba.
 
-\subsection{Cálculo de Rendimiento}
+\subsection{Cálculo de rendimiento}
 Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de densidad objetivo, volumen y cantidad de insumos utilizadas y proporcionados por el calculo de insumos, se valida el correcto funcionamiento si la ecuación expresa el mismo rendimiento que el utilizado para el cálculo de insumos.
 
 \begin{table}[h]
     \centering
     \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+        \hline
         Densidad & Volumen & KgTotal de Insumos & KgTotal de extracto & Rendimiento utilizado & Rendimiento Calculado \\
         \hline
         \hline
@@ -133,62 +134,154 @@ Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de 
 
 
 \section{Pruebas de campo}
-\par En esta sección se exponen un conjunto de pruebas experimentales realizadas con el fin de demostrar que los resultados obtenidos por el sistema cumplen los requerimientos. 
+\par En esta sección se exponen un conjunto de pruebas experimentales realizadas con el fin de demostrar que los resultados obtenidos por el sistema en el análisis y optimización de insumos cumplen los requerimientos. 
 
     \subsection{Metodología de pruebas}
-        \par Para llevar a cabo las pruebas se utilizó como macerador un termo\footnote{Termo, adaptación doméstica de un frasco de Dewar} con capacidad volumétrica de 2 litros. Al mismo se le realizaron orificios pasantes de forma de incorporar en el interior los cuatro sensores de temperatura sumergibles.
+        \par Con la finalidad de ejecutar las pruebas se utilizó como macerador un termo\footnote{Termo, adaptación doméstica de un frasco de Dewar} con capacidad volumétrica de 2 litros. Al mismo se le realizaron orificios pasantes de forma de incorporar en su interior los cuatro sensores de temperatura sumergibles, (Figura \ref{fig:ConstrucMacerador}).
         
-        \par Los sensores introducidos fueron fijados por medio de pegamento de base siliconada en diferentes posiciones (Figura \ref{}). Con el fin de disminuir la pérdida de calor producida por las perforaciones realizadas para introducir estos sensores, se procedió a aplicar sellador siliconado  en los orificios con el fin de mejorar el aislamiento térmico.
+        \par Los sensores introducidos fueron fijados por medio de pegamento de base siliconada en diferentes posiciones (Figura \ref{fig:ConstrucMacerador}). Con la finalidad de disminuir la pérdida de calor producida por las perforaciones realizadas para introducir estos sensores, se procedió a aplicar sellador siliconado  en los orificios.
         
         \par El termo utilizado cuenta con pico vertedor. El mismo facilita la extracción de muestras sin la necesidad de exponer toda la templa a la temperatura ambiente que produciría la disminución de temperatura y, por tanto, la alteración del experimento.
         
-        \par Las mediciones de pH se realizaron a partir de una muestra alojada en un recipiente de aluminio refrigerado, con la intención de disminuir la temperatura de la solución a veinticinco grados (ver Tabla \ref{tablePhvsTemp}). Dentro del mismo también se aloja uno de los sensores de temperatura para indicar en el sistema cual fue la temperatura al momento de la medición. 
+        \par En pruebas durante la construcción del macerador, se identificó que el mismo perdía temperatura a un ritmo mayor al aceptable. Por tanto, se decidió colocar el mismo dentro de un bolso térmico de manera de aumentar el aislamiento térmico. (Figura \ref{fig:ConstrucAislamTerm}).
         
-        \par Para los experimentos se optó por utilizar intervalos de medición de un minuto para la medición de temperatura y diez para la obtención de la medida de pH. Si bien el sistema soporta mayor frecuencia de medición de pH, la limitante del volumen del recipiente empleado para el experimento no permite obtener una cantidad de templa de la cual se puedan extraer muchas muestras, sin que el total de estas extracciones afecte al resultado final.
+        \par Las mediciones de pH se realizaron a partir de una muestra alojada en un recipiente de aluminio refrigerado\ref{fig:MedicPH}, con la intención de disminuir la temperatura de la solución a veinticinco grados (ver Tabla \ref{tablePhvsTemp}). De forma adicional, dentro del mismo se aloja un sensor de temperatura con el fin de indicar la temperatura de la templa al momento de la medición de pH.
         
-        \par La cantidad de pruebas se definieron acorde a realizar cinco experimentos por cada tipo de maceración planteada. A partir de tres experimentos, el sistema comienza a realizar ajustes sobre el calculo de insumos. Luego, con cinco, es posible observar el ajuste de este valor, y un número suficiente para el relleno de las gráficas estadísticas. 
+        \par Para la realización de los experimentos se optó por utilizar intervalos de medición de un minuto para la medición de temperatura y diez para la obtención de la medida de pH. Si bien el sistema soporta mayor frecuencia de medición de pH, la limitante del volumen del recipiente empleado para el experimento no permite obtener una cantidad de templa de la cual se puedan extraer demasiadas muestras sin que el total de estas extracciones afecte al resultado final.
         
+        \par La cantidad de pruebas se definieron acorde a la realización de cinco experimentos por cada tipo de maceración planteada. A partir de tres experimentos, el sistema comienza a realizar ajustes sobre el calculo de insumos. Luego, con cinco, es posible observar el ajuste de este valor.
+        
+        \par La malta utilizada para todos los experimentos proviene del mismo lote, y es resguardada en las mismas condiciones. De esta manera puede asegurarse que los cambios en el rendimiento obtenido en los experimentos se encuentra únicamente influenciado por la cantidad de insumo utilizado. De esta manera pueden ser planteados los experimentos como en igualdad de condiciones.
+        
+        En el Anexo \ref{AnexoFotografias} se ubican una serie de imágenes relacionadas a la construcción del sistema, y a los procedimiento involucrados en el proceso de maceración.
     \subsection{Recetas y tipos de maceración utilizadas}
         \par Para llevar a cabo los experimentos se planificaron las siguientes maceraciones:
-            \subsubsection{Pilsen Lager - Simple} %por dar un ejemplo
+            \subsubsection{Pilsen Lager - Simple} 
                 \begin{itemize}
                     \item Tipo de Maceración: Simple
                     \item Volumen: 2 litros
-                    \item Densidad específica deseada: 1.045
+                    \item Densidad específica deseada: 1.070
                     \item Granos:
                         \begin{itemize}
                             \item Nombre: Pilsener \\
                                 Porcentaje de utilización: 100\% \\
-                                Extracto Potencial: 81\%
+                                Extracto Potencial: 80\%
                         \end{itemize}
                     \item Intervalos:
                         \begin{itemize}
                             \item Duración: 60 minutos \\
-                             Temperatura objetivo: 62$^{\circ}$C \\
-                             Desvío de temperatura tolerado: ±3$^{\circ}$C \\
+                             Temperatura objetivo: 65°C \\
+                             Desvío de temperatura tolerado: ±3°C \\
                              pH: 5.4 \\
                              Desvío de pH tolerado: ±0.2 \\
                         \end{itemize}
                 \end{itemize}
                 
-            \subsubsection{Pale Ale - Escalonada}
-            
+                \subsubsection{Pilsen Lager - Escalonada} 
+                \begin{itemize}
+                    \item Tipo de Maceración: Escalonada
+                    \item Volumen: 2 litros
+                    \item Densidad específica deseada: 1.070
+                    \item Granos:
+                        \begin{itemize}
+                            \item Nombre: Pilsener \\
+                                Porcentaje de utilización: 100\% \\
+                                Extracto Potencial: 80\%
+                        \end{itemize}
+                    \item Intervalos:
+                        \begin{itemize}
+                            \item Duración: 20 minutos \\
+                             Temperatura objetivo: 45°C \\
+                             Desvío de temperatura tolerado: ±3°C \\
+                             pH: 5.4 \\
+                             Desvío de pH tolerado: ±0.2 \\
+                             \item Duración: 20 minutos \\
+                             Temperatura objetivo: 55°C \\
+                             Desvío de temperatura tolerado: ±3°C \\
+                             pH: 5.4 \\
+                             Desvío de pH tolerado: ±0.2 \\
+                             \item Duración: 20 minutos \\
+                             Temperatura objetivo: 65°C \\
+                             Desvío de temperatura tolerado: ±3°C \\
+                             pH: 5.4 \\
+                             Desvío de pH tolerado: ±0.2 \\
+                        \end{itemize}
+                \end{itemize}
     \subsection{Valores calculados para cada receta}
     \par A continuación se visualizan los valores calculados por la aplicación para conocer la cantidad de insumos necesaria para realizar la maceración según la planificación correspondiente.
         \subsubsection{Pilsen Lager - Simple}
-            \begin{itemize}
-                \item Cantidad de grano:
-                    \begin{itemize}
-                        \item Pilsener: xxx kg
-                    \end{itemize}
-                \item Volumen y temperatura de agua a adicionar en cada etapa:
-                    \begin{itemize}
-                        \item Primer Intervalo: xxx litros a xx $^{\circ}$C
-                    \end{itemize}
-            \end{itemize}
     
+    \begin{minipage}{0.95\textwidth}    
+    
+        \centering
+        \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+             \hline
+             \multicolumn{1}{|c|}{Experimentos} & \multirow{1}{2cm}{Rendimiento Utilizado} &\multirow{1}{2cm}{Insumos Utilizados}  & \multirow{1}{2cm}{Rendimiento Obtenido} &\multirow{1}{2cm}{Insumos Ajustados}\\
+             & & & &\\
+             \hline
+             \hline
+             \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{65.3\%} &\multicolumn{1}{c|}{-} \\
+             \hline
+             \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{70\%}  & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{62.2\%} &\multicolumn{1}{c|}{-} \\
+             \hline
+             \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{60.3\%} &\multicolumn{1}{c|}{0.4 Kg.} \\
+             \hline
+             \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+        \end{tabularx}
+        \captionof{table}{Tabla de resultados Pilsen Lager Simple}
+        \label{tab:ResultadosPilsenSimple}
+    \end{minipage}
+    
+ \subsubsection{Pilsen Lager - Escalonada}
+    
+    \begin{minipage}{0.95\textwidth}    
+    
+        \centering
+        \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+             \hline
+             \multicolumn{1}{|c|}{Experimentos} & \multirow{1}{2cm}{Rendimiento Utilizado} &\multirow{1}{2cm}{Insumos Utilizados}  & \multirow{1}{2cm}{Rendimiento Obtenido} &\multirow{1}{2cm}{Insumos Ajustados}\\
+             & & & &\\
+             \hline
+             \hline
+             \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{65.3\%} &\multicolumn{1}{c|}{-} \\
+             \hline
+             \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{70\%}  & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{62.2\%} &\multicolumn{1}{c|}{-} \\
+             \hline
+             \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{60.3\%} &\multicolumn{1}{c|}{-} \\
+             \hline
+             \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+             \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \hline
+        \end{tabularx}
+        \captionof{table}{Tabla de resultados Pilsen Lager Escalonada}
+        \label{tab:ResultadosPilsenEscalonada}
+    \end{minipage}
     \subsection{Resultados obtenidos}
-        \par Para cada experimento realizado se muestran las gráficas de temperatura y pH obtenidas ?? (son muchas imágenes, creo), el volumen final, la densidad especifica y el rendimiento.
+        \par Para cada receta realizada se muestran las gráficas de promedio de temperatura y pH obtenidas provistas por la aplicación.
         
         \subsubsection{Pilsen Lager - Simple}
             %Experimento 1
@@ -196,12 +289,19 @@ Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de 
             %Experimento 3
             %Valores generales/promedio
         
-        \subsubsection{Pale Ale - Escalonada}
+        \subsubsection{Pilsen Lager - Escalonada}
             %Experimento 1
             %Experimento 2
             %Experimento 3
             %Valores generales/promedio
-        
+            
+    \subsection{Evaluación}
+    \par En la anterior subsección se evidenció que el ajuste de la cantidad de insumos realizada por el sistema produce resultados correctos, esto es, cuando la densidad es menor a la deseada incrementa la cantidad de granos de manera de compensar este sub-rendimiendo, y lo mismo ocurre en caso contrario con un sobre-rendimiento.
+    \par  Si se observan los datos arrojados por el sistema en cuanto al ajuste del insumo, puede verse como los valores tienden a converger a un valor estable. Esta convergencia representa el objetivo de esta herramienta, la cual es asistir al productor a partir de una herramienta de optimización de insumos en función de un ajuste utilizando el rendimiento del equipo.
+    \par Cabe señalar que si bien pueden parecer reducidos los cambios en los valores de insumo, los mismos corresponden a un preparado de un volumen reducido. Estos cambios crecerán en forma proporcional al tamaño del preparado, constituyéndose en valores mas significativos conforme a este incremento.
+    \par Por tanto, puede concluirse que esta funcionalidad del sistema se comporta de la manera esperada, y por tanto, correcta. 
+    
+    
         
         
 %validar el usuario lo acepta, verificar comprobar que lo que haces anda bien, tiene resultados correctos 
