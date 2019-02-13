@@ -14,7 +14,7 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
 \end{itemize}
 
 \par La tabla \ref{tab:TablaChequeoRequerimientos} refleja el cumplimiento de los requerimientos del sistema.
- \begin{table}[h]
+ \begin{table}[H]
      \centering
      \begin{tabularx}{\textwidth}{|X|X|}
      \hline
@@ -43,6 +43,17 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
         \hline
         \multicolumn{1}{|c|}{RF011}  & Luego de 3 experimentos de maceraciones concretados para una misma maceración, el sistema comenzará a optimizar los insumos.Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
+        \end{tabularx}
+        \caption{Tabla de chequeo de requerimientos}
+        \label{tab:TablaChequeoRequerimientos}
+        \end{table}
+        
+         \begin{table}[H]
+        \centering
+        \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        \multicolumn{1}{|c|}{Requerimiento} & \multicolumn{1}{|c|}{Verificación}\\
+        \hline
         \multicolumn{1}{|c|}{RF012}  & Durante el monitoreo de un experimento, el sistema permite configurar que sensores intervienen en el calculo medidas de representatividad, además de cambiar la forma en que se calcula esta. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
         \multicolumn{1}{|c|}{RNF001}  & La aplicación utiliza un diseño intuitivo y dinámica, la información es presentada en forma clara (sin ambigüedades). Mencionado en el capítulo \textit{\textbf{Software}}. \\
@@ -55,7 +66,6 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
         \hline
      \end{tabularx}
      \caption{Tabla de chequeo de requerimientos}
-     \label{tab:TablaChequeoRequerimientos}
  \end{table}
 
 \section{Pruebas de ejecución y despliegue de resultados}
@@ -63,16 +73,16 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
 \par En esta sección mediante distintos tipos de pruebas dinámicas son validadas las funcionalidades del sistema.
 
 \subsection{Funcionamiento de la aplicación}
-De forma de asegurar el correcto funcionamiento de la aplicación son llevados adelante casos de prueba de entrega. Según \cite{Som05} "\ldots Las pruebas de entrega, “pruebas funcionales” o “pruebas de caja negra”, son aquellas en las que solo interesan las funcionalidades del sistema y no su implementación. En otras palabras, se valida que el sistema satisfaga sus requerimientos \ldots".
+De forma de asegurar el correcto funcionamiento de la aplicación son llevados adelante casos de prueba de tipo ``Entrega''. Según \cite{Som05} "\ldots Las pruebas de entrega, “pruebas funcionales” o “pruebas de caja negra”, son aquellas en las que solo interesan las funcionalidades del sistema y no su implementación. En otras palabras, se valida que el sistema satisfaga sus requerimientos \ldots".
 Las fichas de Casos de Prueba se encuentra ubicadas en el Anexo \ref{CasosPrueba}. Los casos de pruebas son ejecutados por el único usuario del sistema, el fabricante de cerveza Artesanal. Al final de cada ficha bajo el título de ``Evidencias'', se ubica un hipervínculo a un vídeo, donde podrá observarse la ejecución de la prueba.
 
-\subsubsection{Cálculo de insumos}
+\subsection{Cálculo de insumos}
 \par Se procedió a realizar la validación de los cálculos de insumos implementados mediante el uso de recetas provistas por los directores. Es de resaltar que en el cálculo de insumos utilizado para las mismas se lleva adelante un procedimiento diferente en el cual no es tenido en cuenta el extracto potencial máximo de cada malta, asumiendo así este potencial como del 100\%. Siendo que los extractos potenciales se encuentran en el intervalo de 70\% a 85\%, los valores aquí calculados serán entre un 15\% a un 30\% mayores según el caso. Tomando en cuenta lo antes mencionado, se consideran como válidos los cálculos que se encuentren dentro de estos intervalos.
 
 %; Parte de un valor de relación agua-grano (aproximación al objetivo de densidad), busca un resultado de mosto final prefijado y para encontrarlo utiliza valores incrementales de cantidad total de insumo hasta que el volumen de salida bajo esa relación satisfaga el objetivo; luego, sobre este total de insumo aplica los porcentajes de la receta para establecer cuanto debe utilizar de cada grano. Por tanto, los valores obtenidos mediante los cálculos aquí implementados variaran respecto de los provistos debido a la injerencia de la ponderación del extracto potencial máximo de cada grano
 
 En la tabla \ref{tab:TablaRecetaExperimentos}, se presentan las recetas y la comparativa de los valores de insumos allí presentes con los obtenidos por la aplicación.
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|}
     \hline
@@ -115,7 +125,7 @@ En la tabla \ref{tab:TablaRecetaExperimentos}, se presentan las recetas y la com
 \subsection{Cálculo de rendimiento}
 Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de densidad objetivo, volumen y cantidad de insumos utilizadas y proporcionados por el calculo de insumos, se valida el correcto funcionamiento si la ecuación expresa el mismo rendimiento que el utilizado para el cálculo de insumos.
 
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
         \hline
@@ -131,6 +141,35 @@ Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de 
 \end{table}
 
 \par Como puede observarse en la Tabla \ref{tab:rendimiento} los valores calculados aproximan muy bien al resultado, donde la desviación procede de los redondeos utilizados en cada cálculo. Dado que el error es menor al 0.5\% se toman los valores obtenidos como aceptables, concluyendo la validación del cálculo.
+
+\subsection{Pruebas de velocidad de medición}
+\par
+Para la realización de estas pruebas se llevó a cabo un experimento para el cual se definió el inicio de un experimento de medición con una duración de 10 minutos, e intervalos de medición de 15 segundos y 120 segundos para las mediciones de temperatura y pH respectivamente.
+\par 
+En primer lugar, en la figura \ref{fig:pruebasdeInsercion} se presenta una captura tomada de la herramienta \textit{phpmyadmin}\footnote{phpMyAdmin es una herramienta escrita en \textit{PHP} para manejar la administración de \textit{MySQL} a través de páginas web, \url{https://www.phpmyadmin.net/}}. En la figura \ref{fig:pruebasdeInsercionFechayHora} se presenta un acercamiento (zoom) de la columna ``fechayhora'' en la cual  pueden observarse los tiempos en los cuales las inserciones fueron realizadas, siendo que el intervalo de medición de temperatura (el mínimo entre ambos intervalos) fue definido en 15 segundos, las diferencias entre una medición y la siguiente toman valores que van entre los 15 y los 22 segundos. En forma consecuente, se establece que un intervalo de medición de temperatura mínimo debe ser de un valor no inferior a los 22 segundos, de esta forma se asegura un intervalo de duración constante entre mediciones.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Pruebas/Inserciones.jpg}
+    \caption{Captura de mediciones realizadas para la prueba de velocidad}
+    \label{fig:pruebasdeInsercion}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Pruebas/InsercionesZOOM.jpg}
+    \caption{Acercamiento de ``fechayhora'' de la tabla de mediciones de pruebas de velocidad}
+    \label{fig:pruebasdeInsercionFechayHora}
+\end{figure}
+\par
+Luego, mediante la herramienta \textit{Postman}, fueron realizados tres experimentos. Estos consisten en realizar la consulta de obtención de mediciones a la API REST. En la figura \ref{fig:pruebasdeConsulta} se presentan los resultados, donde puede evidenciarse una demora con duraciones entre 13 ms y 100 ms para obtener la respuesta. A a partir de este valor, se asume a la obtención de datos de la API como instantánea.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{Pruebas/postman3en1b.jpg}
+    \caption{Captura de consulta de mediciones para la prueba de velocidad}
+    \label{fig:pruebasdeConsulta}
+\end{figure}
+
+\par
+Concretadas estas pruebas con un valor de 22 segundos como mínimo para intervalo de medición de temperatura. Se asume satisfactorios los resultados, cumpliendo de esta manera el requerimiento no funcional que motivo la misma.
 
 
 \section{Pruebas de campo}
@@ -149,7 +188,7 @@ Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de 
         
         \par Para la realización de los experimentos se optó por utilizar intervalos de medición de un minuto para la medición de temperatura y diez para la obtención de la medida de pH. Si bien el sistema soporta mayor frecuencia de medición de pH, la limitante del volumen del recipiente empleado para el experimento no permite obtener una cantidad de templa de la cual se puedan extraer demasiadas muestras sin que el total de estas extracciones afecte al resultado final.
         
-        \par La cantidad de pruebas se definieron acorde a la realización de cinco experimentos por cada tipo de maceración planteada. A partir de tres experimentos, el sistema comienza a realizar ajustes sobre el calculo de insumos. Luego, con cinco, es posible observar el ajuste de este valor.
+        \par La cantidad de pruebas se definieron acorde a la realización de diez experimentos por cada tipo de maceración planteada. Es a partir de tres experimentos, que el sistema comienza a realizar ajustes sobre el calculo de insumos. Luego, con diez, es posible observar el ajuste de este valor.
         
         \par La malta utilizada para todos los experimentos proviene del mismo lote, y es resguardada en las mismas condiciones. De esta manera puede asegurarse que los cambios en el rendimiento obtenido en los experimentos se encuentra únicamente influenciado por la cantidad de insumo utilizado. De esta manera pueden ser planteados los experimentos como en igualdad de condiciones.
         
@@ -220,25 +259,25 @@ Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de 
              & & & &\\
              \hline
              \hline
-             \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{65.3\%} &\multicolumn{1}{c|}{-} \\
+             \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{60.13\%} &\multicolumn{1}{c|}{-} \\
              \hline
-             \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{70\%}  & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{62.2\%} &\multicolumn{1}{c|}{-} \\
+             \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{70\%}  & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{61.16\%} &\multicolumn{1}{c|}{-} \\
              \hline
-             \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{60.3\%} &\multicolumn{1}{c|}{0.4 Kg.} \\
+             \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{62.54\%} &\multicolumn{1}{c|}{0.37356 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{62.54\%}  & \multicolumn{1}{c|}{0.4 Kg.} &\multicolumn{1}{c|}{63.75\%} &\multicolumn{1}{c|}{0.37777 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{63.75\%}  & \multicolumn{1}{c|}{0.37777 Kg.} &\multicolumn{1}{c|}{64.89\%} &\multicolumn{1}{c|}{0.38221 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{64.89\%}  & \multicolumn{1}{c|}{0.38221 Kg.} &\multicolumn{1}{c|}{66.17\%} &\multicolumn{1}{c|}{0.39111 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{66.17\%}  & \multicolumn{1}{c|}{0.39111 Kg.} &\multicolumn{1}{c|}{66.78\%} &\multicolumn{1}{c|}{0.37673 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{66.78\%}  & \multicolumn{1}{c|}{0.37673 Kg.} &\multicolumn{1}{c|}{66.99\%} &\multicolumn{1}{c|}{0.36486 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{66.99\%}  & \multicolumn{1}{c|}{0.36486 Kg.} &\multicolumn{1}{c|}{67.14\%} &\multicolumn{1}{c|}{0.36401 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{67.14\%} & \multicolumn{1}{c|}{0.36401 Kg.} &\multicolumn{1}{c|}{67.48\%} &\multicolumn{1}{c|}{0.37286 Kg.} \\
              \hline
         \end{tabularx}
         \captionof{table}{Tabla de resultados Pilsen Lager Simple}
@@ -256,48 +295,37 @@ Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de 
              & & & &\\
              \hline
              \hline
-             \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{65.3\%} &\multicolumn{1}{c|}{-} \\
+             \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{51.92\%} &\multicolumn{1}{c|}{-} \\
              \hline
              \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{70\%}  & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{62.2\%} &\multicolumn{1}{c|}{-} \\
              \hline
-             \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{60.3\%} &\multicolumn{1}{c|}{-} \\
+             \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{65.3\%} &\multicolumn{1}{c|}{0.37356 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{62.54\%}  & \multicolumn{1}{c|}{0.37356 Kg.} &\multicolumn{1}{c|}{64.27\%} &\multicolumn{1}{c|}{0.36529 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{62.97\%}  & \multicolumn{1}{c|}{0.36529 Kg.} &\multicolumn{1}{c|}{65.3\%} &\multicolumn{1}{c|}{0.36828 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{63.44\%}  & \multicolumn{1}{c|}{0.36828 Kg.} &\multicolumn{1}{c|}{74.66\%} &\multicolumn{1}{c|}{0.40727 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{65.31\%}  & \multicolumn{1}{c|}{0.40727 Kg.} &\multicolumn{1}{c|}{70.49\%} &\multicolumn{1}{c|}{0.38094 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{66.05\%}  & \multicolumn{1}{c|}{0.38094 Kg.} &\multicolumn{1}{c|}{72.57\%} &\multicolumn{1}{c|}{0.38705 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{X}  & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{66.86\%}  & \multicolumn{1}{c|}{0.38705 Kg.} &\multicolumn{1}{c|}{68.41\%} &\multicolumn{1}{c|}{0.36461 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} &\multicolumn{1}{c|}{X} \\
+             \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{67.03\%} & \multicolumn{1}{c|}{0.36461 Kg.} &\multicolumn{1}{c|}{70.49\%} &\multicolumn{1}{c|}{0.37341 Kg.} \\
              \hline
         \end{tabularx}
         \captionof{table}{Tabla de resultados Pilsen Lager Escalonada}
         \label{tab:ResultadosPilsenEscalonada}
     \end{minipage}
     \subsection{Resultados obtenidos}
-        \par Para cada receta realizada se muestran las gráficas de promedio de temperatura y pH obtenidas provistas por la aplicación.
+        \par Para cada receta realizada se muestran las gráficas de promedio de temperatura y pH obtenidas provistas por la aplicación. Las mismas se presentan en el Anexo \ref{GraficasPruebasCampo}.
         
-        \subsubsection{Pilsen Lager - Simple}
-            %Experimento 1
-            %Experimento 2
-            %Experimento 3
-            %Valores generales/promedio
-        
-        \subsubsection{Pilsen Lager - Escalonada}
-            %Experimento 1
-            %Experimento 2
-            %Experimento 3
-            %Valores generales/promedio
+
             
     \subsection{Evaluación}
-    \par En la anterior subsección se evidenció que el ajuste de la cantidad de insumos realizada por el sistema produce resultados correctos, esto es, cuando la densidad es menor a la deseada incrementa la cantidad de granos de manera de compensar este sub-rendimiendo, y lo mismo ocurre en caso contrario con un sobre-rendimiento.
-    \par  Si se observan los datos arrojados por el sistema en cuanto al ajuste del insumo, puede verse como los valores tienden a converger a un valor estable. Esta convergencia representa el objetivo de esta herramienta, la cual es asistir al productor a partir de una herramienta de optimización de insumos en función de un ajuste utilizando el rendimiento del equipo.
+    \par En la anterior subsección se evidenció que el ajuste de la cantidad de insumos realizada por el sistema produce resultados correctos, esto es, cuando la densidad es menor a la deseada incrementa la cantidad de granos de manera de compensar este sub-rendimiendo, y lo mismo ocurre en caso contrario con un sobre-rendimiento. Esta compensación representa el objetivo de esta funcionalidad, la cual es asistir al productor a partir de una herramienta de optimización de insumos en función de un ajuste utilizando el rendimiento del equipo.
     \par Cabe señalar que si bien pueden parecer reducidos los cambios en los valores de insumo, los mismos corresponden a un preparado de un volumen reducido. Estos cambios crecerán en forma proporcional al tamaño del preparado, constituyéndose en valores mas significativos conforme a este incremento.
     \par Por tanto, puede concluirse que esta funcionalidad del sistema se comporta de la manera esperada, y por tanto, correcta. 
     
