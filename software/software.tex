@@ -1,29 +1,24 @@
 \chapter{Software}
-\par Este componente de software tendrá el propósito de asistir al fabricante de cerveza en las tareas de monitoreo, planificación y visualización de datos históricos de experimentos de maceración.
+\par El componente de software tendrá el propósito de asistir al fabricante de cerveza en las tareas de monitoreo, planificación y visualización de datos históricos de experimentos de maceración.
 
-\par En los siguientes incisos, serán descriptas las consideraciones tomadas para la elección de la plataforma sobre la cual se desarrolló la aplicación, el diseño conceptuado, y finalmente, una descripción detallada del desarrollo realizado.
+\par En este capítulo se describen las consideraciones tomadas para la elección de la plataforma sobre la cual se desarrolló la aplicación, el diseño conceptuado y, finalmente, una descripción detallada del desarrollo realizado.
 
 \section{Análisis de alternativas}
+    En esta sección se argumenta la elección de la plataforma sobre la cual es desarrollado este componente.
+    
     \subsection{Tecnologías}
         \par A continuación se presenta una breve reseña de las plataformas actualmente más relevantes para dispositivos móviles.
         
         \subsubsection{Android}
-            \par Android es un sistema operativo, el cual fue inicialmente desarrollado por Android Inc., empresa que Google respaldó económicamente y más tarde, en 2005, compró. Fue diseñado principalmente para dispositivos móviles con pantalla táctil desarrollados por Google o por terceros, como teléfonos inteligentes, tabletas y también, relojes inteligentes, televisores y automóviles. 
-            
-            \par Android es un sistema operativo basado en el núcleo Linux.
+            \par Android es un sistema operativo, el cual fue inicialmente desarrollado por Android Inc.\footnote{Sitio oficial: \url{https://www.android.com/}}, empresa que Google\textsuperscript{\textregistered} respaldó económicamente y más tarde, en 2005, compró. Fue diseñado principalmente para dispositivos móviles con pantalla táctil desarrollados por Google\textsuperscript{\textregistered} o por terceros, como teléfonos inteligentes, tabletas y también, relojes inteligentes, televisores y automóviles. Android es un sistema operativo basado en el núcleo Linux.
             
         \subsubsection{iOS}
-            \par iOS es un sistema operativo móvil de la multinacional Apple Inc. Originalmente desarrollado para el iPhone (iPhone OS), después utilizado en dispositivos como el iPod touch y el iPad. No permite la instalación de iOS en hardware de terceros.
-            
-            \par iOS se deriva de macOS, que a su vez está basado en Darwin BSD, y por lo tanto es un sistema operativo Tipo Unix.
-            
-  
-            
+            \par iOS es un sistema operativo móvil de la multinacional Apple Inc\footnote{Sitio oficial: \url{https://www.apple.com/}}. Originalmente desarrollado para el teléfono móvil \textit{iPhone} (iPhone OS), después utilizado en dispositivos como el \textit{iPod touch} y el \textit{iPad}. Este sistema operativo móvil solo puede ser instalado sobre dispositivos móviles pertenecientes a Apple Inc. iOS se deriva de macOS\footnote{Sistema operativo de Apple para computadoras portátiles y de escritorio \url{https://www.apple.com/la/macos/mojave/}}, que a su vez está basado en Darwin BSD, y por lo tanto es un sistema operativo Tipo Unix.
             
     \subsection{Comparación}
-        \par El desarrollo será realizado para una plataforma móvil, de las cuales se tendrán en cuenta las siguientes consideraciones: cantidad de usuarios que la utilicen; tamaño de la comunidad a disposición para dar soporte; disponibilidad de mejores herramientas y utilidades para el desarrollo de aplicaciones.
+        \par Las consideraciones a tener en cuenta para la elección de la plataforma móvil para el desarrollo son las siguientes: cantidad de usuarios que la utilicen; tamaño de la comunidad a disposición para dar soporte; disponibilidad de mejores herramientas y utilidades para el desarrollo de aplicaciones.
         
-        \par A continuación, se presenta una tabla comparativa en la cual se abordan aspectos de interés para la elección y un análisis concluyente.
+        \par En la Tabla \ref{tab:ComparacionPlataformasMoviles} se presenta un cuadro comparativo entre ambas tecnologías dónde se abordan aspectos de interés para la elección y un análisis concluyente.
         
         \begin{table}[h]
             \centering
@@ -53,7 +48,7 @@
                  Familia del SO & Linux & Unix - BSD\\
                  \hline
                  
-                 Complejidad de desarrollo & Muy diversa variedad de dispositivos y de versiones del SO & Variedad reducida de dispositivos, versiones de SO comunes a la mayoría\\
+                 Complejidad de desarrollo & Alta variedad de dispositivos y versiones del SO & Baja variedad de dispositivos, versiones de SO comunes a la mayoría\\
                  \hline
                  
                  Entorno & Open Source & Entorno cerrado \\
@@ -70,41 +65,46 @@
     
     \subsection{Elección}
     \par
-    La elección fue realizada a partir de los criterios antes mencionados aplicados sobre la tabla comparativa.
+    A partir del cuadro comparativo de la Tabla \ref{tab:ComparacionPlataformasMoviles} y los aspectos aquí mencionados se decide optar por la plataforma Android. 
+    %La elección fue realizada a partir de los criterios antes mencionados aplicados sobre la tabla comparativa.
     \par
-    Se decidió desarrollar la aplicación para la plataforma \textbf{Android}, considerado, el porcentaje de uso en Argentina, el tamaño de la comunidad de desarrolladores, la gran disponibilidad de herramientas y la sencillez relativa en cuanto a requerimientos para la publicación de aplicaciones.
+    %Se decidió desarrollar la aplicación para la plataforma \textbf{Android}, considerado, 
+    Esta decisión se basa en los siguientes aspectos: El alto porcentaje de uso en Argentina, el tamaño de la comunidad de desarrolladores, la gran disponibilidad de herramientas y la sencillez relativa en cuanto a requerimientos para la publicación de aplicaciones.
     
-    \par Para el desarrollo se empleó el lenguaje Java (JDK 1.7 o Java 7) sobre el entorno de desarrollo integrado (IDE) oficial de Google, AndroidStudio. La versión de sistema operativo mínima para la que se desarrolló es \textit{Nougat 7.0}, lanzada en agosto de 2016, la cual utiliza la plataforma de desarrollo (Android SDK plataform \footnote{\url{https://developer.android.com/studio/releases/platforms}}) API nivel 24.
+    \par Para el desarrollo se emplea el lenguaje Java (JDK 1.7 o Java 7) sobre el entorno de desarrollo integrado (IDE) oficial de Google, AndroidStudio. La versión mínima de sistema operativo para la que se desarrolla es \textit{Nougat 7.0}, lanzada en agosto de 2016, la cual utiliza la plataforma de desarrollo (Android SDK plataform \footnote{\url{https://developer.android.com/studio/releases/platforms}}) API nivel 24.
 
     
     
 \section{Diseño}
+    
+    \par En esta sección es presentan los modelos diseñados para la interfaz gráfica y la base de datos del dispositivo móvil.
+    
     \subsection{Diseño de la interfaz de usuario}
-        \par Las figuras \ref{fig:MockUpMainActivity}, \ref{fig:MockUpPlanningActivity}, \ref{fig:MockUpExperimentActivity}, \ref{fig:MockUpInfoMash}, \ref{fig:MockUpCurrentExperienceFragment}, \ref{fig:MockUpStageFragment}, \ref{fig:MockUpGeneralFragment}, \ref{fig:MockUpExperimentFragment} y \ref{fig:MockUpDetailExperimentActivity} ubicadas en el Anexo, diagraman y describen el diseño y las funcionalidades de la interfaz de usuario (UI) bosquejadas para la aplicación móvil.
+        \par Las figuras \ref{fig:MockUpMainActivity}, \ref{fig:MockUpPlanningActivity}, \ref{fig:MockUpExperimentActivity}, \ref{fig:MockUpInfoMash}, \ref{fig:MockUpCurrentExperienceFragment}, \ref{fig:MockUpStageFragment}, \ref{fig:MockUpGeneralFragment}, \ref{fig:MockUpExperimentFragment} y \ref{fig:MockUpDetailExperimentActivity} ubicadas en el Anexo, modelan y describen el diseño y las funcionalidades de la interfaz de usuario (UI) bosquejadas para la aplicación móvil.
 
     \subsection{Base de datos}
-        \par En el siguiente diagrama (Figura \ref{fig:DiagramaBdApp}) se esquematiza la base de datos a alojar en la aplicación. En el diagrama se pueden distinguir las tablas a utilizar para la abstracción de la aplicación y el conjunto de relaciones establecidas entre ellas.
+        \par En el diagrama presente en la Figura \ref{fig:DiagramaBdApp} se encuentran las tablas diseñadas para la base de datos y el conjunto de relaciones establecidas entre ellas.
         
         \begin{figure}[h]
             \centering
             \includegraphics[scale=0.8]{DiagramaBaseDeDatosAPP.jpg}
-            \caption{Diagrama de Base de Datos de la aplicación}
+            \caption{Modelo de Base de Datos de la aplicación}
             \label{fig:DiagramaBdApp}
         \end{figure}
 
 \section{Implementación}
-    \par En esta sección, se realizará en primer lugar una breve introducción al desarrollo Android de manera de construir una base de conocimientos del tema. Luego, para cada pantalla implementada se realizará una descripción estética y funcional junto a un detalle de su implementación.
+    \par En esta sección se realiza una breve introducción al desarrollo Android, de manera de construir una base de conocimientos del tema. Posteriormente se realiza una descripción estética y funcional de cada pantalla de la interfaz gráfica creada y un detalle de su implementación. 
+    %Luego, para cada pantalla implementada se realizará una descripción estética y funcional junto a un detalle de su implementación.
     
     \subsection{Breve introducción al desarrollo en Android}
     
-    \par Las aplicaciones en Androdid son desarrolladas siguiendo el patrón de arquitectura de desarrollo MVP (Modelo-Vista-Presentador). Este patrón separa las lógicas de datos y negocios (modelo y presentador respectivamente) de la interfaz gráfica (Vista). En este contexto, la lógica es llevada a cabo por elementos denominados \textit{Activities} y Adaptadores (\textit{Adapters}), y la interfaz gráfica por componentes denominados Vistas(\textit{Views}).
-    
-    \par En cada clase \textit{Activity} es definida la lógica de funcionamiento de la aplicación y el manejo de una pantalla relacionada a esta con la que el usuario finalmente interactúa. Entre las funcionalidades implementadas dentro de un \textit{Activity} pueden mencionarse principalmente: gestión de widgets\footnote{Elementos gráficos preestablecidos que implementan funcionalidades, como menús desplegables, botones, relojes, etc.} desplegados en la pantalla; lógica o dinámica de funcionamiento; manejo de información ingresada y desplegada en pantalla; llamadas a librerías externas de interacción con bases de datos, APIs o incluso otros \textit{Activities}.
+    \par Las aplicaciones en Androdid son desarrolladas siguiendo el patrón de arquitectura de desarrollo MVP (Modelo-Vista-Presentador). Este patrón separa las lógicas de datos y negocios (modelo y presentador respectivamente) de la interfaz gráfica (Vista). En este contexto, la lógica es llevada a cabo por elementos denominados \textit{Activities} y Adaptadores (\textit{Adapters}), y la interfaz gráfica por componentes denominados Vistas(\textit{Views}). En cada clase \textit{Activity} se define la lógica de funcionamiento de la aplicación y el manejo de una pantalla relacionada a ésta con la que el usuario interactúa. Entre las funcionalidades implementadas dentro de una \textit{Activity} pueden mencionarse principalmente: gestión de widgets\footnote{Elementos gráficos preestablecidos que implementan funcionalidades, como menús desplegables, botones, relojes, etc.} desplegados en la pantalla; lógica o dinámica de funcionamiento; manejo de información ingresada y desplegada en pantalla; llamadas a librerías externas de interacción con bases de datos, APIs o incluso otros \textit{Activities}.
     
     % ------ Ver si es necesario hablar de ciclo de vida del activity.
     \subsubsection{Interfaz gráfica}
+    \label{explicacionInterfazGrafica}
     
-    \par Una estructura de pantalla básica esta compuesta por un \textit{Actionbar} y un cuerpo (Véase Figura \ref{fig:emptyActivity}). El primero se ubica en la parte superior  y contiene el título de la pantalla o aplicación y soporta el agregado de un \textit{OptionsMenu} (compuesto por botones y/o un menú desplegable). En el segundo se ubicará el contenedor de Vistas (layout) y el contenido gráfico-funcional a ser definido para esta pantalla.
+    \par Una estructura de pantalla básica está compuesta por un \textit{Actionbar} y un cuerpo (Véase Figura \ref{fig:emptyActivity}). El \textit{Actionar} se ubica en la parte superior y contiene el título de la pantalla o aplicación y soporta el agregado de un \textit{OptionsMenu} (compuesto por botones y/o un menú desplegable). En el cuerpo se ubica el contenedor de Vistas (\textit{layout}) y el contenido gráfico-funcional definido para la pantalla (\textit{widgets}).
     
     \begin{figure}
         \centering
@@ -113,64 +113,66 @@
         \label{fig:emptyActivity}
     \end{figure}
     
-    \par Android organiza los componentes visuales de una pantalla mediante archivos XML. En estos puede ser definida la estructura básica de una pantalla (posiciones, margenes, etc.) y ser agregados layouts o widgets. De entre los componentes tipo widget pueden ser mencionados los botones estáticos (\textit{Button}) o flotantes (\textit{FloatingActionButton}), menús desplegables (\textit{Spinner}), campos para inserción y presentación de texto (\textit{EditText y TextView} respectivamente), cronómetros (\textit{Chronometer}) entre otros.
-    
-    %Le clavo itemize?
     %\begin{minipage}[0.95\textwidth]
-    \par Dentro de los layouts disponibles se encuentran:
+    \par Mediante el uso de layouts, definidos en archivos XML, se estructura la pantalla a ser presentada (posiciones, margenes, etc.). Existen distintos tipos de layouts que incorporan con su uso distintas funcionalidades. El comportamiento final de las pantallas, se define entonces, a partir del anidamiento de distintos layouts de manera de poder utilizar las ventajas que cada tipo implementa. Dentro de los layouts disponibles se encuentran:
     
     \begin{itemize}
-        \item \textit{LinearLayout}, que permite definir en secuencia vertical(arriba hacia abajo)  u horizontal(izquierda a derecha) el orden en que se visualizan los componentes;
-        \item \textit{RelativeLayout} que define la ubicación en pantalla del componente en referencia a otro componente ya añadido;
+        \item \textit{LinearLayout}, define en secuencia vertical (arriba hacia abajo)  u horizontal (izquierda a derecha) el orden en que se visualizan los componentes;
         
-        \item \textit{FrameLayout} que define la ubicación de los componentes de manera absoluta, permitiendo la superposición de los mismos;
+        \item \textit{RelativeLayout}, define la ubicación en pantalla del componente en referencia a otro componente ya añadido;
         
-        \item \textit{ScrollView}, utilizado cuando el espacio en pantalla es menor que el contenido que se desea mostrar, ofreciendo la posibilidad de desplazar el mismo para visualizar el área de interés de este contenido;
+        \item \textit{FrameLayout}, define la ubicación de los componentes de manera absoluta, permitiendo la superposición de los mismos;
         
-        \item \textit{ListView} que generan una lista de layout anidados, utilizado cuando la cantidad de estos últimos varia dinámicamente. Para el manejo de los mismos, se utiliza un tipo de clase denominado \textit{Adapter} que gestiona la información de cada entrada de la lista y como se visualiza dentro de la misma;
+        \item \textit{ScrollView}, utilizado cuando el espacio en pantalla es menor que el contenido que se desea mostrar, ofreciendo la posibilidad de desplazamiento para visualizar el área de interés del contenido;
         
-        \item \textit{RecyclerView} posee la misma funcionalidad que el \textit{ListView} pero este no renderiza los layout que no se muestran en pantalla, como si lo hace el primero. Se utiliza cuando la cantidad de layout anidados es bastante mayor que lo que puede ser mostrado en pantalla. Donde, el requerimiento de memoria para mantener todo el conjunto de entradas podría producir una reducción del rendimiento de la aplicación;
+        \item \textit{ListView}, genera una lista de \textit{layout} anidados, utilizado cuando la cantidad de estos últimos varia dinámicamente. Para el manejo de los mismos, se utiliza un tipo de clase denominado \textit{Adapter} que gestiona la información de cada entrada de la lista y como se visualiza dentro de la misma;
         
-        \item \textit{CardView} es un contenedor estético que usualmente presenta un panel de bordes redondeados y sombra, muy utilizado en conjunto con \textit{RecyclerView} o \textit{ListView} como layout anidado dentro los mismos.
+        \item \textit{RecyclerView}, posee la misma funcionalidad que el \textit{ListView} pero este no renderiza los layout que no se muestran en pantalla, a diferencia del ListView. Se utiliza cuando la cantidad de \textit{layout} anidados es mayor a la que puede ser mostrada en pantalla. Este \textit{layout} evita que el requerimiento de memoria no se vea afectado por la cantidad de entradas y se reduzca el rendimiento de la aplicación;
+        
+        \item \textit{CardView}, es un contenedor estético que usualmente presenta un panel de bordes redondeados y sombra, muy utilizado en conjunto con \textit{RecyclerView} o \textit{ListView} como layout anidado dentro los mismos.
         
     \end{itemize}
 
     %\end{minipage}
     
-    \par Una pantalla puede incorporar, además de \textit{Views}, cuadros de diálogo (pop-up) emergentes y menús contextuales (\textit{ContextMenu}) que son invocados a través de la interacción del usuario con un \textit{View}. Para la definición del contenido visual y el comportamiento de estos diálogos se utiliza la clase \textit{AlertDialog} para una ventana tipo emergente y métodos propios del \textit{Activity} para un menú contextual. Ambos casos, se implementan dentro del \textit{Activity} encargado de gestionar esa pantalla.
-    
-    \par Como fue antes mencionado, la lógica funcional de una pantalla es implementada en un \textit{Activity}. Dentro de este pueden ser incluidos \textit{Fragments}, los cuales representan un comportamiento o una parte de la interfaz de usuario. Permitiendo con su uso combinado en una misma actividad crear interfaces gráficas multipanel. El manejo de las pantallas o interfaces definidas para un \textit{Fragment} se realiza de la misma forma que las pantallas definidas para un \textit{Activity}.
-    
-    \par Una forma de utilizar \textit{Fragments} es mediante pestañas (\textit{Tabs}). De esta manera una misma pantalla contiene un conjunto definido de cuerpos intercambiables (subpantallas). Para su manipulación por el usuario son utilizados \textit{TabLayouts} que definen el conjunto de pestañas en la pantalla junto a clases instanciadas por el Activity padre encargados de gestionar los intercambios entre las mismas (\textit{ViewPagerAdapter}).
-    
-    %\par En la implementación de los componentes de la interfaz gráfica (Views) pueden ser incorporados \textit{listeners} los cuales definen un comportamiento u operación a ser realizada según la forma en la que el usuario interactúe con los mismos. Ejemplos de estos últimos son el click (\textit{onClickListener}), click de larga duración (\textit{onLongClickListener}), desplazamiento vertical u horizontal (\textit{onScrollListener}), entre otros.
-    
+    \par Los componentes de tipo widget, antes mencionados, son definidos dentro de los layouts. Mediante el uso de cada uno se especifica una estructura en particular, entre estos fueron utilizados: botones estáticos (\textit{Button}) o flotantes (\textit{FloatingActionButton}), menús desplegables (\textit{Spinner}), campos para inserción y presentación de texto (\textit{EditText y TextView} respectivamente), cronómetros (\textit{Chronometer}).
+        
+    \par Una pantalla puede incorporar, además de \textit{Views}, cuadros de diálogo (pop-up) emergentes y menús contextuales (\textit{ContextMenu}) que son invocados a través de la interacción del usuario con un \textit{View}. Para la definición del contenido visual y el comportamiento de estos diálogos se utiliza la clase \textit{AlertDialog} para una ventana tipo emergente y métodos propios del \textit{Activity} para un menú contextual. Ambos casos se implementan dentro del \textit{Activity}, que es el encargado de gestionar esa pantalla.
+        
+    \par Como fue antes mencionado, la lógica funcional de una pantalla es implementada en un \textit{Activity}. Dentro de este pueden ser incluidos \textit{Fragments}, los cuales representan un comportamiento o una parte de la interfaz de usuario. Mediante el uso combinado de Activity y Fragments en una misma actividad es posible crear interfaces gráficas multipanel. El manejo de las pantallas o interfaces definidas para un \textit{Fragment} se realiza de la misma forma que las pantallas definidas para un \textit{Activity}. Una forma de utilizar \textit{Fragments} es mediante pestañas (\textit{Tabs}). De esta manera una misma pantalla contiene un conjunto definido de cuerpos intercambiables (subpantallas). Para poder ser utilizadas por el usuario se utilizan \textit{TabLayouts}, que definen el conjunto de pestañas en la pantalla junto a clases instanciadas por el \textit{Activity} padre. El \textit{ViewPagerAdapter} es el encargado de gestionar el intercambio entre los \textit{TabLayouts} y los \textit{Activities} que las instancian.
+    %encargados de gestionar los intercambios entre las mismas (\textit{ViewPagerAdapter}).
     
     \subsubsection{Librerías utilizadas}
-     \par Los \textit{Activities} dentro de su hilo de ejecución incluyen métodos o llamadas que interaccionan con librerías o clases complementarias. Se considera importante mencionar las siguientes:
+     \par Los \textit{Activities}, dentro de su hilo de ejecución, incluyen métodos o llamadas que interaccionan con librerías o clases complementarias. A continuación se nombran las más destacadas o importantes: %Se considera importante mencionar las siguientes:
      \begin{itemize}
-         \item \textbf{Clases POJO} (Plain Old Java Object): Para el modelado de las reglas de negocio se utilizan clases complementarias que estructuran y relacionan la información requerida mediante la definición de sus atributos y métodos.
+         %% Ver con dami
+         \item \textbf{Clases POJO} (Plain Old Java Object): Son clases simples que permiten modelar las reglas de negocio a través de la estructuración y relación de la información presentes en ellas.
+         %% Ver con dami
+         %Para el modelado de las reglas de negocio se utilizan clases complementarias que estructuran y relacionan la información requerida mediante la definición de sus atributos y métodos.
          
-         \item \textbf{Persistencia}: Pueden ser utilizadas distintas librerías\footnote{Página de referencia \url{https://developer.android.com/guide/topics/data/data-storage}}. En el desarrollo de esta aplicación se utilizó persistencia de datos y almacenamiento de preferencias compartidas (datos de configuración). Para el primero, se decidió gestionar la base de datos SQL en Android utilizando \textit{SQLite}\footnote{SQLite, sistema de gestión de bases de datos relacional}. En su implementación, se define una clase con patrón \textit{Singleton}\footnote{Singleton, patrón de diseño que permite restringir la creación de objetos pertenecientes a una clase o el valor de un tipo a un único objeto} que define la estructura de tablas de la base de datos y en la que, adicionalmente, se pueden implementar funciones para actualizar, insertar, eliminar y consultar datos de las tablas. Para el segundo, preferencias compartidas, se utiliza \textit{SharedPreferences} el cual define un sistema clave-valor (\textit{key-value}) para persistir datos aislados cuando la aplicación se cierra.
+         \item \textbf{Persistencia}: Es el conjunto de datos que se almacena y se mantiene aún cuando no este en ejecución la aplicación. Para el desarrollo de aplicaciones Android pueden ser utilizadas distintas librerías\footnote{Página de referencia \url{https://developer.android.com/guide/topics/data/data-storage}}. En esta aplicación se persisten datos y preferencias compartidas (datos de configuración). Los datos se gestionan mediante base de datos SQL en Android utilizando \textit{SQLite}\footnote{SQLite, sistema de gestión de bases de datos relacional}. En su implementación, se define una clase con patrón \textit{Singleton}\footnote{Singleton, patrón de diseño que permite restringir la creación de objetos pertenecientes a una clase o el valor de un tipo a un único objeto} que define la estructura de tablas de la base de datos y en la que, adicionalmente, se pueden implementar funciones para actualizar, insertar, eliminar y consultar datos de las tablas. Las preferencias compartidas se persisten mediante la utilización de \textit{SharedPreferences} donde se define un sistema clave-valor (\textit{key-value}) para persistir datos aislados cuando la aplicación se cierra.
          
-         \item \textbf{REST API}: Con el fin de interactuar con la API REST externa existen múltiples opciones a ser utilizadas. En este desarrollo, fue empleada la librería Retrofit \footnote{Librería implementada por Square. Repositorio \url{https://square.github.io/retrofit/}}, con la cual se definen servicios HTTP, GET o POST, a ser empleados. El envío y recepción de datos se realiza mediante objetos Json (\textit{JsonObject y JsonArray}), y una interfaz de conexión en la que se definen estas operaciones y la IP del servidor. Los objetos recibidos deben ser ``parseados'' a objetos denominados clases contenedoras (\textit{Containers}) en donde se definen los métodos de obtención de datos. 
-         
-        \item \textbf{Hilos de ejecución}: Cuando son requeridas tareas que sobrecargan el hilo de ejecución principal o detienen su ejecución por espera de respuestas, deben ser empleados hilos de ejecución (\textit{Threads}) independientes del hilo de principal del \textit{Activity} que se este ejecutando.
+         %% Dami, te regalo la definión de REST API
+         \item \textbf{REST API}: Con el fin de interactuar con la API REST presentada en el Capítulo \ref{capituloInterfaz} existen múltiples opciones a ser utilizadas. En este proyecto, la interacción con la REST API, se realiza mediante la librería \textit{Retrofit} \footnote{Librería implementada por \textit{Square}. Repositorio \url{https://square.github.io/retrofit/}}, con la cual se definen los protocolos o servicios de comunicación HTTP, GET o POST. El envío y recepción de datos se realiza mediante objetos Json (\textit{JsonObject y JsonArray}), y una interfaz de conexión en la que se definen estas operaciones y la IP del servidor. Los objetos enviados por la API REST y recibidos por la clase \textit{Retrofit} deben ser transformados en clases capaces de ser comprendidas por la aplicación. Estos últimos se denominan clases contenedoras (\textit{Containers}) y se utilizan para  definir los métodos de obtención de datos.
         
-        \par Existen dos tipos de procesos, paralelos y subprocesos. Los primeros son utilizados cuando se requieren tareas paralelas a la aplicación, estas carecen de la capacidad de interacción con las interfaces visuales pero poseen la ventaja de continuar su ejecución aun si el proceso que las inicio se encuentra inactivo o en segundo plano. Para el manejo de estos se utilizó la librería \textit{WorkManager}\footnote{Página de referencia \url{https://developer.android.com/topic/libraries/architecture/workmanager/}}. En la misma, se define la funcionalidad a ejecutar y el intervalo de tiempo de vida que posee. Por otro lado, los subprocesos no cuentan con la habilidad de ejecución independiente sino que son ejecutados junto con el hilo principal, pudiendo de esta manera actualizar la interfaz gráfica mientras en el hilo padre se llevan adelante tareas de gestión de la interfaz. Esto se lleva adelante con herramientas propias del sistema Android.
+        %% esto de los hilos de ejecucoón parece que hay que darle una reestructuración completa. 
+        \item \textbf{Hilos de ejecución independientes}: Los hilos de ejecución independientes (Threads) permiten liberar de carga al hilo principal cuando éste se ve sobrecargado o detiene su ejecución por espera de respuestas. 
         
-        \item \textbf{Gráficas}: Para la presentación de gráficas se decidió utilizar la librería \textit{MPAndroidChart}\footnote{Repositorio \url{https://github.com/PhilJay/MPAndroidChart}} ya que la misma dispone de todos las gráficas necesarias para esta aplicación. Para esto, se ubica un \textit{View} de tipo \textit{ChartView} en el layout correspondiente, el cual varía según el tipo de gráfica que se desee utilizar (Ej. \textit{LineChartView, CombinedChartView, CandleStick}, etc.). Permite agregar múltiples funciones gráficas del mismo o de diferente tipo dentro de un mismo gráfico.
+        \par En esta aplicación son utilizados dos tipos de hilos, hilos paralelos (\textit{Threads}) y subhilos (\textit{subThreads}). Los primeros son utilizados cuando se requieren tareas a ser ejecutadas en forma paralela al hilo de ejecución principal de la Aplicación. Estas tareas carecen de capacidad de interacción con las interfaces visuales, pero poseen la ventaja de continuar su ejecución aun si el proceso que las inició se encuentra inactivo o en segundo plano. Para el manejo de hilos paralelos se utilizó la librería \textit{WorkManager}\footnote{Página de referencia \url{https://developer.android.com/topic/libraries/architecture/workmanager/}}. En esta librería se define la funcionalidad que se va a ejecutar y el intervalo de tiempo de vida que posee. Por su parte, los subhilos no cuentan con la habilidad de ejecución independiente sino que son ejecutados junto con el hilo principal, pudiendo de esta manera actualizar la interfaz gráfica mientras en el hilo principal se llevan adelante tareas de gestión de la interfaz. Los subhilos son definidos y utilizados mediante herramientas propias del sistema Android, y no de una librería externa.
         
-        \item \textbf{Cálculos Varios}: Se implementó una clase \textit{Calculos} que actúa como librería, los métodos incorporados son utilizados por numerosas clases dentro de la aplicación razón por la cual se decidió unificarlos en una librería. Entre los mismos, se pueden encontrar todos los cálculos inherentes al rendimiento, cantidad de insumos, activación de enzimas, valores estadísticos, entre otros.
+        \item \textbf{Gráficas estadísticas}: Para la presentación de gráficas se utiliza la librería \textit{MPAndroidChart}\footnote{Repositorio \url{https://github.com/PhilJay/MPAndroidChart}}, que dispone de todos las gráficas necesarias para esta aplicación. Para la utilización de las gráficas se dispone de un componente \textit{View} que se ubica en un de tipo \textit{ChartView} en el \textit{layout} correspondiente, el cual varía según el tipo de gráfica que se desee utilizar (Ej. \textit{LineChartView} para gráficos de líneas, \textit{CombinedChartView} para combinar distintos tipos de gráficos dentro de un mismo contexto gráfico, \textit{CandleStick} para gráficos tipo candelero, etc.).
+        
+        \item \textbf{Cálculos Varios}: Para realizar los cálculos auxiliares de rendimiento, cantidad de insumos, activación de enzimas, valores estadísticos, entre otros se utiliza una clase propia denominada \textit{Cálculos}. La misma actúa como librería, pudiendo ser invocada por numerosas clases dentro de la aplicación.
+        
      \end{itemize}
-    
+     
     \subsection{Pantalla principal}
         \label{DescripPantallaPrincipal}
-        
+        \par Es la pantalla con la que inicia la aplicación. En la misma se puede visualizar la lista de maceraciones planificadas.
+           
             \subsubsection{Descripción}
-                \par Es la pantalla con la que inicia la aplicación. En la misma se puede visualizar la lista de maceraciones planificadas.
                 
-                \par Para la implementación se utiliza un \textit{Activity} denominado \textit{MainActivity}. La interfaz definida se compone por un \textit{ActionBar} que cuenta con un botón para acceder a la pantalla de planificación, una lista de elementos (maceraciones) que ocupa el cuerpo de la pantalla y un botón flotante para acceder un dialogo tipo \textit{pop-up} donde puede observarse los valores actuales recolectados por los sensores de la estación de recolección de datos Figura \ref{fig:CapturaMainAct}. 
+                \par Para la implementación de la pantalla principal se utiliza un \textit{Activity} denominado \textit{MainActivity}, (Diagrama \ref{fig:DiagClaseMainActivity}). La interfaz definida se compone por un \textit{ActionBar} que cuenta con un botón para acceder a la pantalla de planificación, una lista de elementos (maceraciones) que ocupa el cuerpo de la pantalla y un botón flotante para acceder un dialogo tipo \textit{pop-up} donde puede observarse los valores actuales recolectados por los sensores de la estación de recolección de datos (Figura \ref{fig:CapturaMainAct}). 
                 
                 \begin{figure}[h]
                     \centering
@@ -190,17 +192,17 @@
                 \begin{itemize}
                     \item \textbf{Lista de maceraciones planificadas:} Cada una de las maceraciones listadas es un botón clickeable que permite el acceso a la pantalla de gestión de la maceración seleccionada.
                     
-                    \item \textbf{Agregar nueva maceración:} Al seleccionar el botón, se accede a la pantalla que permite crear una nueva maceración.
+                    \item \textbf{Agregar nueva maceración:} Al seleccionar el botón destinado a este fin, se accede a la pantalla que permite crear una nueva maceración.
                     
-                    \item \textbf{Medición actual:} Dialogo \textit{pop-up} que muestra los valores obtenidos por los sensores de la estación de recolección de datos de forma reciente, Figura \ref{fig:CapturaShowCurrentValues}).
+                    \item \textbf{Informar valores actuales:} Los valores de medición obtenidos por los sensores de la estación de recolección se muestras mediante un dialogo por-up. (Figura \ref{fig:CapturaShowCurrentValues}).
+
                 \end{itemize}
                 
             \subsubsection{Detalle de implementación}
                 % captura de pantalla del mainactivity o citamos el mockup?
+                La lista de maceraciones planificadas se obtiene mediante la instanciación de una clase \textit{SQLiteDatabase}. Esta clase realiza una consulta SELECT para obtener los campos \textit{nombre} y \textit{tipo} de todos los índices de la tabla \textit{Maceracion} (Figura \ref{fig:DiagramaBdApp}). Una vez obtenida esta lista, se instancia una clase \textit{Adapter}\footnote{Clase que gestiona la información de cada entrada de la lista y como se visualiza dentro de la misma} que se incorpora a un objeto \textit{RecylcerView} para que inserte los datos en objetos \textit{CardViews} que son anidados dentro de la lista. Cada componente \textit{CardView} tiene la funcionalidad de iniciar la pantalla de gestión de maceración al ser presionado (subsección \ref{DescripPantallaPlanificación}).
                 
-                Con el fin de obtener la lista de maceraciones planificadas, se instancia una clase \textit{SQLiteDatabase} y se realiza una consulta SELECT para obtener los campos \textit{nombre} y \textit{tipo} de todos los índices de la tabla \textit{Maceracion}. Una vez obtenida esta lista, se instancia un \textit{Adapter} y se lo adjunta a un \textit{RecylcerView}, para que inserte los datos en \textit{CardViews} que son anidados en la lista. Estos últimos tienen añadido una funcionalidad cuando se los presiona que inicia la pantalla de gestión de maceración (subsección \ref{DescripPantallaPlanificación}) adjuntando el ID perteneciente a la maceración del \textit{CardView} seleccionado.
-                
-                \par La información de los sensores que se muestra en el panel de mediciones actuales se obtiene a partir una llamada a la API "GetTempPh.php" (función getTempPh() incluida en la interfaz API) mediante el uso de la librería \textit{Retrofit}. Una vez obtenidos estos valores, insertados en una instancia de la clase \textit{TempPh} (\textit{Container}), se carga un \textit{AlertDialog} con los mismos (Figura \ref{fig:CapturaShowCurrentValues}).
+                \par La información de los sensores que se muestra en el panel de Valores Actuales se obtiene a partir una llamada a la API "GetTempPh.php" (función \textit{getTempPh()} incluida en la interfaz API) mediante el uso de la librería \textit{Retrofit}. Una vez obtenidos estos valores, son insertados en una instancia de la clase \textit{TempPh} (\textit{Container}) y se carga un objeto \textit{AlertDialog} con los mismos (Figura \ref{fig:CapturaShowCurrentValues}).
                 
                 \par El acceso a la pantalla de planificación se realiza mediante una funcionalidad implementada para el icono del \textit{OptionsMenu} que inicia el \textit{Activity PlanningActivity} (subsección \ref{DescripPantallaPlanificación}).
                 
