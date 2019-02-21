@@ -13,7 +13,7 @@
 \usepackage{xr} % Referenciar secciones en otro tex
 \usepackage{booktabs}
 \usepackage{varwidth}
-
+\usepackage[toc]{glossaries}
 \usepackage{emptypage}
 
 \usepackage{natbib}
@@ -73,29 +73,45 @@
 \usepackage{hypcap}
 \capstarttrue
 
+%%%%% ----------------- INICIO DE DOCUMENTO --------------------------
+\renewcommand{\glossarypreamble}{\label{glosario}}
+\makeglossaries
+\input{Glosario/Glosario.tex}
+
 
 \begin{document}
 \import{caratula/}{caratula.tex}
-
-\afterpage{\null\newpage}
+\clearpage
+%\afterpage{\null\newpage}
 \newpage
 
 \frontmatter
 
-%Indice General
-\tableofcontents
-%Indice de tablas
-\listoftables
-%Indice de Figuras
-\listoffigures
-
-
-\pagestyle{plain}
+%\pagestyle{plain}
 \import{Prefacio/}{Prefacio.tex}
+\clearpage
+\newpage
 
 \import{resumen/}{resumen.tex}
-\afterpage{\null\newpage}
+\clearpage
+%\afterpage{\null\newpage}
+
 \newpage
+
+%Indice General
+\tableofcontents
+\clearpage
+%Indice de tablas
+\listoftables
+\clearpage
+%Indice de Figuras
+\listoffigures
+\clearpage
+
+\newpage
+
+
+
 
 
 %------------------------ACOMODO ESTILOS!------------------------------------
@@ -108,10 +124,10 @@
 \rhead[]{}
 \cfoot[]{}
 \fancyhead[LO,RE]{ \leftmark}% Aca hay una magia con el leftmark para q ponga los encabezados, si pones rightmark se manda otra...
-\renewcommand{\headrulewidth}{0pt}% Ancho de la linea del encabezado
+\renewcommand{\headrulewidth}{0pt}% Ancho de la línea del encabezado
 \fancyfoot[LO,RE]{\thepage}% Num de pagina alternante con paginas pares e impares
 
-\fancypagestyle{plain}{% Formato para nuevos capítulos, incluye la bibliografia
+\fancypagestyle{plain}{% Formato para nuevos capítulos, incluye la bibliografía
 \fancyhf{} 
 \fancyfoot[LO,RE]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
@@ -122,34 +138,34 @@
 \mainmatter
 
 \import{introduccion/}{introduccion.tex}
-
+\clearpage
 \import{analisis_tematico/}{analisis_tematico.tex}
-
+\clearpage
 \import{requerimientos/}{requerimientos.tex}
-
+\clearpage
 \import{hardware/}{hardware.tex}
-
+\clearpage
 \import{Interfaz_Hard-Soft/}{interfazHardSoft.tex}
-
+\clearpage
 \import{software/}{software.tex}
-
+\clearpage
 \import{Pruebas/}{pruebas.tex}
-
+\clearpage
 \import{Conclusiones/}{Conclusiones.tex}
+\clearpage
 
 
+\setglossarystyle{listgroup}
 
-\import{Anexo/}{anexo.tex}
-
-\fancyhead[LO,RE]{Bibliografía}
-
+\printglossary
+\clearpage
+\fancyhead[LO,RE]{Bibliografía} %Encabezado de la Bibliografía
 
 %Bibliografía
-
 \nocite{*}
 \bibliographystyle{apalike}
 \bibliography{Bibliografia/biblio}
+\clearpage
 
+\import{Anexo/}{anexo.tex}
 \end{document}
-
-
