@@ -1,17 +1,127 @@
 \newglossaryentry{Activity}
 {
     name=Activity,
-    description={Clase encargada de la gestión de la interfaz y la lógica de un pantalla en una aplicación móvil Android}
+    description={Clase encargada de la gestión de la interfaz y la lógica de un pantalla en una aplicación móvil.}
 }
-
 \newglossaryentry{ActionBar}
 {
     name=Actionbar,
-    description={Panel superior de una pantalla que usualmente el título de la aplicación o pantalla y una serie de botones para diferentes opciones}
+    description={Panel superior de una pantalla que usualmente presenta el título de la aplicación o pantalla y una serie de botones para diferentes opciones.}
 }
-
 \newglossaryentry{Adapter}
 {
     name=Adapter,
-    description={Clase que gestiona la información de cada entrada de un \textit{layout} tipo lista y como se visualiza dentro del mismo}
+    description={Clase que gestiona la información de cada entrada de un \textit{layout} tipo lista y como se visualiza dentro del mismo.}
+}
+\newglossaryentry{TabLayout}
+{
+    name=TabLayout,
+    description={Clase para gestión de pestañas en una pantalla.}
+}
+\newglossaryentry{Fragment}
+{
+    name=Fragment,
+    description={Clase similar a un Activity, que debe ser anidada dentro de uno. Encargada de la gestión de la interfaz y la lógica de un panel en una aplicación móvil.}
+}
+\newglossaryentry{widget}
+{
+    name=widget,
+    description={Elementos gráficos preestablecidos que implementan funcionalidades, como menús desplegables, botones, relojes, etc.}
+}
+
+\newglossaryentry{AlertDialog}{
+    name=AlertDialog,
+    description={Dialogo emergente invocado por la interacción con un widget de la pantalla. En el mismo pueden configurarse el título del dialogo, un mensaje, un layout propio y botones de acción positiva o negativa.}
+}
+
+\newglossaryentry{Layout}
+{
+    name=Layout,
+    description={Función escrita en lenguaje XML que permite definir la estructura de una pantalla(posiciones, margenes, etc.). Existen distintos tipos de layouts que incorporan con su uso distintas funcionalidades y se utilizan de forma anidada para construir funcionalidades coexistentes.}
+}
+\newglossaryentry{ScrollView}
+{
+    name=ScrollView,
+    description={\textit{Layout} utilizado cuando el espacio en pantalla es menor que el contenido que se desea mostrar, ofreciendo la posibilidad de desplazamiento para visualizar el área de interés del contenido.}
+}
+\newglossaryentry{ListView}
+{
+    name=ListView,
+    description={\textit{Layout} utilizado para generar una lista de \textit{layout} anidados, utilizado cuando la cantidad de estos últimos varia dinámicamente. Para el manejo de los mismos, se utiliza un tipo de clase denominado \textit{Adapter} que gestiona la información de cada entrada de la lista y como se visualiza dentro de la misma.}
+}
+\newglossaryentry{RecyclerView}
+{
+    name=RecyclerView,
+    description={\textit{Layout} que posee la misma funcionalidad que el \textit{ListView} pero este no renderiza los layout que no se muestran en pantalla, a diferencia del \textit{ListView}. Se utiliza cuando la cantidad de \textit{layout} anidados es mayor a la que puede ser mostrada en pantalla. Este \textit{layout} evita que el requerimiento de memoria no se vea afectado por la cantidad de entradas y se reduzca el rendimiento de la aplicación}
+}
+\newglossaryentry{CardView}
+{
+    name=CardView,
+    description={Es un contenedor estético que usualmente presenta un panel de bordes redondeados y sombra, muy utilizado en conjunto con \textit{RecyclerView} o \textit{ListView} en forma \textit{layout} anidada dentro los mismos}
+}
+
+\newglossaryentry{SQLiteDatabase}{
+    name=SQLiteDatabase,
+    description={ Clase encargada de definir la estructura de la base de datos y gestionar las consultas a la misma a través de su instanciación. Generalmente las consultas se implementan como funciones públicas dentro de esta clase}
+}
+
+\newglossaryentry{SELECT}{
+    name=SELECT,
+    description={ Instrucción SQL de manipulación de datos (DML) para obtener datos de las tablas pertenecientes a la base de datos }
+}
+
+\newglossaryentry{DELETE}{
+    name=DELETE,
+    description={ Instrucción SQL de manipulación de datos (DML) para eliminar entradas de las tablas pertenecientes a la base de datos }
+}
+\newglossaryentry{Retrofit}
+{
+    name=Retrofit,
+    description={Librería cuyo propósito es el de actuar como cliente para gestión de comunicaciones HTTP.}
+}
+\newglossaryentry{WorkManager}
+{
+    name=WorkManager,
+    description={Librería del sistema Android para calendarización, definición y gestión de tareas ejecutadas en hilos paralelos de ejecución.}
+}
+
+\newglossaryentry{EditText}{
+    name=EditText,
+    description={Widget que genera un campo para ingreso de texto en la pantalla.}
+}
+\newglossaryentry{TextView}{
+    name=EditText,
+    description={Widget para presentar texto en la pantalla.}
+}
+\newglossaryentry{OptionsMenu}{
+    name=OptionsMenu,
+    description={Menú que contiene los botones de acción y/o menú despegable pertenecientes al ActionBar. En este componente se definen las acciones de cada uno de los botones que lo componen.}
+}
+
+\newglossaryentry{Spinner}{
+    name=Spinner,
+    description={Widget de pantalla encargado de gestionar un menú desplegable}
+}
+
+\newglossaryentry{FloatingActionButton}{
+    name=FloatingActionButton,
+    description={Widget tipo botón que se superpone a los widgets de la pantalla}
+}
+
+\newglossaryentry{ContextMenu}{
+    name=ContextMenu,
+    description={Menu contextual asociado a un widget de la pantalla. Define una serie de opciones relacionadas al widget que lo invoca.}
+}
+
+\newglossaryentry{CandleStickChart}{
+    name=CandleStickChart,
+    description={Clase perteneciente a la librería de gráficas \textit{WPAndroidChart}, mediante su utilización permite construir gráficos de tipo Candelabro \textit{CandleStick}.}
+}
+\newglossaryentry{LineChart}{
+    name=LineChart,
+    description={Clase perteneciente a la librería de gráficas \textit{WPAndroidChart}, mediante su utilización permite construir gráficos de líneas.}
+}
+\newglossaryentry{Container}{
+    name=Container,
+    description={Clase utilizada para transformar un Json en un conjunto de cadenas de texto manipulables.}
 }
