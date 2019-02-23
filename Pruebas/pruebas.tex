@@ -6,11 +6,13 @@
 \section{Inspecciones del sistema}
 
 Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron analizados los requerimientos funcionales y no funcionales, así como las especificaciones formuladas durante el diseño. De esta forma, luego de implementar e integrar funcionalidades en los componentes desarrollados se analizó la documentación de forma de asegurar que se cumpliera con todos los requisitos y requerimientos.
+
 \par Junto al avance del desarrollo de los componentes fueron aplicadas las siguientes pruebas estáticas de forma de comprobar que las funcionalidades cumplieran su objetivo de manera individual e integral:
+
 \begin{itemize}
     \item Pruebas en Componente de Hardware: Recolección de datos de sensores; Inserción en base de datos.
-    \item Pruebas de Interfaz Hardware-Software: Las \textit{API REST} desarrolladas fueron probadas utilizando la herramienta \textit{Postman}\footnote{\textit{Postman}, Entorno de desarrollo de \textit{APIs} \url{https://www.getpostman.com/}}. Mediante esta herramienta se proveyeron datos a la \textit{API REST} de la misma forma en que luego serían provistas por la aplicación, así fueron identificados y corregidos distintos fallos.
-    \item Pruebas de la aplicación: Cada funcionalidad fue probada de manera individual imprimiendo en el \textit{log} del entorno de desarrollo \textit{AndroidStudio} diferentes variables de control, verificando así el correcto funcionamiento. En forma adicional, fueron probadas todas las funcionalidades que interactúan de forma integral con el sistema (métodos de interacción con la \textit{API REST}).
+    \item Pruebas de Interfaz Hardware-Software: Verificación de funcionamiento de la \textit{API REST} desarrollada. La \textit{API REST} fue probada utilizando la herramienta \textit{Postman}\footnote{\textit{Postman}, Entorno de desarrollo de \textit{APIs} \url{https://www.getpostman.com/}}. Mediante esta herramienta se proveyeron datos a la \textit{API REST} de la misma forma en que luego serían provistas por la aplicación, así fueron identificados y corregidos distintos fallos.
+    \item Pruebas de la aplicación: Verificación de funcionalidades, de manera individual, imprimiendo en el retorno del sistema (\textit{Log}) del entorno de desarrollo \textit{AndroidStudio} diferentes variables de control, verificando así el correcto funcionamiento. En forma adicional, fueron probadas todas las funcionalidades que interactúan de forma integral con el sistema (métodos de interacción con la \textit{API REST}).
 \end{itemize}
 
 \par La tabla \ref{tab:TablaChequeoRequerimientos} refleja el cumplimiento de los requerimientos del sistema.
@@ -23,7 +25,7 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
      \hline
         \multicolumn{1}{|c|}{RF001}  & El sistema implementa el uso de sensores de temperatura, pH y temperatura ambiente. Mencionados en el capítulo \textit{\textbf{Hardware}}. \\
         \hline
-        \multicolumn{1}{|c|}{RF002}  & El sistema implementa el uso de cuatro sensores de temperatura a ser ubicados en distintas posiciones del macerado. El uso de los mismos se menciona en el capítulo \textit{\textbf{Hardware}}. \\
+        \multicolumn{1}{|c|}{RF002}  & El sistema implementa el uso de cuatro sensores de temperatura ubicados en distintas posiciones del macerado. El uso de los mismos se menciona en el capítulo \textit{\textbf{Hardware}}. \\
         \hline
         \multicolumn{1}{|c|}{RF003}  & El sistema permite visualizar los datos recolectados por los sensores aun si no se esta llevando a cabo un experimento. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
@@ -31,17 +33,17 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
         \hline
         \multicolumn{1}{|c|}{RF005}  & El sistema permite ingresar todos los datos que caracterizan a una planificación de maceración. Mencionado en el capítulo \textit{\textbf{Software}}.  \\
         \hline
-        \multicolumn{1}{|c|}{RF006}  & El sistema permite crear o eliminar una maceración planificada y de esta forma todos los experimentos relacionados a ella. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RF006}  & El sistema permite crear o eliminar una maceración planificada y todos los experimentos relacionados a ella. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RF007}  & El sistema almacena los datos de los experimentos realizados, y de la misma forma permite eliminarlo mediante la interfaz gráfica de la aplicación. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RF007}  & El sistema almacena y elimina los datos de los experimentos realizados mediante la interfaz gráfica de la aplicación. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RF008}  & El sistema realiza cálculos de insumos en forma teórica y practica. En forma adicional, para maceraciones complejas brinda los cálculos de volumen y temperatura del agua. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RF008}  & El sistema realiza cálculos de insumos en forma teórica y práctica. En forma adicional, para maceraciones complejas, brinda los cálculos de volumen y temperatura del agua. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RF009}  & El sistema provee información relativa al proceso del experimento de maceración siendo monitoreado. Mencionado en el capítulo \textit{\textbf{Software}}.  \\
+        \multicolumn{1}{|c|}{RF009}  & El sistema provee información relativa al proceso del experimento de maceración  monitoreado. Mencionado en el capítulo \textit{\textbf{Software}}.  \\
         \hline
-        \multicolumn{1}{|c|}{RF010}  & El sistema provee gráficas relativas a los datos recolectados en cada experimento de maceración, además provee otras producto de resultados obtenidos del conjunto de experimentos. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RF010}  & El sistema provee gráficas relativas a los datos recolectados en cada experimento de maceración, además provee otras a partir de resultados obtenidos del conjunto de experimentos. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RF011}  & Luego de 3 experimentos de maceraciones concretados para una misma maceración, el sistema comenzará a optimizar los insumos.Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RF011}  & Luego de 3 experimentos de maceraciones concretados para una misma maceración, el sistema comienza a optimizar los insumos. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
         \end{tabularx}
         \caption{Tabla de chequeo de requerimientos}
@@ -54,15 +56,15 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
         \hline
         \multicolumn{1}{|c|}{Requerimiento} & \multicolumn{1}{|c|}{Verificación}\\
         \hline
-        \multicolumn{1}{|c|}{RF012}  & Durante el monitoreo de un experimento, el sistema permite configurar que sensores intervienen en el calculo medidas de representatividad, además de cambiar la forma en que se calcula esta. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RF012}  & Durante el monitoreo de un experimento, el sistema permite configurar que sensores intervienen en el cálculo de medidas de representatividad, además de cambiar la forma en que se calcula esta. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RNF001}  & La aplicación utiliza un diseño intuitivo y dinámica, la información es presentada en forma clara (sin ambigüedades). Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RNF001}  & La aplicación utiliza un diseño intuitivo y dinámico, la información es presentada en forma clara (sin ambigüedades). Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
         \multicolumn{1}{|c|}{RNF002}  & Al momento de elegir los diferentes componentes se tuvo en cuenta esta limitación, optando así por los mas económicos.\\
         \hline
         \multicolumn{1}{|c|}{RNF003}  & La plataforma elegida para la aplicación, \textit{Android},  se basó en este requerimiento. Mencionado en el capítulo \textit{\textbf{Hardware}}. \\
         \hline
-        \multicolumn{1}{|c|}{RNF004}  & El sistema demora 55 segundos en recolectar un conjunto de valores, luego el envío a la aplicación es casi instantáneo. \\
+        \multicolumn{1}{|c|}{RNF004}  & El sistema produce resultados aceptables para recolectar un conjunto de valores, luego el lapso consumido para el envío de los datos a la aplicación es despreciable. \\
         \hline
      \end{tabularx}
      \caption{Tabla de chequeo de requerimientos}
@@ -70,14 +72,14 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
 
 \section{Pruebas de ejecución y despliegue de resultados}
 
-\par En esta sección mediante distintos tipos de pruebas dinámicas son validadas las funcionalidades del sistema.
+\par En esta sección se describen las validaciones realizadas a las funcionalidades del sistema mediante distintos tipos de pruebas dinámicas.
 
 \subsection{Funcionamiento de la aplicación}
-De forma de asegurar el correcto funcionamiento de la aplicación son llevados adelante casos de prueba de tipo ``Entrega''. Según \cite{Som05} "\ldots Las pruebas de entrega, “pruebas funcionales” o “pruebas de caja negra”, son aquellas en las que solo interesan las funcionalidades del sistema y no su implementación. En otras palabras, se valida que el sistema satisfaga sus requerimientos \ldots".
-Las fichas de Casos de Prueba se encuentra ubicadas en el Anexo \ref{CasosPrueba}. Los casos de pruebas son ejecutados por el único usuario del sistema, el fabricante de cerveza Artesanal. Al final de cada ficha bajo el título de ``Evidencias'', se ubica un hipervínculo a un vídeo, donde podrá observarse la ejecución de la prueba.
+El correcto funcionamiento de la aplicación se lleva a cabo mediante casos de prueba de tipo ``Entrega''. Según \cite{Som05} "\ldots Las pruebas de entrega, “pruebas funcionales” o “pruebas de caja negra”, son aquellas en las que sólo interesan las funcionalidades del sistema y no su implementación. En otras palabras, se valida que el sistema satisfaga sus requerimientos \ldots".
+Las fichas de Casos de Prueba se encuentran ubicadas en el Anexo \ref{CasosPrueba}. Los casos de pruebas son ejecutados por el único usuario del sistema, el fabricante de cerveza Artesanal. Al final de cada ficha bajo el título de ``Evidencias'', se ubica un hipervínculo a un vídeo, donde podrá observarse la ejecución de la prueba.
 
 \subsection{Cálculo de insumos}
-\par Se procedió a realizar la validación de los cálculos de insumos implementados mediante el uso de recetas provistas por los directores. Es de resaltar que en el cálculo de insumos utilizado para las mismas se lleva adelante un procedimiento diferente en el cual no es tenido en cuenta el extracto potencial máximo de cada malta, asumiendo así este potencial como del 100\%. Siendo que los extractos potenciales se encuentran en el intervalo de 70\% a 85\%, los valores aquí calculados serán entre un 15\% a un 30\% mayores según el caso. Tomando en cuenta lo antes mencionado, se consideran como válidos los cálculos que se encuentren dentro de estos intervalos.
+\par Se procedió a realizar la validación de los cálculos de insumos implementados mediante el uso de recetas provistas por los directores. Es de resaltar que en el cálculo de insumos utilizado para las validaciones se lleva adelante un procedimiento en el cual no es tenido en cuenta el extracto potencial máximo de cada malta, asumiendo así este potencial como del 100\%. Siendo que los extractos potenciales se encuentran en el intervalo de 70\% a 85\%, los valores aquí calculados serán entre un 15\% a un 30\% mayores según el caso. Tomando en cuenta lo antes mencionado, se consideran como válidos los cálculos que se encuentren dentro de estos intervalos.
 
 %; Parte de un valor de relación agua-grano (aproximación al objetivo de densidad), busca un resultado de mosto final prefijado y para encontrarlo utiliza valores incrementales de cantidad total de insumo hasta que el volumen de salida bajo esa relación satisfaga el objetivo; luego, sobre este total de insumo aplica los porcentajes de la receta para establecer cuanto debe utilizar de cada grano. Por tanto, los valores obtenidos mediante los cálculos aquí implementados variaran respecto de los provistos debido a la injerencia de la ponderación del extracto potencial máximo de cada grano
 
@@ -123,7 +125,7 @@ En la tabla \ref{tab:TablaRecetaExperimentos}, se presentan las recetas y la com
 \par Siendo que los valores presentados en la tabla \ref{tab:TablaRecetaExperimentos} satisfacen los objetivos antes presentados, se asume como exitosa esta prueba.
 
 \subsection{Cálculo de rendimiento}
-Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de densidad objetivo, volumen y cantidad de insumos utilizadas y proporcionados por el calculo de insumos, se valida el correcto funcionamiento si la ecuación expresa el mismo rendimiento que el utilizado para el cálculo de insumos.
+Para validar la fórmula de rendimiento, se ingresaron al cálculo de rendimiento valores de densidad objetivo, volumen y cantidad de insumos utilizadas y proporcionados por el cálculo de insumos. Se valida el correcto funcionamiento si la ecuación expresa el mismo rendimiento que el utilizado para el cálculo de insumos.
 
 \begin{table}[H]
     \centering
@@ -140,11 +142,11 @@ Para validar esta ecuación, se ingresaron al calculo de rendimiento valores de 
     \label{tab:rendimiento}
 \end{table}
 
-\par Como puede observarse en la Tabla \ref{tab:rendimiento} los valores calculados aproximan muy bien al resultado, donde la desviación procede de los redondeos utilizados en cada cálculo. Dado que el error es menor al 0.5\% se toman los valores obtenidos como aceptables, concluyendo la validación del cálculo.
+\par Como puede observarse en la Tabla \ref{tab:rendimiento} el error de aproximación es menor al 0,5\% lo cual considera a los valores obtenidos como aceptables. La desviación se debe a los redondeos utilizados en cada cálculo. 
 
 \subsection{Pruebas de velocidad de medición}
 \par
-Para la realización de estas pruebas se llevó a cabo un experimento para el cual se definió el inicio de un experimento de medición con una duración de 10 minutos, e intervalos de medición de 15 segundos y 120 segundos para las mediciones de temperatura y pH respectivamente.
+Para la realización de las pruebas de velocidad se llevó a cabo un experimento con las siguientes variables: Duración de 10 minutos, e intervalos de medición de 15 segundos y 120 segundos para las mediciones de temperatura y pH respectivamente.
 \par 
 En primer lugar, en la figura \ref{fig:pruebasdeInsercion} se presenta una captura tomada de la herramienta \textit{phpmyadmin}\footnote{phpMyAdmin es una herramienta escrita en \textit{PHP} para manejar la administración de \textit{MySQL} a través de páginas web, \url{https://www.phpmyadmin.net/}}. En la figura \ref{fig:pruebasdeInsercionFechayHora} se presenta un acercamiento (zoom) de la columna ``fechayhora'' en la cual  pueden observarse los tiempos en los cuales las inserciones fueron realizadas, siendo que el intervalo de medición de temperatura (el mínimo entre ambos intervalos) fue definido en 15 segundos, las diferencias entre una medición y la siguiente toman valores que van entre los 15 y los 22 segundos. En forma consecuente, se establece que un intervalo de medición de temperatura mínimo debe ser de un valor no inferior a los 22 segundos, de esta forma se asegura un intervalo de duración constante entre mediciones.
 \begin{figure}[H]
@@ -160,7 +162,7 @@ En primer lugar, en la figura \ref{fig:pruebasdeInsercion} se presenta una captu
     \label{fig:pruebasdeInsercionFechayHora}
 \end{figure}
 \par
-Luego, mediante la herramienta \textit{Postman}, fueron realizados tres experimentos. Estos consisten en realizar la consulta de obtención de mediciones a la API REST. En la figura \ref{fig:pruebasdeConsulta} se presentan los resultados, donde puede evidenciarse una demora con duraciones entre 13 ms y 100 ms para obtener la respuesta. A a partir de este valor, se asume a la obtención de datos de la API como instantánea.
+Luego, mediante la herramienta \textit{Postman}, fueron realizados tres experimentos. Estos consisten en realizar la consulta de obtención de mediciones a la API REST. En la figura \ref{fig:pruebasdeConsulta} se presentan los resultados, donde puede evidenciarse una demora con duraciones entre 13 ms y 100 ms para obtener la respuesta. A a partir de este valor, se asume a la obtención de datos de la \textit{API REST} como excelente para su propósito.
 \begin{figure}[h]
     \centering
     \includegraphics[scale=1]{Pruebas/postman3en1b.jpg}
@@ -169,7 +171,7 @@ Luego, mediante la herramienta \textit{Postman}, fueron realizados tres experime
 \end{figure}
 
 \par
-Concretadas estas pruebas con un valor de 22 segundos como mínimo para intervalo de medición de temperatura. Se asume satisfactorios los resultados, cumpliendo de esta manera el requerimiento no funcional que motivo la misma.
+Concretadas estas pruebas con un valor de 22 segundos como mínimo para intervalo de medición de temperatura. Se asume satisfactorios los resultados, cumpliendo de esta manera el requerimiento no funcional que motivó la misma.
 
 
 \section{Pruebas de campo}
@@ -182,17 +184,15 @@ Concretadas estas pruebas con un valor de 22 segundos como mínimo para interval
         
         \par El termo utilizado cuenta con pico vertedor. El mismo facilita la extracción de muestras sin la necesidad de exponer toda la templa a la temperatura ambiente que produciría la disminución de temperatura y, por tanto, la alteración del experimento.
         
-        \par En pruebas durante la construcción del macerador, se identificó que el mismo perdía temperatura a un ritmo mayor al aceptable. Por tanto, se decidió colocar el mismo dentro de un bolso térmico de manera de aumentar el aislamiento térmico. (Figura \ref{fig:ConstrucAislamTerm}).
+        \par Durante la construcción del macerador, se identificó que el mismo perdía temperatura a un ritmo mayor al aceptable. Por tanto, se procedió a colocar el macerador dentro de un bolso térmico de manera de aumentar el aislamiento. (Figura \ref{fig:ConstrucAislamTerm}).
         
-        \par Las mediciones de pH se realizaron a partir de una muestra alojada en un recipiente de aluminio refrigerado\ref{fig:MedicPH}, con la intención de disminuir la temperatura de la solución a veinticinco grados (ver Tabla \ref{tablePhvsTemp}). De forma adicional, dentro del mismo se aloja un sensor de temperatura con el fin de indicar la temperatura de la templa al momento de la medición de pH.
+        \par Las mediciones de pH se realizaron a partir de una muestra alojada en un recipiente de aluminio refrigerado (Figura \ref{fig:MedicPH}) para disminuir la temperatura de la solución a la temperatura de calibración (ver Tabla \ref{tablePhvsTemp}). De forma adicional, dentro del recipiente se aloja un sensor de temperatura con el fin de indicar la temperatura de la templa al momento de la medición de pH.
         
-        \par Para la realización de los experimentos se optó por utilizar intervalos de medición de un minuto para la medición de temperatura y diez para la obtención de la medida de pH. Si bien el sistema soporta mayor frecuencia de medición de pH, la limitante del volumen del recipiente empleado para el experimento no permite obtener una cantidad de templa de la cual se puedan extraer demasiadas muestras sin que el total de estas extracciones afecte al resultado final.
+        \par Para la realización de los experimentos se optó por utilizar intervalos de medición de 1 minuto para la medición de temperatura y 10 minutos para la obtención de la medida de pH. Si bien el sistema soporta mayor frecuencia de medición de pH, la limitante del volumen del recipiente empleado no permite obtener una cantidad de templa de la cual se puedan extraer demasiadas muestras sin que el total de estas extracciones afecte al resultado final. La cantidad de pruebas se definieron acorde a la realización de diez experimentos por cada tipo de maceración planteada. Es a partir de tres experimentos, que el sistema comienza a realizar ajustes sobre el cálculo de insumos. Luego, con 10 experimentos es posible observar el ajuste de este valor.
         
-        \par La cantidad de pruebas se definieron acorde a la realización de diez experimentos por cada tipo de maceración planteada. Es a partir de tres experimentos, que el sistema comienza a realizar ajustes sobre el calculo de insumos. Luego, con diez, es posible observar el ajuste de este valor.
+        \par La malta utilizada para todos los experimentos proviene del mismo lote, y es resguardada en las mismas condiciones. De esta manera puede asegurarse que cualquier cambio de rendimiento obtenido se debe únicamente a la cantidad de insumo utilizado. Definiendo así, las mismas condiciones para todos los experimentos.
         
-        \par La malta utilizada para todos los experimentos proviene del mismo lote, y es resguardada en las mismas condiciones. De esta manera puede asegurarse que los cambios en el rendimiento obtenido en los experimentos se encuentra únicamente influenciado por la cantidad de insumo utilizado. De esta manera pueden ser planteados los experimentos como en igualdad de condiciones.
-        
-        En el Anexo \ref{AnexoFotografias} se ubican una serie de imágenes relacionadas a la construcción del sistema, y a los procedimiento involucrados en el proceso de maceración.
+        En el Anexo \ref{AnexoFotografias} se ubican una serie de imágenes relacionadas a la construcción del sistema y a los procedimientos involucrados en el proceso de maceración.
     \subsection{Recetas y tipos de maceración utilizadas}
         \par Para llevar a cabo los experimentos se planificaron las siguientes maceraciones:
             \subsubsection{Pilsen Lager - Simple} 
@@ -319,15 +319,17 @@ Concretadas estas pruebas con un valor de 22 segundos como mínimo para interval
         \captionof{table}{Tabla de resultados Pilsen Lager Escalonada}
         \label{tab:ResultadosPilsenEscalonada}
     \end{minipage}
+    
+    
     \subsection{Resultados obtenidos}
-        \par Para cada receta realizada se muestran las gráficas de promedio de temperatura y pH obtenidas provistas por la aplicación. Las mismas se presentan en el Anexo \ref{GraficasPruebasCampo}.
-        
-
-            
+        \par Para cada receta realizada se muestran las gráficas de promedio de temperatura y pH obtenidas por la aplicación. Las mismas se presentan en el Anexo \ref{GraficasPruebasCampo}.
+    
     \subsection{Evaluación}
-    \par En la anterior subsección se evidenció que el ajuste de la cantidad de insumos realizada por el sistema produce resultados correctos, esto es, cuando la densidad es menor a la deseada incrementa la cantidad de granos de manera de compensar este sub-rendimiendo, y lo mismo ocurre en caso contrario con un sobre-rendimiento. Esta compensación representa el objetivo de esta funcionalidad, la cual es asistir al productor a partir de una herramienta de optimización de insumos en función de un ajuste utilizando el rendimiento del equipo.
-    \par Cabe señalar que si bien pueden parecer reducidos los cambios en los valores de insumo, los mismos corresponden a un preparado de un volumen reducido. Estos cambios crecerán en forma proporcional al tamaño del preparado, constituyéndose en valores mas significativos conforme a este incremento.
-    \par Por tanto, puede concluirse que esta funcionalidad del sistema se comporta de la manera esperada, y por tanto, correcta. 
+        \par En la anterior subsección se evidenció que el ajuste de la cantidad de insumos realizada por el sistema produce resultados correctos, esto es, cuando la densidad es menor a la deseada incrementa la cantidad de granos de manera de compensar este sub-rendimiendo, y lo mismo ocurre en caso contrario con un sobre-rendimiento. Esta compensación representa el objetivo de esta funcionalidad, la cual es asistir al productor a partir de una herramienta de optimización de insumos en función de un ajuste utilizando el rendimiento del equipo.
+        
+        \par Cabe señalar que si bien pueden parecer reducidos los cambios en los valores de insumo, los mismos corresponden a un preparado de un volumen reducido. Estos cambios crecerán en forma proporcional al tamaño del preparado, constituyéndose en valores más significativos conforme a este incremento.
+        
+        \par Por tanto, puede concluirse que esta funcionalidad del sistema se comporta de la manera esperada, y por tanto, correcta. 
     
     
         
