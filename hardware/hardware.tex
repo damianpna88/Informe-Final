@@ -45,7 +45,7 @@
             \begin{center}
             \begin{tabularx}{\textwidth}{| X | X | X |}
             \hline
-            \multicolumn{3}{|c|}{\textbf{Comparación Plataformas de Hardware}} \\
+            \multicolumn{3}{|c|}{\textbf{Comparación de plataformas de hardware}} \\
             \hline
             Criterio de Comparación & Arduino\textsuperscript{\textregistered} & Raspberry\textsuperscript{\textregistered} pi \\
             \hline
@@ -61,12 +61,29 @@
             \\ \hline
             Tamaño & 7.6 x 1.9 x 6.4 cm. & 8.6cm x 5.4cm x 1.7cm.
             \\ \hline
-            Lenguaje de programación & Lenguaje Bajo Nivel. Gran comunidad y soporte. Se requiere de un computador para el desarrollo. & Lenguaje Alto Nivel. Gran comunidad y soporte. Se desarrolla directamente en el dispositivo.
-            \\ \hline
-            Persistencia de datos ante pérdida de alimentación eléctrica & Ninguna & Al utilizar una memoria SD, se obtiene persistencia de datos.
-            \\ \hline
+
+            
             \end{tabularx}
             \label{CompHard}
+            %\captionof{table}{Comparación entre Arduino y Raspberry Pi}
+            \end{center}
+            
+            \begin{center}
+            \begin{tabularx}{\textwidth}{| X | X | X |}
+                \hline
+                \multicolumn{3}{|c|}{\textbf{Comparación de plataformas de hardware Cont.}} \\
+                \hline
+                Criterio de Comparación & Arduino\textsuperscript{\textregistered} & Raspberry\textsuperscript{\textregistered} pi \\
+                \hline
+                \hline
+                
+                Lenguaje de programación & Lenguaje Bajo Nivel. Gran comunidad y soporte. Se requiere de un computador para el desarrollo. & Lenguaje Alto Nivel. Gran comunidad y soporte. Se desarrolla directamente en el dispositivo.
+                \\ \hline
+                
+                Persistencia de datos ante pérdida de alimentación eléctrica & Ninguna & Al utilizar una memoria SD, se obtiene persistencia de datos.
+            \\ \hline
+            \end{tabularx}
+            \label{CompHardCont}
             \captionof{table}{Comparación entre Arduino y Raspberry Pi}
             \end{center}
             
@@ -182,7 +199,8 @@
             
             \begin{figure}[h] 
                 \centering
-                \includegraphics[scale=0.9]{errorMedicionPh.jpg}
+                %\includegraphics[scale=0.9]{errorMedicionPh.jpg}
+                \includegraphics[scale=0.6]{hardware/ErrorMedicionPH.jpg}
                 \caption{Error de medición de pH respecto a la temperatura de la solución}
                 \label{tablePhvsTemp}
             \end{figure}
@@ -233,17 +251,17 @@
     \subsection{Subcapa de software}
         \par En el diagrama de flujo de la Figura \ref{FlujoPython} se muestra el flujo de funcionamiento que cumple las funcionalidades que se desprenden del diseño.
 
-        \begin{figure}[H]
-            \centering
-            \includegraphics[scale=0.8]{hardware/DiagramadeFlujoPython.jpeg}
+        \begin{figure}
+        \centering
+            \includegraphics[scale=0.75]{hardware/DiagramadeFlujoPython.pdf}
             \caption{Diagrama de flujo del funcionamiento del software }
             \label{FlujoPython}
         \end{figure}
 
-\section{Subcapa de hardware}
-    \par En las siguientes subsecciones se muestran los diagramas de conexión de cada sensor con la placa Raspberry, siguiendo el diseño general de la la Figura \ref{fig:EsquemaHardware} del Anexo.
+    \subsection{Subcapa de hardware}
+        \par En las siguientes subsecciones se muestran los diagramas de conexión de cada sensor con la placa Raspberry, siguiendo el diseño general de la la Figura \ref{fig:EsquemaHardware} del Anexo.
 
-    \subsection{Conexión sensor de pH}
+    \subsubsection{Conexión del sensor de pH}
         \par En la Figura \ref{fig:ConexionSensorpH} se muestra el diagrama de conexión del sensor de pH, conformado por el sensor electroquímico, electrodo y "sonda de pH". Este último, se encuentra conectado a una placa Arduino\textsuperscript{\textregistered} UNO que realiza la función de conversor Analógico-Digital enviando los datos analógicos obtenidos por el sensor como una señal digital al Raspberry\textsuperscript{\textregistered} mediante conexión Serial USB.
         
         \begin{figure}[h]
@@ -253,10 +271,10 @@
             \label{fig:ConexionSensorpH}
         \end{figure}
 
-    \subsection{Conexión del sensor de temperatura sumergible}
+    \subsubsection{Conexión del sensor de temperatura sumergible}
 
         \par Para poder realizar las mediciones del líquido se utiliza un sensor de temperatura sumergible (véase \ref{subseccionElementosutilizados}). Dicho sensor requiere la conexión de un resistencia de $4.7k\Omega$ entre el pin de datos (Data) y el de corriente continua (VDD). En forma adicional, este sensor incorpora la posibilidad de conexión de múltiples sensores en serie mediante el bus I2C\footnote{Bus desarrollado por Philips\textsuperscript{\textregistered} para envío de datos en serie entre un circuito maestro y uno o varios esclavos}. Bajo esta dinámica, cada sensor DS18B20 dispone de un código de identificación único que le permite ser identificado de forma unívoca por la placa Raspberry\textsuperscript{\textregistered}. En la figura \ref{fig:ConexionTemperatura} se presenta el diagrama de conexión de estos sensores.
-        
+        %\begin{minipage}{0.95 \textwidth}
         \begin{figure}[h]
             \centering
             \includegraphics[scale = 0.8]{DiagramaSensordeTemp_bb.jpg}
@@ -264,9 +282,9 @@
             \label{fig:ConexionTemperatura}
         \end{figure}
         
-    \subsection{Conexión del sensor temperatura y humedad ambiental}
+    \subsubsection{Conexión del sensor temperatura y humedad ambiental}
         \par Para recolectar los valores de temperatura y humedad ambiental se utiliza un sensor dedicado (véase \ref{subseccionElementosutilizados}). Este sensor, al igual que el anterior, requiere la conexión de los pines de corriente continua (VDD) y el de datos (Data) mediante una resistencia de $4.7k\Omega$. En la figura \ref{fig:EsquemaDHT11} se muestra el esquema de conexión.
-        
+    %\begin{minipage}{0.95 \textwidth}    
         \begin{figure}[h]
             \centering
             \includegraphics[scale = 0.8]{DiagramaSensorDHT11_bb.jpg}
@@ -275,14 +293,17 @@
         \end{figure}
 
 \section{Ensamble completo}
-\begin{minipage}{0.95 \textwidth}
-    \par Finalmente, en la figura \ref{fig:EsquemaCompletoHardware} se exhibe mediante una imagen fotográfica de la estación de recolección de datos conectada e integrada con todos sus sensores (Figura \ref{fig:EsquemaCompletoHardware}).\\
-\end{minipage}
-\begin{minipage}{0.95 \textwidth}
-    
-        \centering
-        \includegraphics[scale=0.1]{hardware/SistemaEnsamblado.jpeg}
+
+    \par Finalmente, en la Figura \ref{fig:EsquemaCompletoHardware} se exhibe mediante una imagen fotográfica la integración de todos los componentes, en conjunto, la estación de recolección de datos.\\
+%\end{minipage}
+%\begin{minipage}{0.95 \textwidth}
+
+    \begin{figure}[t]
+    \centering
+        \includegraphics[scale=0.11]{hardware/SistemaEnsamblado.jpeg}
         \captionof{figure}{Fotografía de la estación de recolección de datos}
         \label{fig:EsquemaCompletoHardware}
+    \end{figure}
+
     
-\end{minipage}
+%\end{minipage}

@@ -17,12 +17,13 @@
     Por otro lado, fueron analizadas funcionalidades de otras aplicaciones disponibles en el mercado como \textit{Beer Smith}\textsuperscript{\textregistered}, \textit{Brew-o-Matic}\textsuperscript{\textregistered} y \textit{Brewer’s Friend}\textsuperscript{\textregistered}, dado que las mismas realizan funciones similares a la propuesta en el presente proyecto.
     
     \subsection{Definición de requerimientos}
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
     \par
     Con la información obtenida en la etapa de recopilación de requerimientos, fue definido un conjunto de requisitos funcionales y no funcionales, los cuales establecen las principales características de la aplicación. Los mismos fueron divididos en tres módulos: el módulo de monitoreo, de planificación y el módulo historial.
-    \end{minipage}
+    %\end{minipage}
     
-  \begin{minipage}{0.95\textwidth}
+  %\begin{minipage}{0.95\textwidth}
+  \begin{table}[H]
    \begin{center}
    \begin{tabularx}{\textwidth}{| X | X | X |}
    \hline
@@ -38,13 +39,17 @@
         RF003 & Monitorear Maceración & El sistema debe permitir visualizar las variables: temperatura; condiciones climáticas; pH; y Actividad enzimática; a partir de los datos obtenidos de los sensores.
         \\\hline
         RF004 & Realizar seguimiento de un experimento de Maceración & El sistema debe permitir realizar el seguimiento de un experimento de maceración, brindando alertas ante desvíos o momentos de intervención del productor. \\\hline
+        RF005 &  Planificar experimentos de Maceración & El sistema debe permitir definir las temperaturas, pH, duración de los intervalos de Maceraciones Simples y Complejas,
+        \\\hline
         
     \end{tabularx}
     \label{ReqFuncionales_Parte1}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{| X | X | X |}
     \hline
@@ -53,7 +58,7 @@
     ID & Nombre & Descripción \\
     \hline
     \hline
-        RF005 &  Planificar experimentos de Maceración & El sistema debe permitir definir las temperaturas, pH, duración de los intervalos de Maceraciones Simples y Complejas, características de los granos que se utilizarán y el volumen deseado para la misma.
+         &   & características de los granos que se utilizarán y el volumen deseado para la misma.
         \\\hline
         RF006 & Alta y Baja de Maceraciones & El sistema debe permitir crear o eliminar una maceración y todos los experimentos relacionados a esta.  \\\hline
         RF007 & Almacenar / Eliminar experimentos  & El sistema debe permitir almacenar y eliminar experimentos de maceración.
@@ -62,12 +67,15 @@
         \\\hline
         RF009 & Observar datos evolutivos de la maceración & El sistema debe proveer información que represente la evolución del proceso de maceración en curso a partir de las variables de temperatura y pH, y su acción combinada en la actividad enzimática. De forma adicional debe proveer datos de las condiciones ambientales en las que se está realizando la maceración.
         \\\hline
+        RF010 & Observar gráficas históricas y comparativas entre experimentos de maceración & El sistema debe proveer gráficas de cada experimento de maceración y otras donde se evidencien sus correspondientes comparaciones. \\\hline
     \end{tabularx}
     \label{ReqFuncionales_Parte2}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{| X | X | X |}
     \hline
@@ -76,7 +84,7 @@
     ID & Nombre & Descripción \\
     \hline
     \hline
-         RF010 & Observar gráficas históricas y comparativas entre experimentos de maceración & El sistema debe proveer gráficas de cada experimento de maceración y otras donde se evidencien sus correspondientes comparaciones. \\\hline
+
          RF011 & Cálculo de rendimientos en base a datos estadísticos & El sistema debe realizar optimizaciones en base a estimaciones del rendimiento del grano a partir de datos obtenidos de los experimentos de maceración.
          \\\hline
          RF012 & Configurar métodos de obtención de medidas representativas de temperatura & El sistema debe permitir configurar la forma en que se establece la representatividad de las múltiples medidas de temperatura obtenidas por los diferentes sensores (media, promedio, etc).
@@ -84,9 +92,11 @@
     \end{tabularx}
     \label{ReqFuncionales_Parte3}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{| X | X | X |}
     \hline
@@ -100,13 +110,16 @@
          \\\hline
          RNF003 & Elección de plataforma para software & La plataforma del componente de software debe tener amplio acceso en el mercado argentino. 
          \\\hline
+         RNF004 & Demoras aceptables de transmisión entre componentes & La interfaz debe permitir la transmisión de mediciones de un experimento con una demora máxima establecida\footnote{Dada la duración promedio de 60 min. de los experimentos, se considera aceptable un valor no menor a 1 min. como máximo}, tal que esta cumpla la condición de no entorpecer la detección de desvíos del preparado.
+         \\ \hline
      \end{tabularx}
     \label{ReqNoFuncionales_Parte2}
     \end{center}
-    \end{minipage}
+    \end{table}
+    %\end{minipage}
     
     %\begin{minipage}{0.95\textwidth}
-    %\begin{table}
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{| X | X | X |}
     \hline
@@ -115,8 +128,7 @@
     ID & Nombre & Descripción \\
     \hline
     \hline          
-         RNF004 & Demoras aceptables de transmisión entre componentes & La interfaz debe permitir la transmisión de mediciones de un experimento con una demora máxima establecida\footnote{Dada la duración promedio de 60 min. de los experimentos, se considera aceptable un valor no menor a 1 min como máximo}, tal que esta cumpla la condición de no entorpecer la detección de desvíos del preparado.
-         \\ \hline
+
         RNF005 & Recuperación de datos ante desconexiones & El sistema debe ser capaz de almacenar en el componente de hardware una copia de seguridad de los datos de la experiencia que se esté realizando, de manera de no perder datos antes eventuales pérdidas de conexión.
         \\ \hline
         RNF006 & Tamaño reducido & El componente electrónico debe tener un tamaño reducido, de manera de no estorbar las actividades de producción.
@@ -125,7 +137,7 @@
     \label{ReqNoFuncionales_Parte2}
     \end{center}
     %\end{minipage}
-    %\end{table}}
+    \end{table}
     
     %\begin{minipage}{0.95\textwidth}
     
@@ -136,15 +148,13 @@
     \textbf{Cervecero}: Es el usuario del sistema, quien se encarga de definir las planificaciones de maceración, utilizar el monitoreo de variables para dar seguimiento al proceso y realizar análisis a partir de las experiencias y la información obtenida de estas.
     %\end{minipage}
  
- 
-    
-    
- 
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
     \subsection{Casos de uso}
-    \hfill \break
-    \hfill \break
+    %\hfill \break
+    %\hfill \break
     %esto sería el current values?
+    \begin{table}[H]
+    
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
         \hline
@@ -156,31 +166,38 @@
         \hline
         1- El CU comienza cuando el usuario hace \textit{click} en el botón “Monitorear Variables”. & \\
         \hline
-    \end{tabularx}
-    \label{CU001a}
-    \end{center}
-    \end{minipage}    
-        
-    \begin{minipage}{0.95\textwidth}
-    \begin{center}
-    \begin{tabularx}{\textwidth}{ | X | X |}
-        \hline
-        \multicolumn{2}{|c|}{\textbf{Caso de Uso: Monitorear variables - CU001 cont.}} \\
-        \hline
-        Curso Normal & Curso Alternativo \\
-        \hline
-        
         2- El sistema muestra una pantalla con los valores de temperatura y pH en proceso de monitoreo. & 2.1- El sistema no detecta los sensores. 
         El sistema muestra el mensaje “No pudieron obtenerse los datos del componente de hardware. Verificar conexión “. Vuelve a la pantalla anterior.
         \\
         \hline
     \end{tabularx}
-    \label{CU001b}
+    \label{CU001a}
     \end{center}
-    \end{minipage}
+    \end{table}
+    %\end{minipage}    
+        
+    %\begin{minipage}{0.95\textwidth}
+%    \begin{table}[H]
+%    \begin{center}
+%    \begin{tabularx}{\textwidth}{ | X | X |}
+%        \hline
+%        \multicolumn{2}{|c|}{\textbf{Caso de Uso: Monitorear variables - %CU001 cont.}} \\
+%        \hline
+%        Curso Normal & Curso Alternativo \\
+%        \hline
+%        
+%        2- El sistema muestra una pantalla con los valores de temperatura y pH en proceso de monitoreo. & 2.1- El sistema no detecta los sensores. 
+        %El sistema muestra el mensaje “No pudieron obtenerse los datos del componente de hardware. Verificar conexión “. Vuelve a la pantalla anterior.
+        %\\
+        %\hline
+    %\end{tabularx}
+    %\label{CU001b}
+    %\end{center}
+    %\end{minipage}
+%\end{table}
 
-
-\begin{minipage}{0.95\textwidth}
+%\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     %planning activity
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
@@ -206,9 +223,11 @@
     \end{tabularx}
     \label{CU002}
     \end{center}
+    \end{table}
     %\end{minipage}
     
     %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     %experiment activity
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
@@ -221,28 +240,30 @@
         \hline
         1- El CU comienza cuando el usuario selecciona la maceración de la lista de maceraciones cargadas. & \\
         \hline
-        
-    \end{tabularx}
-    \label{CU003a}
-    \end{center}
-    \end{minipage}
-    
-    \begin{minipage}{0.95\textwidth}
-    \begin{center}
-    \begin{tabularx}{\textwidth}{ | X | X |}
-        \hline
-        \multicolumn{2}{|c|}{\textbf{Caso de Uso: Gestionar maceración - CU003 cont.}} \\
-        \hline
-        Curso Normal & Curso Alternativo \\
-        \hline    
         2- El sistema despliega una pantalla con los experimentos realizados y una serie de botones para: eliminar maceración (CU009), eliminar experimento (CU008), iniciar nuevo experimento (CU007), ver datos cargados de la maceración (CU004), ver histórico de maceración (CU005 y CU006) & 2.1- No existen experimentos realizados, la lista se muestra vacía.
         \\
         \hline
     \end{tabularx}
-    \label{CU003b}
+    \label{CU003a}
     \end{center}
+    %\end{minipage}
+    \end{table}
+   %\begin{minipage}{0.95\textwidth}
+    
+%    \begin{center}
+%    \begin{tabularx}{\textwidth}{ | X | X |}
+%        \hline
+%        \multicolumn{2}{|c|}{\textbf{Caso de Uso: Gestionar maceración - % CU003 cont.}} \\
+%        \hline
+%        Curso Normal & Curso Alternativo \\
+%        \hline    
+%        
+%    \end{tabularx}
+%    \label{CU003b}
+%    \end{center}
 
     %este sería el info mash, planning activity hardcodeado
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
         \hline
@@ -260,10 +281,25 @@
     \end{tabularx}
     \label{CU004}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
+    %\begin{table}[H]
+    %    \begin{center}
+%    \begin{tabularx}{\textwidth}{ | X | X |}
+%        \hline
+%        \multicolumn{2}{|c|}{\textbf{Caso de Uso: Gestionar maceración - % CU003 cont.}} \\
+%        \hline
+%        Curso Normal & Curso Alternativo \\
+%        \hline    
+%        2- El sistema muestra el tipo de maceración, el volumen de empaste a usar, la densidad deseada, la cantidad de malta de cada tipo a utilizar en base teórica y el volumen y temperatura de agua requerido para cada etapa. & 2.1- En caso de haberse repetido más de tres experimentos con la maceración seleccionada, se mostrará la cantidad de insumos en base ajustada. \\
+%        \hline
+%    \end{tabularx}
+%    \label{CU00b}
+%    \end{center}
     
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     %general fragment
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
@@ -288,10 +324,11 @@
     \end{tabularx}
     \label{CU005}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
-    
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
         \hline
@@ -309,10 +346,12 @@
     \end{tabularx}
     \label{CU006}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
     
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
         \hline
@@ -336,34 +375,39 @@
         5- El sistema muestra un panel con información relacionada a cada etapa dentro de la maceración en curso: Tiempo restante para el inicio de la misma y volumen y temperatura de agua en el caso de una maceración por infusión o la cantidad de empaste a retirar en el caso de una maceración por decocción. & \\
         \hline
         
+        6- El sistema muestra las opciones ``Finalizar experimento'' y ``Cancelar experimento'' & 6.1- En caso que el usuario seleccione la opción ``Finalizar experimento'' y el experimento hay alcanzado el total de la cantidad de mediciones, el sistema muestra un panel para que el usuario ingrese el valor de densidad específica obtenida.\newline 6.2- En caso que el usuario seleccione la opción ``Finalizar experimento'' y el experimento no haya alcanzado la cantidad de mediciones a realizar, el sistema enseña un mensaje indicando que aún no se puede finalizar el experimento.\\ 
+        \hline
+        
         \end{tabularx}
     \label{CU007_a}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
-    
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
     \hline
         \multicolumn{2}{|c|}{\textbf{Caso de Uso: Monitorear experimento de maceración - CU007 cont.}} \\
         \hline
-        \multicolumn{2}{|l|}{Actor: Productor de Cerveza} \\
-        \hline
+        %\multicolumn{2}{|l|}{Actor: Productor de Cerveza} \\
+        %\hline
     
         Curso Normal & Curso Alternativo \\
         \hline
         
-        6- El sistema muestra las opciones ``Finalizar experimento'' y ``Cancelar experimento'' & 5.1- En caso que el usuario seleccione la opción ``Finalizar experimento'' y el experimento hay alcanzado el total de la cantidad de mediciones, el sistema muestra un panel para que el usuario ingrese el valor de densidad específica obtenida.\newline 5.2- En caso que el usuario seleccione la opción ``Finalizar experimento'' y el experimento no haya alcanzado la cantidad de mediciones a realizar, el sistema enseña un mensaje indicando que aún no se puede finalizar el experimento. \newline 5.3- En caso que el usuario seleccione la opción ``Cancelar experimento'', el sistema finalizará el experimento y volverá a la pantalla de ``Gestión de maceración" luego que el usuario indique que esta seguro que desea cancelar el experimento.\\
+         & 6.3- En caso que el usuario seleccione la opción ``Cancelar experimento'', el sistema finalizará el experimento y volverá a la pantalla de ``Gestión de maceración" luego que el usuario indique que esta seguro que desea cancelar el experimento.\\
         \hline
 
     \end{tabularx}
     \label{CU007_b}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
-    
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
         \hline
@@ -385,10 +429,11 @@
     \end{tabularx}
     \label{CU008}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
-    
-    \begin{minipage}{0.95\textwidth}
+    %\begin{minipage}{0.95\textwidth}
+    \begin{table}[H]
     \begin{center}
     \begin{tabularx}{\textwidth}{ | X | X |}
         \hline
@@ -412,7 +457,8 @@
     \end{tabularx}
     \label{CU009}
     \end{center}
-    \end{minipage}
+    %\end{minipage}
+    \end{table}
     
     \subsubsection{Diagrama de Casos de uso}
     El mismo se encuentra presente en el Anexo, Figura \ref{DiagCU}.
