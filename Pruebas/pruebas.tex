@@ -15,60 +15,78 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
     \item Pruebas de la aplicación: Verificación de funcionalidades, de manera individual, imprimiendo en el retorno del sistema (\textit{Log}) del entorno de desarrollo \textit{AndroidStudio} diferentes variables de control, verificando así el correcto funcionamiento. En forma adicional, fueron probadas todas las funcionalidades que interactúan de forma integral con el sistema (métodos de interacción con la \textit{API REST}).
 \end{itemize}
 
-\par La tabla \ref{tab:TablaChequeoRequerimientos} refleja el cumplimiento de los requerimientos del sistema.
- \begin{table}[H]
-     \centering
-     \begin{tabularx}{\textwidth}{|X|X|}
-     \hline
-     \multicolumn{1}{|c|}{Requerimiento} & \multicolumn{1}{|c|}{Verificación}\\
-     \hline
-     \hline
-        \multicolumn{1}{|c|}{RF001}  & El sistema implementa el uso de sensores de temperatura, pH y temperatura ambiente. Mencionados en el capítulo \textit{\textbf{Hardware}}. \\
+ \begin{longtable}{|p{3cm}|p{11cm}|}
+    \hline
+    \multicolumn{2}{| c |}{\textbf{Tabla de verificación de requerimientos}}\\
+    \hline
+    \multicolumn{1}{| c |}{Requerimiento} &\multicolumn{1}{| c |}{Verificación}\\
+    \hline
+    \hline
+ \endfirsthead
+ 
+ \hline
+    \multicolumn{2}{|c|}{Continuación de la tabla \ref{tab:TablaChequeoRequerimientos}}\\
+    \hline
+    \multicolumn{1}{| c |}{Requerimiento} &\multicolumn{1}{| c |}{Verificación}\\
+    \hline
+ \endhead
+ 
+ %\hline
+ \endfoot
+ 
+ %\hline
+ %\multicolumn{2}{| c |}{End of Table}\\
+ %\hline
+ \caption{Tabla de verificación de requerimientos \label{tab:TablaChequeoRequerimientos}}\\
+ \endlastfoot
+     
+     
+        \multicolumn{1}{|c|}{RF001} & El sistema implementa el uso de sensores de temperatura, pH y temperatura ambiente. Mencionados en el capítulo \textit{\textbf{Hardware}}. \\
         \hline
-        \multicolumn{1}{|c|}{RF002}  & El sistema implementa el uso de cuatro sensores de temperatura ubicados en distintas posiciones del macerado. El uso de los mismos se menciona en el capítulo \textit{\textbf{Hardware}}. \\
+        \multicolumn{1}{|c|}{RF002} & El sistema implementa el uso de cuatro sensores de temperatura ubicados en distintas posiciones del macerador. El uso de los mismos se menciona en el capítulo \textit{\textbf{Hardware}} y posteriormente en este mismo capitulo. \\
         \hline
-        \multicolumn{1}{|c|}{RF003}  & El sistema permite visualizar los datos recolectados por los sensores aun si no se esta llevando a cabo un experimento. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RF003} & El sistema permite visualizar los datos recolectados por los sensores se este llevando a cabo o no un experimento de maceración. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RF004}  & El sistema permite realizar el seguimiento de un experimento de maceración.  Mencionado en el capítulo \textit{\textbf{Software}}.   \\
+        %\multicolumn{1}{|c|}{RF004}  & El sistema permite realizar el seguimiento de un experimento de maceración.  Mencionado en el capítulo \textit{\textbf{Software}}.   \\
+        %\hline
+        \multicolumn{1}{|c|}{RF004} & El sistema a través de la aplicación, permite ingresar todos los datos que caracterizan a una receta de maceración mediante una pantalla destinada a este fin. Mencionado en el capítulo \textit{\textbf{Software}}.  \\
         \hline
-        \multicolumn{1}{|c|}{RF005}  & El sistema permite ingresar todos los datos que caracterizan a una planificación de maceración. Mencionado en el capítulo \textit{\textbf{Software}}.  \\
-        \hline
-        \multicolumn{1}{|c|}{RF006}  & El sistema permite crear o eliminar una maceración planificada y todos los experimentos relacionados a ella. Mencionado en el capítulo \textit{\textbf{Software}}. \\
-        \hline
-        \multicolumn{1}{|c|}{RF007}  & El sistema almacena y elimina los datos de los experimentos realizados mediante la interfaz gráfica de la aplicación. Mencionado en el capítulo \textit{\textbf{Software}}. \\
-        \hline
-        \multicolumn{1}{|c|}{RF008}  & El sistema realiza cálculos de insumos en forma teórica y práctica. En forma adicional, para maceraciones complejas, brinda los cálculos de volumen y temperatura del agua. Mencionado en el capítulo \textit{\textbf{Software}}. \\
-        \hline
-        \multicolumn{1}{|c|}{RF009}  & El sistema provee información relativa al proceso del experimento de maceración  monitoreado. Mencionado en el capítulo \textit{\textbf{Software}}.  \\
-        \hline
-        \multicolumn{1}{|c|}{RF010}  & El sistema provee gráficas relativas a los datos recolectados en cada experimento de maceración, además provee otras a partir de resultados obtenidos del conjunto de experimentos. Mencionado en el capítulo \textit{\textbf{Software}}. \\
-        \hline
-        \multicolumn{1}{|c|}{RF011}  & Luego de 3 experimentos de maceraciones concretados para una misma maceración, el sistema comienza a optimizar los insumos. Mencionado en el capítulo \textit{\textbf{Software}}. \\
-        \hline
-        \end{tabularx}
-        \caption{Tabla de chequeo de requerimientos}
-        \label{tab:TablaChequeoRequerimientos}
-        \end{table}
         
-         \begin{table}[H]
-        \centering
-        \begin{tabularx}{\textwidth}{|X|X|}
+        \multicolumn{1}{|c|}{RF005} & El sistema emite alertas gráficas y sonoras ante desvíos entre los valores planificados y los obtenidos durante un experimento de macerado. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{Requerimiento} & \multicolumn{1}{|c|}{Verificación}\\
+        \multicolumn{1}{|c|}{RF006}  & El sistema, en particular la aplicación móvil, cuenta con la capacidad de almacenar recetas de maceración, y permite remover una maceración existente junto a todos los experimentos relacionados a ella. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RF012}  & Durante el monitoreo de un experimento, el sistema permite configurar que sensores intervienen en el cálculo de medidas de representatividad, además de cambiar la forma en que se calcula esta. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RF007} & El sistema permite almacenar y eliminar los datos de los experimentos realizados, estos pueden ser gestionados mediante la interfaz gráfica de la aplicación. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RNF001}  & La aplicación utiliza un diseño intuitivo y dinámico, la información es presentada en forma clara (sin ambigüedades). Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \multicolumn{1}{|c|}{RF008} & El sistema, mediante la aplicación móvil, informa las cantidades de insumos a utilizar para cada receta de maceración. Estos insumos son calculados mediante dos aproximaciones: una estimación teórica y un ajuste empírico de los valores teóricos basados en resultados antes obtenidos. De forma adicional, brinda los cálculos de volumen y temperatura del agua para cada Etapa. Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        \hline %HASTA ACÁ LLEGAMOS!
+        %\multicolumn{1}{|c|}{RF009} & El sistema provee información relativa al proceso del experimento de maceración  monitoreado. Mencionado en el capítulo \textit{\textbf{Software}}.  \\
+        %\hline
+        \multicolumn{1}{|c|}{RF009} & El sistema provee gráficas de los datos recolectados en cada experimento de maceración ubicados en una única pantalla. De forma adicional, provee gráficas relativas a resultados obtenidos del conjunto de experimentos para una misma receta de maceración. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RNF002}  & Al momento de elegir los diferentes componentes se tuvo en cuenta esta limitación, optando así por los mas económicos.\\
+        \multicolumn{1}{|c|}{RF010} & Luego de 3 experimentos de macerado concretados para una misma receta de maceración, el sistema comienza a optimizar los insumos. El resultado de estas optimizaciones es presentado junto a los valores no optimizados en una pantalla destinada a este fin. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RNF003}  & La plataforma elegida para la aplicación, \textit{Android},  se basó en este requerimiento. Mencionado en el capítulo \textit{\textbf{Hardware}}. \\
+        \multicolumn{1}{|c|}{RF011} & Durante un experimento de maceración en curso, el sistema presenta un único valor de temperatura representativo del tanque. Este valor es obtenido aplicando el calculo de medidas de tendencia central. El sistema permite seleccionar entre tres métodos de calculo para este valor: media,  mediana  y  promedio  de  valores extremos. Mencionado en el capítulo \textit{\textbf{Software}}. \\
         \hline
-        \multicolumn{1}{|c|}{RNF004}  & El sistema produce resultados aceptables para recolectar un conjunto de valores, luego el lapso consumido para el envío de los datos a la aplicación es despreciable. \\
+        %\multicolumn{1}{|c|}{RNF001} & Los insumos de hardware utilizados para la construcción del sistema fueron seleccionados de forma tal de disminuir el costo total sin complejizar la construcción. . Mencionado en el capítulo \textit{\textbf{Software}}. \\
+        %\hline
+        %\multicolumn{1}{|c|}{RNF002} & Al momento de elegir los diferentes componentes se tuvo en cuenta esta limitación, optando así por los mas económicos.\\
+        %\hline
+        \multicolumn{1}{|c|}{RNF001} & La plataforma elegida para la aplicación, \textit{Android},  se basó en este requerimiento siendo esta la mas usada en el mercado Argentino. Mencionado en el capítulo \textit{\textbf{Hardware}}. \\
         \hline
-     \end{tabularx}
-     \caption{Tabla de chequeo de requerimientos}
- \end{table}
+        \multicolumn{1}{|c|}{RNF002} & El sistema produce resultados aceptables para recolectar un conjunto de valores, luego el lapso consumido para el envío de los datos a la aplicación es despreciable por su duración corroborando asi este requerimiento. Mencionado en el capítulo \textit{\textbf{Verificación y validación}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RNF003} & Los datos inherentes a los experimentos realizados se almacenan en los componentes de hardware y software. Mencionado en los capítulos \textit{\textbf{Hardware}} y \textit{\textbf{Software}}. \\
+        \hline
+        \multicolumn{1}{|c|}{RNF004} & Durante la comunicación entre el componente de software y el componente de hardware.\\
+        %\hline
+        %\multicolumn{1}{|c|}{RNF002} & Al momento de elegir los diferentes componentes se tuvo en cuenta esta limitación, optando así por los mas económicos.\\
+        %\hline
+        %\multicolumn{1}{|c|}{RNF002} & Al momento de elegir los diferentes componentes se tuvo en cuenta esta limitación, optando así por los mas económicos.\\
+        %\hline
+        \multicolumn{1}{|c|}{RNF007} & Al momento de seleccionar las placas electrónicas .\\
+        \hline
+    \end{longtable}
 
 \section{Pruebas de ejecución y despliegue de resultados}
 
@@ -76,7 +94,7 @@ Durante el ciclo de vida del proyecto, de forma constante y repetitiva, fueron a
 
 \subsection{Funcionamiento de la aplicación}
 El correcto funcionamiento de la aplicación se lleva a cabo mediante casos de prueba de tipo ``Entrega''. Según \cite{Som05} "\ldots Las pruebas de entrega, “pruebas funcionales” o “pruebas de caja negra”, son aquellas en las que sólo interesan las funcionalidades del sistema y no su implementación. En otras palabras, se valida que el sistema satisfaga sus requerimientos \ldots".
-Las fichas de Casos de Prueba se encuentran ubicadas en el Anexo \ref{CasosPrueba}. Los casos de pruebas son ejecutados por el único usuario del sistema, el fabricante de cerveza Artesanal. Al final de cada ficha bajo el título de ``Evidencias'', se ubica un hipervínculo a un vídeo, donde podrá observarse la ejecución de la prueba.
+Las fichas de Casos de Prueba se encuentran ubicadas en el Anexo \ref{CasosPrueba}. Los casos de pruebas son ejecutados por el único usuario del sistema, el fabricante de cerveza artesanal. Al final de cada ficha bajo el título de ``Evidencias'', se ubica un hipervínculo a un vídeo, donde podrá observarse la ejecución de la prueba.
 
 \subsection{Cálculo de insumos}
 \par Se procedió a realizar la validación de los cálculos de insumos implementados mediante el uso de recetas provistas por los directores. Es de resaltar que en el cálculo de insumos utilizado para las validaciones se lleva adelante un procedimiento en el cual no es tenido en cuenta el extracto potencial máximo de cada malta, asumiendo así este potencial como del 100\%. Siendo que los extractos potenciales se encuentran en el intervalo de 70\% a 85\%, los valores aquí calculados serán entre un 15\% a un 30\% mayores según el caso. Tomando en cuenta lo antes mencionado, se consideran como válidos los cálculos que se encuentren dentro de estos intervalos.
@@ -178,9 +196,19 @@ Concretadas estas pruebas con un valor de 22 segundos como mínimo para interval
 \par En esta sección se exponen un conjunto de pruebas experimentales realizadas con el fin de demostrar que los resultados obtenidos por el sistema en el análisis y optimización de insumos cumplen los requerimientos. 
 
     \subsection{Metodología de pruebas}
-        \par Con la finalidad de ejecutar las pruebas se utilizó como macerador un termo\footnote{Termo, adaptación doméstica de un frasco de Dewar} con capacidad volumétrica de 2 litros. Al mismo se le realizaron orificios pasantes de forma de incorporar en su interior los cuatro sensores de temperatura sumergibles, (Figura \ref{fig:ConstrucMacerador}).
         
-        \par Los sensores introducidos fueron fijados por medio de pegamento de base siliconada en diferentes posiciones (Figura \ref{fig:ConstrucMacerador}). Con la finalidad de disminuir la pérdida de calor producida por las perforaciones realizadas para introducir estos sensores, se procedió a aplicar sellador siliconado  en los orificios.
+        \par Con la finalidad de ejecutar las pruebas se utilizó como macerador un termo\footnote{Termo, adaptación doméstica de un frasco de Dewar} de forma cilíndrica con capacidad volumétrica de 2 litros. Al mismo se le realizaron orificios pasantes de forma de incorporar en su interior los sensores de temperatura sumergibles, (Figura \ref{fig:ConstrucMacerador}).
+        
+        \par En cuanto a la ubicación para los sensores dentro del tanque de macerado, a partir del análisis presentado en el apartado \ref{colocacionDeSensores}, se decidió utilizar un polígono de tres lados. Luego, son necesarios para el uso de esta figura cuatro sensores que fueron ubicados en los vértices y centro de un triángulo equilátero circunscrito en el tanque (Figura \ref{fig:EsquemaCompletoHardware}). De forma de obtener temperaturas representativas de las distintas profundidades del tanque, se ubicó cada sensor en una altura diferente manteniendo los mismos a distancias equidistantes, figura \ref{fig:SensoresEnTanque}.
+   
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.5]{Pruebas/UbicacionSensoresEnTanque-04.jpeg}
+            \caption{Esquema representativo de la ubicación de los sensores en el tanque de maceración de forma cilíndrica. La distribución de los sensores A', B', C' y O' (color rojo) yacen en 3 niveles de altura distintos, dividiendo el volumen en cuatro secciones verticales de igual tamaño. Para este caso, la altura de los sensores B' y O' se corresponde con el segundo nivel de altura. En vista en planta, los sensores A', B' y C' coinciden con los vértices de un triángulo equilátero y el sensor O' con el centro de ésta figura que se encuentra circunscrita en el cilindro.}
+            \label{fig:SensoresEnTanque}
+        \end{figure}
+        
+        \par Los sensores introducidos fueron fijados por medio de pegamento de base siliconada en las posiciones antes indicadas  (Figura \ref{fig:ConstrucMacerador}). Con la finalidad de disminuir la pérdida de calor producida por las perforaciones realizadas para introducir estos sensores, se procedió a aplicar sellador siliconado  en los orificios.
         
         \par El termo utilizado cuenta con pico vertedor. El mismo facilita la extracción de muestras sin la necesidad de exponer toda la templa a la temperatura ambiente que produciría la disminución de temperatura y, por tanto, la alteración del experimento.
         

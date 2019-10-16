@@ -4,9 +4,9 @@
 
 \section{Tecnologías evaluadas}
 \label{SeccionTecnoEvalHardware}
-    \par Para el funcionamiento del prototipo propuesto es necesario obtener datos digitales provenientes de múltiples sensores\footnote{Dispositivo capaz de recibir información de una magnitud del exterior y transformarla en otra magnitud, normalmente eléctrica, apta para ser cuantificada y manipulada} (temperatura y pH de líquidos;  temperatura y humedad ambiental); disponer de capacidad de almacenamiento para la persistencia de datos; e incorporar conectividad para transmisión de datos. De forma adicional, el componente debe poseer un tamaño reducido, de manera de no estorbar en las actividades de producción.
+    \par Para el funcionamiento del prototipo propuesto es necesario obtener datos digitales provenientes de múltiples sensores\footnote{Dispositivo capaz de recibir información de una magnitud del exterior y transformarla en otra magnitud, normalmente eléctrica, apta para ser cuantificada y manipulada} (temperatura y pH de líquidos,  temperatura y humedad ambiental), disponer de capacidad de almacenamiento para la persistencia de datos, e incorporar conectividad para transmisión de datos. De forma adicional, el componente debe poseer un tamaño reducido, de manera de no estorbar en las actividades de producción.
 
-    \par Existen diferentes plataformas dentro de las cuales puede ser desarrollado un componente que cumpla los requerimientos antes mencionados. Raspberry\textsuperscript{\textregistered} y Arduino\textsuperscript{\textregistered} se destacan como las más utilizadas y con mayor comunidad, por tanto, luego se describen y comparan en detalle.
+    \par Existen diferentes plataformas dentro de las cuales puede ser desarrollado un componente que cumpla los requerimientos antes mencionados. Raspberry Pi\textsuperscript{\textregistered} y Arduino\textsuperscript{\textregistered} se destacan como las más utilizadas y con mayor comunidad, por tanto, luego se describen y comparan en detalle.
     
     \par Respecto de la recolección de datos, los sensores se describen abordando aspectos como costo económico, precisión y fiabilidad de los datos.
     
@@ -15,7 +15,7 @@
     
         \subsubsection{Arduino: Microcontrolador}
         
-            \par Arduino\textsuperscript{\textregistered} es una compañía de cultura libre\footnote{Corriente de pensamiento que promueve la libertad en la distribución y modificación de trabajos creativos basándose en el principio del contenido libre para distribuir o modificar trabajos y obras creativas.} que manufactura placas de desarrollo de hardware para construir dispositivos digitales e interactivos que pueden sensar y controlar objetos del mundo real. El software de Arduino\textsuperscript{\textregistered} consiste de dos elementos, un entorno de desarrollo (IDE) y un \textit{bootloader}\footnote{El bootloader de Arduino es un software alojado en la memoria flash que permite programar Arduino a través del puerto serie sin necesidad de usar un programador externo.} que es ejecutado de forma automática dentro del microcontrolador cuando este se enciende. Las placas Arduino se programan mediante un computador, usando comunicación serial. Generalmente el hardware (Figura \ref{boardArduino}) consiste de un microcontrolador\footnote{Un microcontrolador es un circuito integrado o chip que incluye en su interior las tres unidades funcionales de un ordenador: CPU, memoria y unidades de E/S.} Atmel AVR, conectado sobre una placa de circuito impreso con al menos 16 GPIO (\textit{General Purpose Input Output}) para entrada y salida de datos. A la misma se le pueden conectar placas de expansión (shields) que complementan la funcionalidad del modelo de placa empleada, agregando circuitería, sensores y módulos de comunicación externos a la placa original.
+            \par Arduino\textsuperscript{\textregistered} es una compañía de cultura libre\footnote{Corriente de pensamiento que promueve la libertad en la distribución y modificación de trabajos creativos basándose en el principio del contenido libre para distribuir o modificar trabajos y obras creativas.} que manufactura placas de desarrollo de hardware para construir dispositivos digitales e interactivos que pueden sensar y controlar objetos del mundo real. El software de Arduino\textsuperscript{\textregistered} consiste de dos elementos, un entorno de desarrollo (IDE) y un \textit{bootloader}\footnote{El \textit{bootloader} de Arduino es un software alojado en la memoria flash que permite programar Arduino a través del puerto serie sin necesidad de usar un programador externo.} que es ejecutado de forma automática dentro del microcontrolador cuando este se enciende. Las placas Arduino se programan mediante un computador, usando comunicación serial. Generalmente el hardware (Figura \ref{boardArduino}) consiste de un microcontrolador\footnote{Un microcontrolador es un circuito integrado o chip que incluye en su interior las tres unidades funcionales de un ordenador: CPU, memoria y unidades de E/S.} Atmel AVR, conectado sobre una placa de circuito impreso con al menos 16 GPIO (\textit{General Purpose Input Output}) para entrada y salida de datos. A la misma se le pueden conectar placas de expansión (\textit{shields}) que complementan la funcionalidad del modelo de placa empleada, agregando circuitería, sensores y módulos de comunicación externos a la placa original.
         
             \begin{figure}[h]
                 \centering
@@ -24,88 +24,37 @@
                 \label{boardArduino}
             \end{figure}
         
-        \subsubsection{Raspberry: Computadora de placa reducida}
-            \par Raspberry\textsuperscript{\textregistered} Pi es un computador de placa reducida de bajo costo (SBC\footnote{Single Board Computer o SBC, es una computadora completa en un sólo circuito.}). Es decir, su diseño se centra en un sólo microprocesador con la RAM, E/S y todas las demás características de un computador funcional en una sola tarjeta que suele ser de tamaño reducido, y que tiene todo lo que necesita en la placa base. Estas placas son desarrolladas en Reino Unido por la Fundación Raspberry\textsuperscript{\textregistered} Pi. El software de las placas es open source, siendo su sistema operativo oficial una versión adaptada de Debian\footnote{Debian es un sistema operativo y una distribución de Software Libre, \url{www.debian.org}}, denominada Raspbian. También, es posible usar otros sistemas operativos como Windows 10. El hardware (Firgura \ref{boardRaspberry}), en todas sus versiones, incluye un procesador Broadcom, una memoria RAM, una GPU, puertos USB, HDMI, Ethernet y 40 pines GPIO. Ninguna de sus ediciones incluye memoria de almacenamiento pero si cuentan con un slot para memoria MicroSD. De forma adicional, es posible agregar placas de expansión HAT (Hardware Attached on Top) para agregar otras funcionalidades.
-            
-            \begin{minipage}{0.95\textwidth}
+        \subsubsection{Raspberry Pi: Computadora de placa reducida}
+            \par Raspberry\textsuperscript{\textregistered} Pi es un computador de placa reducida de bajo costo (SBC\footnote{\textit{Single Board Computer} o SBC, es una computadora completa en un sólo circuito.}). Es decir, su diseño se centra en un sólo microprocesador con la RAM, E/S y todas las demás características de un computador funcional en una sola tarjeta que suele ser de tamaño reducido, y que tiene todo lo que necesita en la placa base. Estas placas son desarrolladas en Reino Unido por la fundación Raspberry\textsuperscript{\textregistered} Pi. El software de las placas es \textit{open source}, siendo su sistema operativo oficial una versión adaptada de Debian\footnote{Debian es un sistema operativo y una distribución de Software Libre, \url{www.debian.org}}, denominada Raspbian. También, es posible usar otros sistemas operativos como Windows 10. El hardware (Firgura \ref{boardRaspberry}), en todas sus versiones, incluye un procesador Broadcom, una memoria RAM, una GPU, puertos USB, HDMI, Ethernet y 40 pines GPIO. Ninguna de sus ediciones incluye memoria de almacenamiento pero si cuentan con un slot para memoria MicroSD. De forma adicional, es posible agregar placas de expansión HAT (\textit{Hardware Attached on Top}) para agregar otras funcionalidades.
             
             \begin{center}
                 \includegraphics[scale=0.30]{hardware/raspberrypib3.jpg}
                 
-                \captionof{figure}{Placa Raspberry\textsuperscript{\textregistered} pi 3 B+}
+                \captionof{figure}{Placa Raspberry\textsuperscript{\textregistered} Pi 3 B+}
                 \label{boardRaspberry}
             \end{center}
-            \end{minipage}
-            \begin{minipage}{0.95\textwidth}
+           
             \subsubsection{Comparación}
                 \par En la Tabla \ref{CompHard}, se puede observar la comparación entre las dos placas descritas en la sección anterior. Los criterios de comparación utilizados se enfocaron en los requerimientos que este proyecto posee sobre dichos componentes.
-            \end{minipage}
-        
-            
-            \begin{center}
-            \begin{tabularx}{\textwidth}{| X | X | X |}
-            \hline
-            \multicolumn{3}{|c|}{\textbf{Comparación de plataformas de hardware}} \\
-            \hline
-            Criterio de Comparación & Arduino\textsuperscript{\textregistered} & Raspberry\textsuperscript{\textregistered} pi \\
-            \hline
-            \hline
-        
-            Precio & \$440 (USD 17,00) & \$1900 (USD 61,00)
-            \\ \hline
-            Manejo de sensores & Digitales y analógicos & Digitales y analógicos
-            \\ \hline
-            Capacidad de procesamiento, memoria y almacenamiento & Procesador de 8 bits a 16Mhz, memoria de 2KB, sin almacenamiento (sin slot de expansión). & Procesador de 64 bits a 1.4Ghz, memoria de 1GB, sin almacenamiento (Slot memoria SD).
-            \\ \hline
-            Conectividad & Conexión USB (tipo B) x 1. Pueden adicionarse Shields Ethernet, Bluetooth o WiFi. & Conexión USB (tipo A) x 4, Ethernet 100M, WiFi 802.11n/ac, Bluetooth.
-            \\ \hline
-            Tamaño & 7.6 x 1.9 x 6.4 cm. & 8.6cm x 5.4cm x 1.7cm.
-            \\ \hline
-
-            
-            \end{tabularx}
-            \label{CompHard}
-            %\captionof{table}{Comparación entre Arduino y Raspberry Pi}
-            \end{center}
-            
-            \begin{center}
-            \begin{tabularx}{\textwidth}{| X | X | X |}
-                \hline
-                \multicolumn{3}{|c|}{\textbf{Comparación de plataformas de hardware Cont.}} \\
-                \hline
-                Criterio de Comparación & Arduino\textsuperscript{\textregistered} & Raspberry\textsuperscript{\textregistered} pi \\
-                \hline
-                \hline
-                
-                Lenguaje de programación & Lenguaje Bajo Nivel. Gran comunidad y soporte. Se requiere de un computador para el desarrollo. & Lenguaje Alto Nivel. Gran comunidad y soporte. Se desarrolla directamente en el dispositivo.
-                \\ \hline
-                
-                Persistencia de datos ante pérdida de alimentación eléctrica & Ninguna & Al utilizar una memoria SD, se obtiene persistencia de datos.
-            \\ \hline
-            \end{tabularx}
-            \label{CompHardCont}
-            \captionof{table}{Comparación entre Arduino y Raspberry Pi}
-            \end{center}
-            
         
     \subsection{Elementos utilizados}
     \label{subseccionElementosutilizados}
         \par A continuación se detallan los componentes de hardware utilizados.
         
         \subsubsection{Placa electrónica}
-            \par En base al análisis de la Tabla \ref{CompHard}, la tecnología utilizada en este proyecto es \textbf{Raspberry\textsuperscript{\textregistered} Pi} (modelo Raspberry\textsuperscript{\textregistered} Pi 3 B+) debido a su mayor capacidad de procesamiento, almacenamiento, persistencia de datos y por poseer un lenguaje de programación de más alto nivel. Al incorporar, esta placa, conectividad inalámbrica de fábrica, posee la ventaja sobre Arduino\textsuperscript{\textregistered} de no requerir la instalación de placas externas para realizar este fin, siendo este tipo de conexiones necesarias para el desarrollo de este proyecto. Respecto al tamaño y precio, no presentan diferencias significativas de modo de influir en la elección propuesta.
+            \par En base al análisis de la Tabla \ref{CompHard} (ubicada en el Anexo), la tecnología utilizada en este proyecto es \textbf{Raspberry\textsuperscript{\textregistered} Pi} (modelo Raspberry\textsuperscript{\textregistered} Pi 3 B+) debido a su mayor capacidad de procesamiento, almacenamiento, persistencia de datos y por poseer un lenguaje de programación de más alto nivel. Al incorporar, esta placa, conectividad inalámbrica de fábrica, posee la ventaja sobre Arduino\textsuperscript{\textregistered} de no requerir la instalación de placas externas para realizar este fin, siendo este tipo de conexiones necesarias para el desarrollo de este proyecto. Respecto al tamaño y precio, no presentan diferencias significativas de modo de influir en la elección propuesta.
 
         \subsubsection{Sensores}
-            \par Tanto Arduino\textsuperscript{\textregistered} como Raspberry\textsuperscript{\textregistered} Pi pueden trabajar con sensores analógicos y digitales, debiendo en el caso del Raspberry\textsuperscript{\textregistered} utilizar un ADC\footnote{\textit{Analog Digital Converter}, Conversor Analogico Digital} para trabajar con sensores analógicos. Para cada tipo de sensor, existen numerosas opciones que se diferencian en cuanto a la precisión de las medidas, dónde esta característica aumenta en forma proporcional a su precio. 
+            \par Tanto Arduino\textsuperscript{\textregistered} como Raspberry\textsuperscript{\textregistered} Pi pueden trabajar con sensores analógicos y digitales, debiendo en el caso del Raspberry\textsuperscript{\textregistered} utilizar un ADC\footnote{\textit{Analog Digital Converter}, Conversor Analógico Digital} para trabajar con sensores analógicos. Para cada tipo de sensor, existen numerosas opciones que se diferencian en cuanto a la precisión de las medidas, dónde esta característica aumenta en forma proporcional a su precio. 
             
-            \par Para este proyecto se propone el desarrollo de un prototipo con un presupuesto limitado. Por tanto, no fue aplicado un criterio comparativo como el utilizado para las placas electrónicas, sino que, se buscaron sensores cuya relación precio/calidad sea adecuada y accesible al presupuesto de los alumnos proyectistas, enfocando esta decisión en la obtención de datos fiables para cumplir los objetivos del proyecto, y no en la precisión de los valores a obtener.
+            \par En concordancia con el requerimiento no funcional RNF007 (Tabla \ref{reqNoFunc}), para este proyecto se propone el desarrollo de un prototipo con un presupuesto limitado para la adquisición de sensores. Por tanto, no fue aplicado un criterio comparativo como el utilizado para las placas electrónicas, sino que, se buscaron sensores cuya relación precio/calidad sea adecuada y accesible al presupuesto de los alumnos proyectistas, enfocando esta decisión en la obtención de datos fiables para cumplir los objetivos del proyecto, y no en la precisión de los valores a obtener.
             
             \paragraph{Sensores de temperatura sumergibles:}Sensor que permite obtener valores de temperatura de un líquido a partir de su inmersión en él. Como fue mencionado antes, se decidió optar por un sensor que satisfaga la limitación precio/calidad y, de ser posible, que no requiera la utilización de un ADC con el fin de reducir costos y complejidad. Por esto, fue elegido el sensor digital DS18B20 (Figura \ref{SensorTemp}), cuyas características se describen a continuación:
             
                 \begin{itemize}
                     \item Modelo: Sensor Digital Temperatura DS18B20 Cable Sumergible
                     \item Fabricante: Maxim
-                    \item Microcontrolador: ATmega328P/
+                    \item Microcontrolador: ATmega328P
                     \item Voltaje de funcionamiento: 3,3V / 5V
                     \item Comunicación: Digital. Posee tres pines: VDD, Data, GND.
                     \item Precisión: 9 bits, tomando valores de -55°C - 125°C, con un margen de error de 0,5°C
@@ -119,7 +68,7 @@
                     \label{SensorTemp}
                 \end{figure}
                 
-            \paragraph{Sensor de pH de líquidos:}Sensor electroquímico de pH\footnote{ Medida de acidez o alcalinidad de una disolución}, compuesto por un electrodo sumergible y una placa electrónica denominada sonda de pH (pH probe), que permiten transducir la actividad química del ion de hidrógeno en una señal eléctrica. (Figuras \ref{BoardPh} y \ref{phElectrode})
+            \paragraph{Sensor de pH de líquidos:}Sensor electroquímico de pH\footnote{ Medida de acidez o alcalinidad de una disolución}, compuesto por un electrodo sumergible y una placa electrónica denominada sonda de pH (\textit{pH probe}), que permiten transducir la actividad química del ion de hidrógeno en una señal eléctrica. (Figuras \ref{BoardPh} y \ref{phElectrode})
                 
                 \par A continuación se describen las características del sensor adquirido en base al presupuesto del proyecto:
                 
@@ -148,7 +97,7 @@
                     \end{center}
                 \end{minipage}
                 
-            \paragraph{Sensor de temperatura y humedad ambiental:}Sensor digital que permite realizar mediciones ambientales de temperatura y humedad relativa. Dados los condicionamientos antes planteados, el funcionamiento digital y las buenas prestaciones, se eligió el modelo de bajo costo DHT11 (Figura \ref{SensorDHT11}), sus características son descritas a continuación:
+            \paragraph{Sensor de temperatura y humedad ambiental:}Sensor digital que permite realizar mediciones ambientales de temperatura y humedad relativa. Dados los condicionamientos antes planteados, el funcionamiento digital y las buenas prestaciones, se eligió el modelo de bajo costo DHT11 (Figura \ref{SensorDHT11}), sus características son descriptas a continuación:
                 \begin{itemize}
                     \item Modelo: DHT11
                     \item Fabricante: Adafruit
@@ -170,6 +119,28 @@
                     \label{SensorDHT11}
                 \end{figure}
 
+        \subsubsection{Placa conversora de señal}
+        
+        \par Placa electrónica que permite convertir señales analógicas en señales digitales. Se seleccionó la placa modelo Adafruit ADS1115 en base a sus prestaciones y bajo coto.
+        Sus características son descriptas a continuación:
+        \begin{itemize}
+                    \item Modelo: ADS1115
+                    \item Fabricante: Adafruit
+                    \item Voltaje de funcionamiento: 2.0V - 5V DC
+                    \item Consumo de corriente: 150mA
+                    \item Comunicación: Digital (I2C). Posee nueve pines: A0, A1, A2, A3, VDD, GND, SSL/SDA, ADDR, ALRT.
+                    \item Resolución de transformación: 16 bits
+                    \item Rango de voltajes de entrada: -6.144V - 6.144V
+                    \item Frecuencia de muestreo: 860 muestras por segundo 
+        \end{itemize}
+        
+        \begin{figure} [h]
+            \centering
+            \includegraphics[scale=0.35]{hardware/dht11_.jpg}
+            \caption{Sensor de temperatura y humedad ambiente DHT11}
+            \label{SensorDHT11}
+        \end{figure}
+        
         
 \section{Diseño}
     \par En las siguientes secciones se analiza y define la estrategia utilizada para abordar el desarrollo del componente de Hardware.
@@ -180,8 +151,8 @@
         \begin{itemize}
             \item 6 sensores digitales de temperatura sumergibles DS18B20 con 2 metros de extensión por cable
             \item 1 sensor digital de temperatura y humedad ambiente Adafruit DHT11
-            \item 1 sensor de pH analógico ( Electrodo y Plaqueta controladora)
-            \item 1 Conversor Analógico / Digital (Arduino\textsuperscript{\textregistered} Uno)
+            \item 1 sensor de pH analógico ( Electrodo y alaqueta controladora)
+            \item 1 Conversor analógico / digital (Adafruit ADS1115)
             \item 1 Raspberry\textsuperscript{\textregistered} Pi 3 B+
             \item Resistencias electrónicas (4.7 k$\Omega$, 10 k$\Omega$)
             \item Protoboard con cables
@@ -190,12 +161,13 @@
         \end{itemize}
         
     \subsection{Consideraciones previas}
+    \label{subseccionConsideracionesPreviasSensores}
         \par En este apartado se describen restricciones inherentes al funcionamiento del sistema que debieron ser consideradas para el diseño del mismo. Cada una se detalla justificando la decisión de diseño que se optó.
         
         \paragraph{Medición de pH:} 
             La obtención de este valor se realiza mediante el sensor electroquímico antes mencionado en la sección \ref{SeccionTecnoEvalHardware}. Por cuestiones inherentes al funcionamiento, este sensor, requiere de al menos 2 minutos para estabilizar el resultado obtenido (medición).
             
-            \par Respecto de la variación de las mediciones de pH con la temperatura, (M. E. Mohammd Ali y O. A. Razag Sharif, 2015) expresa que la medición es afectada de dos maneras. Por un lado, al valor de pH de la solución, cuya corrección directa no puede ser realizada, dado que cada muestra de pH tiene una relación\footnote{Coeficiente de temperatura de la solución  $ = \Delta pH/ ^{\circ}C $} entre pH y temperatura única. Sin embargo, una compensación de pH debe ser realizada a través de una calibración utilizando soluciones \textit{buffers} de pH estándares. Por otro lado, al efecto de la temperatura sobre la sensibilidad del electrodo de pH, el cual puede ser corregido y cuya desviación depende de cada electrodo. El fabricante del electrodo utilizado en este desarrollo provee la Tabla \ref{tablePhvsTemp} de desvíos. 
+            \par Respecto de la variación de las mediciones de pH con la temperatura, (M. E. Mohammd Ali y O. A. Razag Sharif, 2015) expresa que la medición es afectada de dos maneras. Por un lado, al valor de pH de la solución, cuya corrección directa no puede ser realizada, dado que cada muestra de pH tiene una relación\footnote{Coeficiente de temperatura de la solución  $ = \Delta pH/ ^{\circ}C $} entre pH y temperatura única. Sin embargo, una compensación de pH debe ser realizada a través de una calibración utilizando soluciones \textit{buffers} de pH estándares. Por otro lado, al efecto de la temperatura sobre la sensibilidad del electrodo de pH, el cual puede ser corregido y cuya desviación depende de cada instrumento. El fabricante del electrodo utilizado en este desarrollo provee la Tabla \ref{tablePhvsTemp} de desvíos. 
             
             \begin{figure}[h] 
                 \centering
@@ -205,7 +177,7 @@
                 \label{tablePhvsTemp}
             \end{figure}
             
-            \par Por las características mencionadas, el intervalo de medición  de pH, para este proyecto, es de 2 minutos (El usuario puede aumentar este intervalo si lo requiere) asumiendo así el correspondiente error. El desvío de medición del pH ocasionado por la temperatura de sensado es ajustado por un sensor sumergible de temperatura destinado a este propósito, junto a la Tabla \ref{tablePhvsTemp}.
+            \par Por las características mencionadas, el intervalo de medición de pH, para este proyecto, es de 2 minutos (El usuario puede aumentar este intervalo si lo requiere) asumiendo así el correspondiente error. El desvío de medición del pH ocasionado por la temperatura del líquido durante el sensado es ajustado mediante Tabla \ref{tablePhvsTemp} para la cual es necesario contar con la temperatura del medio líquido en el cual se encuentra inmerso el electrodo de pH. Esta temperatura es obtenida por medio de un sensor sumergible que es introducido de forma conjunta al sensor de pH.
         
         \paragraph{Medición de temperatura:} 
             Debido a que el objeto involucrado en la medición es un líquido, se opta por un sensor de temperatura sumergible.
@@ -233,7 +205,7 @@
                     \begin{itemize}
                         \item Obtención de datos de sensores: Cada sensor utiliza una función específica desarrollada de forma particular para garantizar su correcto funcionamiento. De esta manera, se abordan de manera eficaz los posibles inconvenientes (\textit{bugs}) que puedan ser identificados.
                         
-                        \item Insertar datos en la Base de Datos: Los datos obtenidos en cada secuencia de medición se insertan en la base de datos a partir de un identificador (Id) proporcionado como parámetro de la función.
+                        \item Insertar datos en la Base de Datos: Los datos obtenidos en cada secuencia de medición se insertan en la base de datos a partir de un identificador (ID) proporcionado como parámetro de la función.
                     \end{itemize}
                 
                 \paragraph{Diagrama de Base de Datos:} La Figura \ref{fig:DiagramaBdRasp} ubicada en el Anexo, presenta el diagrama de base de datos utilizado. El mismo, consiste de tres tablas relacionadas mediante claves foráneas (\textit{foreign keys}): \textit{Maceración}, \textit{Experimento} y \textit{SensedValues}. 
@@ -242,12 +214,29 @@
             \subsubsection{Subcapa de hardware} 
                 \par En la Figura \ref{fig:EsquemaHardware} del Anexo, se presenta un esquema simplificado de conexiones de la subcapa de Hardware. En dicho esquema se encuentran identificadas las entradas (sensores y conversor) y la salida (API REST) del Raspberry\textsuperscript{\textregistered} Pi.
                 
-                \par Como se mencionó en \ref{subseccionElementosutilizados}, para poder procesar la señal analógica del sensor de pH es necesario que previamente ésta sea digitalizada. Para tal función se emplea un Arduino\textsuperscript{\textregistered} Uno en modo esclavo para utilizar su DAC interno de 10 bits.
+                \paragraph{Revisión de diseño:}
+                 Como se mencionó en la subsección \ref{subseccionElementosutilizados}, con el objetivo de procesar la señal analógica del sensor de pH es necesario que previamente ésta sea digitalizada. Para tal función, se decidió emplear un conversor analógico-digital modelo Adafruit ADS1115, luego reemplazado por una placa Arduino\textsuperscript{\textregistered} Uno. A continuación se narra la secuencia de hechos que condujeron a este cambio en el diseño.
+                
+                \par De forma inicial, se realizaron conexiones electrónicas e instalaciones de software necesarias para el funcionamiento del ADS1115 junto a la placa Raspberry\textsuperscript{\textregistered} Pi. A continuación, se conectó el sensor de pH con la placa convertidora. Posterior a la conexión electrónica, fue ubicado el sensor de pH dentro de una solución de tipo \textit{buffer}\footnote{Solución química que posee un valor de pH conocido.}, de manera de conocer con antelación el valor que debe leer el sensor de pH, y verificar así, el correcto funcionamiento de esta conexión.
+                
+                \par El ADC cuenta con una resolución de 16 bit, produciendo como salida valores entre -2\textsuperscript{15} y 2\textsuperscript{15} en correspondencia al rango de voltajes de entrada de -6,144v a 6,144v. Dado que los valores de salida de la sonda de pH toman el rango de voltajes entre -5v y 5v, la salida del ADS produce un rango menor (entre -26.666 y 26.666)\footnote{ Los extremos de este rango son obtenidos al aplicar el mapeo lineal a 5v. Esto es $ 5 \cdot (2^{15} / 6.144)$  }. Este último rango se corresponde con valores de pH que pertenecen a una escala entre 0 y 14. Como siguiente paso, se procedió a construir un mapeo lineal entre la salida del convertidor y la escala de pH. Luego de realizado el mapeo los valores obtenidos difirieron de los esperados en todas las ocasiones (se realizaron pruebas con tres \textit{buffers} distintos). A consecuencia de esta situación, se procedió a realizar numerosas verificaciones matemáticas sobre este mapeo y luego sobre las conexiones electrónicas no pudiendo resolver el conflicto. Posteriormente, se decidió investigar alternativas de solución, identificándose la posibilidad de utilizar una placa Arduino \textsuperscript{\textregistered} Uno para este fin. Dado que ya se contaba con una, se optó por realizar una prueba de funcionamiento la cual devolvió resultados exitosos. Por tanto, bajo la consideración de la construcción de un prototipo funcional (planteada en el alcance) y el bajo coste de esta placa se decidió conservar esta solución.
+                
+                \begin{figure}
+                    \centering
+                    \includegraphics[scale=0.55]{EsquemaDesigndeHardware.jpg}
+                    \captionof{figure}{Esquema del diseño del sistema}
+                    \label{fig:EsquemaHardware}            
+                \end{figure}
+        
+                
+                %CAMBIO EN EL DISEÑO PARA USAR EL ARDUINO
+                
+                
         
     
 \section{Implementación del diseño}
     \par A continuación son descriptas mediante diagramas las implementaciones de las subcapas utilizadas.
-    %%% Corroborar la oración de acá arriba
+  
     \subsection{Subcapa de software}
         \par En el diagrama de flujo de la Figura \ref{FlujoPython} se muestra el flujo de funcionamiento que cumple las funcionalidades que se desprenden del diseño.
 
@@ -262,7 +251,8 @@
         \par En las siguientes subsecciones se muestran los diagramas de conexión de cada sensor con la placa Raspberry, siguiendo el diseño general de la la Figura \ref{fig:EsquemaHardware} del Anexo.
 
     \subsubsection{Conexión del sensor de pH}
-        \par En la Figura \ref{fig:ConexionSensorpH} se muestra el diagrama de conexión del sensor de pH, conformado por el sensor electroquímico, electrodo y "sonda de pH". Este último, se encuentra conectado a una placa Arduino\textsuperscript{\textregistered} UNO que realiza la función de conversor Analógico-Digital enviando los datos analógicos obtenidos por el sensor como una señal digital al Raspberry\textsuperscript{\textregistered} mediante conexión Serial USB.
+
+        \par En la Figura \ref{fig:ConexionSensorpH} se muestra el diagrama de conexión del sensor de pH, conformado por el sensor electroquímico, electrodo y ``sonda de pH''. Este último, se encuentra conectado a una placa Arduino\textsuperscript{\textregistered} UNO que realiza la función de conversor Analógico-Digital enviando los datos analógicos obtenidos por el sensor como una señal digital al Raspberry\textsuperscript{\textregistered} mediante conexión Serial USB.
         
         \begin{figure}[h]
             \centering
@@ -291,6 +281,51 @@
             \caption{Diagrama de conexión del sensor DHT11}
             \label{fig:EsquemaDHT11}
         \end{figure}
+    
+    \subsubsection{Colocación de los sensores}
+    \label{colocacionDeSensores}
+    El análisis de la cantidad y ubicación de los sensores, dentro y fuera del tanque de maceración, reviste una importancia significativa dado que estos pueden afectar en gran medida la calidad de los resultados obtenidos. Es de destacar, que la optimización de estas variables no reviste un carácter central en la construcción de este sistema. No obstante, a continuación se argumenta la cantidad y ubicación de los sensores utilizados.
+    
+    \begin{itemize}
+    
+        \item \textbf{Sensor de pH: }En base a las consideraciones descriptas para este sensor en el apartado \ref{subseccionConsideracionesPreviasSensores}, la sonda de pH es inmersa en una muestra obtenida de la templa durante el macerado enfriada mediante intercambio térmico para disminuir el error de medición. Es utilizada una única sonda debido al alto coste de la misma y a la uniformidad del pH en una solución.
+        
+        \item \textbf{Sensor de temperatura y humedad ambiental: } El sensor debe ser expuesto al ambiente o entorno donde se realice la maceración, y encontrarse suficientemente alejado de fuentes de calor o acondicionadores de aire que puedan llegar a alterar la medición. Este sensor cumple la función de contextualizar ambientalmente al macerado realizado, por tanto, no reviste importancia la utilización de mas de un sensor.
+        
+        \item \textbf{Sensores sumergibles de temperatura: } Estos sensores deben ser colocados en posiciones fijas dentro del macerador de manera de mantener un marco de referencia constante de medición. Los mismos, además, deben ser ubicados considerando mitigar los efectos producidos por los gradientes térmicos del tanque. De forma adicional, otras consideraciones relativas a mejorar la calidad de los datos obtenidos deben ser analizadas. A continuación estas son mencionadas:
+        \begin{itemize}
+        
+            \item Límites del tanque de maceración, en este sector sucede un intercambio de temperatura con el entorno exterior del macerador. En este sentido, los sensores deben de ubicarse lejos de la tapa, y ser adheridos al tanque de forma separada de las paredes utilizando un material de baja conductividad térmica.
+            
+            \item 
+            La distancia entre la ubicación de los sensores y la cama de malta (fondo del tanque). Esto es debido a un gradiente de temperatura producido dentro del tanque entre la temperatura del agua y la malta.\\
+            En el inicio del proceso de macerado, es realizada una mezcla entre malta, que se encuentra a temperatura ambiente, y agua caliente. Es entonces que ocurre un intercambio de temperatura entre estas dos partes, que se continúa hasta que la malta se remoje por completo, y la temperatura se estabilice en toda la mezcla.
+            
+            \item Ubicar los sensores a distintas medidas de elevación y en distintos sectores perimetrales con el objetivo de recolectar datos representativos del tanque en sus totalidad y no solo de un sector del mismo.
+            
+        \end{itemize}
+       
+        \par
+        A raíz del análisis realizado, en relación a la ubicación espacial de los sensores dentro del tanque son considerados dos ejes:
+        \begin{itemize}
+            
+            \item \textbf{Vista lateral: }Los sensores se ubicarán a distancias equidistantes entre sí, manteniéndose alejados de los límites superior e inferior del macerador.
+            
+            \item \textbf{Vista en planta: }Los sensores serán distribuidos en posiciones que se condecirán con los vértices y el centro de un polígono regular. Al hacer coincidir el centro del tanque con el centro de esta figura formada, se encierra el volumen central del macerador. Ejemplo véase \ref{fig:PosSens}.
+            
+        \end{itemize}
+        
+        \begin{figure}[H]            
+        \centering
+            \includegraphics[scale = 0.4]{hardware/posicionesSensores.jpg}
+            \caption{Ejemplo, vista en planta de la ubicación de sensores en vértices (A, B, C) y centro (O) de un triangulo equilátero circunscrito en un tanque circular }
+            \label{fig:PosSens}
+        \end{figure}
+        
+        \par
+        Respecto de la separación los sensores con las paredes laterales del tanque se considera conveniente colocar los sensores utilizando, como intermediario con éstos, una pieza de baja conductividad térmica como el poliestireno expandido.
+        
+    \end{itemize}
 
 \section{Ensamble completo}
 
@@ -298,9 +333,9 @@
 %\end{minipage}
 %\begin{minipage}{0.95 \textwidth}
 
-    \begin{figure}[t]
+    \begin{figure}[H]
     \centering
-        \includegraphics[scale=0.11]{hardware/SistemaEnsamblado.jpeg}
+        \includegraphics[scale=0.09]{hardware/SistemaEnsamblado.jpeg}
         \captionof{figure}{Fotografía de la estación de recolección de datos}
         \label{fig:EsquemaCompletoHardware}
     \end{figure}

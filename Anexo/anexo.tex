@@ -9,16 +9,51 @@
 %\appendixpage %Agrega una pagina en blanco q en el medio Dice Anexo en grande..
 
 
+\chapter{Comparación de plataformas de hardware}
+        \begin{longtable}{|p{4cm}|p{5cm}|p{5cm}|}
+            \hline
+            \multicolumn{3}{| c |}{\textbf{Comparación de plataformas de hardware}}\\
+            \hline
+            Criterio de Comparación & Arduino\textsuperscript{\textregistered} & Raspberry\textsuperscript{\textregistered} pi\\
+            \hline
+            \endfirsthead
+             
+            \hline
+            \multicolumn{3}{|c|}{Continuación de la tabla \ref{CompHard}}\\
+            \hline
+            Criterio de Comparación & Arduino\textsuperscript{\textregistered} & Raspberry\textsuperscript{\textregistered} pi\\
+            \hline
+            \endhead
+             
+            \hline
+            \endfoot
+             
+            \hline
+            %\multicolumn{3}{| c |}{End of Table}\\
+            %\hline
+            \caption{Comparación entre Arduino y Raspberry Pi \label{CompHard}}\\
+            \endlastfoot
+            
+            Precio & \$440 (USD 17,00) & \$1900 (USD 61,00)
+            \\ \hline
+            Manejo de sensores & Digitales y analógicos & Digitales y analógicos
+            \\ \hline
+            Capacidad de procesamiento, memoria y almacenamiento & Procesador de 8 bits a 16Mhz, memoria de 2KB, sin almacenamiento (sin slot de expansión). & Procesador de 64 bits a 1.4Ghz, memoria de 1GB, sin almacenamiento (Slot memoria SD).
+            \\ \hline
+            Conectividad & Conexión USB (tipo B) x 1. Pueden adicionarse Shields Ethernet, Bluetooth o WiFi. & Conexión USB (tipo A) x 4, Ethernet 100M, WiFi 802.11n/ac, Bluetooth.
+            \\ \hline
+            Tamaño & 7.6 x 1.9 x 6.4 cm. & 8.6cm x 5.4cm x 1.7cm.
+            \\ \hline
 
-    \begin{minipage}{0.95\textwidth}
-    \chapter{Diagrama del modelo de casos de uso}
-    %\section{Diagrama del modelo de casos de uso}
-    	\leftline{\includegraphics[scale=0.7]{ModelodeCasosdeUso.jpg}}
-    	\captionof{figure}{Diagrama de Casos de Uso}
-	    \label{DiagCU}
-	\end{minipage}
+            Lenguaje de programación & Lenguaje Bajo Nivel. Gran comunidad y soporte. Se requiere de un computador para el desarrollo. & Lenguaje Alto Nivel. Gran comunidad y soporte. Se desarrolla directamente en el dispositivo.
+            \\ \hline
+                
+            Persistencia de datos ante pérdida de alimentación eléctrica & Ninguna & Al utilizar una memoria SD, se obtiene persistencia de datos.
+            \\ \hline
 
+            \end{longtable}
 
+%---------------------------------------------------------------------------------
     \begin{minipage}{0.95\textwidth}
     \chapter{Diagrama de base de datos del componente de hardware}
         \centering
@@ -27,15 +62,7 @@
         \label{fig:DiagramaBdRasp}
     
     \end{minipage}
-    
-    \begin{minipage}{0.95\textwidth}
-    \chapter{Esquema de conexión de la estación de recolección de datos}
-        \centering
-        \includegraphics[scale=0.55]{EsquemaHardware.jpg}
-        \captionof{figure}{Esquema simplificado de las conexiones}
-        \label{fig:EsquemaHardware}
-    \end{minipage}
-    
+
 %---------------------- MOCK UP ----------------------------------------
     \begin{minipage}{0.95\textwidth}
     \chapter{Diseño de interfaz de usuario}

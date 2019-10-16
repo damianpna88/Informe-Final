@@ -52,7 +52,7 @@
                 \label{tab:ComparacionInterfaz}
             \end{table}
         \subsection{Tecnologías utilizadas}
-            A partir de los datos comparados de la Tabla \ref{tab:ComparacionInterfaz}, se opta por utilizar la tecnología WiFi, dadas sus características de seguridad, rango y cantidad de dispositivos conectados. A partir de la elección del protocolo de comunicación inalámbrica, se define instalar un servidor web que opere sobre el componente electrónico y, posteriormente, un servicio web REST API \footnote{REST API, representational state transfer (REST) application program interface (API), es una interfaz que utiliza requerimientos HTTP tipo GET, PUT, POST and DELETE para transferencia de datos.}, funcionando en este contexto, que permita establecer una comunicación entre el dispositivo móvil y el componente electrónico.Dadas las recomendaciones del fabricante del componente electrónico, la multiplicidad de guías, comunidad y soporte, se opta por la utilización de la tecnología Apache para la instalación del servidor web. A partir de esta elección se propone PHP\footnote{PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de código abierto muy popular especialmente adecuado para el desarrollo web.} como tecnología de desarrollo por cuestiones de agilidad y coexistencia.
+            A partir de los datos comparados de la Tabla \ref{tab:ComparacionInterfaz}, se opta por utilizar la tecnología WiFi, dadas sus características de seguridad, rango y cantidad de dispositivos conectados. A partir de la elección del protocolo de comunicación inalámbrica, se define instalar un servidor web que opere sobre el componente electrónico y, posteriormente, un servicio web REST API \footnote{REST API, representational state transfer (REST) application program interface (API), es una interfaz que utiliza requerimientos HTTP tipo GET, PUT, POST and DELETE para transferencia de datos.}, funcionando en este contexto, que permita establecer una comunicación entre el dispositivo móvil y el componente electrónico. Dadas las recomendaciones del fabricante del componente electrónico, la multiplicidad de guías, comunidad y soporte, se opta por la utilización de la tecnología Apache para la instalación del servidor web. A partir de esta elección se propone PHP\footnote{PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de código abierto muy popular especialmente adecuado para el desarrollo web.} como tecnología de desarrollo por cuestiones de agilidad y coexistencia.
             
     \section{Diseño}
     A continuación, se describen las consideraciones previas al proceso de diseño de la interfaz, luego se presenta el resultado de este diseño.
@@ -80,47 +80,49 @@
             \par En cuanto al diseño de la REST API, se opta por codificar cada funcionalidad en un archivo independiente y cumplir de esta manera con la consideración previa de ejecución paralela.
             \par En la Tabla \ref{tab:FuncionalidadesInterfaz} se presenta una descripción de funcionalidades:
             
-                \begin{table}[h]
-                \centering
-                \begin{tabularx}{\textwidth}{|X|X|X|X|}
-                    \hline
-                    \multicolumn{4}{|c|}{\textbf{Funcionalidades de la Interfaz}} \\
-                    \hline
-                    Nombre & Funcionalidad & Retorno & Parámetros \\ 
-                    \hline 
-                    \hline
+            
+            
+            
+            \begin{longtable}{|p{2.2cm}|p{4.8cm}|p{3.5cm}|p{3.5cm}|}
+            \hline
+            \multicolumn{4}{| c |}{\textbf{Tabla de funcionalidades de la interfaz}}\\
+            \hline
+            \multicolumn{1}{| c |}{Nombre} &\multicolumn{1}{| c |}{Funcionalidad} & \multicolumn{1}{| c |}{Retorno} &\multicolumn{1}{| c |}{Parámetros}\\
+           
+            \hline
+            \hline
+            \endfirsthead
+            
+            \hline
+            \multicolumn{4}{|c|}{Continuación de la tabla \ref{tab:FuncionalidadesInterfaz}}\\
+            \hline
+             \multicolumn{1}{| c |}{Nombre} &\multicolumn{1}{| c |}{Funcionalidad} & \multicolumn{1}{| c |}{Retorno} &\multicolumn{1}{| c |}{Parámetros}\\
+            \hline
+            \endhead
+            
+            \endfoot
+ 
+            \caption{Descripción de funcionalidades de la interfaz Hardware - Software \label{tab:FuncionalidadesInterfaz}}\\
+            \endlastfoot
+             
+            Inicio de experimento de Maceración & Inserta en la base de datos la maceración (en caso de ser una nueva entrada) y el experimento. Ejecuta los archivos Python utilizando como parámetros la duración del experimento y los intervalos de medición & & Nombre maceración,  duración, intervalos de medición de temperatura y pH, e ID de Experimento \\ 
+            \hline
+            
+            Obtención de valores recolectados de un experimento de Maceración & A partir de un ID de experimento y una lista de valores recolectados (obtenidos previamente por la aplicación), la API REST consulta la base de datos y retorna las mediciones correspondientes a cada ID de experimento no presente en el conjunto enviado & Arreglo de medidas por experimento. N conjuntos de: Medidas de temperatura del líquido; pH; temperatura y humedad ambiente & ID experimento, Lista de valores recolectados obtenidos en consultas anteriores \\ 
+            \hline
                     
-                    Inicio de experimento de Maceración & Inserta en la base de datos la maceración (en caso de ser una nueva entrada) y el experimento. Ejecuta los archivos Python utilizando como parámetros la duración del experimento y los intervalos de medición & & Nombre maceración,  duración, intervalos de medición de temperatura y pH, e ID de Experimento \\ 
-                    \hline
-                \end{tabularx}
-                \end{table}
-        %\end{minipage}
-                
-                \begin{table}[H]
-                \centering
-                \begin{tabularx}{\textwidth}{|X|X|X|X|}
-                    \hline
-                    \multicolumn{4}{|c|}{\textbf{Funcionalidades de la Interfaz - cont.}} \\
-                    \hline
-                    Obtención de valores recolectados de un experimento de Maceración & A partir de un ID de experimento y una lista de valores recolectados (obtenidos previamente por la aplicación), la API REST consulta la base de datos y retorna las mediciones correspondientes a cada ID de experimento no presente en el conjunto enviado & Arreglo de medidas por experimento. N conjuntos de: Medidas de temperatura del líquido; pH; temperatura y humedad ambiente & ID experimento, Lista de valores recolectados obtenidos en consultas anteriores \\ 
-                    \hline
+            Obtención de datos de sensores & 
+            El componente de software (previsto a desarrollarse en las siguientes etapas) permite visualizar los valores actuales de los sensores. La funcionalidad encargada de acción ejecuta una rutina python y retorna los valores a través de la API REST. & Medidas de temperatura del líquido; pH; temperatura y humedad ambiente & \\
+            \hline
                     
-                    Obtención de datos de sensores & 
-                    El componente de software (previsto a desarrollarse en las siguientes etapas) permite visualizar los valores actuales de los sensores. La funcionalidad encargada de acción ejecuta una rutina python y retorna los valores a través de la API REST. & Medidas de temperatura del líquido; pH; temperatura y humedad ambiente & \\
-                    \hline
+            Eliminación de un experimento de maceración & Eliminar el experimento y todos los datos recolectados que posean el ID de experimento pasado como parámetro &  & ID experimento\\
+            \hline
                     
-                    Eliminación de un experimento de maceración & Eliminar el experimento y todos los datos recolectados que posean el ID de experimento pasado como parámetro &  & ID experimento\\
-                    \hline
-                    
-                    Cancelación de un experimento de maceración & Detiene la ejecución de la librería Python, elimina los valores recolectados relacionados al ID de experimento y finalmente elimina el experimento mismo. & & ID experimento
-                    \\
-                    \hline
-                    
-                \end{tabularx}
-                \caption{Descripción de funcionalidades de la interfaz Hardware - Software}
-                \label{tab:FuncionalidadesInterfaz}
-            \end{table}
-    
+            Cancelación de un experimento de maceración & Detiene la ejecución de la librería Python, elimina los valores recolectados relacionados al ID de experimento y finalmente elimina el experimento mismo. & & ID experimento\\
+            \hline
+            
+\end{longtable}     
+  
     \section{Implementación del componente}
         \par En esta sección se describe el funcionamiento de la API REST desarrollada mediante diagramas de flujo de cada funcionalidad.
         
