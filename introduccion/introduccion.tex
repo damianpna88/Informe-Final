@@ -5,7 +5,7 @@
     \par
     Las primeras cervezas, datadas alrededor del año 9000 A.C., fueron producto de una combinación de ciertos accidentes en el almacenado de granos y en la elaboración de pan. La receta de la cerveza se fue construyendo, con el avance del tiempo, mediante ensayo y error de las técnicas utilizadas para elaborarla, perfeccionándose hacia finales del siglo XV.
     \par
-    La cerveza artesanal tiene su origen a finales de 1970 en el Reino Unido, siendo este término utilizado para denotar pequeñas cervecerías o microcervecerías que se enfocaban en la producción tradicional. Según \cite{Calvillo17} “Aunque el término microcervecería fue utilizado para describir el tamaño de las cervecerías, gradualmente pasó a reflejar una actitud y un enfoque alternativo a la flexibilidad en la producción de cerveza, adaptabilidad y atención al cliente”. En el año 2017 fue incorporado al Código Alimentario Argentino (Ley 18284, 2017, art. 1082 bis) la definición de \textit{cerveza de elaboración artesanal} como “ … aquella que no utilice en su producción aditivos alimentarios... se encuentre adicionada únicamente con ingredientes naturales… y cuya elaboración sea de manera manual o semiautomática…”
+    La cerveza artesanal tiene su origen a finales de 1970 en el Reino Unido, siendo este término utilizado para denotar pequeñas cervecerías o microcervecerías que se enfocaban en la producción tradicional. Según \cite{Calvillo17} “Aunque el término microcervecería fue utilizado para describir el tamaño de las cervecerías, gradualmente pasó a reflejar una actitud y un enfoque alternativo a la flexibilidad en la producción de cerveza, adaptabilidad y atención al cliente”. En el año 2017 fue incorporado al Código Alimentario Argentino (Ley 18284, 2017, art. 1082 bis) la definición de \textit{cerveza de elaboración artesanal} como “... aquella que no utilice en su producción aditivos alimentarios... se encuentre adicionada únicamente con ingredientes naturales… y cuya elaboración sea de manera manual o semiautomática...”
     
     %% ------ Acá el primer subtítulo: Mercado Actual ---
     
@@ -18,7 +18,7 @@
     %% ---- EL proceso en sí ----
     \subsection{El macerado en el proceso de producción de cerveza artesanal}
     \par
-    El proceso de producción de cerveza\footnote{En la jerga cocción} según algunos autores (\cite{Dummies08,DogBrewery,AmericanHomeBrewers18, Novozymes13}; entre otros), consta básicamente de siete etapas ordenadas en forma secuencial (Figura \ref{ProcFab}): maceración, cocción, enfriamiento, fermentación, maduración, filtrado y envasado. Este proceso de elaboración de cerveza se resume de la siguiente manera: se comienza por la maceración, donde se mezcla agua caliente y granos molidos de cebada malteada. La función de la maceración es la de transformar en azúcares las cadenas de almidón presentes en los granos; a continuación se realiza el proceso de cocción, donde se hierve y esteriliza la solución (mosto) y se le incorpora el lúpulo, una hierba que le aporta al mosto aroma y sabor. Esta etapa finaliza con el enfriado del mosto. A partir de aquí comienzan las etapas finales, iniciando con la fermentación que es donde se produce alcohol a partir de la incorporación de levadura que consume el azúcar fermentable del mosto. A partir de aquí el preparado ya se denomina ``cerveza''. Los últimos pasos consisten en filtrar para remover sedimentos y finalmente envasarla.
+    El proceso de producción de cerveza\footnote{En la jerga, cocción} según algunos autores (\cite{Dummies08,DogBrewery,AmericanHomeBrewers18, Novozymes13}; entre otros), consta básicamente de siete etapas ordenadas en forma secuencial (Figura \ref{ProcFab}): maceración, cocción, enfriamiento, fermentación, maduración, filtrado y envasado. Este proceso de elaboración de cerveza se resume de la siguiente manera: se comienza por la maceración, donde se mezcla agua caliente y granos molidos de cebada malteada. La función de la maceración es la de transformar en azúcares las cadenas de almidón presentes en los granos; a continuación se realiza el proceso de cocción, donde se hierve y esteriliza la solución (mosto) y se le incorpora el lúpulo, una hierba que le aporta al mosto aroma y sabor. Esta etapa finaliza con el enfriado del mosto. A partir de aquí comienzan las etapas finales, iniciando con la fermentación que es donde se produce alcohol a partir de la incorporación de levadura que consume el azúcar fermentable del mosto. A partir de aquí el preparado ya se denomina ``cerveza''. Los últimos pasos consisten en filtrar para remover sedimentos y finalmente envasarla.
  
     \begin{figure}[h]
 		\centerline{\includegraphics[scale=0.75]{introduccion/Etapasdelproceso.jpg}}
@@ -111,22 +111,24 @@
 	%% --- Propuesta de solución ---
 	\subsection{ Propuesta de solución }
 	\par
-    Dentro de este contexto, se propuso el desarrollo de un prototipo de hardware y software para asistir al productor de cerveza artesanal,de escala media y baja, en el proceso de maceración. Esta herramienta proveerá asistencia a través de la planificación de procesos, monitoreo de variables mediante sensores, estimación de variables de control y análisis intensivo de variables intervinientes y sus relaciones.
+    Dentro de este contexto, se propuso el desarrollo de un prototipo de hardware y software para asistir al productor de cerveza artesanal, de escala media y baja, en el proceso de maceración. Esta herramienta proveerá asistencia a través de la planificación de procesos, monitoreo de variables mediante sensores, estimación de variables de control y análisis intensivo de variables intervinientes y sus relaciones.
     \par
     Esta herramienta brinda al productor facilidad para realizar el seguimiento de la evolución del proceso, permitiendo identificar los momentos apropiados donde realizar acciones correctivas. Comportándose las variables (pH y temperatura) según lo esperado en los distintos períodos de la maceración, se evitan resultados disímiles entre diferentes maceraciones y se optimiza la utilización de la malta a través del control puntual de las actividades enzimáticas, derivando en una disminución de insumos y costos.
     \par
     De forma adicional, el sistema provee la capacidad de calcular un valor ajustado, con cada experimento de maceración, de la cantidad de insumos necesaria a ser utilizada para una receta particular. Este ajuste es realizado a partir de un cálculo, repetido en cada experimento de maceración, mediante el cual se obtiene el rendimiento del equipo.
     
 \section{Estado del arte}
+\label{seccionEstadoDelArte}
     \par
-    Se considera de importancia presentar el contexto tecnológico del sistema presentado en este proyecto. Por tanto, a continuación es caracterizada una selección de tecnologías electrónicas e informáticas para asistir al productor de cerveza artesanal. Estas son clasificadas en tres grupos según el tipo de aproximación que cada solución utiliza.
+    Se considera de importancia presentar el contexto tecnológico del sistema presentado en este proyecto. Por tanto, a continuación se expone una selección de tecnologías electrónicas e informáticas para asistir al productor de cerveza artesanal. Estas son clasificadas en tres grupos según el tipo de aproximación que cada solución utiliza.
+    
     \par
     \textbf{Sistemas informáticos basados en software:} Las herramientas identificadas en este grupo comparten un abordaje común hacia la temática, ya que todas implementan como base un registro de recetas (con diferentes niveles de detalle). De forma adicional incorporan una serie de utilidades, llamadas calculadoras, cuyo fin es la estimación de medidas, tiempos y cantidades de insumos intervinientes en el proceso de elaboración de cerveza artesanal. A continuación, se realiza mención a dichos aplicativos de software:
     \begin{itemize}
         
         \item {\textit{BeerSmith}\textsuperscript{®}}: Este sistema cuenta con un registro de alta especificación técnica para detallar elementos y variables intervinientes en el proceso de fabricación de cerveza artesanal. De forma adicional, incorpora un gran repertorio de calculadoras de estimación de valores para diversos fines.
         \par
-        Utilidad para el proceso de maceración: Registro detallado de insumos intervinientes en el proceso, provee calculadoras especificas: ``Mash Adjust'' su fin es el cálculo de las adiciones de agua necesarias para lograr un objetivo de temperatura de maceración; ``Mash pH'' cuyo objetivo es la estimación de cantidades de sales necesarias para ajustar el pH de un mosto.
+        Utilidad para el proceso de maceración: Registro detallado de insumos intervinientes en el proceso, provee calculadoras específicas: ``Mash Adjust'' su fin es el cálculo de las adiciones de agua necesarias para lograr un objetivo de temperatura de maceración; ``Mash pH'' cuyo objetivo es la estimación de cantidades de sales necesarias para ajustar el pH de un mosto.
         \par
         \textit{Beersmith}\textsuperscript{®} es un software para computadora en idioma inglés que funciona sobre los sistemas operativos Windows\textsuperscript{®},Linux y macOS\textsuperscript{®}. Debe ser pagarse una licencia para su utilización.
         \par
@@ -134,12 +136,12 @@
         
         \item{\textit{BrewersFriend}\textsuperscript{®} }: Herramienta de software para asistencia en la producción de cerveza cuya principal funcionalidad es un registro de recetas con detalle de insumos y variables intervinientes en el proceso de fabricación. Incorpora calculadoras de estimación de diferentes valores intervinientes en el proceso de fabricación de cerveza. De forma adicional ofrece a sus usuarios la posibilidad de compartir recetas y experiencias a través de una red social propia.
         \par
-        Utilidad para el proceso de maceración: Registro de insumos intervinientes en el proceso, provee las siguientes calculadoras especificas: ``Mash Calculator'' cuyo objetivo es calcular la temperatura del agua a ser agregada a la malta para alcanzar una temperatura deseada; ``All Grain OG/FG'' es una calculadora para estimar densidades de control a ser obtenidas al final de las etapas de maceración y fermentación.
+        Utilidad para el proceso de maceración: Registro de insumos intervinientes en el proceso, provee las siguientes calculadoras específicas: ``Mash Calculator'' cuyo objetivo es calcular la temperatura del agua a ser agregada a la malta para alcanzar una temperatura deseada; ``All Grain OG/FG'' es una calculadora para estimar densidades de control a ser obtenidas al final de las etapas de maceración y fermentación.
         \par
         \textit{BrewersFriend}\textsuperscript{®} es una aplicación de plataforma web en idioma inglés, que ofrece licencia comercial para su utilización.\\
         Licencias: Ofrece una licencia por tiempo limitado con un costo de 25 USD.
         
-        \item{\textit{Brew-O-Matic}}: Herramienta de software cuyo fin es brindar un registro de recetas de cerveza artesanal para usuarios con conocimientos básicos sobre la temática. De forma adicional, brinda a través de su plataforma una red social de productores de cerveza artesanal. En esta red, los usuarios pueden compartir recetas, y realizar colaboraciones sobre recetas con otros productores.
+        \item{\textit{Brew-O-Matic}}: Herramienta de software cuyo fin es brindar un registro de recetas de cerveza artesanal para usuarios con conocimientos básicos sobre la temática. De forma adicional, brinda a través de su plataforma, una red social de productores de cerveza artesanal. En esta red, los usuarios pueden compartir recetas y realizar colaboraciones sobre recetas con otros productores.
         \par
         Utilidad para el proceso de maceración: Registro de insumos.
         \par
@@ -199,9 +201,10 @@
 \section{Objetivos}
 \label{secccionObjetivos}
     \par
-    A continuación se presentan los objetivos para el desarrollo de este proyecto.
+    A continuación se presentan los objetivos para el desarrollo de este proyecto. Divididos en objetivos generales y específicos.
 
-    \subsection{Objetivos generales}
+    %\subsection{Objetivos generales}
+    \subsection{Objetivo general}
         \par
         Desarrollar un prototipo de hardware y software para asistir al productor de cerveza artesanal en la planificación, seguimiento y evaluación del proceso maceración. 
     \subsection{Objetivos específicos}
@@ -217,7 +220,7 @@
  
 \section{Alcance}
     \par
-    En este apartado se presenta el alcance del proyecto el cual fue definido en etapas previas\footnote{Este alcance fue definido en el documento de Anteproyecto} al desarrollo del presente proyecto. El cual incorpora, las inclusiones, exclusiones y supuestos que fueron considerados.
+    En este apartado se presenta el alcance del proyecto, el cual fue definido en etapas previas\footnote{Este alcance fue definido en el documento de Anteproyecto} al desarrollo del prototipo. En este son incorporadas las inclusiones, exclusiones y supuestos que fueron considerados.
     \par
     Se desarrollará un prototipo de hardware y software compuesto por un sistema electrónico y una aplicación móvil. El primero estará formado por un conjunto de sensores ubicados en diferentes puntos que medirán los valores de temperatura y pH del preparado. Por otra parte, un controlador transmitirá a través de una interfaz los valores sensados. La aplicación, por su parte, se encargará de brindar las funciones de planeamiento de procesos de maceración, simples y complejos, incorporando estimación de variables de control, configuración de estrategias de obtención, monitoreo y notificación de desvíos de medidas, registro histórico de procesos, visualización gráfica, análisis estadístico y comparativo de la evolución temporal de variables intervinientes en diferentes maceraciones a partir de muestras puntuales, medidas representativas o valores ingresados.
     \par
@@ -237,12 +240,12 @@
     En este apartado se presenta la metodología utilizada para el desarrollo del presente proyecto.
     \par La metodología seleccionada para este proyecto es la de ciclo de vida en cascada enmarcando el desarrollo completo del sistema. En el mismo, cada proceso es secuencial y la finalización de uno de ellos es el punto de inicio del siguiente.
     
-    \par Al finalizar cada etapa se presenta un hito, que es el resultado de la etapa, el cual está sujeto a determinados criterios de aceptación. En cada etapa, el director del proyecto es quien juzga si los resultados que obtenidos satisfacen estos criterios.
+    \par Al finalizar cada etapa se presenta un hito, que es el resultado de la etapa, el cual está sujeto a determinados criterios de aceptación. En cada etapa, el director del proyecto es quien juzga si los resultados obtenidos satisfacen estos criterios.
 
     \paragraph{Etapas:}
         \begin{enumerate}
             \item Análisis temático y de requerimientos:
-                \par En la etapa inicial se realiza una investigación bibliográfica, enfocada en el estudio del procedimiento de fabricación de cerveza artesanal, con especial atención en los procesos y subprocesos del macerado. Se redacta en forma adicional un análisis de requerimientos para el proyecto. Al finalizar esta etapa se documenta el Análisis temático que contendrá las bases teóricas que sustentan este proyecto.
+                \par En la etapa inicial se realiza una investigación bibliográfica, enfocada en el estudio del procedimiento de fabricación de cerveza artesanal, con especial atención en los procesos y subprocesos del macerado. Se redacta en forma adicional un análisis de requerimientos para el proyecto. Al finalizar esta etapa se documenta el análisis temático que contendrá las bases teóricas que sustentan este proyecto.
                 \par \textit{Hito 1: Adquisición de conocimientos necesarios.}
                 
             \item Análisis, diseño y desarrollo del componente Hardware:
@@ -254,7 +257,7 @@
                 \par \textit{Hito 3: Aplicación móvil desarrollada.}
                 
             \item Análisis, diseño y desarrollo de la Interfaz Hardware - Software:
-                \par Se entiende la interfaz como un espacio, lugar donde se desarrolla la interacción y el intercambio entre dos sistemas. Disponiendo del sistema de hardware y la aplicación móvil, se realiza una investigación y análisis de posibles alternativas, procediendo a continuación con el desarrollo de la misma.
+                \par Se entiende a la interfaz como un espacio donde se desarrolla la interacción y el intercambio entre dos sistemas. Disponiendo del sistema de hardware y la aplicación móvil, se realiza una investigación y análisis de posibles alternativas, procediendo a continuación con el desarrollo de la misma.
                 \par \textit{Hito 4: Interfaz desarrollada.}
                 
             \item Integración y ciclo de pruebas:

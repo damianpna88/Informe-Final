@@ -55,15 +55,110 @@
 
 %---------------------------------------------------------------------------------
     \begin{minipage}{0.95\textwidth}
-    \chapter{Diagrama de base de datos del componente de hardware}
+\chapter{Diagrama de base de datos del componente de hardware}
         \centering
         \includegraphics[scale=0.65]{diagramaBD-Rasp.jpg}
         \captionof{figure}{Diagrama de diseño de Base de Datos}
         \label{fig:DiagramaBdRasp}
     
     \end{minipage}
+    
+%------------------ INTERFAZ ----------------
+\chapter{Comparación de tecnologías inalámbricas para interfaz Hardware - Software}
+
+\begin{table}[h]
+    \centering
+    
+    \begin{tabularx}{\textwidth}{|X|X|X|}
+        \hline
+        \multicolumn{3}{|c|}{\textbf{Comparación de tecnologías inalámbricas}}
+        \\
+        \hline
+            
+        & Bluetooth\textsuperscript{\textregistered} & Wi-Fi\textsuperscript{\textregistered}  \\ \hline \hline
+             
+        Frecuencia & 2.4 GHz & 2.4, 3.6, 5 GHz \\ \hline 
+                     
+        Ancho de banda (Bandwidth) & Bajo (800 kbps) & Alto (11 Mbps en 802.11b) \\ \hline
+                     
+        Autoridad de especificación & Bluetooth SIG\footnote{ Bluetooth Special Interest Group, asociación privada sin ánimo de lucro} & IEEE, WECA \\ \hline
+                     
+        Seguridad & Poco seguro & Más seguro \\ \hline
+                     
+        Dispositivos principales & Teléfonos inteligentes, ratones, teclados, etc & Notebook, Computadoras de escritorio, Servidores, TV, Teléfonos inteligentes, etc\\ \hline
+                     
+        Requerimientos de Hardware & Adaptador Bluetooth en todos los dispositivos & Adaptadores inalámbricos (Wireless) en todos los dispositivos de la red, wireless router y/o wireless access point \\ \hline
+                    
+        Cantidad de dispositivos conectados & Solo dos & Múltiples\\ \hline
+                     
+        Rango & 5-30 metros & 32-300 metros \\ \hline
+                     
+        Consumo de Energía & Bajo & Alto \\ \hline
+                     
+        Latencia & 200 ms & 150 ms \\ \hline
+                     
+        Tasa de transferencia (Bit-rate) & 2.1 Mbps & 600 Mbps\\ \hline
+            
+    \end{tabularx}
+    
+    \caption{Comparación de tecnologías inalámbricas Bluetooth\textsuperscript{\textregistered} y Wi-Fi\textsuperscript{\textregistered}}
+    \label{tab:ComparacionInterfaz}
+\end{table}
 
 %---------------------- MOCK UP ----------------------------------------
+ \chapter{Comparativa tecnologías de software para teléfonos móviles}
+ \begin{table}[h!]
+            \centering
+            \begin{tabularx}{\textwidth}{|X|X|X|}
+                 \hline
+                 \multicolumn{3}{|c|}{Tabla comparativa de tecnologías de software para teléfonos móviles}\\
+                 \hline
+                 Criterios de comparación & Android & iOS \\
+                 \hline
+                 \hline
+                 
+                 Porcentaje Mercado (Arg) & 75\% & 19\%  \\
+                 \hline
+                 
+                 Porcentaje Mercado Internacional & 85\% & 14,7\% \\
+                 \hline
+                 
+                 Comunidad de desarrolladores & Muy grande & Amplia pero acorde al número de usuarios\\
+                 \hline
+                 
+                  Entornos desarrollo Propia & Android Studio & Xcode\\
+                 \hline
+                 
+                 Lenguaje de desarrollo & Java, C, C++ y Kotlin & Swift, C, C++ y objective-C\\
+                 \hline
+                 
+                 Familia del SO & Linux & Unix - BSD\\
+                 \hline
+                 
+                 Complejidad de desarrollo & Alta variedad de dispositivos y versiones del SO & Baja variedad de dispositivos, versiones de SO comunes a la mayoría\\
+                 \hline
+                 
+                 Entorno & Open Source & Entorno cerrado \\
+                 \hline
+                 
+                 Requerimientos para publicación de aplicación & Ninguna & Debe cumplir requisitos de Apple\\
+                 \hline
+                 
+            \end{tabularx}
+            \caption{Comparación de plataformas móviles}
+            \label{tab:ComparacionPlataformasMoviles}
+        \end{table}
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+    \hfill \break
+        
+
     \begin{minipage}{0.95\textwidth}
     \chapter{Diseño de interfaz de usuario}
     %\section{Diseño de Interfaz de Usuario}
@@ -139,7 +234,7 @@
     
 %-------------------------- DIAGRAMAS DE CLASE --------------------------- 
     \begin{minipage}{0.95\textwidth}
-    \chapter{Diagramas de clases}
+\chapter{Diagramas de clases}
     %\begin{figure}
         \centering
         \includegraphics[scale=0.55, angle=90]{Anexo/DiagramasClase/ExperimentActivity.jpg}
@@ -212,7 +307,7 @@
     
     %\begin{minipage}{0.95\textwidth}
     %\begin{minipage}{0.95\textwidth}
-    \chapter{Fotografías de prueba de campo}
+\chapter{Fotografías de prueba de campo}
     \label{AnexoFotografias}
         \centering
         \includegraphics[scale=0.10]{Anexo/FotosExperimentos/P1.jpg}
@@ -229,7 +324,7 @@
         
     \begin{figure}
         \centering
-        \includegraphics[scale=0.10]{Anexo/FotosExperimentos/P3.jpg}
+        \includegraphics[scale=0.10]{Anexo/FotosExperimentos/tanque-nuevoP3.jpg}
         \captionof{figure}{Interior del termo}
         \label{fig:ConstrucMacerador}
     \end{figure}
@@ -270,305 +365,9 @@
     \end{figure}
         
     %\end{minipage}
-    \begin{minipage}{0.95\textwidth}
-    \chapter{Casos de prueba}
-    \label{CasosPrueba}
-    \begin{center}
-    \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Monitorear variables - CP001}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Actor Caso de Prueba:} Productor de Cerveza} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Propósito}} \\
-        \hline
-        \multicolumn{4}{|p{0.95\linewidth}|}{Verificar la correcta funcionalidad del dialogo que proporciona los datos siendo recolectados por los sensores de la estación de recolección de datos. Verificar que se despliegan en pantalla los datos antes mencionados} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Descripción de las acciones para las pruebas}} \\
-        \hline
-        \textbf{\#} & Acciones & Salida Esperada & Salida Obtenida \\
-        \hline
-        01 & Abrir el panel mediante el botón destinado a ello presente en la pantalla principal & Se abre el panel y se despliegan los datos esperados. & El panel se abrió correctamente y se mostraron luego los datos esperados. \\
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Resultados Obtenidos}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Resultado:} Aprobado} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Evidencia: \url{https://shorturl.me/BauGZ} }} \\
-        \hline
-     \end{tabularx}
-    \label{CP001}
-    \end{center}
-    %\end{minipage}
+
     
-    %\begin{minipage}{0.95\textwidth}
-    \begin{center}
-    \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Planificar una maceración - CP002 (parte 1)}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Actor Caso de Prueba:} Productor de Cerveza} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Propósito}} \\
-        \hline
-        \multicolumn{4}{|p{0.95\linewidth}|}{Verificar la correcta apertura y funcionalidad de la pantalla destinada para la carga y creación de una nueva maceración.} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Descripción de las acciones para las pruebas}} \\
-        \hline
-        \textbf{\#} & Acciones & Salida Esperada & Salida Obtenida \\
-        \hline
-        01 & Apertura de la pantalla mediante el botón destinado a ello presente en la pantalla principal & Se abre la pantalla con el formulario. & La pantalla se abrió correctamente desplegando en ella el formulario a rellenar. \\
-        \hline
-        02 & Agregar grano (formulario incompleto), apertura del diálogo y relleno incompleto del formulario & Se abre el diálogo con el formulario. No se agrega el grano y despliega un mensaje de error. & Se abrió el diálogo con el formulario. No se agregó el grano y desplegó un mensaje de error:"No se pudo insertar el grano porque faltaron completar campos". \\
-        \hline
-        
-        \end{tabularx}
-        \label{CP002-p1}
-        \end{center}
-        \end{minipage}
-        
-        
-        \begin{minipage}{0.95\textwidth}
-        \begin{center}
-        \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Planificar una maceración - CP002 (parte 2)}} \\
-        \hline
-        03 & Agregar grano (formulario completo), apertura del diálogo y relleno completo del formulario, luego se agrega el mismo pudiendo ver los datos del mismo en el formulario principal & Se abre el diálogo con el formulario, se rellena el mismo y luego es agregado el grano a la lista de granos. & Se abrió el diálogo con el formulario. El grano fue agregado a la lista. \\
-        \hline
-        04 & Eliminar grano, se abre el menú con la opción de eliminación luego de realizar una presión larga de un grano de la lista. Luego de seleccionada la eliminación en el menú, el mismo es retirado de la lista. & Se abre el menú, se selecciona eliminar y el mismo es removido de la lista. & Se abrió el menú, se seleccionó eliminar y el mismo fue removido de la lista de granos. \\
-        \hline
-        05 & Agregar nuevo intervalo de medición (formulario incompleto), luego de presionado el botón para este fin se abre un diálogo y se rellena de forma incompleta el formulario.  & No se agrega el intervalo a la lista de intervalos y se despliega un mensaje de error. & Se abrió el diálogo con el formulario. El intervalo no fue agregado a la lista y se desplegó un mensaje de error: "No se pudo insertar el intervalo porque faltaron completar campos" \\
-        \hline
-        06 & Agregar nuevo intervalo de medición (formulario completo), luego de presionado el botón para este fin se abre un diálogo y se rellena de forma completa el formulario presente en el mismo. & Se abre el diálogo con el formulario y luego es agregado el intervalo a la lista de intervalos. & Se abrió el diálogo con el formulario. El intervalo fue agregado a la lista.\\
-        \hline
-        07 & Finalizar carga de maceración (formulario principal, grano y/o intervalos no agregados). & Se presiona el botón de confirmación se despliega un error. & Se desplegó un mensaje de error por cada tipo de campo incompleto.\\
-        \hline
-        \end{tabularx}
-        \label{CP002-p2}
-        \end{center}
-        \end{minipage}
-        
-        \begin{minipage}{0.95\textwidth}
-        \begin{center}
-        \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Planificar una maceración - CP002 (parte 3)}} \\
-        \hline
-        08 & Finalizar carga de maceración (formulario principal completo, grano e intervalos agregados, formulario de finalización incompleto), luego de presionado el botón para este fin se despliega un dialogo con un formulario final, se rellena el formulario de forma incompleta. & Se presiona el botón de confirmación y se despliega un error. & Se desplegó un mensaje de error: "No se guardó, hay algún campo incompleto".\\
-        \hline
-        09 & Finalizar carga de maceración (formulario principal completo, grano e intervalos agregados, formulario de finalización completo), luego de presionado el botón para este fin se despliega un dialogo con un formulario final, se rellena el formulario de forma completa. & Se presiona el botón de confirmación, vuelve a la pantalla principal desplegando un mensaje de confirmación. & Volvió a la pantalla principal y desplegó un mensaje de confirmación: "Maceración correctamente planificada".\\
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Resultados Obtenidos}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Resultado:} Aprobado} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Evidencia: \url{https://shorturl.me/eR1LM} }} \\
-        \hline
-     \end{tabularx}
-    \label{CP002-p3}
-    \end{center}
-    \end{minipage}
-    
-    \begin{minipage}{0.95\textwidth}
-    \begin{center}
-    \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Gestionar maceración - CP003 (parte 1)}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Actor Caso de Prueba:} Productor de Cerveza} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Propósito}} \\
-        \hline
-        \multicolumn{4}{|p{0.95\linewidth}|}{Verificar la correcta apertura y funcionalidad de la pantalla destinada a informar y acceder a los experimentos realizados para la maceración seleccionada, consultar información de los insumos que se utilizan, iniciar un nuevo experimento y visualizar datos estadísticos generales y particulares de cada experimento.} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Descripción de las acciones para las pruebas}} \\
-        \hline
-        \textbf{\#} & Acciones & Salida Esperada & Salida Obtenida \\
-        \hline
-        01 & Apertura de la pantalla mediante el ítem de la lista de maceraciones presente en la pantalla principal & Se abre la pantalla con la lista de experimentos realizados y botones correspondientes a las opciones de gestión. & La pantalla se abrió correctamente desplegando la lista y las opciones. \\
-        \hline
-        02 & Eliminar Maceración, apertura del diálogo y selección opción ``Cancelar'' & Se abre el diálogo en el que se despliega un mensaje de advertencia, se cierra el diálogo sin aplicar modificaciones & Se abrió el diálogo con el mensaje: ``¿Está seguro que desea eliminar maceración?'' , el cuadro de dialogo se cerró y no se realizaron modificaciones. \\
-        \hline
-        03 & Eliminar Maceración, apertura del diálogo y selección opción ``Aceptar'' & Se abre el diálogo en el que se despliega un mensaje de advertencia, se inicia la pantalla principal.  & Se abrió el diálogo con el mensaje ``¿Está seguro que desea eliminar maceración?''. la maceración se eliminó y se inició la pantalla principal. \\
-        \hline
-        04 & Iniciar Nuevo Experimento & El usuario selecciona la opción ``Iniciar nuevo experimento''. Se abre la pantalla destinada a esta tarea.& Se seleccionó la opción correspondiente y se inició la pantalla.\\
-        \hline
-        05 & Ver detalles de maceración, luego de presionado el botón correspondiente a esta opción & El usuario selecciona la opción ``Ver Planificación''. Se abre la pantalla destinada a esta tarea.& Se seleccionó la opción correspondiente y se inició la pantalla que indica los valores de los insumos calculados.\\
-        \hline
-        \end{tabularx}
-        \label{CP003-p1}
-        \end{center}
-        \end{minipage}
-        
-        \begin{minipage}{0.95\textwidth}
-        \begin{center}
-        \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Gestionar maceración - CP003 (parte 2)}} \\
-        \hline
-        06 & Ver estadísticas de maceración, Se presiona el botón correspondiente a esta opción. & Se despliega la pantalla de estadísticas históricas de  la maceración.& Se desplegó la pantalla de estadísticas históricas de  la maceración.\\
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Resultados Obtenidos}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Resultado:} Aprobado} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Evidencia: \url{https://shorturl.me/CBPyJ72}}} \\
-        \hline
-     \end{tabularx}
-    \label{CP003-p2}
-    \end{center}
-    %\end{minipage}
-    
-    %\begin{minipage}{0.95\textwidth}
-    \begin{center}
-    \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Iniciar experimento de Maceración - CP004 (parte 1)}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Actor Caso de Prueba:} Productor de Cerveza} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Propósito}} \\
-        \hline
-        \multicolumn{4}{|p{0.95\linewidth}|}{Verificar la correcta funcionalidad de la pantalla destinada al seguimiento y monitoreo de un experimento de maceración. Pestaña de datos obtenidos por sensores. Pestaña de etapas. Correcto despliegue de los datos correspondientes.} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Descripción de las acciones para las pruebas}} \\
-        \hline
-        \textbf{\#} & Acciones & Salida Esperada & Salida Obtenida \\
-        \hline
-        01 & Abrir la pantalla mediante el botón destinado a ello presente en la pantalla de ``Gestión de Maceración'' & Se abre la pantalla de Monitoreo, con la pestaña de mediciones. Pasado el intervalo de medición de temperatura, se cargan los datos de temperatura ambiente y los correspondientes al interior del del macerador. De igual forma son cargados luego, los datos de pH. De forma secuencial a los valores de pH, se cargan los valores correspondientes a la activación de enzimas & Se abrió la pantalla de Monitoreo, con la pestaña de mediciones. Pasado el intervalo de medición de temperatura, se cargaron los datos de temperatura ambiente y los correspondientes al interior del macerador. De igual forma se cargaron luego, los datos de pH. De forma secuencial a los valores de pH, se cargaron los valores correspondientes a la activación de enzimas. \\
-        \hline
-        02 & Se presiona el apartado de temperaturas. & Se abre el diálogo de configuración de medición & Se abrió el diálogo de configuración de medición \\
-        \hline
-        \end{tabularx}
-        \label{CP004-p1}
-        \end{center}
-        \end{minipage}        
-        
-        \begin{minipage}{0.95\textwidth}
-        \begin{center}
-        \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Iniciar experimento de Maceración - CP004 (parte 2)}} \\
-        \hline
-        03 & Seleccionar la pestaña de Etapas. & Se abre la pestaña de mediciones, donde se despliegan los datos estáticos correspondiente/s a la/s etapa/s. Se muestra un reloj con cuenta regresiva hasta el final de la etapa o comienzo de la siguiente. & Se abrió la pestaña de mediciones, donde se desplegaron los datos estáticos correspondiente/s a la/s etapa/s. Se cargó un reloj con cuenta regresiva hasta el final de la etapa o comienzo de la siguiente. \\
-        \hline
-        04 & Se selecciona el botón para cancelar el experimento destinado a este fin. & Se cierra la pantalla de monitoreo, retornando a la gestión de la Maceración. Se despliegan mensajes confirmando la cancelación. & Se cerró la pantalla de monitoreo, retornando a la gestión de la Maceración. Se desplegó el mensaje: ``Maceración Cancelada'' \\
-        \hline
-        05 & Se selecciona el botón para finalizar el experimento (Experimento incompleto). & Se despliega un mensaje de error. & Se desplegó el mensaje de error: ``Aún no se realizaron todas las mediciones correspondientes'' \\
-        \hline
-        06 & Se selecciona el botón para finalizar el experimento (Experimento completo). Se ingresa el valor de densidad obtenido. Se presiona el botón Aceptar. & Se despliega un diálogo con espacio para ingresar la densidad obtenida. Se cierra la pantalla, volviendo a la gestión de la maceración. Se despliega un mensaje de confirmación. & Se desplegó un diálogo con espacio para ingresar la densidad obtenida. Se cerró la pantalla, volviendo a la gestión de la maceración. Se desplegó el mensaje de confirmación: ``Densidad correctamente insertada''. \\
-        \hline
-        
-        \multicolumn{4}{|c|}{\textbf{Resultados Obtenidos}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Resultado:} Aprobado} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Evidencia: \url{https://shorturl.me/DYrt} y \url{https://shorturl.me/Sn4JhPb} }} \\
-        \hline
-     \end{tabularx}
-    \label{CP004-p2}
-    \end{center}
-    \end{minipage}
-    
-    
-    \begin{minipage}{0.95\textwidth}
-    \begin{center}
-    \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Detalle de maceración - CP005}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Actor Caso de Prueba:} Productor de Cerveza} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Propósito}} \\
-        \hline
-        \multicolumn{4}{|p{0.95\linewidth}|}{ Verificar que el sistema despliegue correctamente las cantidades de insumos acorde a los datos ingresados por el usuario en la planificación. } \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Descripción de las acciones para las pruebas}} \\
-        \hline
-        \textbf{\#} & Acciones & Salida Esperada & Salida Obtenida \\
-        \hline
-        01 & Abrir la pantalla mediante el botón destinado a ello presente en la pantalla de gestión de maceración & Se abre la pantalla y se despliegan los datos esperados. & La pantalla se abrió correctamente y se mostró el tipo de maceración, volumen de mosto, densidad objetivo, detalle de granos y detalle de intervalos.\\
-        \hline
-        02 & Mostrar valores de insumos ajustados en caso de acumular la cantidad de experimentos suficientes & El sistema carga los valores cuando se supera la cantidad definida & El sistema cargó la cantidad de granos ajustado cuando se alcanzó tres repeticiones de la maceración.\\
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Resultados Obtenidos}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Resultado:} Aprobado} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Evidencia: \url{https://shorturl.me/6Mcy17f} }} \\
-        \hline
-     \end{tabularx}
-    \label{CP005}
-    \end{center}
-    %\end{minipage}
-    
-   
-    %\begin{minipage}{0.95\textwidth}
-    \begin{center}
-    \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Detalle de un experimento - CP006}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Actor Caso de Prueba:} Productor de Cerveza} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Propósito}} \\
-        \hline
-        \multicolumn{4}{|p{0.95\linewidth}|}{Verificar la correcta funcionalidad de la pantalla que proporciona los datos obtenidos de un experimento de maceración. Verificar que se despliegan en pantalla los datos y gráficas inherentes al detalle antes mencionado} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Descripción de las acciones para las pruebas}} \\
-        \hline
-        \textbf{\#} & Acciones & Salida Esperada & Salida Obtenida \\
-        \hline
-        01 & Abrir el panel mediante la selección de un experimento de maceración en el panel de gestión de una maceración. & Se abre el panel, se presentan los datos y gráficas de las mediciones. & Se abrió el panel, se presentaron los datos y gráficas de las mediciones. \\
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Resultados Obtenidos}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Resultado:} Aprobado} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Evidencia: \url{https://shorturl.me/hQ9770j} }} \\
-        \hline
-     \end{tabularx}
-    \label{CP006}
-    \end{center}
-    \end{minipage}
-    
-    \begin{minipage}{0.95\textwidth}
-    \begin{center}
-    \begin{tabularx}{\textwidth}{ | p{2cm} | X | X | X |}
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Caso de Prueba: Datos históricos - CP007}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Actor Caso de Prueba:} Productor de Cerveza} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Propósito}} \\
-        \hline
-        \multicolumn{4}{|p{0.95\linewidth}|}{Verificar el correcto despliegue de la pantalla y los paneles destinados a proporcionar las gráficas y valores estadísticos correspondientes al histórico de experimentos de una maceración. Verificar que se despliegan en pantalla los datos antes mencionados} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Descripción de las acciones para las pruebas}} \\
-        \hline
-        \textbf{\#} & Acciones & Salida Esperada & Salida Obtenida \\
-        \hline
-        01 & Abrir la pantalla mediante el botón destinado a ello presente en la pantalla de gestión de una maceración & Se abre la pantalla en la pestaña de Histórico general. Se presenta un botón para cambiar de tipos de gráfica y se despliegan las gráficas y datos esperados para la misma. & Se abrió la pantalla en la pestaña de Histórico general. Se presentó un botón para cambiar de tipos de gráfica y se desplegaron las gráficas y datos esperados para la misma. \\
-        \hline
-        02 & Se presiona el botón para cambiar tipo de gráfica & Las gráficas alternan de gráfico de lineas a boxplot y viceversa & Las gráficas alternaron de gráfico de lineas a boxplot y viceversa \\
-        \hline
-        04 & Se presiona el botón de la pestaña Experimentos & Se despliega la pantalla de experimentos. En el borde superior un menú desplegable con el/los sensor/es cuyas gráficas se mostraran, y luego, las gráficas de todos los experimentos respecto del/de los sensor/es seleccionado/s & Se desplegó la pantalla de experimentos. En el borde superior un menú desplegable con el/los sensor/es cuyas gráficas se mostraron, y luego, las gráficas de todos los experimentos respecto del/de los sensor/es seleccionado/s \\
-        \hline
-        05 & Se presiona el botón para cambiar sensor de gráficas a ser mostradas & Cambian todas las gráficas de la pantalla para mostrar las propias a la selección realizada & Cambiaron todas las gráficas de la pantalla para mostrar las propias a la selección realizada \\
-        \hline
-        \multicolumn{4}{|c|}{\textbf{Resultados Obtenidos}} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Resultado:} Aprobado} \\
-        \hline
-        \multicolumn{4}{|l|}{\textbf{Evidencia: \url{https://shorturl.me/ve9QK} }} \\
-        \hline
-     \end{tabularx}
-    \label{CP007}
-    \end{center}
-    \end{minipage}
-    
-    \chapter{Mediciones pruebas de campo}
+\chapter{Mediciones pruebas de campo}
     \label{GraficasPruebasCampo}
     \begin{minipage}{\textwidth}
     \section{Pilsen Lager - Simple}
@@ -577,7 +376,7 @@
             %\begin{figure}[H]
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/SimpleExp1.jpg}
-                \captionof{figure}{Evolución de la temperatura durante las mediciones en experimento 1}
+                \captionof{figure}{Maceración simple: Evolución de la temperatura durante las mediciones en experimento 1}
                 \label{fig:SimpTempExp1}
             %\end{figure}
     \end{minipage}     
@@ -585,7 +384,7 @@
             \begin{figure}[H]
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/SimpleExp2.jpg}
-                \captionof{figure}{Evolución de la temperatura durante las mediciones en experimento 2}
+                \captionof{figure}{Maceración simple: Evolución de la temperatura durante las mediciones en experimento 2}
                 \label{fig:SimpTempExp2}
             \end{figure}
 
@@ -597,7 +396,7 @@
             \begin{figure}[H]
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/SimpleExp3.jpg}
-                \captionof{figure}{Evolución de la temperatura durante las mediciones en experimento 3}
+                \captionof{figure}{Maceración simple: Evolución de la temperatura durante las mediciones en experimento 3}
                 \label{fig:SimpTempExp3}
             \end{figure}
         
@@ -605,14 +404,14 @@
             \begin{figure}[H]
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/SimpleEvolTempProm.jpg}
-                \captionof{figure}{Evolución de la temperatura promedio de todos los Experimentos}
+                \captionof{figure}{Maceración simple: Evolución de la temperatura promedio de todos los Experimentos}
                 \label{fig:SimpTempProm}
             \end{figure}
            
             \begin{figure}[H]
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/SimpleEvolPHProm.jpg}
-                \captionof{figure}{Evolución del pH promedio de todos los Experimentos}
+                \captionof{figure}{Maceración simple: Evolución del pH promedio de todos los Experimentos}
                 \label{fig:SimpPHProm}
             \end{figure}
 
@@ -621,7 +420,7 @@
             \begin{figure}[H]
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/EscalonadaExp1.jpg}
-                \captionof{figure}{Evolución de la temperatura durante las mediciones en experimento 1}
+                \captionof{figure}{Maceración escalonada: Evolución de la temperatura durante las mediciones en experimento 1}
                 \label{fig:EscExp1}
             \end{figure}
         %\end{minipage}
@@ -631,27 +430,37 @@
             %\begin{minipage}{\textwidth}    
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/EscalonadaExp2.jpg}
-                \captionof{figure}{Evolución de la temperatura durante las mediciones en experimento 2}
+                \captionof{figure}{Maceración escalonada: Evolución de la temperatura durante las mediciones en experimento 2}
                 \label{fig:EscExp2}
             \end{figure}
                 
             \begin{figure}[H]    
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/EscalonadaExp3.jpg}
-                \captionof{figure}{Evolución de la temperatura durante las mediciones en experimento 3}
+                \captionof{figure}{Maceración escalonada: Evolución de la temperatura durante las mediciones en experimento 3}
                 \label{fig:EscExp3}
             \end{figure}
 
             \begin{figure}[H]
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/EscalonadaEvolTempProm.jpg}
-                \caption{Evolución de la temperatura promedio de todos los Experimentos}
+                \caption{Maceración escalonada: Evolución de la temperatura promedio de todos los Experimentos}
                 \label{fig:EscTempProm}
             \end{figure}
         
             \begin{figure}[H]
                 \centering
                 \includegraphics[scale=0.65]{Pruebas/EscalonadaEvolPhProm.jpg}
-                \caption{Evolución del pH promedio de todos los Experimentos}
+                \caption{Maceración escalonada: Evolución del pH promedio de todos los Experimentos}
                 \label{fig:EscPhProm}
             \end{figure}     
+
+\chapter{Metodologías ágiles de gestión}
+\label{anexoMetodologiasAgiles}
+\justifying
+\par Las metodologías ágiles se basan en la utilización de una planificación poco exhaustiva y rígida en aras de facilitar la adaptación de las tareas según las necesidades que se presenten o los cambios en las prioridades que se requieran con la finalidad de cumplir los objetivos del proyecto.
+
+\paragraph{Scrum:} Metodología de gestión ágil de proyectos, mayormente aplicada al software, basada en la  entrega de resultados con frecuencia constante (usualmente cada 2 o 4 semanas) y la integración del cliente en el proceso de desarrollo del proyecto.
+% LIBRO INTRODUCCIÓN A SCRUM http://www.jeffsutherland.org/oopsla/schwapub.pdf
+
+\paragraph{Kanban:} Metodología de gestión de actividades diseñada por Toyota\textsuperscript{®} y aplicada en software, basada en el control de un flujo secuencial de actividades. Uno de los principales conceptos aplicados es evitar el avance de ciertas actividades mientras no sea necesario o hasta que no se resuelvan conflictos o bloqueos que se presenten en el flujo de actividades. Al presentarse estas interrupciones, la práctica habitual es asignar mayor cantidad de recursos a la tarea bloqueada hasta que ésta se resuelva.

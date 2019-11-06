@@ -16,6 +16,9 @@
 \usepackage[toc]{glossaries}
 \usepackage{emptypage}
 
+%\usepackage{enumitem} %Customizar listas de item o enumeraciones
+
+
 \usepackage{natbib}
 \usepackage{todonotes}
 \usepackage{blindtext}
@@ -77,6 +80,11 @@
 \renewcommand{\glossarypreamble}{\label{glosario}}
 \makeglossaries
 \input{Glosario/Glosario.tex}
+
+% Hacer que las imagenes que quedan solas en una página queden arriba y no en el centro
+\makeatletter
+    \setlength\@fptop{0\p@}
+\makeatother
 
 
 \begin{document}

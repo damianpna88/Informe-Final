@@ -86,7 +86,7 @@ A continuación se listan los stakeholders identificados para este sistema:
         RF003 & Monitorear maceración & El sistema debe proveer una pantalla en la que se visualicen los valores de temperatura; condiciones medioambientales (humedad y temperatura); pH; y actividad enzimática correspondientes a un experimento de maceración en curso.
         \\\hline
         
-        RF004 &  Ingresa los datos caracterizan una receta de maceración & El sistema debe permitir el ingreso de datos para definir una receta de maceración: temperatura/s, pH, duración de las etapas de maceraciones simples y complejas, características y porcentaje de los granos que se utilizarán y el volumen deseado para la misma.
+        RF004 &  Ingresar los datos caracterizan una receta de maceración & El sistema debe permitir el ingreso de datos para definir una receta de maceración: temperatura/s, pH, duración de las etapas de maceraciones simples y complejas, características y porcentaje de los granos que se utilizarán y el volumen deseado para la misma.
         \\\hline
         
         RF005 & Notificar al usuario ante desviaciones respecto del plan de maceración & El sistema debe alertar al usuario ante desvíos entre los valores medidos y aquellos especificados en el plan de maceración.
@@ -98,7 +98,7 @@ A continuación se listan los stakeholders identificados para este sistema:
         RF007 & Almacenar y eliminar experimentos  & El sistema debe tener la capacidad de almacenar experimentos de maceración y permitir su eliminación.
         \\\hline
         
-        RF008 & Informar las cantidades de insumos a utilizar en cada receta de maceración  & A partir de los datos de una planificación de maceración, el sistema debe calcular e informar la cantidad de cada tipo de grano, y el volumen y temperatura del agua para cada etapa de maceración.
+        RF008 & Informar las cantidades de insumos a utilizar en cada receta de maceración & El sistema debe calcular e informar la cantidad de cada tipo de grano, y el volumen y temperatura del agua para cada etapa de maceración basado en los datos de planificación de la misma.
         \\\hline
         
         RF009 & Presentar un histórico de experimentos realizados & El sistema debe proveer gráficas con los valores obtenidos de cada experimento de maceración realizado en una única pantalla facilitando la comparación de las mismas.
@@ -158,7 +158,7 @@ A continuación se listan los stakeholders identificados para este sistema:
     RNF005 & Comunicación inalámbrica entre dispositivos & El sistema debe ser diseñado de manera de utilizar comunicación inalámbrica entre el dispositivo que realiza las mediciones y el cual con el que el usuario interactúa.
     \\ \hline
     
-    RNF006 & Sensores de bajo costo económico de adquisición & Deben ser adquiridos sensores utilizando como criterio la selección del de menor costo económico que cumpla las funcionalidades básicas requeridas para el mismo.
+    RNF006 & Sensores de bajo costo económico de adquisición & Deben ser adquiridos sensores utilizando como criterio de selección la de menor costo económico que cumpla las funcionalidades básicas requeridas para el mismo.
     \\ \hline
     
     RNF007 & Selección de placa electrónica & Debe seleccionarse la placa electrónica que satisfaga, por sus funcionalidades, la mayor cantidad de necesidades que surjan del diseño del sistema.
@@ -204,7 +204,7 @@ A continuación se listan los stakeholders identificados para este sistema:
         1- El CU comienza cuando el usuario hace \textit{click} en el botón ``Monitorear variables''. & \\
         \hline
         2- El sistema muestra una pantalla con los valores de temperatura y pH en proceso de monitoreo. & 2.1- El sistema no detecta los sensores. 
-        El sistema muestra el mensaje ``Èrror de conexión con el servidor''.
+        El sistema muestra el mensaje ``Error de conexión con el servidor''.
         \\
         \hline
         %\hline
@@ -324,7 +324,7 @@ A continuación se listan los stakeholders identificados para este sistema:
         5- El sistema presenta un panel con información relacionada a cada etapa dentro de la maceración en curso: tiempo restante para el inicio de cada etapa siguiente (si las hubiese); y para maceraciones complejas presenta el volumen y temperatura del agua o la cantidad de empaste a retirar en dicha etapa. & \\
         \hline
         
-        6- El sistema muestra las opciones ``Finalizar experimento'' y ``Cancelar experimento'' & 6.1- En caso que el usuario seleccione la opción ``Finalizar experimento'' y el experimento haya alcanzado el total de la cantidad de mediciones, el sistema muestra un panel para que el usuario ingrese el valor de densidad específica obtenida.\newline 6.2- En caso que el usuario seleccione la opción ``Finalizar experimento'' y el experimento no haya alcanzado la cantidad de mediciones a realizar, el sistema enseña un mensaje indicando que aún no se puede finalizar el experimento.\newline 
+        6- El sistema muestra las opciones ``Finalizar experimento'' y ``Cancelar experimento'' & 6.1- En caso que el usuario seleccione la opción ``Finalizar experimento'' y el experimento haya alcanzado el total de la cantidad de mediciones, el sistema muestra un panel para que el usuario ingrese el valor de densidad específica medida manualmente.\newline 6.2- En caso que el usuario seleccione la opción ``Finalizar experimento'' y el experimento no haya alcanzado la cantidad de mediciones a realizar, el sistema enseña un mensaje indicando que aún no se puede finalizar el experimento.\newline 
         6.3- En caso que el usuario seleccione la opción ``Cancelar experimento'' se presenta un panel donde se le consulta al usuario si se encuentra seguro que desea realizar esta acción. Si la respuesta al panel es aseverativa, el sistema finalizará el experimento y volverá al panel ``Gestionar maceración'' (CU003).\\
         \hline
        \multicolumn{2}{c}{ }\\
@@ -368,13 +368,15 @@ A continuación se listan los stakeholders identificados para este sistema:
       \par
       Los casos de uso se documentan con el empleo de un diagrama de caso de uso de alto nivel. El conjunto de casos de uso representa todas las interacciones posibles que se describirán en los requerimientos del sistema. Los actores en el proceso, que pueden ser individuos u otros sistemas, se representan como figuras sencillas. Cada clase de interacción se constituye como una elipse con etiqueta. Líneas vinculan a los actores con la interacción. \cite{Som05}.
       \par
-      A continuación, en la figura \ref{DiagCU} se presenta el diagrama correspondiente a los casos de uso identificados en la subsección anterior:\\
-    
-        \begin{minipage}{0.95\textwidth}
+      A continuación, en la figura \ref{DiagCU} se presenta el diagrama correspondiente a los casos de uso identificados en la subsección anterior.\\
+      
+    \begin{figure}[t]
+%        \begin{minipage}{0.95\textwidth}
     	\leftline{\includegraphics[scale=0.7]{DiagramadeCasosdeUso.jpg}}
-    	\captionof{figure}{Diagrama de casos de uso}
+    	\caption{Diagrama de casos de uso}
 	    \label{DiagCU}
-	\end{minipage}
+	\end{figure}
+%	\end{minipage}
 	
     
     

@@ -1,62 +1,198 @@
 \chapter{Conclusiones y trabajos futuros}
 \par
-En este último capítulo se describen las conclusiones finales obtenidas a partir de las pruebas y de un análisis de las funcionalidades provistas por el sistema. En forma adicional, se presentan una serie de propuestas para trabajos futuros que permitirían mejorar el alcance y rendimiento del sistema.
+En este último capítulo, se describen los resultados finales obtenidos. Los mismos fueron divididos en áreas según la temática involucrada: ``Lecciones aprendidas: Desarrollo y gestión del proyecto'', ``Cumplimiento de objetivos'' y ``Balance general''. 
+\par De forma adicional, se presenta al final de este capitulo una serie de propuestas para trabajos futuros que permitirían mejorar el alcance y rendimiento del sistema.
 
-%podria ser conclusiones y resultados?
-\section{Conclusiones} % Cumplimos lo que nos propusimos? era cierto lo que se dijo?
+\section{Conclusiones} 
+    \subsection{Lecciones aprendidas: Desarrollo y gestión del proyecto}
+        \par En la presente subsección se comentan los aprendizajes realizados sobre gestión y desarrollo de este proyecto. Se hace referencia a las distintas metodologías, técnicas y herramientas utilizadas para llevar a cabo las distintas actividades.
+        
+        \par En el abordaje de la gestión y desarrollo, se reconoció como piedra angular la correcta construcción de una metodología de desarrollo adecuada. En este sentido, se refiere al acoplamiento de diferentes metodologías en aras de mejorar la dinámica productiva. Se inició como un modelo en cascada mediante el cual se definió un flujo conexo de actividades globales secuenciales. Con el correr del proyecto, se evidenció la necesidad de granular estas actividades globales en actividades más pequeñas con mayor detalle, que luego fueron reordenadas en función de criterios y prioridades subjetivas. Esto conllevó a incorporar las siguientes prácticas de metodologías de desarrollo ágiles (véase el anexo \ref{anexoMetodologiasAgiles}):
+        
+        \begin{itemize}
+            % SON 2 ITEMS. CAPAZ QUE LO PENSAMOS PARA COMPRIMIRLO EN UN PÁRRAFO CHE
+            \item Se tomó la iniciativa de realizar reuniones diarias en las que de describían las tareas a llevar a cabo (Daily meetings de Scrum).
 
-\par En principio se consideran necesarios de destacar los ejes que dominan la dinámica de todo proyecto: la triple restricción ``Alcance, Tiempo y Costo''. El primero, fue establecido en etapas tempranas del desarrollo del anteproyecto, y no reviste la condición de ser reducido o aumentado. Por ende, esta restricción fue la dominante en la dinámica de trabajo. En segundo lugar, respecto al tiempo, se resalta una inicial sub-estimación de tiempo-esfuerzo producto de la inexperiencia de los proyectistas en las áreas de conocimiento que atravesaron este proyecto. Es así, que las tareas de aprendizaje y desarrollo resultaron en una extensión de tiempo substancialmente superior. Finalmente, en consecuencia de las dos restricciones anteriores, el costo de los recursos humanos aumentó de manera significativa conforme lo hizo el tiempo.
+            
+            \item En lo que refiere a la gestión de actividades se tomó como base un modelo híbrido entre Kanban y Scrum. Se dividieron las actividades grandes (\textit{Epic user stories}) en actividades más pequeñas (\textit{User Stories}), se estableció un orden de prioridades el cual se reflejó en una lista (Backlog). A continuación, el ciclo de vida de las actividades fue dividido en diferentes estados secuenciales: Un backlog semanal (actividades objetivo para esa semana), en desarrollo (actividades siendo llevadas a cabo), fase de revisión (verificación de las actividades), y por último, finalizadas (lista de actividades ya concretadas). Para esto, fue utilizada la herramienta web Trello\textsuperscript{®}\footnote{ Sitio oficial de Trello: \url{trello.com}}.
+            
+        \end{itemize}
+        
+        \par Con el transcurso del proyecto, se dio cuenta que el trabajo se resultaba mas eficiente si ambos proyectistas ejecutaban sus tareas de forma simultanea, sin que esto requiera que ambos trabajen en la misma actividad. A partir de esta situación, se acordó limitar los encuentros en persona solo para las actividades que lo requiriesen. Esto conllevó a la necesidad de utilizar la mayor cantidad de herramientas colaborativas. A continuación se mencionan las mas relevantes:
+        \begin{itemize}
+            
+            \item Hangouts de Google\textsuperscript{®}\footnote{ Sitio oficial de Hangouts: \url{hangouts.google.com}}: Realizar videollamadas y compartir pantalla. En este contexto se utilizó de forma muy frecuente la herramienta Paint de Microsoft\textsuperscript{®} Windows para diagramar diseños.
+            
+            \item Dropbox\textsuperscript{®}\footnote{ Sitio oficial de Dropbox: \url{dropbox.com}} y Google \textsuperscript{®} Drive\footnote{ Sitio oficial de Google Drive: \url{drive.google.com}}: Almacenar multimedia en la nube.
+            
+            \item Github\textsuperscript{®}\footnote{ Sitio oficial de GitHub: \url{github.com}}: Para versionar el código fuente a través de un repositorio remoto.
+            
+            \item LucidChart\textsuperscript{®}\footnote{ Sitio oficial de Lucidchart: \url{lucidchart.com}}: Diseño de diagramas.
+            
+            \item NinjaMock\textsuperscript{®}\footnote{ Sitio oficial de NinjaMock: \url{ninjamock.com}}: Diseño de interfaces gráficas para dispositivos móviles.
+            
+            \item Google\textsuperscript{®} Docs\footnote{ Sitio oficial de Google\textsuperscript{®} Docs: \url{docs.google.com}}: Redacción de documentos que no requerían herramientas de formato técnicas.
+            
+            \item Overleaf\textsuperscript{®}\footnote{ Sitio oficial de Overleaf\textsuperscript{®}: \url{es.overleaf.com}}: Redacción del presente informe final. Overleaf permite la edición conjunta de documentos utilizando el lenguaje Latex. Incorpora la posibilidad de sincronizar la carpeta con un repositorio Git.
+            
+        \end{itemize}
+        
+        \par También se destacan otras herramientas que, si bien no permiten la colaboración de muchos usuarios, fueron de gran utilidad. Dentro de estas se destacan Enterprise Architect\footnote{ Sitio oficial de Sparx Systems: \url{sparxsystems.com/products/ea}} para modelado UML, y Fritzing\footnote{ Sitio oficial de Fritzing: \url{fritzing.org}}  para el diseño de diagramas de circuitos electrónicos.
+        
+        \par En lo que refiere a la duración de proyecto, se hizo evidente una subestimación en el tiempo y esfuerzo requerido para el desarrollo de este proyecto. A continuación se mencionan las tareas que fueron identificadas como de mayor impacto negativo en las estimaciones:
+        \begin{itemize}
+        
+            \item El presente trabajo abordó diferentes temáticas como la electrónica, el desarrollo web y el desarrollo móvil, lo que resultó en una gran cantidad de tiempo expendido en tareas de aprendizaje muy disímiles entre sí.
+            
+            \item En la redacción del presente informe, dada la variedad de temáticas que por él atraviesan, resultó en un documento extenso y complejo. Conllevando una duración mayor de la esperada. 
+            
+            \item Este proyecto fue llevado a cabo por alumnos de la carrera de Ingeniería informática, la cual no imparte conocimientos específicos para la aplicación, armado y utilización de placas, y circuitos electrónicos. En este sentido, los proyectistas emprendieron el desarrollo basados en la corriente \textit{Do it Youserlf} \footnote{Del inglés, ``Hazlo tú mismo'', abreviado como DIY} en electrónica la cual invita a la construcción de sistemas con buenas prestaciones al alcance de individuos con habilidades y conocimientos limitados en la temática. Luego de investigar y consultar expertos, se emprendió un desarrollo en materia electrónica considerando sus capacidades y el nivel de dificultad que este desarrollo requería. En el transcurso del mismo se evidenció que los límites que marcan los cambios en los niveles de complejidad para los desarrollos electrónicos son poco claros. En este caso, la utilización del sensor de pH, resultó en un impedimento de alto nivel consecuencia de los avanzados conocimientos necesarios para operar el mismo. Esto impactó de forma negativa en las estimaciones de tiempo y esfuerzo produciendo una gran demora en el proceso de desarrollo.
+
+        \end{itemize}
+%Fin de lecciones aprendidas    
+\subsection{Cumplimiento de objetivos}
 
 \par En este proyecto se planteó el desarrollo de un prototipo de hardware y software para asistir al productor de cerveza artesanal en la planificación, seguimiento y evaluación del proceso maceración. Tomando como guía los objetivos planteados para el mismo (Sección \ref{secccionObjetivos}), se fueron desempeñando las tareas correspondientes para su cumplimiento. A continuación son evaluados estos objetivos:
 
 \subsubsection{Asistencia para planificación} 
-\par A raíz de las pruebas realizadas (sección \ref{CapituloPruebas}), fue comprobado que el sistema contribuye en la asistencia del proceso de maceración de forma práctica y útil. A partir de ciertos parámetros básicos, el sistema facilita los pasos e insumos necesarios para llevar a cabo la maceración deseada. Luego, los valores de estimación obtenidos en la Pantalla de detalle de maceración \ref{DescripPantallaDetalleMaceración} cumplen el requerimiento de auto-ajuste, conforme son llevados a cabo una mayor cantidad de experimentos. En forma consecuente, se optimiza la cantidad de insumos utilizada, y se asiste al productor asegurando el cumplimiento de los objetivos planteados para la receta. Además, incorpora en este apartado herramientas para llevar a cabo de forma mas sencilla maceraciones complejas (que requieran de dos o más etapas). Por ende, puede afirmarse que el sistema cumple el objetivo de ser una herramienta útil en la planificación de maceraciones.
+\par A raíz de las pruebas realizadas (sección \ref{CapituloPruebas}), fue comprobado que el sistema contribuye en la asistencia del proceso de maceración de forma práctica y útil. A partir de ciertos parámetros básicos, el sistema facilita los pasos e insumos necesarios para llevar a cabo la maceración deseada. Luego, los valores de estimación obtenidos en la pantalla de detalle de maceración, subsección \ref{DescripPantallaDetalleMaceración}, cumplen el requerimiento de auto-ajuste, conforme son llevados a cabo una mayor cantidad de experimentos. En forma consecuente, se optimiza la cantidad de insumos utilizada, y se asiste al productor asegurando el cumplimiento de los objetivos planteados para la receta. Además, incorpora en este apartado herramientas para llevar a cabo de forma mas sencilla maceraciones complejas (que requieran de dos o más etapas). Por ende, puede afirmarse que el sistema cumple el objetivo de ser una herramienta útil en la planificación de maceraciones.
 
 \subsubsection{Asistencia para seguimiento}
-\par La pantalla de monitoreo de experimento \ref{DescripPantallaMonitoreoExperimento} permite el seguimiento durante el avance de una maceración a través de los múltiples datos allí presentados. En este apartado, se considera importante de mencionar un planteo inicial en cuanto al intervalo de medición de temperatura, el cual pudiese tener una duración tan reducida como la que el usuario requiera. Luego, esta decisión de diseño se vio restricta por limitaciones funcionales del hardware. El mismo requiere de un tiempo aproximado de 30 segundos para recolectar e insertar en la base de datos los valores obtenidos por los sensores. Finalmente, tanto el intervalo de medición de pH (con su mínimo de dos minutos de estabilización de medición) como el de temperatura, cuentan con un límite inferior. No obstante a esto, estas limitaciones temporales no perjudican al funcionamiento del sistema debido a que los cambios de estas variables, en este contexto, aun permiten al usuario reconocer la desviación y realizar una corrección en consecuencia. De esta forma, aun contando con los límites inferiores en el intervalo de tiempo de medición, el seguimiento del proceso se realiza de forma correcta.
+\par La pantalla de monitoreo de experimento, subsección \ref{DescripPantallaMonitoreoExperimento}, permite el seguimiento durante el avance de una maceración a través de los múltiples datos allí presentados. En este apartado, se considera importante de mencionar un planteo inicial en cuanto al intervalo de medición de temperatura, el cual pudiese tener una duración tan reducida como la que el usuario requiera. Luego, esta decisión de diseño se vio restringida por limitaciones funcionales del hardware. El mismo requiere de un tiempo aproximado de 30 segundos para recolectar e insertar en la base de datos los valores obtenidos por los sensores. Finalmente, tanto el intervalo de medición de pH (con su mínimo de dos minutos de estabilización de medición) como el de temperatura, cuentan con un límite inferior. No obstante a esto, estas limitaciones temporales no perjudican al funcionamiento del sistema debido a que los cambios de estas variables, en este contexto, aún permiten al usuario reconocer la desviación y realizar una corrección en consecuencia. De esta forma, aún contando con los límites inferiores en el intervalo de tiempo de medición, el seguimiento del proceso se realiza de forma correcta.
 
 \subsubsection{Asistencia para la evaluación}  
 \par La utilización de gráficas en la aplicación produjo resultados satisfactorios gracias a su utilidad en la identificación y comprensión rápida del comportamiento de las variables intervinientes. Estas gráficas, pueden presentar desde datos puntuales de una medición de un experimento hasta un resumen de todas las experiencias realizadas, permitiendo así un análisis específico o del conjunto de procesos.
 
 \par Por otro lado, el sistema proporciona el valor de rendimiento del equipo para cada experimento de maceración, y en conjunto a las gráficas es posible realizar un análisis de las dinámicas intervinientes en la producción de un determinado resultado, pudiendo así repetir o perfeccionar una receta.
 Es importante mencionar el cumplimiento de una de las finalidades expuestas en el anteproyecto, permitir identificar dinámicas de comportamiento térmico dentro del recipiente de macerado. A partir de la integración de múltiples sensores de temperatura el sistema cumple este objetivo.
-%NEGRO
-%Aún mas, para la realización de las pruebas empíricas pudo identificarse que el contenedor dentro del que se realizaban las maceraciones perdía temperatura por varios sectores del macerador, afectando negativamente a los resultados del proceso. A partir de los resultados arrojados por este sistema, fueron implementadas mejoras al recipiente de manera de corregir esta deficiencia.
-%Finalmente, se considera el conjunto de herramientas como útiles para el productor, cumpliendo con el objetivo. 
 
-\section{Trabajos futuros} %A delirar fuerte.
+
+\subsection{Balance general}
+
+    \par Se entiende al balance general como el resultado de un proceso reflexivo sucedido al concluir un proyecto. Este balance es plasmado en una serie de enunciados en los que se evalúan los resultados obtenidos. De esta forma, a continuación se hace mención a los mismos:
+    
+    \begin{itemize}
+
+        \item{Temáticas involucradas:} Para el desarrollo de este proyecto/sistema, debió involucrarse diferentes temáticas como el desarrollo móvil, el desarrollo web y la electrónica. En este sentido, se considera como rasgo positivo esta multiplicidad de ejes técnicos en lo que hace al aprendizaje y el desafío mismo para los proyectistas. El mismo concluyó en un sistema muy completo y de variadas dimensiones técnicas. Sin embargo, es de nuestro creer, que durante la formulación del anteproyecto se recayó en una necesidad grandilocuente en cuanto a lo que el proyecto es y hace. En esta situación fue de vital importancia, contar con un alcance extenso y bien definido que permitió limitar y organizar la construcción del sistema de forma realizable como proyecto final de carrera. En este desarrollo, en términos del atravesamiento de las diferentes temáticas, se precisó realizar cursos de numerosa índole que consumieron una gran parte del tiempo total que tomó el desarrollo. Enfocar un proyecto en una sola temática particular hubiese permitido optimizar mas el tiempo dedicado al aprendizaje. De forma adicional, hubiese dado paso a la redacción de un alcance mas extenso en cuanto a las funcionalidades y características, construyendo un producto de mayor calidad y características técnicas finales. Por ejemplo, un desarrollo mas intensivo de un componente electrónico, que transforme la estación de recolección de datos en un sistema en sí mismo, que entre otras cosas considere cuestiones como la precisión de los sensores y la optimización de las mediciones, una API de mayor nivel quizás creada con un framework, un análisis profundo en cuanto a la optimización de la ubicaciones de los sensores, y demás características que transformarían esta estación en un producto final de mayor nivel. 
+        
+        \item{Análisis del diseño:} Al momento de analizar la solución, las experiencias previas de los proyectistas influyen en la concepción final, resultando en ciertos casos en una ventaja y, en otros casos, condicionamientos que dificultan la implementación. Particularmente en este proyecto, se tomó la decisión de diseño de no involucrar el uso de internet en la transmisión de información entre la estación de recolección de datos y la aplicación móvil. Esta decisión, basada en el hecho de evitar la dependencia de una conexión sensible a interrupciones por factores externos, resultó en un sistema en el cual la lógica se encuentra implementada dentro de la aplicación móvil y las bases de datos de los experimentos realizados se encuentran duplicados en el componente electrónico y la aplicación misma. Al concluir este desarrollo, se constató que de no existir esta limitación podría haberse implementado un diseño alternativo mediante un servicio basado en nube (por ejemplo Firebase\footnote{Sitio oficial de Firebase: \url{firebase.google.com/}}) que implemente la lógica, almacene la información y establezca la comunicación con la estación de recolección de datos. En este caso, múltiples terminales tontas implementadas con un framework fullstack, por ejemplo React Native \footnote{Sitio web, \url{reactnative.com/}}, brindarían la posibilidad al usuario de interactuar con el mismo sistema desde cualquier dispositivo móvil o computadora. 
+        
+        \item{Características diferenciales de otras propuestas:}
+        El resultado final obtenido es un producto diferenciado de las opciones existentes en el mercado, mencionadas en la sección \ref{seccionEstadoDelArte}. En este sentido se logró concretar un sistema de asistencia específica para el proceso de macerado que incorpora elementos de hardware y software con un enfoque diferenciado en cuanto a la manera en la que se asiste al productor. En este sentido, se destaca la idea de mejorar los resultados futuros a partir del detalle de experimentos ya realizados y la optimización en el uso de insumos en base a la retroalimentación de los cálculos con datos de experimentos anteriores. 
+        
+        \item{ Alcance, tiempo y costo: } Se considera necesario evaluar los ejes que dominan la dinámica de todo proyecto: la triple restricción ``Alcance, Tiempo y Costo''. El primero, fue establecido en etapas tempranas del desarrollo del anteproyecto, y no reviste la condición de ser reducido o aumentado. Por ende, esta restricción fue la dominante en la dinámica de trabajo. En segundo lugar, respecto al tiempo, se resalta una inicial subestimación de tiempo-esfuerzo producto de la inexperiencia de los proyectistas en las áreas de conocimiento que atravesaron este proyecto. Es así, que las tareas de aprendizaje y desarrollo resultaron en una extensión de tiempo substancialmente superior. Finalmente, en consecuencia de las dos restricciones anteriores, el costo de los recursos humanos aumentó de manera significativa conforme lo hizo el tiempo.
+        
+        \par En relación a la inversión económica realizada por los alumnos esta consta de tres segmentos, ``Cursos de capacitación'', ``Componentes electrónicos'' y ``Materiales para realización de prueba de campo''. Es de destacar que los gastos fueron realizados de forma mixta en dolares y pesos con cotización correspondiente a agosto del al año 2018 (1 USD = \$31.61 pesos argentinos), por tanto para dar valor comparativo con los valores económicos actuales todos los costos serán detallados en dolares estadounidenses. A continuación en la tabla \ref{tab:TablaGastosRealizados} se presenta el detalle de los gastos realizados:
+        \begin{longtable}{|p{11cm}|p{3cm}|}
+                \hline
+                \multicolumn{2}{| c |}{\textbf{Tabla resumen de gastos realizados}}\\
+                \hline
+                \multicolumn{1}{| c |}{Detalle} &\multicolumn{1}{| c |}{Costo (USD)}\\
+                \hline
+                \hline
+            \endfirsthead
+         
+                \hline
+                \multicolumn{2}{|c|}{Continuación de la tabla resumen de gastos realizados}\\
+                \hline
+                \multicolumn{1}{| c |}{Detalle} &\multicolumn{1}{| c |}{Costo (USD)}\\
+                \hline
+            \endhead
+         
+                %\hline
+            \endfoot
+                %\hline
+                %\multicolumn{2}{| c |}{End of Table}\\
+                %\hline
+                \caption{Tabla resumen de gastos realizados \label{tab:TablaGastosRealizados}}\\
+            \endlastfoot
+            \multicolumn{2}{| c |}{Cursos de capacitación} \\
+            \hline
+            % 1 USD = $31.61 en 27/8/18
+            Curso ``Android desde cero'', una licencia para cada estudiante - Udemy & 2 x \$25 = \$50 \\
+            \hline
+            Subtotal & \$50 \\
+            \hline
+            \hline
+            \multicolumn{2}{| c |}{Componentes electrónicos}\\
+            \hline
+            Sensor de temperatura & 6 x \$5 = \$30 \\
+            \hline
+            Sensor de pH & \$73 \\
+            \hline
+            Sensor de temperatura y humedad ambiente & \$5 \\
+            \hline
+            Soluciones buffer (pH4, pH10)  y agua destilada & \$19 \\
+            \hline
+            Placa Raspberry Pi 3 B+ & \$57 \\
+            \hline
+            Placa Arduino Uno & \$32\\
+            \hline
+            Protoboard, cables y resistencias & \$20 \\
+            \hline
+            Subtotal & \$236 \\
+            \hline
+            \hline
+            \multicolumn{2}{| c |}{Materiales para realización de prueba de campo}\\
+            \hline
+            Malta Pilsen x 10kg & \$30 \\
+            \hline
+            Termo marca ``Thermos'' de 2,5 litros & \$47 \\
+            \hline
+            Densímetro & \$28\\
+            \hline
+            Bolsa de macerado & \$5\\
+            \hline
+            Insumos varios & \$7 \\
+            \hline
+            Subtotal & \$117 \\
+            \hline
+            \hline
+           \textbf{ TOTAL} & \textbf{ \$403}\\
+           \hline
+        \end{longtable}
+ 
+        \par Considerando los gastos realizados, pueden concluirse que el costo de inversión en insumos, si bien elevado, se mantuvo acorde al presupuesto con el que contaban los proyectistas al momento de desarrollar este sistema.
+        
+        %VER PARA AGREGAR TIEMPO Y COSTO.
+        % Tal vez agregar: tiempo total, costo total, calidad????. Bueno, alcance ya dijimos todo ok.
+    \end{itemize}
+    
+    
+    % Balance general: Nos fue bien? cuanto termino saliendo? que estuvo bueno? que no le recomendamos a otros.
+    
+    % Balance: que nos resulto bien, que nos resulto mal. (consejos para terceros), en que nos equivocamos, qué dificultades encontramos, de esto que hicimos, saco aprendizajes: cosas buenas y malas. Dificultades que encontramos.
+
+\section{Trabajos futuros}
+%minería de datos, objetivos futuros: respaldo de información, 
 \par En esta sección se enumeran una serie de mejoras en las que podría incurrir este sistema/proyecto con la finalidad de aumentar los beneficios otorgados por el mismo.
 
 \begin{itemize}
     \item Optimización de código: la optimización de código puede conllevar la mejora del aprovechamiento de los recursos y la reducción de tiempos de respuesta del sistema. En particular, la implementación del prototipo posee una demora aproximada de 50 segundos para realizar la medición de todos los sensores. Esto conllevó a la restricción de no poder utilizar un período de medición inferior a un minuto. Aplicar una optimización en el código favorecería al aumento de la frecuencia de medición permitida.
     
-    \item Mejora de componentes utilizados: La exactitud y precisión de los sensores estuvieron limitados al presupuesto destinado por parte de los proyectistas. En particular, el sensor de pH utilizado produce mediciones inestables a lo largo del tiempo, conllevando a una disminución de la exactitud de sus medidas. El empleo de un sensor de mejor calidad produciría el mejoramiento de la exactitud de las medidas, ofreciendo mayor confianza en los resultados.
+    \item Mejora de componentes utilizados: la exactitud y precisión de los sensores estuvieron limitados al presupuesto destinado por parte de los proyectistas. En particular, el sensor de pH utilizado produce mediciones inestables a lo largo del tiempo, conllevando a una disminución de la exactitud de sus medidas. El empleo de un sensor de mejor calidad produciría el mejoramiento de la exactitud de las medidas, ofreciendo mayor confianza en los resultados.
     
-    \item Integración con otros sistemas: El mayor beneficio para el productor lo obtendría a partir de un sistema que lo asista durante todo el proceso de producción de cerveza. Con una herramienta de estas características, cada variable que interviene puede ser controlada y ajustada para que el producto final tenga las propiedades deseadas. Ya que el prototipo propuesto es limitado al proceso de maceración, la integración del mismo con otros sistemas que contribuyan con la asistencia de los restantes procesos de producción, otorgaría un mayor beneficio para el usuario del mismo.
+    \item Integración con otros sistemas: el mayor beneficio para el productor lo obtendría a partir de un sistema que lo asista durante todo el proceso de producción de cerveza. Con una herramienta de estas características, cada variable que interviene puede ser controlada y ajustada para que el producto final tenga las propiedades deseadas. Ya que el prototipo propuesto es limitado al proceso de maceración, la integración del mismo con otros sistemas que contribuyan con la asistencia de los restantes procesos de producción, otorgaría un mayor beneficio para el usuario del mismo.
     
-    \item Monitoreo de múltiples maceraciones: Este prototipo fue planteado para llevar el seguimiento de un único equipo para macerar. Si el productor cuenta con mayor cantidad de equipos destinados a este proceso para paralelizar su producción, este sistema no tendría capacidad de asistirlo en cada uno de ellos. Para estos casos, tendría mayor beneficio que el modulo de hardware actué en forma independiente y se implemente una aplicación que pueda obtener valores de cada uno de estos de forma simultánea.
+    \item Monitoreo de múltiples maceraciones: este prototipo fue planteado para llevar el seguimiento de un único equipo para macerar. Si el productor cuenta con mayor cantidad de equipos destinados a este proceso para paralelizar su producción, este sistema no tendría capacidad de asistirlo en cada uno de ellos. Para estos casos, tendría mayor beneficio que el modulo de hardware actué en forma independiente y se implemente una aplicación que pueda obtener valores de cada uno de estos de forma simultánea.
     
-    \item Instrucciones de corrección del proceso en tiempo real: Cuando se incurre en un desvío de las variables temperatura o pH, existen métodos para corregir las mismas al valor deseado. Esto requiere un mayor conocimiento de física (temperatura, termodinámica) y química (pH, ácidos y bases) por parte del productor, siendo obviados usualmente por métodos empíricos utilizados en el \textit{home brewing}. El productor obtendría mayor beneficio del asistente si este le indicará durante el proceso los pasos a seguir para restablecer la templa a los valores deseados.
+    \item Instrucciones de corrección del proceso en tiempo real: cuando se incurre en un desvío de las variables temperatura o pH, existen métodos para corregir las mismas al valor deseado. Esto requiere un mayor conocimiento de física (temperatura, termodinámica) y química (pH, ácidos y bases) por parte del productor, siendo obviados usualmente por métodos empíricos utilizados en el \textit{home brewing}. El productor obtendría mayor beneficio del asistente si este le indicará durante el proceso los pasos a seguir para restablecer la templa a los valores deseados.
     
-    \item Incorporación de densímetro digital: Como se mencionó a lo largo de este documento, la densidad es una variable de interés al finalizar la maceración. El sistema desarrollado requiere la inserción manual de dicho valor por parte del productor, conllevando al mismo a la realización de la medición. Esta última puede incurrir en una modificación del valor real si el usuario no ingresa correctamente el valor o no es preciso al momento de realizar el proceso, ya que el sistema no lo detectará. La incorporación de un componente que se encargue de realizar esta tarea reduciría el esfuerzo del productor y aumentaría la confianza del valor obtenido. 
+    \item Incorporación de densímetro digital: como se mencionó a lo largo de este documento, la densidad es una variable de interés al finalizar la maceración. El sistema desarrollado requiere la inserción manual de dicho valor por parte del productor, conllevando al mismo a la realización de la medición. Esta última puede incurrir en una modificación del valor real si el usuario no ingresa correctamente el valor o no es preciso al momento de realizar el proceso, ya que el sistema no lo detectará. La incorporación de un componente que se encargue de realizar esta tarea reduciría el esfuerzo del productor y aumentaría la confianza del valor obtenido. 
     
-    \item Base de datos en la nube: El diseño del sistema se estableció a partir de la ubicación de dos bases de datos, en la estación de recolección de datos y en la aplicación móvil. A partir de este diseño fue posible cumplir con los objetivos del proyecto. Sin embargo, en lugar de establecer la base de datos en la aplicación sino en un servidor externo (servidor web), permitiría utilizar las herramientas provistas por la aplicación en más de un dispositivo móvil, así como también en un navegador web.
+    \item Base de datos en la nube: el diseño del sistema se estableció a partir de la ubicación de dos bases de datos, en la estación de recolección de datos y en la aplicación móvil. A partir de este diseño fue posible cumplir con los objetivos del proyecto. Sin embargo, en lugar de establecer la base de datos en la aplicación sino en un servidor externo (servidor web), permitiría utilizar las herramientas provistas por la aplicación en más de un dispositivo móvil, así como también en un navegador web. Adicionalmente, utilizar una única base de datos facilita las tareas de respaldo de información ya que no se recae en problemas de integridad y requiere el conocimiento del manejo de un único gestor de base de datos.
     
-    \item Circuitería impresa como PCB\footnote{“placa de circuito impreso”, superficie constituida por caminos, pistas o buses de material conductor laminadas sobre una base no conductora.}: En cuanto a las conexiones de los sensores con las placas electrónicas, las mismas fueron realizadas mediante la utilización de cables y una protoboard. Esta configuración, aunque eficaz, es poco eficiente, ya que dificulta su transporte por la relativa sencillez con la que los mismos pueden desconectarse. Imprimir estas conexiones sobre una placa impresa resultaría en un valor agregado al sistema.
+    \item Circuitería impresa como PCB\footnote{“placa de circuito impreso”, superficie constituida por caminos, pistas o buses de material conductor laminadas sobre una base no conductora.}: en cuanto a las conexiones de los sensores con las placas electrónicas, las mismas fueron realizadas mediante la utilización de cables y una protoboard. Esta configuración, aunque eficaz, es poco eficiente, ya que dificulta su transporte por la relativa sencillez con la que los mismos pueden desconectarse. Imprimir estas conexiones sobre una placa impresa resultaría en un valor agregado al sistema.
     
-    \item Facilidades de configuración WiFi\textsuperscript{\textregistered} de la estación de recolección de datos: En los alcances de este proyecto fue planteado que la configuración WiFi\textsuperscript{\textregistered} de la estación de recolección de datos sería realizada en forma manual. Se plantea como mejora la posibilidad de realizar esta configuración de alguna otra manera, por ejemplo, a partir de una conexión Bluetooth\textsuperscript{\textregistered} y una funcionalidad implementada con esta conexión para este fin.
-    %NEGRO
-    \item Placa electrónica de diseño propio: Las placas electrónicas aquí utilizadas poseen ventajas y limitaciones en cuanto a las necesidades requeridas para este sistema. Estas limitaciones debieron ser atendidas y, por tanto,  produjeron complicaciones en el desarrollo. Mediante un diseño electrónico propio podría obtenerse un componente que satisfaga directamente los requerimientos necesarios para este sistema, aminorando de esta manera la complejidad en su construcción y mejorando su funcionamiento.
+    \item Facilidades de configuración WiFi\textsuperscript{\textregistered} de la estación de recolección de datos: en los alcances de este proyecto fue planteado que la configuración WiFi\textsuperscript{\textregistered} de la estación de recolección de datos sería realizada en forma manual. Se plantea como mejora la posibilidad de realizar esta configuración de alguna otra manera, por ejemplo, a partir de una conexión Bluetooth\textsuperscript{\textregistered} y una funcionalidad implementada con esta conexión para este fin.
+
+    \item Placa electrónica de diseño propio: las placas electrónicas aquí utilizadas poseen ventajas (adaptador WIFI/Bluetooth, arqutectura de computador, etc) y limitaciones  en cuanto a las necesidades requeridas para este sistema (entradas analógicas). Estas limitaciones debieron ser atendidas y, por tanto, produjeron complicaciones en el desarrollo. Mediante un diseño electrónico propio podría obtenerse un componente que satisfaga directamente los requerimientos necesarios para este sistema, aminorando de esta manera la complejidad en su construcción y mejorando su funcionamiento.
     
     \item Optimización de código Android: la aplicación aquí desarrollada tiene el objetivo de satisfacer sus requerimientos de implementación, no teniéndose en cuenta una optimización en cuanto al uso de recursos del dispositivo. Por ende, una optimización del mismo solventaría esta situación.
+    
+    \item Minería de datos: incorporar la búsqueda de patrones en grandes volúmenes de datos permite detectar comportamientos que muchas veces no están contemplados en los modelos. Para este sistema, el conjunto de datos que se pueden generar por cada usuario para cada una de las maceraciones que estos monitoricen, permitiría ayudar a obtener mayor conocimiento de buenas (o malas) prácticas que se llevan a cabo durante la maceración. 
     
     
 \end{itemize}
 
 \clearpage
-
-
-
-
-
-
