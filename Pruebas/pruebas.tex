@@ -19,13 +19,35 @@
 \par A continuación se presentan las pruebas de ``cálculo de insumos'' y ``cálculo de rendimiento'', llevadas a cabo de manera de verificar su correcto funcionamiento.
 
 \subsection{Cálculo de insumos}
-\par Se procedió a realizar la verificación de los cálculos de insumos implementados mediante el uso de recetas provistas por los directores. Estas recetas incluyen cantidades obtenidas mediante la aplicación de cálculos en los que se asume el extracto potencial de la malta como del 100\%. Por tanto, las cantidades diferirán con las aquí calculadas entre un 15\% y un 30\% dado que para el cálculo son utilizados los extractos potenciales reales de las maltas, los cuales varían entre un 70-85\%. Tomando en cuenta lo antes mencionado, se consideran como válidos los cálculos que se encuentren dentro de estos intervalos.
 
-\par En la Tabla \ref{tab:TablaRecetaExperimentos}, se presentan las recetas y la comparativa de los valores de insumos allí presentes con los obtenidos por la aplicación.
+%\par Se procedió a realizar la verificación de los cálculos de insumos implementados mediante el uso de recetas provistas por los directores. Estas recetas incluyen cantidades obtenidas mediante la aplicación de cálculos en los que se asume el extracto potencial de la malta como del 100\%. Por tanto, las cantidades diferirán con las aquí calculadas entre un 15\% y un 30\% dado que para el cálculo son utilizados los extractos potenciales reales de las maltas, los cuales varían entre un 70-85\%. Tomando en cuenta lo antes mencionado, se consideran como válidos los cálculos que se encuentren dentro de estos intervalos.
 
-\begin{longtable}{|p{1.8cm}|p{1.8cm}|p{1.8cm}|p{1.9cm}|p{1.7cm}|p{2cm}|p{2cm}|}
+\par Se procedió a realizar la verificación de los cálculos de insumos implementados a partir del uso de recetas provistas por los directores. Mediante la utilización de la herramienta de planillas Microsoft \textsuperscript{\textregistered} Excel y la ecuación \ref{EcuacionRayDaniels} descripta en la sección \ref{AT_CalculodeCantGrano} del marco temático, se realizaron los cálculos de insumos necesarios para cada receta. Luego, se comparó los resultados de la planilla con los de la aplicación.
+
+\par En la Tabla \ref{tab:TablaRecetaExperimentos}, se presentan cinco recetas: \textit{English Pale Ale}, \textit{Session IPA}, \textit{American Blonde Ale}, \textit{Hopfenweizen} y \textit{India Pale Lager}. 
+En la misma se lista el volumen de maceración (V), densidad objetivo (DO), los granos utilizados junto con el extracto potencial (EP) y porcentaje de utilización (PU) de los mismos, los valores de insumo obtenidos por la planilla de cálculo y por la aplicación y, por último, el error relativo obtenido entre estos dos valores. Este último cálculo se obtiene a partir de la ecuación $ e = |vo-vp|/vp $, siendo $e$ el error relativo, $vo$ el valor obtenido de la aplicación y $vp$ el valor de planilla.
+
+\begin{longtable}{
+|p{1.8cm} %Nombre
+|p{0.9cm} %Volumen (V)
+|p{0.9cm} %Dens Obj (DO)
+|p{1.8cm} %Granos
+|p{1.0cm} %Extracto Potencial (EP)
+|p{1.0cm} %Porcentaje (PU)
+|p{1.7cm} %Ins. Receta
+|p{1.7cm} %Ins. Calculado
+|p{1.0cm} % Error
+|}
     \hline
-    Nombre Receta & Granos & Porcentaje & Volumen & Densidad Objetivo & Insumo Receta & Insumo Calculado \\
+    Nombre Receta 
+    & \multicolumn{1}{c|}{V}
+    & \multicolumn{1}{c|}{DO}
+    & Granos
+    & \multicolumn{1}{c|}{EP} 
+    & \multicolumn{1}{c|}{PU} 
+    & Insumo Receta
+    & Insumo Sistema
+    & Error \\
     \hline
     \hline
     \endfirsthead
@@ -34,9 +56,17 @@
     \endfoot
     
     \hline
-    \multicolumn{7}{|c|}{Continuación de la Tabla \ref{tab:TablaRecetaExperimentos}}\\
+    \multicolumn{9}{|c|}{Continuación de la Tabla \ref{tab:TablaRecetaExperimentos}}\\
     \hline
-    Nombre Receta & Granos & Porcentaje & Volumen & Densidad Objetivo & Insumo Receta & Insumo Calculado \\
+    Nombre Receta 
+    & \multicolumn{1}{c|}{V}
+    & \multicolumn{1}{c|}{DO}
+    & Granos 
+    & \multicolumn{1}{c|}{EP} 
+    & \multicolumn{1}{c|}{PU} 
+    & Insumo Receta 
+    & Insumo Sistema
+    & Error \\
     \hline
     \hline
     \endhead
@@ -45,47 +75,212 @@
     \caption{Recetas empleadas para experimentos \label{tab:TablaRecetaExperimentos}}\\
     \endlastfoot
     
-    %content
-    \multirow{2}{2cm}{English Pale Ale} & Pilsen &\multicolumn{1}{c|}{86\%}  &\multirow{2}{2cm}{48.6 litros}  &\multirow{2}{2cm}{1.090} & \multicolumn{1}{c|}{14.04 Kg.} & \multicolumn{1}{c|}{17.34 Kg.}\\
-         & Munich & \multicolumn{1}{c|}{14\%} & & &\multicolumn{1}{c|}{2.35 Kg.} &\multicolumn{1}{c|}{2.86 Kg.} \\
-        \hline
-        \multirow{3}{2cm}{American Blonde Ale} & Pilsen &\multicolumn{1}{c|}{86\%}  &\multirow{3}{2cm}{38.7 litros}  &\multirow{3}{2cm}{1.080} & \multicolumn{1}{c|}{9.47 Kg.} & \multicolumn{1}{c|}{12.28 Kg.}\\
-         & Malted Wheat & \multicolumn{1}{c|}{7\%} & & &\multicolumn{1}{c|}{0.87 Kg.} &\multicolumn{1}{c|}{0.96 Kg.}\\ 
-         & Carapils & \multicolumn{1}{c|}{7\%} & & & \multicolumn{1}{c|}{0.87 Kg.} &\multicolumn{1}{c|}{1.12 Kg.} \\
-        \hline
-        \multirow{5}{2cm}{New England IPA} & Pilsen &\multicolumn{1}{c|}{80\%}  &\multirow{5}{2cm}{43.7 litros}  &\multirow{5}{2cm}{1.090} & \multicolumn{1}{c|}{9.6 Kg.} & \multicolumn{1}{c|}{14.51 Kg.}\\
-         & Oats & \multicolumn{1}{c|}{10\%} & & &\multicolumn{1}{c|}{1.26 Kg.} &\multicolumn{1}{c|}{1.84 Kg.} \\
-        & Carapils & \multicolumn{1}{c|}{4\%} & & &\multicolumn{1}{c|}{0.61 Kg.} &\multicolumn{1}{c|}{0.98 Kg.} \\
-        & Wheat & \multicolumn{1}{c|}{3\%} & & &\multicolumn{1}{c|}{0.5 Kg.} &\multicolumn{1}{c|}{0.7 Kg.} \\
-        & Corn Sugar & \multicolumn{1}{c|}{3\%} & & &\multicolumn{1}{c|}{0.6 Kg.} &\multicolumn{1}{c|}{0.6 Kg.} \\
-        \hline
-        \multirow{4}{2cm}{Session IPA} & Pilsen &\multicolumn{1}{c|}{62\%}  &\multirow{4}{2cm}{40.5 litros}  &\multirow{4}{2cm}{1.070} & \multicolumn{1}{c|}{7.69 Kg.} & \multicolumn{1}{c|}{8.11 Kg.}\\
-         & Cara Munich & \multicolumn{1}{c|}{23.5\%} & & &\multicolumn{1}{c|}{2.9 Kg.} &\multicolumn{1}{c|}{3.47 Kg.} \\
-        & Crystal Munich & \multicolumn{1}{c|}{5.5\%} & & &\multicolumn{1}{c|}{0.73 Kg.} &\multicolumn{1}{c|}{0.83 Kg.} \\
-        & Carapils & \multicolumn{1}{c|}{9\%} & & &\multicolumn{1}{c|}{1.11 Kg.} &\multicolumn{1}{c|}{1.32 Kg.} \\
-        \hline
-        \multirow{8}{2cm}{Hopfen - Weizen} & Pilsen &\multicolumn{1}{c|}{44.44\%}  &\multirow{8}{2cm}{44.15 litros}  &\multirow{8}{2cm}{1.070} & \multicolumn{1}{c|}{5.99 Kg.} & \multicolumn{1}{c|}{6.33 Kg.}\\
-         & Malted Wheat & \multicolumn{1}{c|}{33.33\%} & & &\multicolumn{1}{c|}{4.5 Kg.} &\multicolumn{1}{c|}{4.58 Kg.} \\
-         & Carapils & \multicolumn{1}{c|}{7.4\%} & & &\multicolumn{1}{c|}{0.99 Kg.} &\multicolumn{1}{c|}{1.19 Kg.} \\
-         & Caramel Wheat & \multicolumn{1}{c|}{3.7\%} & & &\multicolumn{1}{c|}{0.49 Kg.} &\multicolumn{1}{c|}{0.61 Kg.} \\
-         & Biscuit & \multicolumn{1}{c|}{3.7\%} & & &\multicolumn{1}{c|}{0.49 Kg.} &\multicolumn{1}{c|}{0.54 Kg.} \\
-         & Ruby & \multicolumn{1}{c|}{3\%} & & &\multicolumn{1}{c|}{0.4 Kg.} &\multicolumn{1}{c|}{0.44 Kg.} \\
-         & Munich Best Malz & \multicolumn{1}{c|}{2.2\%} & & &\multicolumn{1}{c|}{0.297 Kg.} &\multicolumn{1}{c|}{0.32 Kg.} \\
-         & Chocolate & \multicolumn{1}{c|}{1.5\%} & & &\multicolumn{1}{c|}{0.2 Kg.} &\multicolumn{1}{c|}{0.24 Kg.} \\
-        \hline
+    %%%%%% ENGLISH PALE ALE %%%%%%%%
+    \multirow{2}{2cm}{English Pale Ale}
+    &\multirow{2}{2cm}{18.2} 
+    &\multirow{2}{2cm}{1.090}
+    &Pilsen 
+    & \multicolumn{1}{c|}{80\%}
+    &\multicolumn{1}{c|}{90\%} 
+    &\multicolumn{1}{c|}{6.88 Kg.} 
+    &\multicolumn{1}{c|}{6.88 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    &  
+    &  
+    & Munich
+    & \multicolumn{1}{c|}{80\%}
+    & \multicolumn{1}{c|}{10\%}
+    &\multicolumn{1}{c|}{0.76 Kg.} &\multicolumn{1}{c|}{0.76 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    \hline
+
+    %%%%%% SESSION IPA %%%%%%%%        
+    \multirow{4}{2cm}{Session IPA} 
+    &\multirow{4}{2cm}{40.5}   
+    &\multirow{4}{2cm}{1.070}
+    & Pilsen
+    &\multicolumn{1}{c|}{80\%}
+    &\multicolumn{1}{c|}{62\%} 
+    & \multicolumn{1}{c|}{8.21 Kg.} 
+    & \multicolumn{1}{c|}{8.21 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    & 
+    &  
+    & Cara Munich 
+    &\multicolumn{1}{c|}{80\%}
+    &\multicolumn{1}{c|}{23.5\%}
+    &\multicolumn{1}{c|}{3.10 Kg.} 
+    &\multicolumn{1}{c|}{3.11 Kg.} 
+    & \multicolumn{1}{c|}{0.32\%}
+    \\
+    &  
+    &  
+    & Crystal Munich
+    &\multicolumn{1}{c|}{86\%}
+    &\multicolumn{1}{c|}{5.89\%}
+    &\multicolumn{1}{c|}{0.73 Kg.} 
+    &\multicolumn{1}{c|}{0.73 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    & 
+    &  
+    & Carapils 
+    &\multicolumn{1}{c|}{74\%}
+    & \multicolumn{1}{c|}{9\%}
+    &\multicolumn{1}{c|}{1.30 Kg.} 
+    &\multicolumn{1}{c|}{1.29 Kg.} 
+    & \multicolumn{1}{c|}{0.78\%}
+    \\
+    \hline
+    
+    %%%%%% AMERICAN BLONDE %%%%%%%%
+    \multirow{3}{2cm}{American Blonde  Ale} 
+    &\multirow{3}{2cm}{38.7} 
+    &\multirow{3}{2cm}{1.080} 
+    &Pilsen 
+    &\multicolumn{1}{c|}{80\%}
+    &\multicolumn{1}{c|}{86\%}
+    &\multicolumn{1}{c|}{12.43 Kg.} 
+    &\multicolumn{1}{c|}{12.43 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    & 
+    & 
+    & Malted Wheat
+    &\multicolumn{1}{c|}{85\%}
+    & \multicolumn{1}{c|}{7\%} 
+    &\multicolumn{1}{c|}{0.96 Kg.}
+    &\multicolumn{1}{c|}{0.96 Kg.}
+    & \multicolumn{1}{c|}{0\%}
+    \\ 
+    &  
+    & 
+    & Carapils
+    &\multicolumn{1}{c|}{74\%}
+    & \multicolumn{1}{c|}{7\%} 
+    & \multicolumn{1}{c|}{1.10 Kg.}
+    &\multicolumn{1}{c|}{1.09 Kg.} 
+    & \multicolumn{1}{c|}{0.92\%}
+    \\
+    \hline
+        
+    %%%%%% HOPFENWEIZEN %%%%%%%%
+    \multirow{8}{2cm}{Hopfen - Weizen} 
+    &\multirow{8}{2cm}{44.15}  
+    &\multirow{8}{2cm}{1.070} 
+    & Pilsen 
+    &\multicolumn{1}{c|}{80\%}
+    &\multicolumn{1}{c|}{44.44\%} 
+    & \multicolumn{1}{c|}{6.41 Kg.} 
+    & \multicolumn{1}{c|}{6.40 Kg.}
+    & \multicolumn{1}{c|}{0.16\%}
+    \\
+    &  
+    &  
+    & Malted Wheat
+    &\multicolumn{1}{c|}{85\%}
+    & \multicolumn{1}{c|}{33.33\%}
+    &\multicolumn{1}{c|}{4.58 Kg.}
+    &\multicolumn{1}{c|}{4.54 Kg.}
+    & \multicolumn{1}{c|}{0.88\%}
+    \\
+    &  
+    &  
+    & Carapils
+    &\multicolumn{1}{c|}{74\%}
+    & \multicolumn{1}{c|}{7.4\%}
+    &\multicolumn{1}{c|}{1.16 Kg.}
+    &\multicolumn{1}{c|}{1.15 Kg.}
+    & \multicolumn{1}{c|}{0.87\%}
+    \\
+    &  
+    &  
+    & Caramel Wheat
+    &\multicolumn{1}{c|}{76\%}
+    &\multicolumn{1}{c|}{3.7\%}
+    &\multicolumn{1}{c|}{0.56 Kg.}
+    &\multicolumn{1}{c|}{0.56 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    &
+    &  
+    &  Biscuit 
+    &\multicolumn{1}{c|}{78\%}
+    &\multicolumn{1}{c|}{3.7\%}
+    &\multicolumn{1}{c|}{0.55 Kg.}
+    &\multicolumn{1}{c|}{0.55 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    & 
+    &  
+    & Ruby
+    &\multicolumn{1}{c|}{78\%}
+    &\multicolumn{1}{c|}{3\%}
+    &\multicolumn{1}{c|}{0.44 Kg.}
+    &\multicolumn{1}{c|}{0.44 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    & 
+    &  
+    & Munich Best Malz 
+    &\multicolumn{1}{c|}{76\%}
+    &\multicolumn{1}{c|}{2.2\%}
+    &\multicolumn{1}{c|}{0.33 Kg.}
+    &\multicolumn{1}{c|}{0.33 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    & 
+    &  
+    & Chocolate 
+    &\multicolumn{1}{c|}{76\%}
+    &\multicolumn{1}{c|}{1.5\%}
+    &\multicolumn{1}{c|}{0.23 Kg.}
+    &\multicolumn{1}{c|}{0.23 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    \hline
+    
+    %%%%%% IPL %%%%%%%%
+    \multirow{2}{2cm}{India Pale Lager}
+    &\multirow{2}{2cm}{48.6} 
+    &\multirow{2}{2cm}{1.090}
+    &Pilsen 
+    & \multicolumn{1}{c|}{80\%}
+    &\multicolumn{1}{c|}{86\%} 
+    &\multicolumn{1}{c|}{17.55 Kg.} 
+    &\multicolumn{1}{c|}{17.56 Kg.} 
+    & \multicolumn{1}{c|}{0.06\%}
+    \\
+    &  
+    &  
+    & Munich
+    & \multicolumn{1}{c|}{80\%}
+    & \multicolumn{1}{c|}{14\%}
+    &\multicolumn{1}{c|}{3.01 Kg.} 
+    &\multicolumn{1}{c|}{3.01 Kg.} 
+    & \multicolumn{1}{c|}{0\%}
+    \\
+    \hline
     
 \end{longtable}
 
-\par Siendo que los valores provenientes de los cálculos y recetas, presentados en la Tabla \ref{tab:TablaRecetaExperimentos}, difieren dentro del rango antes mencionado debido a la inclusión del extracto potencial de malta en el cálculo, se asume como exitosa esta prueba. %satisfacen los objetivos antes presentados, 
+%\par Siendo que los valores provenientes de los cálculos y recetas, presentados en la Tabla \ref{tab:TablaRecetaExperimentos}, difieren dentro del rango antes mencionado debido a la inclusión del extracto potencial de malta en el cálculo, se asume como exitosa esta prueba. %satisfacen los objetivos antes presentados, 
+
+\par En la columna de error de la Tabla \ref{tab:TablaRecetaExperimentos} pueden observarse casos aislados donde el valor es distinto de cero y menor al 1\%. Estos casos son atribuidos a diferencias en la precisión numérica entre ambas fuentes. Se concluye a partir de esto que los cálculos funcionan según lo esperado cumpliendo el objetivo deseado.
 
 \subsection{Cálculo de rendimiento}
-\par Para verificar la fórmula de rendimiento, se ingresaron al cálculo de rendimiento valores de densidad objetivo, volumen y cantidad de insumos utilizados y proporcionados por el cálculo de insumos. Se verifica el correcto funcionamiento si la ecuación expresa el mismo rendimiento que el utilizado para el cálculo de insumos.
+%\par Para verificar la fórmula de rendimiento, se ingresaron al cálculo de rendimiento valores de densidad objetivo, volumen y cantidad de insumos utilizados y proporcionados por el cálculo de insumos. Se verifica el correcto funcionamiento si la ecuación expresa el mismo rendimiento que el utilizado para el cálculo de insumos.
+
+\par Con el objetivo de verificar la eficacia de la fórmula de rendimiento (función de cálculo de rendimiento), le fueron provistos valores de insumos utilizados en experimentos de maceración de los cuales se conoce el rendimiento final obtenido. Luego, se comparó el valor de rendimiento ya conocido con el obtenido por esta función. A continuación es presentada la Tabla \ref{tab:rendimiento} con los valores antes mencionados.
 
 \begin{table}[H]
     \centering
     \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
         \hline
-        Densidad & Volumen & Total de Insumos [kg] & Total de extracto [kg] & Rendimiento utilizado & Rendimiento Calculado \\
+        Densidad & Volumen & Total de insumos [kg] & Total de extracto [kg] & Rendimiento utilizado & Rendimiento calculado \\
         \hline
         \hline
         1.070 & 1.1 litros & 0.366 & 0.288 & 0.70 & 0.7038\\ \hline
@@ -96,10 +291,10 @@
     \label{tab:rendimiento}
 \end{table}
 
-\par Como puede observarse en la Tabla \ref{tab:rendimiento} el error de aproximación es menor al 0,7\% lo cual considera a los valores obtenidos como aceptables. La desviación se debe a los redondeos utilizados en cada cálculo. 
+\par Como puede observarse en la Tabla \ref{tab:rendimiento} el error de aproximación es menor al 0,77\% lo cual considera a los valores obtenidos como aceptables. La desviación se debe a los redondeos utilizados en cada cálculo. 
 
 \section{Pruebas de validación}
- \par En este apartado, se valida que el sistema cumple con los requerimientos especificados en las Tablas \ref{reqFunc} y \ref{reqNoFunc}. A continuación, se presenta la Tabla \ref{tab:TablaChequeoRequerimientos} donde junto a al identificador de cada requerimiento, se presenta un breve texto mediante el cual se valida que el sistema lo satisface.
+ \par En este apartado, se valida que el sistema cumple con los requerimientos especificados en las Tablas \ref{reqFunc} y \ref{reqNoFunc}. A continuación, se presenta la Tabla \ref{tab:TablaChequeoRequerimientos} donde junto al identificador de cada requerimiento, se presenta un breve texto mediante el cual se valida que el sistema lo satisface.
 
  \begin{longtable}{|p{3cm}|p{11cm}|}
     \hline
@@ -125,7 +320,7 @@
         \multicolumn{1}{|c|}{RF001} & El sistema implementa el uso de sensores de temperatura, pH y temperatura ambiente. Mencionados en el capítulo \ref{CapituloHardware} (\textit{\textbf{Hardware}}). \\
         \hline
         
-        \multicolumn{1}{|c|}{RF002} & El sistema implementa el uso de cuatro sensores de temperatura ubicados en distintas posiciones del macerador. El uso de los mismos se menciona en el capítulo \ref{CapituloHardware} (\textit{\textbf{Hardware}}) y posteriormente en este mismo capítulo. \\
+        \multicolumn{1}{|c|}{RF002} & El sistema implementa el uso de cuatro sensores de temperatura ubicados en distintas posiciones dentro del macerador. El uso de los mismos se menciona en el capítulo \ref{CapituloHardware} (\textit{\textbf{Hardware}}) y posteriormente en este mismo capítulo. \\
         \hline
         
         \multicolumn{1}{|c|}{RF003} & El sistema permite visualizar los datos recolectados por los sensores se este llevando a cabo o no un experimento de maceración. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
@@ -179,12 +374,12 @@
 
 \section{Pruebas del sistema: ejecución y despliegue de resultados}
 
-\par En esta sección se describen las validaciones realizadas a las funcionalidades del sistema mediante distintos tipos de pruebas dinámicas. Según \cite{Press10} ´´La prueba del sistema verifica que todos los elementos se mezclan de manera adecuada y que se logra el funcionamiento/rendimiento global del sistema.''.
+\par En esta sección se describen las validaciones realizadas a las funcionalidades del sistema mediante distintos tipos de pruebas dinámicas. Según \cite{Press10} ``La prueba del sistema verifica que todos los elementos se mezclan de manera adecuada y que se logra el funcionamiento/rendimiento global del sistema''.
 
 \subsection{Pruebas funcionales}
 
-\par La validación del correcto funcionamiento de la aplicación es llevado a cabo mediante la aplicación de pruebas del sistema de tipo ``Entrega''. Según \cite{Som05} ``\ldots Las pruebas de entrega, “pruebas funcionales” o “pruebas de caja negra”, son aquellas en las que sólo interesan las funcionalidades del sistema y no su implementación. En otras palabras, se valida que el sistema satisfaga sus requerimientos \ldots''.
-\par Las pruebas son llevadas a cabo a partir del uso de casos de prueba. La definición de los casos de prueba fue realizada a partir de los casos de uso ubicados en el capítulo de ´´Ingeniería de requerimientos''.
+\par La validación del correcto funcionamiento de la aplicación es llevado a cabo mediante la aplicación de pruebas del sistema de tipo ``Entrega''. Según \cite{Som05} ``Las pruebas de entrega, “pruebas funcionales” o “pruebas de caja negra”, son aquellas en las que sólo interesan las funcionalidades del sistema y no su implementación. En otras palabras, se valida que el sistema satisfaga sus requerimientos''.
+\par Las pruebas son llevadas a cabo a partir del uso de casos de prueba. La definición de los casos de prueba fue realizada a partir de los casos de uso ubicados en el capítulo de ``Ingeniería de requerimientos''.
 \par Las pruebas son ejecutadas por el único usuario del sistema, el fabricante de cerveza artesanal. Al final de cada ficha bajo el título de ``Evidencias'', se ubica un hipervínculo a un vídeo, donde podrá observarse la ejecución de la prueba.
 
 \subsubsection{Fichas de casos de prueba}
@@ -282,7 +477,7 @@
     \hline
     04 & Eliminar grano, se abre el menú con la opción de eliminación luego de realizar una presión larga de un grano de la lista. Luego de seleccionada la eliminación en el menú, el mismo es retirado de la lista. & Se abre el menú, se selecciona eliminar y el mismo es removido de la lista. & Se abrió el menú, se seleccionó eliminar y el mismo fue removido de la lista de granos. \\
     \hline
-    05 & Agregar nuevo intervalo de medición (formulario incompleto), luego de presionado el botón para este fin se abre un diálogo y se rellena de forma incompleta el formulario.  & No se agrega el intervalo a la lista de intervalos y se despliega un mensaje de error. & Se abrió el diálogo con el formulario. El intervalo no fue agregado a la lista y se desplegó un mensaje de error:``No se pudo insertar el intervalo porque faltaron completar campos''\\
+    05 & Agregar nuevo intervalo de medición (formulario incompleto), luego de presionado el botón para este fin se abre un diálogo y se rellena de forma incompleta el formulario.  & No se agrega el intervalo a la lista de intervalos y se despliega un mensaje de error. & Se abrió el diálogo con el formulario. El intervalo no fue agregado a la lista y se desplegó un mensaje de error: ``No se pudo insertar el intervalo porque faltaron completar campos''\\
     \hline
     06 & Agregar nuevo intervalo de medición (formulario completo), luego de presionado el botón para este fin se abre un diálogo y se rellena de forma completa el formulario presente en el mismo. & Se abre el diálogo con el formulario y luego es agregado el intervalo a la lista de intervalos. & Se abrió el diálogo con el formulario. El intervalo fue agregado a la lista.\\
     \hline
@@ -343,7 +538,7 @@
     \hline
     05 & Ver detalles de maceración, luego de presionado el botón correspondiente a esta opción & El usuario selecciona la opción ``Ver Planificación''. Se abre la pantalla destinada a esta tarea.& Se seleccionó la opción correspondiente y se inició la pantalla que indica los valores de los insumos calculados.\\
     \hline
-    06 & Ver estadísticas de maceración, Se presiona el botón correspondiente a esta opción. & Se despliega la pantalla de estadísticas históricas de  la maceración.& Se desplegó la pantalla de estadísticas históricas de  la maceración.\\
+    06 & Ver estadísticas de maceración, se presiona el botón correspondiente a esta opción. & Se despliega la pantalla de estadísticas históricas de  la maceración.& Se desplegó la pantalla de estadísticas históricas de  la maceración.\\
     \hline
  \end{longtable}
 
@@ -585,8 +780,10 @@ Concretadas estas pruebas, se evidenció que el valor mínimo posible para el in
             \label{fig:SensoresEnTanque}
         \end{figure}
         
-        \par Los sensores introducidos fueron fijados por medio de pegamento de base siliconada en las posiciones antes indicadas (Figura \ref{fig:ConstrucMacerador}). Para separar los sensores de los bordes del macerador, se utilizaron piezas de poliestireno expandido, que fueron fijadas entremedio de cada sensor de temperatura y el borde interno del termo.
+        \par Los sensores introducidos fueron fijados por medio de pegamento de base siliconada en las posiciones antes indicadas (Figura \ref{fig:ConstrucMacerador}). Para separar los sensores de los bordes del macerador, se utilizaron piezas de poliestireno expandido fijadas entremedio de cada sensor de temperatura y el borde interno del termo.
         Con la finalidad de disminuir la pérdida de calor producida por las perforaciones realizadas para introducir estos sensores, se procedió a aplicar sellador siliconado  en los orificios.
+        
+        \par Se despreció la posible toxicidad del contacto entre el líquido y el pegamento siliconado. Esta decisión esta basada en que el preparado será utilizado para la realización de las pruebas, y desechado al final de cada una no siendo destinado  al consumo.
         
         \par El termo utilizado cuenta con pico vertedor. El mismo facilita la extracción de muestras sin la necesidad de exponer toda la templa a la temperatura ambiente que produciría la disminución de temperatura y, por tanto, la alteración del experimento.
         
@@ -689,12 +886,20 @@ Concretadas estas pruebas, se evidenció que el valor mínimo posible para el in
     %\hfill \break
     \par A continuación se visualizan los valores calculados por la aplicación para conocer la cantidad de insumos necesaria para realizar la maceración según la planificación correspondiente.
     %\par La cantidad de insumos ajustados se empieza a visualizar a partir de la tercer fila, acorde a la regla de negocio planteada en el capítulo de \ref{}.
+    \par Leyenda de las Tablas \ref{tab:ResultadosPilsenSimple} y \ref{tab:ResultadosPilsenEscalonada}: R.U. = rendimiento utilizado, I.U. = cantidad de insumos Utilizado, D.O. = Densidad Obtenida, R.O. = rendimiento obtenido, R.O. = rendimiento promedio y A.I. = ajuste de insumos.
     
         \subsubsection{Pilsen Lager - Simple}
         
-        \begin{longtable}{|p{2.7cm}|p{2.7cm}|p{2.7cm}|p{2.7cm}|p{2.7cm}|}
+        \begin{longtable}{|p{1cm}|p{1.7cm}|p{2cm}|p{2cm}|p{2cm}| p{1cm}| p{1cm}|}
         \hline
-        Experimentos & Rendimiento utilizado & Insumos utilizados & Rendimiento obtenido & Insumos ajustados\\
+        Exp. %Experimento
+        & \multicolumn{1}{c|}{R.U.} %Rendimiento utilizado%
+        & \multicolumn{1}{c|}{I.U.} %Insumos utilizados%
+        & \multicolumn{1}{c|}{D.O.} %Densidad Obtenida
+        & \multicolumn{1}{c|}{R.O.} %Rendimiento obtenido
+        & \multicolumn{1}{c|}{R.P.} %Rendimiento promedio
+        & \multicolumn{1}{c|}{A.I.} %Insumos ajustados
+        \\
         \endfirsthead
         
         \endhead
@@ -705,34 +910,138 @@ Concretadas estas pruebas, se evidenció que el valor mínimo posible para el in
         \caption{Tabla de resultados Pilsen Lager simple\label{tab:ResultadosPilsenSimple}}\\
         \endlastfoot
         \hline
-             \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{60.13\%} &\multicolumn{1}{c|}{-} \\
+            %1er experimento
+             \multicolumn{1}{|c|}{1} 
+             & \multicolumn{1}{c|}{70\%} %RU
+             & \multicolumn{1}{c|}{0.36 Kg.} %IU
+             & \multicolumn{1}{c|}{1.06 } %DO
+             & \multicolumn{1}{c|}{60.13\%} %RO
+             & \multicolumn{1}{c|}{60.13\%} %RP
+             & \multicolumn{1}{c|}{-} %AI
+             \\
              \hline
-             \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{70\%}  & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{61.16\%} &\multicolumn{1}{c|}{-} \\
+             
+             %2do experimento
+             \multicolumn{1}{|c|}{2} 
+             & \multicolumn{1}{c|}{70\%} %RU
+             & \multicolumn{1}{c|}{0.36 Kg.} %IU
+             & \multicolumn{1}{c|}{1.062} %DO
+             & \multicolumn{1}{c|}{62.2\%} %RO
+             &\multicolumn{1}{c|}{61.165\%} %RP
+             &\multicolumn{1}{c|}{-} %AI
+             
+             \\
              \hline
-             \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{62.54\%} &\multicolumn{1}{c|}{0.37356 Kg.} \\
+             
+             %3er experimento
+             \multicolumn{1}{|c|}{3} 
+             & \multicolumn{1}{c|}{70\%} %RU
+             & \multicolumn{1}{c|}{0.36 Kg.} %IU
+             & \multicolumn{1}{c|}{1.065} %DO
+             & \multicolumn{1}{c|}{62.53\%} %RO
+             &\multicolumn{1}{c|}{62.54\%} %RP 
+             &\multicolumn{1}{c|}{0.37356 Kg.} %AI
+             
+             \\
              \hline
-             \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{62.54\%}  & \multicolumn{1}{c|}{0.4 Kg.} &\multicolumn{1}{c|}{63.75\%} &\multicolumn{1}{c|}{0.37777 Kg.} \\
+             
+             %4to experimento
+             \multicolumn{1}{|c|}{4} 
+             & \multicolumn{1}{c|}{62.54\%}  %RU
+             & \multicolumn{1}{c|}{0.37356 Kg.} %IU
+             & \multicolumn{1}{c|}{1.067} %DO
+             & \multicolumn{1}{c|}{67.37\%} %RO
+             & \multicolumn{1}{c|}{63.75\%} %RP
+             & \multicolumn{1}{c|}{0.37777 Kg.} %AI
+             
+             \\
              \hline
-             \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{63.75\%}  & \multicolumn{1}{c|}{0.37777 Kg.} &\multicolumn{1}{c|}{64.89\%} &\multicolumn{1}{c|}{0.38221 Kg.} \\
+             
+             %5to experimento
+             \multicolumn{1}{|c|}{5} 
+             & \multicolumn{1}{c|}{63.75\%} 
+             & \multicolumn{1}{c|}{0.37777 Kg.}
+             & \multicolumn{1}{c|}{1.069}
+             & \multicolumn{1}{c|}{69.45\%}
+             & \multicolumn{1}{c|}{64.89\%} 
+             & \multicolumn{1}{c|}{0.38221 Kg.} 
+
+             \\
              \hline
-             \multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{64.89\%}  & \multicolumn{1}{c|}{0.38221 Kg.} &\multicolumn{1}{c|}{66.17\%} &\multicolumn{1}{c|}{0.39111 Kg.} \\
+             
+             %6to experimento
+             \multicolumn{1}{|c|}{6} 
+             & \multicolumn{1}{c|}{64.89\%}  
+             & \multicolumn{1}{c|}{0.38221 Kg.} 
+             & \multicolumn{1}{c|}{1.072}
+             & \multicolumn{1}{c|}{72.57\%}
+             & \multicolumn{1}{c|}{66.17\%} 
+             &\multicolumn{1}{c|}{0.39111 Kg.} 
+
+             \\
              \hline
-             \multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{66.17\%}  & \multicolumn{1}{c|}{0.39111 Kg.} &\multicolumn{1}{c|}{66.78\%} &\multicolumn{1}{c|}{0.37673 Kg.} \\
+             
+             %7mo experimento
+             \multicolumn{1}{|c|}{7} 
+             & \multicolumn{1}{c|}{66.17\%}  
+             & \multicolumn{1}{c|}{0.39111 Kg.} 
+             & \multicolumn{1}{c|}{1.07}
+             & \multicolumn{1}{c|}{70.49\%}
+             & \multicolumn{1}{c|}{66.78\%} 
+             & \multicolumn{1}{c|}{0.37673 Kg.} 
+             \\
              \hline
-             \multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{66.78\%}  & \multicolumn{1}{c|}{0.37673 Kg.} &\multicolumn{1}{c|}{66.99\%} &\multicolumn{1}{c|}{0.36486 Kg.} \\
+             
+             %8vo experimento
+             \multicolumn{1}{|c|}{8} 
+             & \multicolumn{1}{c|}{66.78\%}  
+             & \multicolumn{1}{c|}{0.37673 Kg.}
+             & \multicolumn{1}{c|}{1.068}
+             & \multicolumn{1}{c|}{68.41\%}
+             & \multicolumn{1}{c|}{66.99\%} 
+             & \multicolumn{1}{c|}{0.36486 Kg.} 
+             
+             \\
              \hline
-             \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{66.99\%}  & \multicolumn{1}{c|}{0.36486 Kg.} &\multicolumn{1}{c|}{67.14\%} &\multicolumn{1}{c|}{0.36401 Kg.} \\
+             
+             %9no experimento
+             \multicolumn{1}{|c|}{9} 
+             & \multicolumn{1}{c|}{66.99\%}  
+             & \multicolumn{1}{c|}{0.36486 Kg.} 
+             & \multicolumn{1}{c|}{1.068}
+             & \multicolumn{1}{c|}{68.41\%}
+             & \multicolumn{1}{c|}{67.14\%} 
+             & \multicolumn{1}{c|}{0.36401 Kg.} 
+             \\
              \hline
-             \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{67.14\%} & \multicolumn{1}{c|}{0.36401 Kg.} &\multicolumn{1}{c|}{67.48\%} &\multicolumn{1}{c|}{0.37286 Kg.} \\
+             
+             %10mo experimento
+             \multicolumn{1}{|c|}{10} 
+             & \multicolumn{1}{c|}{67.14\%} 
+             & \multicolumn{1}{c|}{0.36401 Kg.} 
+             & \multicolumn{1}{c|}{1.07}
+             & \multicolumn{1}{c|}{70.49\%}
+             & \multicolumn{1}{c|}{67.48\%} 
+             & \multicolumn{1}{c|}{0.37286 Kg.} 
+             
+             \\
              \hline
         
         \end{longtable}
         
     
  \subsubsection{Pilsen Lager - Escalonada}
-        \begin{longtable}{|p{2.7cm}|p{2.7cm}|p{2.7cm}|p{2.7cm}|p{2.7cm}|}
+
+\begin{longtable}{|p{1cm}|p{1.7cm}|p{2cm}|p{2cm}|p{2cm}| p{1cm}| p{1cm}|}
         \hline
-        Experimentos & Rendimiento utilizado & Insumos utilizados & Rendimiento obtenido & Insumos ajustados\\
+        Exp. %Experimento
+        & \multicolumn{1}{c|}{R.U.} %Rendimiento utilizado%
+        & \multicolumn{1}{c|}{I.U.} %Insumos utilizados%
+        & \multicolumn{1}{c|}{D.O.} %Densidad Obtenida
+        & \multicolumn{1}{c|}{R.O.} %Rendimiento obtenido
+        & \multicolumn{1}{c|}{R.P.} %Rendimiento promedio
+        & \multicolumn{1}{c|}{A.I.} %Insumos ajustados
+        \\
         \endfirsthead
         
         \endhead
@@ -745,29 +1054,94 @@ Concretadas estas pruebas, se evidenció que el valor mínimo posible para el in
         \endlastfoot
         
         \hline
-             \multicolumn{1}{|c|}{Experimentos} & \multirow{1}{2cm}{Rendimiento Utilizado} &\multirow{1}{2cm}{Insumos Utilizados}  & \multirow{1}{2cm}{Rendimiento Obtenido} &\multirow{1}{2cm}{Insumos Ajustados}\\
-             & & & &\\
+             \multicolumn{1}{|c|}{1} 
+             & \multicolumn{1}{c|}{70\%} 
+             & \multicolumn{1}{c|}{0.36 Kg.}
+             & \multicolumn{1}{c|}{1.052}
+             & \multicolumn{1}{c|}{51.92\%}
+             & \multicolumn{1}{c|}{51.92\%} 
+             & \multicolumn{1}{c|}{-} \\
              \hline
+             
+             \multicolumn{1}{|c|}{2} 
+             & \multicolumn{1}{c|}{70\%}  
+             & \multicolumn{1}{c|}{0.36 Kg.}
+             & \multicolumn{1}{c|}{1.062}
+             & \multicolumn{1}{c|}{62.2\%}
+             & \multicolumn{1}{c|}{57.06\%} 
+             & \multicolumn{1}{c|}{-} \\
              \hline
-             \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{51.92\%} &\multicolumn{1}{c|}{-} \\
+             
+             \multicolumn{1}{|c|}{3} 
+             & \multicolumn{1}{c|}{70\%} 
+             & \multicolumn{1}{c|}{0.36 Kg.}
+             & \multicolumn{1}{c|}{1.065}
+             & \multicolumn{1}{c|}{65.3\%}
+             & \multicolumn{1}{c|}{59.8\%}
+             & \multicolumn{1}{c|}{0.37356 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{70\%}  & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{62.2\%} &\multicolumn{1}{c|}{-} \\
+             
+             \multicolumn{1}{|c|}{4} 
+             & \multicolumn{1}{c|}{59.8\%}  
+             & \multicolumn{1}{c|}{0.37356 Kg.}
+             & \multicolumn{1}{c|}{1.064}
+             & \multicolumn{1}{c|}{64.27\%}
+             & \multicolumn{1}{c|}{60.92\%}
+             & \multicolumn{1}{c|}{0.36529 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{70\%} & \multicolumn{1}{c|}{0.36 Kg.} &\multicolumn{1}{c|}{65.3\%} &\multicolumn{1}{c|}{0.37356 Kg.} \\
+             
+             \multicolumn{1}{|c|}{5} 
+             & \multicolumn{1}{c|}{60.92\%}  
+             & \multicolumn{1}{c|}{0.36529 Kg.} 
+             & \multicolumn{1}{c|}{1.065}
+             & \multicolumn{1}{c|}{65.3\%} 
+             & \multicolumn{1}{c|}{61.79\%}             
+             & \multicolumn{1}{c|}{0.36828 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{62.54\%}  & \multicolumn{1}{c|}{0.37356 Kg.} &\multicolumn{1}{c|}{64.27\%} &\multicolumn{1}{c|}{0.36529 Kg.} \\
+             
+             \multicolumn{1}{|c|}{6} 
+             & \multicolumn{1}{c|}{61.79\%}  
+             & \multicolumn{1}{c|}{0.36828 Kg.} 
+             & \multicolumn{1}{c|}{1.074}
+             & \multicolumn{1}{c|}{74.66\%} 
+             & \multicolumn{1}{c|}{63.94\%}             
+             & \multicolumn{1}{c|}{0.40727 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{62.97\%}  & \multicolumn{1}{c|}{0.36529 Kg.} &\multicolumn{1}{c|}{65.3\%} &\multicolumn{1}{c|}{0.36828 Kg.} \\
+             
+             \multicolumn{1}{|c|}{7} 
+             & \multicolumn{1}{c|}{63.94\%}  
+             & \multicolumn{1}{c|}{0.40727 Kg.} 
+             & \multicolumn{1}{c|}{1.07}
+             & \multicolumn{1}{c|}{70.49\%} 
+             & \multicolumn{1}{c|}{64.87\%}
+             & \multicolumn{1}{c|}{0.38094 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{63.44\%}  & \multicolumn{1}{c|}{0.36828 Kg.} &\multicolumn{1}{c|}{74.66\%} &\multicolumn{1}{c|}{0.40727 Kg.} \\
+             
+             \multicolumn{1}{|c|}{8} 
+             & \multicolumn{1}{c|}{64.87\%}  
+             & \multicolumn{1}{c|}{0.38094 Kg.} 
+             & \multicolumn{1}{c|}{1.072}
+             & \multicolumn{1}{c|}{72.57\%}
+             & \multicolumn{1}{c|}{65.89\%}
+             & \multicolumn{1}{c|}{0.38705 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{65.31\%}  & \multicolumn{1}{c|}{0.40727 Kg.} &\multicolumn{1}{c|}{70.49\%} &\multicolumn{1}{c|}{0.38094 Kg.} \\
+             
+             \multicolumn{1}{|c|}{9} 
+             & \multicolumn{1}{c|}{66.86\%}  
+             & \multicolumn{1}{c|}{0.38705 Kg.} 
+             & \multicolumn{1}{c|}{1.068}
+             & \multicolumn{1}{c|}{68.41\%}
+             & \multicolumn{1}{c|}{66.12\%}
+             & \multicolumn{1}{c|}{0.36461 Kg.} \\
              \hline
-             \multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{66.05\%}  & \multicolumn{1}{c|}{0.38094 Kg.} &\multicolumn{1}{c|}{72.57\%} &\multicolumn{1}{c|}{0.38705 Kg.} \\
-             \hline
-             \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{66.86\%}  & \multicolumn{1}{c|}{0.38705 Kg.} &\multicolumn{1}{c|}{68.41\%} &\multicolumn{1}{c|}{0.36461 Kg.} \\
-             \hline
-             \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{67.03\%} & \multicolumn{1}{c|}{0.36461 Kg.} &\multicolumn{1}{c|}{70.49\%} &\multicolumn{1}{c|}{0.37341 Kg.} \\
+             
+             \multicolumn{1}{|c|}{10} 
+             & \multicolumn{1}{c|}{66.12\%} 
+             & \multicolumn{1}{c|}{0.36461 Kg.} 
+             & \multicolumn{1}{c|}{1.07}
+             & \multicolumn{1}{c|}{70.49\%}
+             & \multicolumn{1}{c|}{66.56\%}
+             & \multicolumn{1}{c|}{0.37341 Kg.} \\
              \hline
         
     \end{longtable}
@@ -778,6 +1152,6 @@ Concretadas estas pruebas, se evidenció que el valor mínimo posible para el in
     \subsection{Evaluación}
         \par En la anterior subsección se evidenció que el ajuste de la cantidad de insumos realizada por el sistema produce resultados correctos, esto es, cuando el valor de rendimiento es menor al deseado incrementa la cantidad de granos de manera de compensar este sub-rendimiendo, y lo mismo ocurre en caso contrario con un sobre-rendimiento. Esta compensación representa el objetivo de esta funcionalidad, la cual es asistir al productor a partir de una herramienta de optimización de insumos en función de un ajuste utilizando el rendimiento del equipo.
         
-        \par Cabe señalar que si bien pueden parecer reducidos los cambios en los valores de insumo, los mismos corresponden a un preparado de un volumen reducido. Estos cambios crecerán en forma proporcional al tamaño del preparado, constituyéndose en valores más significativos conforme a este incremento, dado que, el comportamiento del sistema y los cálculos realizados son linealmente proporcionales al volumen de producción.
+        \par Cabe señalar que si bien pueden parecer reducidos los cambios en los valores de insumos, los mismos corresponden a un preparado de un volumen reducido. Estos cambios crecerán en forma proporcional al tamaño del preparado, constituyéndose en valores más significativos conforme a este incremento, dado que, los cálculos realizados son linealmente proporcionales al volumen de producción.
         
         \par Por tanto, puede concluirse que esta funcionalidad del sistema se comporta de la manera esperada, y por tanto, correcta. 

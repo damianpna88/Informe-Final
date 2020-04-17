@@ -45,7 +45,7 @@
             \par En base al análisis de la Tabla \ref{CompHard} del Anexo, la tecnología utilizada en este proyecto es \textbf{Raspberry\textsuperscript{\textregistered} Pi} (modelo Raspberry\textsuperscript{\textregistered} Pi 3 B+) debido a su mayor capacidad de procesamiento, almacenamiento, persistencia de datos y por poseer un lenguaje de programación de más alto nivel. Al incorporar, esta placa, conectividad inalámbrica de fábrica, posee la ventaja sobre Arduino\textsuperscript{\textregistered} de no requerir la instalación de placas externas para realizar este fin, siendo este tipo de conexiones necesarias para el desarrollo de este proyecto. 
 
         \subsubsection{Sensores}
-            \par Tanto Arduino\textsuperscript{\textregistered} como Raspberry\textsuperscript{\textregistered} Pi pueden trabajar con sensores analógicos y digitales, debiendo en el caso del Raspberry\textsuperscript{\textregistered} utilizar un ADC\footnote{\textit{Analog Digital Converter}, Conversor Analógico Digital} para trabajar con sensores analógicos. Para cada tipo de sensor, existen numerosas opciones que se diferencian en cuanto a la precisión de las medidas, dónde esta característica aumenta en forma proporcional a su precio. 
+            \par Tanto Arduino\textsuperscript{\textregistered} como Raspberry\textsuperscript{\textregistered} Pi pueden trabajar con sensores analógicos y digitales, debiendo en el caso del Raspberry\textsuperscript{\textregistered} utilizar un conversor analógico digital (ADC\footnote{en inglés, Analog Digital Converter}), para trabajar con sensores analógicos. Para cada tipo de sensor, existen numerosas opciones que se diferencian en cuanto a la precisión de las medidas, dónde esta característica aumenta en forma proporcional a su precio.
             
             \par En concordancia con el requerimiento no funcional RNF007 (Tabla \ref{reqNoFunc}), para este proyecto se propone el desarrollo de un prototipo con un presupuesto limitado para la adquisición de sensores. Por tanto, no fue aplicado un criterio comparativo como el utilizado para las placas electrónicas, sino que, se buscaron sensores cuya relación precio/calidad sea adecuada y accesible al presupuesto de los alumnos proyectistas, enfocando esta decisión en la obtención de datos fiables para cumplir los objetivos del proyecto, y no en la precisión de los valores a obtener.
             
@@ -148,9 +148,9 @@
     \label{subsectionListaElemHard}
     Con base en lo descrito en la sección \ref{SeccionTecnoEvalHardware} se lista, finalmente, la siguiente serie de elementos para el diseño del componente.
         \begin{itemize}
-            \item 6 sensores digitales de temperatura sumergibles DS18B20 con 2 metros de extensión por cable
+            \item 5 sensores digitales de temperatura sumergibles DS18B20 con 2 metros de extensión por cable
             \item 1 sensor digital de temperatura y humedad ambiente Adafruit DHT11
-            \item 1 sensor de pH analógico ( Electrodo y alaqueta controladora)
+            \item 1 sensor de pH analógico ( Electrodo y plaqueta controladora)
             \item 1 Conversor analógico / digital (Adafruit ADS1115)
             \item 1 Raspberry\textsuperscript{\textregistered} Pi 3 B+
             \item Resistencias electrónicas (4.7 k$\Omega$, 10 k$\Omega$)
@@ -165,9 +165,9 @@
         
         \paragraph{Medición de pH:} 
             La obtención de este valor se realiza mediante el sensor electroquímico antes mencionado en la sección \ref{SeccionTecnoEvalHardware}. Por cuestiones inherentes al funcionamiento, este sensor, requiere de al menos 2 minutos para estabilizar el resultado obtenido (medición).
-            
-            \par Respecto de la variación de las mediciones de pH con la temperatura, (M. E. Mohammd Ali y O. A. Razag Sharif, 2015) expresa que la medición es afectada de dos maneras. En primer lugar, la temperatura afecta el valor mismo del pH de la solución. Este valor, al cual, no puede serle aplicada una corrección directa, dado que, cada muestra de pH tiene una relación\footnote{Coeficiente de temperatura de la solución  $ = \Delta pH/ ^{\circ}C $} entre pH y temperatura única. Sin embargo, una compensación debe ser realizada, y esto sucede a través de la correcta calibración del sensor de pH utilizando soluciones \textit{buffers}\footnote{Solución química que posee un valor de pH conocido.} de pH estándares a la temperatura de medición. En segundo lugar, el efecto que produce la temperatura sobre la sensibilidad del electrodo de pH, el cual puede ser corregido y cuya desviación depende de cada instrumento. El fabricante del electrodo utilizado en este desarrollo provee la Tabla \ref{tablePhvsTemp} de errores de medición del pH respecto de la temperatura de la solución. 
 
+            Según \cite{ElArabe}, la temperatura afecta de dos maneras a un valor de pH medido. Por un lado, tiene un efecto intrínseco en el valor mismo de pH, y por otro, afecta al sensor utilizado para realizar la medición. El efecto sobre el valor mismo de pH no puede ser corregido, sin embargo, este puede ser compensado a través de una correcta calibración\footnote{ Esta calibración se realiza tomando medidas de pH, a una temperatura predefinida, de soluciones químicas llamadas \textit{buffers} que poseen un valor de pH conocido.} del sensor de pH. Respecto a la influencia de la temperatura sobre el sensor de pH, esta es particular a cada modelo del sensor. Esta desviación puede ser minimizada mediante el acondicionamiento de la temperatura de la muestra, en donde, distintas escalas de temperatura conllevan distintos errores en la medición. El fabricante del electrodo utilizado en este desarrollo provee la Tabla \ref{tablePhvsTemp} de errores de medición del pH producto de la temperatura de la solución.
+            
             \begin{figure}[h] 
                 \centering
                 %\includegraphics[scale=0.9]{errorMedicionPh.jpg}
@@ -176,7 +176,7 @@
                 \label{tablePhvsTemp}
             \end{figure}
             
-            \par Por las características mencionadas, el intervalo de medición de pH, para este proyecto, es de 2 minutos (El usuario puede aumentar este intervalo si lo requiere) asumiendo así el correspondiente error. El desvío de medición del pH ocasionado por la temperatura del líquido durante el sensado es ajustado mediante Tabla \ref{tablePhvsTemp} para la cual es necesario contar con la temperatura del medio líquido en el cual se encuentra inmerso el electrodo de pH. Esta temperatura es obtenida por medio de un sensor sumergible que es introducido de forma conjunta al sensor de pH.
+            \par Por las características mencionadas del sensor de pH, el intervalo de medición, para este proyecto, es de al menos 2 minutos (El usuario puede aumentar este intervalo si lo requiere) asumiendo así el correspondiente error. El desvío de medición del pH ocasionado por la temperatura del líquido durante el sensado es ajustado mediante Tabla \ref{tablePhvsTemp} para la cual es necesario contar con la temperatura del medio líquido en el cual se encuentra inmerso el electrodo de pH. Esta temperatura es obtenida por medio de un sensor sumergible que es introducido de forma conjunta al sensor de pH.
         
         \paragraph{Medición de temperatura:} 
             Debido a que el objeto involucrado en la medición es un líquido, se opta por un sensor de temperatura sumergible.
@@ -191,13 +191,13 @@
             \par Durante el inicio de la etapa de diseño de la estación de recolección de datos se decidió dividir las tareas en dos módulos: subcapa de software y subcapa de hardware.
             
             \subsubsection{Subcapa de software}
-                \par El sistema operativo utilizado para el Raspberry\textsuperscript{\textregistered} es \textit{Raspbian}\footnote{\url{https://www.raspberrypi.org/downloads/raspbian/}}, una distribución basada en Debian Linux provista por el fabricante de la placa.
+               \par El sistema operativo utilizado para el Raspberry\textsuperscript{\textregistered} es \textit{Raspbian}\footnote{\url{https://www.raspberrypi.org/downloads/raspbian/}}, una distribución basada en Debian Linux provista por el fabricante de la placa.
                 
                \par El desarrollo de las funcionalidades de software se realiza en Python. Esta opción se elige como primer alternativa al contar con una amplia comunidad de desarrolladores, librerías y por encontrarse recomendado por el sitio oficial de Raspberry\textsuperscript{\textregistered} (Raspberry\textsuperscript{\textregistered} Official Page, 2018) para la programación con GPIO.
                 
-                \par Para la gestión de los datos, se emplea el motor de base de datos MySQL. Se justifica esta elección por su simpleza de uso, mínimos requerimientos para un correcto funcionamiento y la existencia de herramientas de interacción con \textit{Scripts} en lenguaje Python.
+               \par Para la gestión de los datos, se emplea el motor de base de datos MySQL. Se justifica esta elección por su simpleza de uso, mínimos requerimientos para un correcto funcionamiento y la existencia de herramientas de interacción con \textit{Scripts} en lenguaje Python.
                 
-                \par Respecto del funcionamiento del componente, una serie de funciones (\textit{Scripts}) escritas en lenguaje Python realizan las tareas de recolección de datos e inserción en la base de datos. Estas funciones son ejecutadas mediante comandos \textit{bash}\footnote{https://www.debian.org/doc/manuals/debian-reference/ch01.es.html} del sistema a las que se les adjuntan los parámetros necesarios para el proceso de obtención de datos. Estas funciones se repetirán durante los diferentes ciclos de muestreo acorde a la duración del experimento y la frecuencia de medición que serán definidos por el usuario. Ejecutando en cada iteración las funciones necesarias para los fines requeridos:
+               \par Respecto del funcionamiento del componente, una serie de funciones (\textit{Scripts}) escritas en lenguaje Python realizan las tareas de recolección de datos e inserción en la base de datos. Estas funciones son ejecutadas mediante comandos \textit{bash}\footnote{https://www.debian.org/doc/manuals/debian-reference/ch01.es.html} del sistema a las que se les adjuntan los parámetros necesarios para el proceso de obtención de datos. Estas funciones se repetirán durante los diferentes ciclos de muestreo acorde a la duración del experimento y la frecuencia de medición que serán definidos por el usuario. Ejecutando en cada iteración las funciones necesarias para los fines requeridos:
                     
                     \begin{itemize}
                         \item Obtención de datos de sensores: cada sensor utiliza una función específica desarrollada de forma particular para garantizar su correcto funcionamiento. De esta manera, se abordan de manera eficaz los posibles inconvenientes (\textit{bugs}) que puedan ser identificados.
@@ -205,23 +205,27 @@
                         \item Insertar datos en la base de datos: los datos obtenidos en cada secuencia de medición se insertan en la base de datos a partir de un identificador (ID) proporcionado como parámetro de la función.
                     \end{itemize}
                 
-                \paragraph{Diagrama de Base de Datos:} La Figura \ref{fig:DiagramaBdRasp} ubicada en el Anexo, presenta el diagrama de base de datos utilizado. El mismo, consiste de tres tablas relacionadas mediante claves foráneas (\textit{foreign keys}): \textit{Maceración}, \textit{Experimento} y \textit{SensedValues}. 
+               \paragraph{Diagrama de Base de Datos:} La Figura \ref{fig:DiagramaBdRasp} ubicada en el Anexo, presenta el diagrama de base de datos utilizado. El mismo, consiste de tres tablas relacionadas mediante claves foráneas (\textit{foreign keys}): \textit{Maceración}, \textit{Experimento} y \textit{SensedValues}. 
                 
                 
             \subsubsection{Subcapa de hardware} 
-                \par En la Figura \ref{fig:EsquemaHardware}, se presenta un esquema simplificado de conexiones de la subcapa de Hardware. En dicho esquema se encuentran identificadas las entradas (sensores y conversor) y la salida (API\footnote{\textit{Application Programming Interface}, es un conjunto de funciones y procedimientos para que aplicaciones puedan comunicarse entre ellas} REST) del Raspberry\textsuperscript{\textregistered} Pi.
+               \par En la Figura \ref{fig:EsquemaHardware}, se presenta un esquema simplificado de conexiones de la subcapa de Hardware. En dicho esquema se encuentran identificadas las entradas (sensores y conversor) y la salida (API\footnote{\textit{Application Programming Interface}, es un conjunto de funciones y procedimientos para que aplicaciones puedan comunicarse entre ellas} REST) del Raspberry\textsuperscript{\textregistered} Pi.
                 
                 \paragraph{Revisión de diseño:}
-                 Como se mencionó en la subsección \ref{subseccionElementosutilizados}, con el objetivo de procesar la señal analógica del sensor de pH es necesario que previamente ésta sea digitalizada. Para tal función, se decidió emplear un conversor analógico-digital modelo Adafruit ADS1115, luego reemplazado por una placa Arduino\textsuperscript{\textregistered} Uno. A continuación se narra la secuencia de hechos que condujeron a este cambio en el diseño.
-                 \begin{enumerate}
+                 %Como se mencionó en la subsección \ref{subseccionElementosutilizados}, con el objetivo de procesar la señal analógica del sensor de pH es necesario que previamente ésta sea digitalizada. Para tal función, se decidió emplear un conversor analógico-digital modelo Adafruit ADS1115, luego reemplazado por una placa Arduino\textsuperscript{\textregistered} Uno. A continuación se narra la secuencia de hechos que condujeron a este cambio en el diseño.
+                 %\begin{enumerate}
+                 
+                 Como se mencionó en la subsección \ref{subseccionElementosutilizados}, con el objetivo de procesar la señal analógica del sensor de pH es necesario que previamente ésta sea digitalizada. Para tal función, se decidió emplear inicialmente un conversor analógico-digital modelo Adafruit ADS1115. Luego, producto de un inconveniente para el funcionamiento de la placa, y basado en el objetivo de desarrollar un prototipo funcional, se tomó la decisión de modificar el diseño reemplazando el ADS1115 con una placa Arduino\textsuperscript{\textregistered} Uno. A continuación se narra la secuencia de hechos que condujeron a este cambio en el diseño.
+    
+                \begin{enumerate}
 
                 \item \textbf{Conexión y disposición del sensor de pH:} En primer lugar se realizaron las conexiones electrónicas e instalaciones de software necesarias para el funcionamiento del ADS1115 junto a la placa Raspberry\textsuperscript{\textregistered} Pi. A continuación, se conectó el sensor de pH con la placa convertidora. Posterior a la conexión electrónica, fue ubicado el sensor de pH dentro de una solución de tipo \textit{buffer}\footnote{Solución química que posee un valor de pH conocido.}, de manera de conocer con antelación el valor que debe leer el sensor de pH, y verificar así, el correcto funcionamiento de esta conexión.
                 
-                \item \textbf{Lectura digital de valores analógicos:} Inicialmente debe mencionarse que el ADC cuenta con una resolución de 16 bit, mediante la cual produce como salida valores entre -2\textsuperscript{15} y 2\textsuperscript{15} en correspondencia al rango de voltajes de entrada de -6,144v a 6,144v. Dado que los valores de salida de la sonda de pH toman el rango de voltajes entre -5v y 5v, la salida del ADS produce un rango menor (entre -26.666 y 26.666)\footnote{ Los extremos de este rango son obtenidos al aplicar el mapeo lineal a 5v. Esto es $ 5 \cdot (2^{15} / 6.144)$  }. Este último rango se corresponde con valores de pH que pertenecen a una escala entre 0 y 14. A partir de este análisis, como siguiente paso, se procedió a construir un mapeo lineal entre la salida del convertidor y la escala de pH.
+                \item \textbf{Lectura digital de valores analógicos:} Inicialmente debe mencionarse que el ADC cuenta con una resolución de 16 bit, mediante la cual produce como salida valores entre -2\textsuperscript{15} y 2\textsuperscript{15}-1 en correspondencia al rango de voltajes de entrada de -6,144v a 6,144v. Dado que los valores de salida de la sonda de pH toman el rango de voltajes entre -5v y 5v, la salida del ADS produce un rango menor (entre -26.666 y 26.667)\footnote{ Los extremos de este rango son obtenidos al aplicar el mapeo lineal a 5v. Esto es $ 5 \cdot (2^{15} / 6.144)$  }. Este último rango se corresponde con valores de pH que pertenecen a una escala entre 0 y 14. A partir de este análisis, como siguiente paso, se procedió a construir un mapeo lineal entre la salida del convertidor y la escala de pH.
                 
                 \item \textbf{Verificación de funcionamiento:} Luego de realizado el mapeo, los valores obtenidos difirieron de los esperados en todas las ocasiones (se realizaron pruebas con tres \textit{buffers} distintos). A consecuencia de esta situación, se procedió a realizar numerosas verificaciones matemáticas sobre el mapeo realizado y luego sobre las conexiones electrónicas no pudiendo resolver el conflicto.
                 
-                \item \textbf{Solución alternativa:} Posteriormente, se decidió investigar alternativas de solución, identificándose la posibilidad de utilizar una placa Arduino \textsuperscript{\textregistered} Uno para este fin. Dado que ya se contaba con una a disposición, se optó por realizar una prueba de funcionamiento la cual devolvió resultados exitosos. Por tanto, bajo la consideración de la construcción de un prototipo funcional (planteada en el alcance) se decidió conservar esta solución alternativa.
+                \item \textbf{Diseño alternativo:} Posteriormente, se decidió investigar alternativas de solución, identificándose la posibilidad de utilizar una placa Arduino \textsuperscript{\textregistered} Uno para este fin. Dado que ya se contaba con una a disposición, se optó por realizar una prueba de funcionamiento, la cual devolvió resultados exitosos. Por tanto, se llevó adelante un rediseño del componente electrónico, reemplazando el conversor ADS1115 por la placa  Arduino\textsuperscript{\textregistered} Uno.
                 \end{enumerate}
                 
                 \begin{figure}[h]
@@ -235,12 +239,6 @@
                 %\hfill \break
                 %\hfill \break
         
-                
-                %CAMBIO EN EL DISEÑO PARA USAR EL ARDUINO
-                
-                
-        
-    
 \section{Implementación del diseño}
     \par A continuación son descriptas mediante diagramas las implementaciones de las subcapas de hardware y software.
   
@@ -305,7 +303,7 @@
             \item Límites del tanque de maceración, en este sector sucede un intercambio de temperatura con el entorno exterior del macerador. En este sentido, los sensores deben de ubicarse lejos de la tapa, y ser adheridos al tanque de forma separada de las paredes utilizando un material de baja conductividad térmica.
             
             \item 
-            La distancia entre la ubicación de los sensores y la cama de malta (fondo del tanque). Esto es debido a un gradiente de temperatura producido dentro del tanque entre la temperatura del agua y la malta.\\
+            La distancia entre la ubicación de los sensores y la cama de malta (fondo del tanque), debido a un gradiente de temperatura producido dentro del tanque entre la temperatura del agua y la malta.\\
             En el inicio del proceso de macerado, es realizada una mezcla entre malta, que se encuentra a temperatura ambiente, y agua caliente. Es entonces que ocurre un intercambio de temperatura entre estas dos partes, que se continúa hasta que la malta se remoje por completo, y la temperatura se estabilice en toda la mezcla.
             
             \item Ubicar los sensores a distintas medidas de elevación y en distintos sectores perimetrales con el objetivo de recolectar datos representativos del tanque en sus totalidad y no solo de un sector del mismo.
