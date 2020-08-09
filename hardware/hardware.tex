@@ -8,14 +8,14 @@
 
     \par Existen diferentes plataformas dentro de las cuales puede ser desarrollado un componente que cumpla los requerimientos antes mencionados. Raspberry Pi\textsuperscript{\textregistered} y Arduino\textsuperscript{\textregistered} se destacan como las más utilizadas y con mayor comunidad, por tanto, luego se describen y comparan en detalle.
     
-    \par Respecto de la recolección de datos, los sensores se describen abordando aspectos como costo económico, precisión y fiabilidad de los datos.
+    \par Respecto de la recolección de datos, los sensores se describen abordando aspectos como costo económico, exactitud, precisión y fiabilidad de los datos.
     
     \subsection{Análisis de elementos}
     \par A continuación se presenta el análisis de los elementos considerados para integrar la estación de recolección de datos.
     
         \subsubsection{Arduino: Microcontrolador}
         
-            \par Arduino\textsuperscript{\textregistered} es una compañía de cultura libre\footnote{Corriente de pensamiento que promueve la libertad en la distribución y modificación de trabajos creativos basándose en el principio del contenido libre para distribuir o modificar trabajos y obras creativas.} que manufactura placas de desarrollo de hardware para construir dispositivos digitales e interactivos que pueden sensar y controlar objetos del mundo real. El software de Arduino\textsuperscript{\textregistered} consiste de dos elementos, un entorno de desarrollo (IDE) y un \textit{bootloader}\footnote{El \textit{bootloader} de Arduino es un software alojado en la memoria flash que permite programar Arduino a través del puerto serie sin necesidad de usar un programador externo.} que es ejecutado de forma automática dentro del microcontrolador cuando este se enciende. Las placas Arduino se programan mediante un computador, usando comunicación serial. Generalmente el hardware (Figura \ref{boardArduino}) consiste de un microcontrolador\footnote{Un microcontrolador es un circuito integrado o chip que incluye en su interior las tres unidades funcionales de un ordenador: CPU, memoria y unidades de E/S.} Atmel AVR, conectado sobre una placa de circuito impreso con al menos 16 GPIO (\textit{General Purpose Input Output}) para entrada y salida de datos. A la misma se le pueden conectar placas de expansión (\textit{shields}) que complementan la funcionalidad del modelo de placa empleada, agregando circuitería, sensores y módulos de comunicación externos a la placa original.
+            \par Arduino\textsuperscript{\textregistered} es una compañía de cultura libre\footnote{Corriente de pensamiento que promueve la libertad en la distribución y modificación de trabajos creativos basándose en el principio del contenido libre para distribuir o modificar trabajos y obras creativas.} que manufactura placas de desarrollo de hardware para construir dispositivos digitales e interactivos que pueden sensar y controlar objetos del mundo real. El software de Arduino\textsuperscript{\textregistered} consiste de dos elementos, un entorno de desarrollo (IDE) y un \textit{bootloader}\footnote{El \textit{bootloader} de Arduino es un software alojado en la memoria flash que permite programar Arduino a través del puerto serie sin necesidad de usar un programador externo.} que es ejecutado de forma automática dentro del microcontrolador cuando este se enciende. Las placas Arduino\textsuperscript{\textregistered} se programan mediante un computador, usando comunicación serial. Generalmente el hardware (Figura \ref{boardArduino}) consiste de un microcontrolador\footnote{Un microcontrolador es un circuito integrado o chip que incluye en su interior las tres unidades funcionales de un ordenador: CPU, memoria y unidades de E/S.} Atmel AVR, conectado sobre una placa de circuito impreso con al menos 16 GPIO (\textit{General Purpose Input Output}) para entrada y salida de datos. A la misma se le pueden conectar placas de expansión (\textit{shields}) que complementan la funcionalidad del modelo de placa empleada, agregando circuitería, sensores y módulos de comunicación externos a la placa original.
         
             \begin{figure}[h]
                 \centering
@@ -25,7 +25,7 @@
             \end{figure}
         
         \subsubsection{Raspberry Pi: Computadora de placa reducida}
-            \par Raspberry\textsuperscript{\textregistered} Pi es un computador de placa reducida de bajo costo (SBC\footnote{\textit{Single Board Computer} o SBC, es una computadora completa en un sólo circuito.}). Es decir, su diseño se centra en un sólo microprocesador con la RAM, E/S y todas las demás características de un computador funcional en una sola tarjeta que suele ser de tamaño reducido, y que tiene todo lo que necesita en la placa base. Estas placas son desarrolladas en Reino Unido por la fundación Raspberry\textsuperscript{\textregistered} Pi. El software de las placas es \textit{open source}, siendo su sistema operativo oficial una versión adaptada de Debian\footnote{Debian es un sistema operativo y una distribución de Software Libre, \url{www.debian.org}}, denominada Raspbian. También, es posible usar otros sistemas operativos como Windows 10. El hardware (Figura \ref{boardRaspberry}), en todas sus versiones, incluye un procesador Broadcom, una memoria RAM, una GPU, puertos USB, HDMI, Ethernet y 40 pines GPIO. Ninguna de sus ediciones incluye memoria de almacenamiento pero si cuentan con un slot para memoria MicroSD. De forma adicional, es posible agregar placas de expansión HAT (\textit{Hardware Attached on Top}) para agregar otras funcionalidades.
+            \par Raspberry\textsuperscript{\textregistered} Pi es un computador de placa reducida de bajo costo (SBC\footnote{\textit{Single Board Computer} o SBC, es una computadora completa en un sólo circuito.}). Es decir, su diseño se centra en un sólo microprocesador con la RAM, E/S y todas las demás características de un computador funcional en una sola tarjeta que suele ser de tamaño reducido, y que tiene todo lo que necesita en la placa base. Estas placas son desarrolladas en Reino Unido por la fundación Raspberry\textsuperscript{\textregistered} Pi. El software de las placas es \textit{open source}, siendo su sistema operativo oficial una versión adaptada de Debian\footnote{Debian es un sistema operativo y una distribución de Software Libre, \url{www.debian.org}}, denominada \textit{Raspbian}. También, es posible usar otros sistemas operativos como Windows 10. El hardware (Figura \ref{boardRaspberry}), en todas sus versiones, incluye un procesador Broadcom, una memoria RAM, una GPU, puertos USB, HDMI, Ethernet y 40 pines GPIO. Ninguna de sus ediciones incluye memoria de almacenamiento pero si cuentan con un slot para memoria MicroSD. De forma adicional, es posible agregar placas de expansión HAT (\textit{Hardware Attached on Top}) para agregar otras funcionalidades.
             
             \begin{center}
                 \includegraphics[scale=0.30]{hardware/raspberrypib3.jpg}
@@ -42,23 +42,24 @@
         \par A continuación se detallan los componentes de hardware utilizados. Esto es, la placa electrónica, los sensores y componentes electrónicos intermedios.
         
         \subsubsection{Placa electrónica}
-            \par En base al análisis de la Tabla \ref{CompHard} del Anexo, la tecnología utilizada en este proyecto es \textbf{Raspberry\textsuperscript{\textregistered} Pi} (modelo Raspberry\textsuperscript{\textregistered} Pi 3 B+) debido a su mayor capacidad de procesamiento, almacenamiento, persistencia de datos y por poseer un lenguaje de programación de más alto nivel. Al incorporar, esta placa, conectividad inalámbrica de fábrica, posee la ventaja sobre Arduino\textsuperscript{\textregistered} de no requerir la instalación de placas externas para realizar este fin, siendo este tipo de conexiones necesarias para el desarrollo de este proyecto. 
+            \par En base al análisis de la Tabla \ref{CompHard} del Anexo, la plataforma utilizada en este proyecto es \textbf{Raspberry\textsuperscript{\textregistered} Pi} (modelo Raspberry\textsuperscript{\textregistered} Pi 3 B+) debido a su mayor capacidad de procesamiento, almacenamiento, persistencia de datos y por poseer un lenguaje de programación de más alto nivel. Al incorporar, esta placa, conectividad inalámbrica de fábrica, posee la ventaja sobre Arduino\textsuperscript{\textregistered} de no requerir la instalación de placas externas para realizar este fin, siendo este tipo de conexiones necesarias para el desarrollo de este proyecto. 
 
         \subsubsection{Sensores}
-            \par Tanto Arduino\textsuperscript{\textregistered} como Raspberry\textsuperscript{\textregistered} Pi pueden trabajar con sensores analógicos y digitales, debiendo en el caso del Raspberry\textsuperscript{\textregistered} utilizar un conversor analógico digital (ADC\footnote{en inglés, Analog Digital Converter}), para trabajar con sensores analógicos. Para cada tipo de sensor, existen numerosas opciones que se diferencian en cuanto a la precisión de las medidas, dónde esta característica aumenta en forma proporcional a su precio.
+            \par Tanto Arduino\textsuperscript{\textregistered} como Raspberry\textsuperscript{\textregistered} Pi pueden trabajar con sensores analógicos y digitales, debiendo en el caso del Raspberry\textsuperscript{\textregistered} utilizar un conversor analógico digital (ADC\footnote{en inglés, Analog Digital Converter}), para trabajar con sensores analógicos. Para cada tipo de sensor, existen numerosas opciones que se diferencian en cuanto a la exactitud de las medidas, dónde esta característica aumenta en forma proporcional a su precio.
             
             \par En concordancia con el requerimiento no funcional RNF007 (Tabla \ref{reqNoFunc}), para este proyecto se propone el desarrollo de un prototipo con un presupuesto limitado para la adquisición de sensores. Por tanto, no fue aplicado un criterio comparativo como el utilizado para las placas electrónicas, sino que, se buscaron sensores cuya relación precio/calidad sea adecuada y accesible al presupuesto de los alumnos proyectistas, enfocando esta decisión en la obtención de datos fiables para cumplir los objetivos del proyecto, y no en la precisión de los valores a obtener.
             
             \paragraph{Sensores de temperatura sumergibles:}Sensor que permite obtener valores de temperatura de un líquido a partir de su inmersión en él. Como fue mencionado antes, se decidió optar por un sensor que satisfaga la limitación precio/calidad y, de ser posible, que no requiera la utilización de un ADC con el fin de reducir costos y complejidad. Por esto, fue elegido el sensor digital DS18B20 (Figura \ref{SensorTemp}), cuyas características se describen a continuación:
             
                 \begin{itemize}
-                    \item Modelo: Sensor Digital Temperatura DS18B20 Cable Sumergible
-                    \item Fabricante: Maxim
-                    \item Microcontrolador: ATmega328P
-                    \item Voltaje de funcionamiento: 3,3V / 5V
+                    \item Modelo: Sensor Digital Temperatura DS18B20 Cable Sumergible.
+                    \item Fabricante: Maxim.
+                    \item Microcontrolador: ATmega328P.
+                    \item Voltaje de funcionamiento: 3,3V / 5V.
                     \item Comunicación: Digital. Posee tres pines: VDD, Data, GND.
-                    \item Precisión: 9 bits, tomando valores de -55°C - 125°C, con un margen de error de 0,5°C
-                    \item Conexión: Cada sensor incorpora de fábrica un número de serie de 64 bits que permite conectar múltiples sensores en paralelo usando sólo una patilla como bus de datos
+                    \item Precisión: 9 bits, tomando valores de -55°C - 125°C, con un margen de error de 0,5°C.
+                    \item Tiempo de respuesta: 10 ms.
+                    \item Conexión: Bus I2C. Cada sensor incorpora de fábrica un número de serie de 64 bits que permite conectar múltiples sensores en paralelo usando sólo una patilla como bus de datos.
                 \end{itemize}
                 
                 \begin{figure}
@@ -68,17 +69,17 @@
                     \label{SensorTemp}
                 \end{figure}
                 
-            \paragraph{Sensor de pH de líquidos:}Sensor electroquímico de pH\footnote{ Medida de acidez o alcalinidad de una disolución}, compuesto por un electrodo sumergible y una placa electrónica denominada sonda de pH (\textit{pH probe}), que permiten transducir la actividad química del ion de hidrógeno en una señal eléctrica. (Figuras \ref{BoardPh} y \ref{phElectrode})
+            \paragraph{Sensor de pH de líquidos:}Sensor electroquímico de pH\footnote{ Medida de acidez o alcalinidad de una disolución}, compuesto por un electrodo sumergible y una placa electrónica denominada sonda de pH (\textit{pH probe}), que permite transducir la actividad química del ion de hidrógeno en una señal eléctrica. (Figuras \ref{BoardPh} y \ref{phElectrode})
                 
                 \par A continuación se describen las características del sensor adquirido en base al presupuesto del proyecto:
                 
                 \begin{itemize}
-                    \item Modelo: phMeter
-                    \item Voltaje de funcionamiento : 5V
-                    \item Comunicación: Analógica, cuenta con 6 pines. Conector tipo BNC
-                    \item Precisión: ± 0.1pH, tomando valores de 0-14 pH
-                    \item Temperatura de trabajo: 0ºC - 60ºC
-                    \item Tiempo de respuesta: 1 minuto
+                    \item Modelo: phMeter.
+                    \item Voltaje de funcionamiento : 5V.
+                    \item Comunicación: Analógica, cuenta con 6 pines. Conector tipo BNC.
+                    \item Precisión: ± 0.1pH, tomando valores de 0-14 pH.
+                    \item Temperatura de trabajo: 0ºC - 60ºC.
+                    \item Tiempo de respuesta: 1 minuto.
                 \end{itemize}
                 
                 \begin{minipage}{0.95\textwidth}
@@ -99,17 +100,17 @@
                 
             \paragraph{Sensor de temperatura y humedad ambiental:}Sensor digital que permite realizar mediciones ambientales de temperatura y humedad relativa. Dados los condicionamientos antes planteados, el funcionamiento digital y las buenas prestaciones, se eligió el modelo de bajo costo DHT11 (Figura \ref{SensorDHT11}), sus características son descriptas a continuación:
                 \begin{itemize}
-                    \item Modelo: DHT11
-                    \item Fabricante: Adafruit
-                    \item Voltaje de funcionamiento: 3V - 5V DC
+                    \item Modelo: DHT11.
+                    \item Fabricante: Adafruit.
+                    \item Voltaje de funcionamiento: 3V - 5V DC.
                     \item Comunicación: Digital. Posee cuatro pines: VDD, Data, Idle, GND.
-                    \item Rango de medición de temperatura: 0ºC a 50°C
-                    \item Precisión de medición de temperatura: ±2.0 °C
-                    \item Resolución temperatura: 0.1°C
-                    \item Rango de medición de humedad: 20\% a 90\% RH
-                    \item Precisión de medición de humedad: 4\% RH
-                    \item Resolución humedad: 1\% RH
-                    \item Tiempo de sensado: 2 seg
+                    \item Rango de medición de temperatura: 0ºC a 50°C.
+                    \item Precisión de medición de temperatura: ±2.0 °C.
+                    \item Resolución temperatura: 0.1°C.
+                    \item Rango de medición de humedad: 20\% a 90\% RH.
+                    \item Precisión de medición de humedad: 4\% RH.
+                    \item Resolución humedad: 1\% RH.
+                    \item Tiempo de sensado: 2 seg.
                 \end{itemize}
                 
                 \begin{figure} [h]
@@ -121,17 +122,17 @@
 
         \subsubsection{Placa conversora de señal}
         
-        \par Placa electrónica que permite convertir señales analógicas en señales digitales. Se seleccionó la placa modelo Adafruit ADS1115 (Fígura \ref{ADS1115}) en base a sus prestaciones y bajo coto.
+        \par Placa electrónica que permite convertir señales analógicas en señales digitales. Se seleccionó la placa modelo Adafruit ADS1115 (Figura \ref{ADS1115}) en base a sus prestaciones y bajo costo.
         Sus características son descriptas a continuación:
         \begin{itemize}
-                    \item Modelo: ADS1115
-                    \item Fabricante: Adafruit
-                    \item Voltaje de funcionamiento: 2.0V - 5V DC
-                    \item Consumo de corriente: 150mA
+                    \item Modelo: ADS1115.
+                    \item Fabricante: Adafruit.
+                    \item Voltaje de funcionamiento: 2.0V - 5V DC.
+                    \item Consumo de corriente: 150mA.
                     \item Comunicación: Digital (I2C). Posee nueve pines: A0, A1, A2, A3, VDD, GND, SSL/SDA, ADDR, ALERT.
-                    \item Resolución de transformación: 16 bits
-                    \item Rango de voltajes de entrada: -6.144V - 6.144V
-                    \item Frecuencia de muestreo: 860 muestras por segundo 
+                    \item Resolución de transformación: 16 bits.
+                    \item Rango de voltajes de entrada: -6.144V - 6.144V.
+                    \item Frecuencia de muestreo: 860 muestras por segundo. 
         \end{itemize}
         
         \begin{figure} [h]
@@ -146,17 +147,17 @@
     
     \subsection{Lista de elementos}
     \label{subsectionListaElemHard}
-    Con base en lo descrito en la sección \ref{SeccionTecnoEvalHardware} se lista, finalmente, la siguiente serie de elementos para el diseño del componente.
+    Con base en lo descrito en la sección \ref{SeccionTecnoEvalHardware} se lista, finalmente, la siguiente serie de elementos para el diseño del componente:
         \begin{itemize}
-            \item 5 sensores digitales de temperatura sumergibles DS18B20 con 2 metros de extensión por cable
-            \item 1 sensor digital de temperatura y humedad ambiente Adafruit DHT11
-            \item 1 sensor de pH analógico ( Electrodo y plaqueta controladora)
-            \item 1 Conversor analógico / digital (Adafruit ADS1115)
-            \item 1 Raspberry\textsuperscript{\textregistered} Pi 3 B+
-            \item Resistencias electrónicas (4.7 k$\Omega$, 10 k$\Omega$)
-            \item Protoboard con cables
-            \item Fuente de alimentación microUSB 5v 2.1A
-            \item Memoria Micro SD Clase 10 16GB
+            \item 5 sensores digitales de temperatura sumergibles DS18B20 con 2 metros de extensión por cable.
+            \item 1 sensor digital de temperatura y humedad ambiente Adafruit DHT11.
+            \item 1 sensor de pH analógico ( Electrodo y plaqueta controladora).
+            \item 1 Conversor analógico / digital (Adafruit ADS1115).
+            \item 1 Raspberry\textsuperscript{\textregistered} Pi 3 B+.
+            \item Resistencias electrónicas (4.7 k$\Omega$, 10 k$\Omega$).
+            \item Protoboard con cables.
+            \item Fuente de alimentación microUSB 5v 2.1A.
+            \item Memoria Micro SD Clase 10 16GB.
         \end{itemize}
         
     \subsection{Consideraciones previas}
@@ -176,7 +177,7 @@
                 \label{tablePhvsTemp}
             \end{figure}
             
-            \par Por las características mencionadas del sensor de pH, el intervalo de medición, para este proyecto, es de al menos 2 minutos (El usuario puede aumentar este intervalo si lo requiere) asumiendo así el correspondiente error. El desvío de medición del pH ocasionado por la temperatura del líquido durante el sensado es ajustado mediante Tabla \ref{tablePhvsTemp} para la cual es necesario contar con la temperatura del medio líquido en el cual se encuentra inmerso el electrodo de pH. Esta temperatura es obtenida por medio de un sensor sumergible que es introducido de forma conjunta al sensor de pH.
+            \par Por las características mencionadas del sensor de pH, el intervalo de medición, para este proyecto, es de al menos 2 minutos (el usuario puede aumentar este intervalo si lo requiere) asumiendo así el correspondiente error. El desvío de medición del pH ocasionado por la temperatura del líquido durante el sensado es ajustado mediante Tabla \ref{tablePhvsTemp} para la cual es necesario contar con la temperatura del medio líquido en el cual se encuentra inmerso el electrodo de pH. Esta temperatura es obtenida por medio de un sensor sumergible que es introducido de forma conjunta al sensor de pH.
         
         \paragraph{Medición de temperatura:} 
             Debido a que el objeto involucrado en la medición es un líquido, se opta por un sensor de temperatura sumergible.
@@ -193,7 +194,7 @@
             \subsubsection{Subcapa de software}
                \par El sistema operativo utilizado para el Raspberry\textsuperscript{\textregistered} es \textit{Raspbian}\footnote{\url{https://www.raspberrypi.org/downloads/raspbian/}}, una distribución basada en Debian Linux provista por el fabricante de la placa.
                 
-               \par El desarrollo de las funcionalidades de software se realiza en Python. Esta opción se elige como primer alternativa al contar con una amplia comunidad de desarrolladores, librerías y por encontrarse recomendado por el sitio oficial de Raspberry\textsuperscript{\textregistered} (Raspberry\textsuperscript{\textregistered} Official Page, 2018) para la programación con GPIO.
+               \par El desarrollo de las funcionalidades de software se realiza en lenguaje Python. Esta opción se elige como primer alternativa al contar con una amplia comunidad de desarrolladores, librerías y por encontrarse recomendado por el sitio oficial de Raspberry\textsuperscript{\textregistered} (Raspberry\textsuperscript{\textregistered} Official Page, 2018) para la programación con GPIO.
                 
                \par Para la gestión de los datos, se emplea el motor de base de datos MySQL. Se justifica esta elección por su simpleza de uso, mínimos requerimientos para un correcto funcionamiento y la existencia de herramientas de interacción con \textit{Scripts} en lenguaje Python.
                 
@@ -202,7 +203,7 @@
                     \begin{itemize}
                         \item Obtención de datos de sensores: cada sensor utiliza una función específica desarrollada de forma particular para garantizar su correcto funcionamiento. De esta manera, se abordan de manera eficaz los posibles inconvenientes (\textit{bugs}) que puedan ser identificados.
                         
-                        \item Insertar datos en la base de datos: los datos obtenidos en cada secuencia de medición se insertan en la base de datos a partir de un identificador (ID) proporcionado como parámetro de la función.
+                        \item Insertar datos en la base de datos: los datos obtenidos en cada secuencia de medición se insertan en la base de datos a partir de un identificador (ID de experimento) proporcionado como parámetro de la función.
                     \end{itemize}
                 
                \paragraph{Diagrama de Base de Datos:} La Figura \ref{fig:DiagramaBdRasp} ubicada en el Anexo, presenta el diagrama de base de datos utilizado. El mismo, consiste de tres tablas relacionadas mediante claves foráneas (\textit{foreign keys}): \textit{Maceración}, \textit{Experimento} y \textit{SensedValues}. 
@@ -221,7 +222,7 @@
 
                 \item \textbf{Conexión y disposición del sensor de pH:} En primer lugar se realizaron las conexiones electrónicas e instalaciones de software necesarias para el funcionamiento del ADS1115 junto a la placa Raspberry\textsuperscript{\textregistered} Pi. A continuación, se conectó el sensor de pH con la placa convertidora. Posterior a la conexión electrónica, fue ubicado el sensor de pH dentro de una solución de tipo \textit{buffer}\footnote{Solución química que posee un valor de pH conocido.}, de manera de conocer con antelación el valor que debe leer el sensor de pH, y verificar así, el correcto funcionamiento de esta conexión.
                 
-                \item \textbf{Lectura digital de valores analógicos:} Inicialmente debe mencionarse que el ADC cuenta con una resolución de 16 bit, mediante la cual produce como salida valores entre -2\textsuperscript{15} y 2\textsuperscript{15}-1 en correspondencia al rango de voltajes de entrada de -6,144v a 6,144v. Dado que los valores de salida de la sonda de pH toman el rango de voltajes entre -5v y 5v, la salida del ADS produce un rango menor (entre -26.666 y 26.667)\footnote{ Los extremos de este rango son obtenidos al aplicar el mapeo lineal a 5v. Esto es $ 5 \cdot (2^{15} / 6.144)$  }. Este último rango se corresponde con valores de pH que pertenecen a una escala entre 0 y 14. A partir de este análisis, como siguiente paso, se procedió a construir un mapeo lineal entre la salida del convertidor y la escala de pH.
+                \item \textbf{Lectura digital de valores analógicos:} Inicialmente debe mencionarse que el ADC cuenta con una resolución de 16 bit, mediante la cual produce como salida valores entre -2\textsuperscript{15} y 2\textsuperscript{15}-1 en correspondencia al rango de voltajes de entrada de -6,144v a 6,144v. Dado que los valores de salida de la sonda de pH toman el rango de voltajes entre -5v y 5v, la salida del ADC produce un rango menor (entre -26.666 y 26.667)\footnote{ Los extremos de este rango son obtenidos al aplicar el mapeo lineal a 5v. Esto es $ 5 \cdot (2^{15} / 6.144)$  }. Este último rango se corresponde con valores de pH que pertenecen a una escala entre 0 y 14. A partir de este análisis, como siguiente paso, se procedió a construir un mapeo lineal entre la salida del convertidor y la escala de pH.
                 
                 \item \textbf{Verificación de funcionamiento:} Luego de realizado el mapeo, los valores obtenidos difirieron de los esperados en todas las ocasiones (se realizaron pruebas con tres \textit{buffers} distintos). A consecuencia de esta situación, se procedió a realizar numerosas verificaciones matemáticas sobre el mapeo realizado y luego sobre las conexiones electrónicas no pudiendo resolver el conflicto.
                 
@@ -243,7 +244,7 @@
     \par A continuación son descriptas mediante diagramas las implementaciones de las subcapas de hardware y software.
   
     \subsection{Subcapa de software}
-        \par En el diagrama de flujo de la Figura \ref{FlujoPython} se presenta el funcionamiento de esta subcapa. El mismo explica la secuencia de actividades llevadas a cabo por el software, iniciando por los mensajes recibidos por la API, continuando por la obtención de mediciones mediante los sensores, su posterior registro en la base de datos y finalizando con la devolución de mediciones con la API.
+        \par En el diagrama de flujo de la Figura \ref{FlujoPython} se presenta el funcionamiento de esta subcapa. El mismo explica la secuencia de actividades llevadas a cabo por el software, iniciando por los mensajes recibidos por la API, continuando por la obtención de mediciones mediante los sensores, su posterior registro en la base de datos y finalizando con la devolución de mediciones con la API. El ciclo de medición/registro en la base de datos se repite iterativamente hasta el concluir la duración del experimento.
 
         \begin{figure}
         \centering
@@ -253,7 +254,7 @@
         \end{figure}
 
     \subsection{Subcapa de hardware}
-        \par En las siguientes subsecciones se muestran los diagramas de conexión de cada sensor con la placa Raspberry, siguiendo el diseño general de la Figura \ref{fig:EsquemaHardware}.
+        \par En las siguientes subsecciones se muestran los diagramas de conexión de cada sensor con la placa Raspberry\textsuperscript{\textregistered}, siguiendo el diseño general de la Figura \ref{fig:EsquemaHardware}.
 
     \subsubsection{Conexión del sensor de pH}
 
@@ -268,7 +269,7 @@
 
     \subsubsection{Conexión del sensor de temperatura sumergible}
 
-        \par Para poder realizar las mediciones del líquido se utiliza un sensor de temperatura sumergible (véase \ref{subseccionElementosutilizados}). Dicho sensor requiere la conexión de un resistencia de $4.7k\Omega$ entre el pin de datos (Data) y el de corriente continua (VDD). En forma adicional, este sensor incorpora la posibilidad de conexión de múltiples sensores en paralelo comunicados mediante el bus I2C\footnote{Bus desarrollado por Philips\textsuperscript{\textregistered} para envío de datos en serie entre un circuito maestro y uno o varios esclavos}. Bajo esta dinámica, cada sensor DS18B20 dispone de un código de identificación único que le permite ser identificado de forma unívoca por la placa Raspberry\textsuperscript{\textregistered}. En la Figura \ref{fig:ConexionTemperatura} se presenta el diagrama de conexión de estos sensores.
+        \par Para poder realizar las mediciones del líquido se utiliza un sensor de temperatura sumergible (véase sección \ref{subseccionElementosutilizados}). Dicho sensor requiere la conexión de un resistencia de $4.7k\Omega$ entre el pin de datos (Data) y el de corriente continua (VDD). En forma adicional, este sensor incorpora la posibilidad de conexión de múltiples sensores en paralelo comunicados mediante el bus I2C\footnote{Bus desarrollado por Philips\textsuperscript{\textregistered} para envío de datos en serie entre un circuito maestro y uno o varios esclavos}. Bajo esta dinámica, cada sensor DS18B20 dispone de un código de identificación único que le permite ser identificado de forma unívoca por la placa Raspberry\textsuperscript{\textregistered}. En la Figura \ref{fig:ConexionTemperatura} se presenta el diagrama de conexión de estos sensores.
         %\begin{minipage}{0.95 \textwidth}
         \begin{figure}
             \centering

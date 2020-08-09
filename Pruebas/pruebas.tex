@@ -12,7 +12,7 @@
 \par Los ciclos de verificación y validación de este sistema se plasman en los distintos tipos de pruebas realizadas sobre el sistema. A continuación se presenta el plan de pruebas para el sistema desarrollado. Dentro del cual, se señala y define cada tipo de prueba a ser llevada a cabo. 
 
 \begin{itemize}
-    \item{\textbf{Prueba de integración:}} El objetivo de este tipo de prueba es descubrir defectos en el sistema. El proceso de integración del sistema implica construir éste a partir de sus componentes, y probar el sistema resultante con el fin de descubrir conflictos que pudiesen surgir producto de la interacción entre ellos. Este tipo de prueba también es conocido como prueba de caja blanca, ya que se tiene acceso al código fuente. Las mismas son realizadas por el equipo de desarrollo.
+    \item{\textbf{Prueba de integración:}} El objetivo de este tipo de prueba es descubrir defectos en el sistema. El proceso de integración del sistema implica construir éste a partir de sus componentes, y probar el sistema resultante con el fin de descubrir conflictos que pudiesen surgir producto de la interacción entre ellos. Este tipo de prueba también es conocido como prueba de caja blanca, ya que durante la misma se tiene acceso al código fuente. Las mismas son realizadas por el equipo de desarrollo.
     
     \item{\textbf{Prueba de validación:}} El objetivo de estas pruebas es demostrar la conformidad con los requerimientos definidos para el sistema construido. Las pruebas para este fin son indicadas a continuación. 
     
@@ -99,7 +99,7 @@
     Episodios
     & \begin{itemize}
         \item El usuario selecciona el botón flotante ubicado en la pantalla principal.
-        \item La aplicación muestra un dialogo pop-up con un \textit{spinner} de carga mientras espera la respuesta de la API.
+        \item La aplicación muestra un dialogo emergente (\textit{pop-up}) con un ícono de carga mientras espera la respuesta de la API.
         \item La aplicación enseña los valores obtenidos por cada uno de los sensores de la estación obtenidos recientemente.
     \end{itemize}
     \\
@@ -118,7 +118,7 @@
 
 \begin{longtable}{|p{2cm}|p{12cm}|}
     \hline
-    \multicolumn{2}{|c|}{ Escenario 02 : Nueva Maceración } \\
+    \multicolumn{2}{|c|}{ Escenario 02 : Nueva maceración } \\
     \hline
     \hline
     \endfirsthead
@@ -140,11 +140,11 @@
 
     %%%%%% tbody %%%%%%%%
     Objetivo
-    & Dar de alta un nueva receta de Maceración    \\
+    & Dar de alta una nueva receta de maceración \\
     \hline
     
     Contexto
-    & El usuario abre la aplicación móvil.
+    & El usuario abre la aplicación móvil, ubicándose en la pantalla principal.
     \\
     \hline
     
@@ -164,7 +164,6 @@
     
     Episodios
     & \begin{itemize}
-        \item El usuario abre la aplicación en su dispositivo móvil.
         \item El usuario hace click en el botón ``+'' para agregar una nueva receta de maceración.
         \item El usuario ingresa la información necesaria para dar de alta una nueva maceración.
         \item El sistema crea la nueva receta.
@@ -233,7 +232,7 @@
     & \begin{itemize}
         \item El usuario selecciona el botón flotante ubicado en la pantalla de gestión de maceración.
         \item La aplicación muestra en la pantalla de monitoreo de experimento con los datos del experimento en curso.
-        \item La aplicación indica que el experimento finalizó y muestra un dialogo para que se inserte la densidad obtenida.
+        \item Finalizada la duración del experimento, el usuario hace click en el botón para finalizar el experimento. La aplicación muestra un dialogo para que se inserte la densidad obtenida.
         \item El usuario inserta el valor de densidad.
     \end{itemize}
     \\
@@ -275,11 +274,11 @@
 
     %%%%%% tbody %%%%%%%%
     Objetivo
-    & Eliminar una receta de Maceración    \\
+    & Eliminar una receta de maceración \\
     \hline
     
     Contexto
-    & El usuario abre la aplicación móvil.
+    & El usuario abre la aplicación móvil, ubicándose en la pantalla principal.
     \\
     \hline
     
@@ -321,7 +320,7 @@
 
 \begin{longtable}{|p{2cm}|p{12cm}|}
     \hline
-    \multicolumn{2}{|c|}{ Escenario 05 : Acceso a los datos históricos y estadísticos de una receta} \\
+    \multicolumn{2}{|c|}{ Escenario 05 : Acceder a los datos históricos y estadísticos de una receta} \\
     \hline
     \hline
     \endfirsthead
@@ -343,11 +342,11 @@
 
     %%%%%% tbody %%%%%%%%
     Objetivo
-    & Acceder al panel panel de datos históricos y estadísticos de una receta de maceración   \\
+    & Acceder al panel de datos históricos y estadísticos de una receta de maceración   \\
     \hline
     
     Contexto
-    & El usuario abre la aplicación móvil.
+    & El usuario abre la aplicación móvil, ubicándose en la pantalla principal.
     \\
     \hline
     
@@ -406,11 +405,11 @@
 
     %%%%%% tbody %%%%%%%%
     Objetivo
-    & Eliminar una receta de maceración    \\
+    & Eliminar un experimento asociado a una receta de maceración \\
     \hline
     
     Contexto
-    & El usuario abre la aplicación móvil.
+    & El usuario abre la aplicación móvil, ubicándose en la pantalla principal.
     \\
     \hline
     
@@ -474,7 +473,7 @@
 
     %%%%%% tbody %%%%%%%%
     Objetivo
-    & Eliminar una receta de maceración    \\
+    & Visualizar las gráficas y resultados de un experimento    \\
     \hline
     
     Contexto
@@ -518,7 +517,7 @@
 %%%%%% ESCENARIO 8 %%%%%%%
 \begin{longtable}{|p{2cm}|p{12cm}|}
     \hline
-    \multicolumn{2}{|c|}{ Escenario 08 : Acceso a detalle de maceración} \\
+    \multicolumn{2}{|c|}{ Escenario 08 : Acceder a detalle de maceración} \\
     \hline
     \hline
     \endfirsthead
@@ -579,7 +578,7 @@
  \end{longtable}
 
 \subsection{Casos de prueba}
-A continuación se listan los casos de pruebas, siendo en cada caso indicado: nombre, tipo de prueba, descripción, objetivos, datos de entrada, salida esperada y salida obtenida.
+A continuación se listan los principales casos de pruebas identificados, siendo en cada caso indicado: nombre, tipo de prueba, descripción, objetivos, datos de entrada, salida esperada y salida obtenida.
 %----------------- FICHA CASO DE PRUEBA 1------------------------
 
 \begin{longtable}{|p{0.6cm}|p{4cm}|p{4.7cm}|p{4.7cm}|}
@@ -935,7 +934,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
     \textbf{\#} & Datos de entrada & Salida esperada & Salida obtenida\\
     \hline
     01 & Se desconecta el dispositivo móvil de la red WiFi. & & \\
-    
+    \hline
     02 & Se inicia un nuevo experimento de maceración en la aplicación.  &  La aplicación debería informar que el dispositivo móvil no se encuentra conectado a la red correspondiente. & La aplicación despliega un mensaje en el que se indica que la red es inaccesible.  \\
     
  \end{longtable}
@@ -1009,7 +1008,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
 
  \begin{longtable}{|p{3cm}|p{11cm}|}
     \hline
-    \multicolumn{2}{| c |}{\textbf{Tabla de verificación de requerimientos}}\\
+    \multicolumn{2}{| c |}{\textbf{Tabla de validación de requerimientos}}\\
     \hline
     \multicolumn{1}{| c |}{Requerimiento} &\multicolumn{1}{| c |}{Verificación}\\
     \hline
@@ -1019,7 +1018,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
  \hline
     \multicolumn{2}{|c|}{Continuación de la tabla de verificación de requerimientos}\\
     \hline
-    \multicolumn{1}{| c |}{Requerimiento} &\multicolumn{1}{| c |}{Verificación}\\
+    \multicolumn{1}{| c |}{Requerimiento} &\multicolumn{1}{| c |}{Validación}\\
     \hline
  \endhead
 
@@ -1034,7 +1033,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
         \multicolumn{1}{|c|}{RF002} & El sistema implementa el uso de cuatro sensores de temperatura ubicados en distintas posiciones dentro del macerador. El uso de los mismos se menciona en el capítulo \ref{CapituloHardware} (\textit{\textbf{Hardware}}) y posteriormente en este mismo capítulo. \\
         \hline
         
-        \multicolumn{1}{|c|}{RF003} & El sistema permite visualizar los datos recolectados por los sensores se este llevando a cabo o no un experimento de maceración. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
+        \multicolumn{1}{|c|}{RF003} & El sistema permite visualizar los datos recolectados por los sensores se este llevando a cabo, o no, un experimento de maceración. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
         \hline
         
         \multicolumn{1}{|c|}{RF004} & El sistema a través de la aplicación, permite ingresar todos los datos que caracterizan a una receta de maceración mediante una pantalla destinada a este fin. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}).  \\
@@ -1049,7 +1048,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
         \multicolumn{1}{|c|}{RF007} & El sistema permite almacenar y eliminar los datos de los experimentos realizados, estos pueden ser gestionados mediante la interfaz gráfica de la aplicación. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
         \hline
         
-        \multicolumn{1}{|c|}{RF008} & El sistema, mediante la aplicación móvil, informa las cantidades de insumos a utilizar para cada receta de maceración. Estos insumos son calculados mediante dos aproximaciones: una estimación teórica y un ajuste empírico de los valores teóricos basados en resultados antes obtenidos. De forma adicional, brinda los cálculos de volumen y temperatura del agua para cada Etapa. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
+        \multicolumn{1}{|c|}{RF008} & El sistema, mediante la aplicación móvil, informa las cantidades de insumos a utilizar para cada receta de maceración. Estos insumos son calculados mediante dos aproximaciones: una estimación teórica y un ajuste empírico de los valores teóricos basados en resultados antes obtenidos. De forma adicional, brinda los cálculos de volumen y temperatura del agua para cada etapa. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
         \hline 
         
         \multicolumn{1}{|c|}{RF009} & El sistema provee gráficas de los datos recolectados en cada experimento de maceración ubicados en una única pantalla. De forma adicional, provee gráficas relativas a resultados obtenidos del conjunto de experimentos para una misma receta de maceración. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
@@ -1061,10 +1060,10 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
         \multicolumn{1}{|c|}{RF011} & Durante un experimento de maceración en curso, el sistema presenta un único valor de temperatura representativo del tanque. Este valor es obtenido aplicando el cálculo de medidas de tendencia central. El sistema permite seleccionar entre tres métodos de cálculo para este valor: media, mediana  y  promedio  de  valores extremos. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
         \hline
         
-        \multicolumn{1}{|c|}{RNF001} & La plataforma elegida para la aplicación, \textit{Android},  se basó en este requerimiento siendo esta la más usada en el mercado Argentino. Mencionado en el capítulo \ref{CapituloHardware} (\textit{\textbf{Hardware}}). \\
+        \multicolumn{1}{|c|}{RNF001} & La plataforma elegida para la aplicación, \textit{Android},  se basó en este requerimiento siendo esta la más usada en el mercado Argentino. Mencionado en el capítulo \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
         \hline
         
-        \multicolumn{1}{|c|}{RNF002} & El sistema produce resultados aceptables para recolectar un conjunto de valores, luego el lapso consumido para el envío de los datos a la aplicación es despreciable por su duración corroborando asi este requerimiento. Mencionado en la sección \textit{\textbf{Pruebas de rendimiento}} del presente capítulo. \\
+        \multicolumn{1}{|c|}{RNF002} & El sistema produce resultados aceptables para recolectar un conjunto de valores, luego el lapso consumido para el envío de los datos a la aplicación es despreciable por su duración corroborando así este requerimiento. Mencionado en la sección \textit{\textbf{Pruebas de rendimiento}} del presente capítulo. \\
         \hline
         
         \multicolumn{1}{|c|}{RNF003} & Los datos inherentes a los experimentos realizados se almacenan en los componentes de hardware y software. Mencionado en los capítulos \ref{CapituloHardware} (\textit{\textbf{Hardware}}) y \ref{CapituloSoftware} (\textit{\textbf{Software}}). \\
@@ -1086,7 +1085,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
 
 \subsection{Pruebas de entrega}
 
-\par Las pruebas de entrega son llevadas a cabo mediante el desarrollo de casos de prueba. La definición de estos fue realizada a partir del análisis de los casos de uso ubicados en el capítulo de ``Ingeniería de requerimientos''.
+\par Las pruebas de entrega son llevadas a cabo mediante el desarrollo de casos de prueba. La definición de estos fue realizada a partir del análisis de los casos de uso ubicados en el capítulo \ref{CapituloRequerimiento} ``Ingeniería de requerimientos'' y los escenarios de prueba antes definidos.
 
 \par Estas pruebas son ejecutadas por el único usuario del sistema, el fabricante de cerveza artesanal. Al final de cada ficha bajo el título de ``Evidencias'', se ubica un hipervínculo a un vídeo, donde podrá observarse la ejecución de la prueba.
 
@@ -1231,7 +1230,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
     \hline
     \multicolumn{4}{|p{0.95\linewidth}|}{\textbf{Caso de prueba: Gestionar maceración - CP011}}\\
     \hline
-    \multicolumn{4}{| l |}{\textbf{Escenarios: } 3,4,5,6 y 8 }\\
+    \multicolumn{4}{| l |}{\textbf{Escenarios: } 03,04,05,06 y 08 }\\
     \hline
     \multicolumn{4}{| l |}{\textbf{Tipo de prueba:} Prueba de entrega}\\
     \hline
@@ -1488,7 +1487,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
     \hline
     \multicolumn{4}{|p{0.95\linewidth}|}{\textbf{Caso de prueba: Datos históricos - CP015}}\\
     \hline
-    \multicolumn{4}{| l |}{\textbf{Escenario: } \# }\\
+    \multicolumn{4}{| l |}{\textbf{Escenario: } 05 }\\
     \hline
     \multicolumn{4}{| l |}{\textbf{Tipo de prueba:} Prueba de entrega}\\
     \hline
@@ -1551,7 +1550,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
 
 \begin{longtable}{|p{0.6cm}|p{4cm}|p{4.7cm}|p{4.7cm}|}
     \hline
-    \multicolumn{4}{|p{0.95\linewidth}|}{\textbf{Caso de prueba: Validar el calculo de insumos  - CP016}}\\
+    \multicolumn{4}{|p{0.95\linewidth}|}{\textbf{Caso de prueba: Validar el cálculo de insumos  - CP016}}\\
     \hline
     \multicolumn{4}{| l |}{\textbf{Escenario: } 05 }\\
     \hline
@@ -1611,7 +1610,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
 
 \begin{longtable}{|p{0.6cm}|p{4cm}|p{4.7cm}|p{4.7cm}|}
     \hline
-    \multicolumn{4}{|p{0.95\linewidth}|}{\textbf{Caso de prueba: Validar el calculo de rendimiento del grano  - CP017}}\\
+    \multicolumn{4}{|p{0.95\linewidth}|}{\textbf{Caso de prueba: Validar el cálculo de rendimiento del grano  - CP017}}\\
     \hline
     \multicolumn{4}{| l |}{\textbf{Escenario: } 05 }\\
     \hline
@@ -1648,7 +1647,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
     \hline
     \multicolumn{4}{| p{0.95\linewidth} |}{
         \begin{itemize}
-            \item Validar que la aplicación realice el calculo de rendimiento del grano de manera correcta.
+            \item Validar que la aplicación realice el cálculo de rendimiento del grano de manera correcta.
         \end{itemize}
     }\\
     \hline
@@ -1670,7 +1669,7 @@ A continuación se listan los casos de pruebas, siendo en cada caso indicado: no
 
 \subsubsection{Cálculo de insumos}
 
-\par Se procedió a realizar la verificación de los cálculos de insumos implementados a partir del uso de recetas provistas por los directores. Mediante la utilización de la herramienta de planillas Microsoft \textsuperscript{\textregistered} Excel y la ecuación \ref{EcuacionRayDaniels} descripta en la sección \ref{AT_CalculodeCantGrano} del marco temático, se realizaron los cálculos de insumos necesarios para cada receta. Luego, se comparó los resultados de la planilla con los de la aplicación.
+\par Se procedió a realizar la verificación de los cálculos de insumos implementados a partir del uso de recetas provistas por los directores. Mediante la utilización de la herramienta de planillas Microsoft \textsuperscript{\textregistered} Excel y la ecuación \ref{EcuacionRayDaniels} descripta en la sección \ref{AT_CalculodeCantGrano} del marco temático, se realizaron los cálculos de insumos necesarios para cada receta. Luego, se comparó los resultados de la planilla con provistos por la aplicación.
 
 \par En la Tabla \ref{tab:TablaRecetaExperimentos}, se presentan cinco recetas: \textit{English Pale Ale}, \textit{Session IPA}, \textit{American Blonde Ale}, \textit{Hopfenweizen} y \textit{India Pale Lager}. 
 En la misma se lista el volumen de maceración (V), densidad objetivo (DO), los granos utilizados junto con el extracto potencial (EP) y porcentaje de utilización (PU) de los mismos, los valores de insumo obtenidos por la planilla de cálculo y por la aplicación y, por último, el error relativo obtenido entre estos dos valores. Este último cálculo se obtiene a partir de la ecuación $ e = |vo-vp|/vp $, siendo $e$ el error relativo, $vo$ el valor obtenido de la aplicación y $vp$ el valor de planilla.
@@ -1724,9 +1723,9 @@ En la misma se lista el volumen de maceración (V), densidad objetivo (DO), los 
     \endlastfoot
     
     %%%%%% ENGLISH PALE ALE %%%%%%%%
-    \multirow{2}{2cm}{English Pale Ale}
-    &\multirow{2}{2cm}{18.2} 
-    &\multirow{2}{2cm}{1.090}
+    English Pale Ale
+    &18.2
+    &1.090
     &Pilsen 
     & \multicolumn{1}{c|}{80\%}
     &\multicolumn{1}{c|}{90\%} 
@@ -1745,9 +1744,12 @@ En la misma se lista el volumen de maceración (V), densidad objetivo (DO), los 
     \hline
 
     %%%%%% SESSION IPA %%%%%%%%        
-    \multirow{4}{2cm}{Session IPA} 
-    &\multirow{4}{2cm}{40.5}   
-    &\multirow{4}{2cm}{1.070}
+    %\multirow{4}{2cm}{Session IPA}
+    Session IPA
+    %&\multirow{4}{2cm}{40.5}   
+    &40.5
+    %&\multirow{4}{2cm}{1.070}
+    &1.070
     & Pilsen
     &\multicolumn{1}{c|}{80\%}
     &\multicolumn{1}{c|}{62\%} 
@@ -1785,9 +1787,9 @@ En la misma se lista el volumen de maceración (V), densidad objetivo (DO), los 
     \hline
     
     %%%%%% AMERICAN BLONDE %%%%%%%%
-    \multirow{3}{2cm}{American Blonde  Ale} 
-    &\multirow{3}{2cm}{38.7} 
-    &\multirow{3}{2cm}{1.080} 
+    American Blonde  Ale
+    &38.7
+    &1.080 
     &Pilsen 
     &\multicolumn{1}{c|}{80\%}
     &\multicolumn{1}{c|}{86\%}
@@ -1816,9 +1818,9 @@ En la misma se lista el volumen de maceración (V), densidad objetivo (DO), los 
     \hline
         
     %%%%%% HOPFENWEIZEN %%%%%%%%
-    \multirow{8}{2cm}{Hopfen - Weizen} 
-    &\multirow{8}{2cm}{44.15}  
-    &\multirow{8}{2cm}{1.070} 
+    Hopfen - Weizen
+    & 44.15
+    & 1.070
     & Pilsen 
     &\multicolumn{1}{c|}{80\%}
     &\multicolumn{1}{c|}{44.44\%} 
@@ -1892,9 +1894,9 @@ En la misma se lista el volumen de maceración (V), densidad objetivo (DO), los 
     \hline
     
     %%%%%% IPL %%%%%%%%
-    \multirow{2}{2cm}{India Pale Lager}
-    &\multirow{2}{2cm}{48.6} 
-    &\multirow{2}{2cm}{1.090}
+    India Pale Lager
+    &48.6
+    &1.090
     &Pilsen 
     & \multicolumn{1}{c|}{80\%}
     &\multicolumn{1}{c|}{86\%} 
@@ -1947,11 +1949,11 @@ En la misma se lista el volumen de maceración (V), densidad objetivo (DO), los 
 \par En esta sección se presentan las pruebas realizadas sobre el sistema con el fin de validar el funcionamiento del mismo. 
 
 \subsection{Pruebas de rendimiento}
-\par Según \cite{PracticalSoftwareTesting} ``...El objetivo de las pruebas de rendimiento del sistema es el de ver si el sistema cumple los requerimientos de rendimiento...''. En este sentido el único requerimiento de rendimiento impuesto es el ``\textit{RNF002 - Retardo temporal restricto para transmisión de datos entre componentes}''. Por tanto, a continuación es descripta la prueba realizada y los resultados obtenidos.
+\par Según \cite{PracticalSoftwareTesting} ``...El objetivo de las pruebas de rendimiento del sistema es el de ver si el sistema cumple los requerimientos de rendimiento...''. En este sentido el único requerimiento de rendimiento impuesto es el ``\textit{RNF002 - Retardo temporal restricto para transmisión de datos entre componentes}''. Parafraseando el mismo, se requiere un valor de un minuto como máximo. Por tanto, a continuación es descripta la prueba realizada y los resultados obtenidos.
 \par
 Para la realización de las pruebas de velocidad se llevó a cabo un experimento con las siguientes variables: duración de 10 minutos e intervalos de medición de 15 segundos y 120 segundos para las mediciones de temperatura y pH respectivamente.
 \par 
-En primer lugar, en la Figura \ref{fig:pruebasdeInsercion} se presenta una captura tomada de la herramienta \textit{phpmyadmin}\footnote{phpMyAdmin es una herramienta escrita en \textit{PHP} para manejar la administración de \textit{MySQL} a través de páginas web, \url{https://www.phpmyadmin.net/}}. En la Figura \ref{fig:pruebasdeInsercionFechayHora} se presenta un acercamiento (zoom) de la columna ``fechayhora'' en la cual  pueden observarse los tiempos en los cuales las inserciones fueron realizadas, siendo que el intervalo de medición de temperatura (el mínimo entre ambos intervalos) fue definido en 15 segundos, las diferencias entre una medición y la siguiente toman valores que van entre los 15 y los 22 segundos. En forma consecuente, se establece que un intervalo de medición de temperatura mínimo debe ser de un valor no inferior a los 22 segundos, de esta forma se asegura un intervalo de duración constante entre mediciones.
+En primer lugar, en la Figura \ref{fig:pruebasdeInsercion} se presenta una captura tomada de la herramienta \textit{phpmyadmin}\footnote{phpMyAdmin es una herramienta escrita en \textit{PHP} para manejar la administración de \textit{MySQL} a través de páginas web, \url{https://www.phpmyadmin.net/}}. En la Figura \ref{fig:pruebasdeInsercionFechayHora} se presenta un acercamiento (\textit{zoom}) de la columna ``fechayhora'' en la cual  pueden observarse los tiempos en los cuales las inserciones fueron realizadas, siendo que el intervalo de medición de temperatura (el mínimo entre ambos intervalos) fue definido en 15 segundos, las diferencias entre una medición y la siguiente toman valores que van entre los 15 y los 22 segundos. En forma consecuente, se establece que un intervalo de medición de temperatura mínimo debe ser de un valor no inferior a los 22 segundos, de esta forma se asegura un intervalo de duración constante entre mediciones.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.5]{Pruebas/Inserciones.jpg}
@@ -1981,7 +1983,7 @@ Concretadas estas pruebas, se evidenció que el valor mínimo posible para el in
 
     \subsubsection{Metodología de pruebas}
         % ---- TERMO -----
-        \par Con la finalidad de ejecutar las pruebas se utilizó como macerador un termo\footnote{Termo, adaptación doméstica de un frasco de Dewar} de forma cilíndrica con capacidad volumétrica de 2,5 litros. Al mismo se le realizaron orificios pasantes de forma de incorporar en su interior los sensores de temperatura sumergibles, (Figura \ref{fig:ConstrucMacerador}).
+        \par Con la finalidad de ejecutar las pruebas se utilizó como macerador un termo\footnote{Termo, adaptación doméstica de un frasco de Dewar} de forma cilíndrica con capacidad volumétrica de 2,5 litros. Al mismo se le realizaron orificios pasantes de forma de incorporar en su interior los sensores de temperatura sumergibles, (Figura \ref{fig:ConstrucMacerador} del Anexo).
         
         \par En cuanto a la cantidad y ubicación de los sensores dentro del tanque de macerado, considerando el requerimiento RNF006, se buscó la mínima configuración que permitiese realizar mediciones que cubran el radio y la altura del mismo. Para este diseño se utilizó el análisis presentado en el apartado \ref{colocacionDeSensores}. Se tomó como punto de partida la utilización de los vértices de un polígono de tres lados circunscrito en un círculo (vista superior del tanque de maceración, Figura \ref{fig:SensoresEnTanque}, vértices \textbf{A}, \textbf{B} y \textbf{C}). De forma de obtener temperaturas representativas de las distintas profundidades del tanque, se ubicó cada sensor en un vértice desplazado en altura, manteniendo los mismos a distancias verticales equidistantes. De forma adicional, se incorporó un cuarto sensor, centro \textbf{O} del polígono, ubicado en el centroide del tanque. Véase el resultado de la distribución de los sensores \textbf{A'}, \textbf{B'}, \textbf{C'} y \textbf{O'} en la Figura \ref{fig:SensoresEnTanque}.
 
@@ -1992,21 +1994,21 @@ Concretadas estas pruebas, se evidenció que el valor mínimo posible para el in
             \label{fig:SensoresEnTanque}
         \end{figure}
         
-        \par Los sensores introducidos fueron fijados por medio de pegamento de base siliconada en las posiciones antes indicadas (Figura \ref{fig:ConstrucMacerador}). Para separar los sensores de los bordes del macerador, se utilizaron piezas de poliestireno expandido fijadas entremedio de cada sensor de temperatura y el borde interno del termo.
+        \par Los sensores introducidos fueron fijados por medio de pegamento de base siliconada en las posiciones antes indicadas (Figura \ref{fig:ConstrucMacerador} del Anexo). Para separar los sensores de los bordes del macerador, se utilizaron piezas de poliestireno expandido fijadas entremedio de cada sensor de temperatura y el borde interno del termo.
         Con la finalidad de disminuir la pérdida de calor producida por las perforaciones realizadas para introducir estos sensores, se procedió a aplicar sellador siliconado  en los orificios.
         
         \par Se despreció la posible toxicidad del contacto entre el líquido y el pegamento siliconado. Esta decisión esta basada en que el preparado será utilizado para la realización de las pruebas, y desechado al final de cada una no siendo destinado  al consumo.
         
         \par El termo utilizado cuenta con pico vertedor. El mismo facilita la extracción de muestras sin la necesidad de exponer toda la templa a la temperatura ambiente que produciría la disminución de temperatura y, por tanto, la alteración del experimento.
         
-        \par Durante la construcción del macerador, se identificó que el mismo perdía temperatura a un ritmo mayor al aceptable. Por tanto, se procedió a colocar el macerador dentro de un bolso térmico de manera de aumentar el aislamiento. (Figura \ref{fig:ConstrucAislamTerm}).
+        \par Durante la construcción del macerador, se identificó que el mismo perdía temperatura a un ritmo mayor al aceptable. Por tanto, se procedió a colocar el macerador dentro de un bolso térmico de manera de aumentar el aislamiento. (Figura \ref{fig:ConstrucAislamTerm} del Anexo).
         
         % ------- pH --------
         \par El sensor de pH fue calibrado para cada una de las maceraciones de prueba realizadas, requerimiento para mejorar la precisión de las mediciones obtenidas señalado en la subsección \ref{subseccionConsideracionesPreviasSensores}.
         
         \par La calibración del sensor de pH consiste en la aplicación de una secuencia de pasos, en los que se ajusta un parámetro mediante software, durante una medición de pH de una solución con un valor estable conocido con el objetivo de mejorar el resultado obtenido. Para este procedimiento, son utilizadas dos soluciones \textbf{buffers} \footnote{Solución química que posee un valor de pH conocido.} cuyos valores (mínimo y máximo) encierran al rango de valores a ser medidos en el experimento. En este caso, el rango de medición varía entre 5 y 6, por tanto, se utilizaron soluciones con valores de pH de 4 y 10, véase Figura \ref{fig:CalibrPhimetro} del Anexo. Luego, esta secuencia inicia con la inmersión de la sonda dentro de la solución \textbf{buffer}. A continuación, se realiza una medición, y se ajusta el resultado mediante un parámetro para este fin. Finalmente, se repite este procedimiento entre las dos soluciones hasta arribar a un valor de ajuste que permita obtener un resultado lo más preciso posible para ambas.
         
-        \par Las mediciones de pH se realizaron a partir de una muestra alojada en un recipiente de aluminio refrigerado (figura \ref{fig:MedicPH}) para disminuir la temperatura de la solución a la temperatura de calibración (ver Tabla \ref{tablePhvsTemp}). De forma adicional, dentro del recipiente se alojó un sensor de temperatura con el fin de indicar la temperatura de la templa al momento de la medición de pH.
+        \par Las mediciones de pH se realizaron a partir de una muestra alojada en un recipiente de aluminio refrigerado (Figura \ref{fig:MedicPH} del Anexo) para disminuir la temperatura de la solución a la temperatura de calibración (ver Tabla \ref{tablePhvsTemp}). De forma adicional, dentro del recipiente se alojó un sensor de temperatura con el fin de indicar la temperatura de la templa al momento de la medición de pH.
         
         % ------ Temperatura ------
         \par Al comienzo de un experimento de macerado debe realizarse una infusión entre agua y malta. Ambas en cantidades que deben ser medidas, y en el caso del agua hallarse a una temperatura inicial. Con el fin de medir la cantidad de malta se utilizó una balanza y un recipiente destinado a contenerla. Luego, para calentar y fraccionar el agua utilizada en las pruebas, se empleó una olla de acero inoxidable de cinco litros y un recipiente medidor de un litro. La cantidad y temperatura del agua utilizada en cada uno de los experimentos fue acorde a las indicaciones provistas por la aplicación, pantalla de detalle de maceración, (mencionado en la subsección \ref{DescripPantallaDetalleMaceración}).
@@ -2098,7 +2100,7 @@ Concretadas estas pruebas, se evidenció que el valor mínimo posible para el in
     %\hfill \break
     \par A continuación se visualizan los valores calculados por la aplicación para conocer la cantidad de insumos necesaria para realizar la maceración según la planificación correspondiente.
     %\par La cantidad de insumos ajustados se empieza a visualizar a partir de la tercer fila, acorde a la regla de negocio planteada en el capítulo de \ref{}.
-    \par Leyenda de las Tablas \ref{tab:ResultadosPilsenSimple} y \ref{tab:ResultadosPilsenEscalonada}: R.U. = rendimiento utilizado, I.U. = cantidad de insumos Utilizado, D.O. = Densidad Obtenida, R.O. = rendimiento obtenido, R.O. = rendimiento promedio y A.I. = ajuste de insumos.
+    \par Leyenda de las Tablas \ref{tab:ResultadosPilsenSimple} y \ref{tab:ResultadosPilsenEscalonada}: R.U. = rendimiento utilizado, I.U. = cantidad de insumos utilizados, D.O. = densidad obtenida, R.O. = rendimiento obtenido, R.P. = rendimiento promedio y A.I. = ajuste de insumos.
     
         \subsubsection{Pilsen Lager - Simple}
         

@@ -1,4 +1,5 @@
 \chapter{Ingeniería de requerimientos}
+\label{CapituloRequerimientos}
 \section{Recopilación de requerimientos}
     \par
     Los requerimientos para un sistema se constituyen como una descripción detallada de los servicios proporcionados y restricciones operativas del mismo. En lo que respecta al proceso de recopilación de requerimientos, el mismo consiste en identificar e interpretar las necesidades de los interesados y afectados por el proyecto en pos de facilitar el análisis de los mismos.
@@ -101,7 +102,7 @@ A continuación se listan los stakeholders identificados para este sistema:
         RF008 & Informar las cantidades de insumos a utilizar en cada receta de maceración & El sistema debe calcular e informar la cantidad de cada tipo de grano, y el volumen y temperatura del agua para cada etapa de maceración basado en los datos de planificación de la misma.
         \\\hline
         
-        RF009 & Presentar un histórico de experimentos realizados & El sistema debe proveer gráficas con los valores obtenidos de cada experimento de maceración realizado en una única pantalla facilitando la comparación de las mismas.
+        RF009 & Presentar un histórico de experimentos realizados & El sistema debe proveer gráficas con los valores obtenidos de cada experimento realizado en una única pantalla facilitando la comparación de experimentos.
         \\\hline
         
         RF010 & Optimizar la cantidad de grano & El sistema debe ser capaz de realizar optimizaciones de la cantidad de granos a utilizar en base a estimaciones de rendimiento del grano a partir de experimentos realizados.
@@ -146,7 +147,7 @@ A continuación se listan los stakeholders identificados para este sistema:
     RNF001 & Maximizar el alcance de usuarios & Debe seleccionarse una plataforma para el componente de software de manera de asegurar el mayor alcance posible de usuarios pertenecientes al mercado argentino.
     \\ \hline
     
-    RNF002 & Retardo temporal restricto para transmisión de datos entre componentes & La interfaz debe permitir la transmisión de mediciones de un experimento con una demora máxima establecida (Dada la duración promedio de 60 min. de los experimentos, se considera aceptable un valor no menor a 1 min. como máximo).
+    RNF002 & Retardo temporal restricto para transmisión de datos entre componentes & La interfaz debe permitir la transmisión de mediciones de un experimento con una demora máxima establecida (Dada la duración promedio de 60 minutos de los experimentos, se considera aceptable un valor menor, ó igual, a un minuto.).
     \\ \hline
     
     RNF003 & Redundancia en el almacenamiento de los datos de experimentos realizados & Los datos inherentes a los experimentos realizados deben ser almacenados de forma redundante en los distintos dispositivos utilizados para la construcción de este sistema.
@@ -169,7 +170,7 @@ A continuación se listan los stakeholders identificados para este sistema:
     A partir de estos requerimientos, se identificó el actor del sistema y las
     interacciones que deben realizar con el mismo:
     \par
-    \textbf{Cervecero}: Es el usuario del sistema, quien se encarga de definir las planificaciones de maceración, utilizar el monitoreo de variables para dar seguimiento al proceso y realizar análisis a partir de las experiencias y la información obtenida de estas.
+    \textbf{Cervecero}: Es el usuario del sistema, quien se encarga de definir las planificaciones de maceración, utilizar el monitoreo de variables para dar seguimiento al proceso y realizar el análisis a partir de las experiencias y la información obtenida de estas.
  
     
     \subsection{Casos de uso}
@@ -204,7 +205,7 @@ A continuación se listan los stakeholders identificados para este sistema:
         1- El CU comienza cuando el usuario hace \textit{click} en el botón ``Monitorear variables''. & \\
         \hline
         2- El sistema muestra una pantalla con los valores de temperatura y pH en proceso de monitoreo. & 2.1- El sistema no detecta los sensores. 
-        El sistema muestra el mensaje ``Error de conexión con el servidor''.
+        El sistema muestra el mensaje ``Error de conexión con el/los sensor/es''.
         \\
         \hline
         %\hline
@@ -222,7 +223,7 @@ A continuación se listan los stakeholders identificados para este sistema:
         2- El sistema despliega un formulario con los campos necesarios para que el usuario ingrese los datos para la realización de una maceración. &
         \\
         \hline
-        3- El usuario ingresa un nombre identificativo para la maceración, el volumen de producción deseada, las características y porcentajes de la/s malta/s que se utilizarán, y el tipo de maceración que será realizada. Finalmente presiona el botón ``Guardar''. &
+        3- El usuario ingresa un nombre identificativo para la maceración, el volumen de producción deseado, las características y porcentajes de la/s malta/s que se utilizarán, y el tipo de maceración caracterizado por la cantidad de etapas a ser realizadas. Finalmente presiona el botón ``Guardar''. &
         \\
         \hline
         4- El sistema emite un mensaje indicando que los datos ingresados han sido guardados exitosamente.  & 
@@ -266,7 +267,7 @@ A continuación se listan los stakeholders identificados para este sistema:
         \hline
         1- El CU comienza cuando el usuario hace \textit{click} en el botón ``Datos históricos'' en la pantalla de ``Gestión de maceración''. & 1.1- No existen experimentos realizados, el sistema emite un mensaje alertando la situación y cierra la pantalla.\\
         \hline
-        2- El sistema muestra gráficas temporales de temperatura promedio, pH, activación de enzimas, temperatura promedio de todos los experimentos de la maceración o solo de alguno de los sensores involucrados. & \\
+        2- El sistema presenta dos paneles, en el primero muestra gráficas temporales de temperatura promedio, pH y activación de enzimas. En el segundo despliega gráficas de temperatura promedio de todos los experimentos de la maceración o solo de alguno de los sensores involucrados. & \\
         \hline
         3- El sistema muestra un botón con la etiqueta ``Cambiar visualización de los gráficos''& 3.1- El usuario presiona el botón, el sistema alterna el formato de los gráficos entre lineales y caja-bigote. \\
         \hline
@@ -355,7 +356,7 @@ A continuación se listan los stakeholders identificados para este sistema:
         \hline
         1- El CU comienza cuando el usuario hace \textit{click} en el botón ``Eliminar Experimento'' perteneciente al panel ``Gestionar maceración'' (CU003). & \\
         \hline
-        2- El sistema despliega una alerta con el mensaje ``Está seguro que desea eliminar este experimento? (El mismos será eliminado de forma permanente)''. &
+        2- El sistema despliega una alerta con el mensaje ``Está seguro que desea eliminar este experimento? (El mismo será eliminado de forma permanente)''. &
         \\
         \hline
         3- El usuario presiona el botón ``Confirmar'', y se aplican los cambios requeridos. El sistema elimina el correspondiente elemento de la lista. & 3.1- El usuario presiona el botón ``Cancelar'' y el sistema cierra la alerta.
